@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Albra Grotesk';
+    src: url('AlbraGrotesk-Black.eot');
+    src: url('AlbraGrotesk-Black.eot?#iefix') format('embedded-opentype'),
+        url('AlbraGrotesk-Black.woff2') format('woff2'),
+        url('AlbraGrotesk-Black.woff') format('woff'),
+        url('AlbraGrotesk-Black.ttf') format('truetype'),
+        url('AlbraGrotesk-Black.svg#AlbraGrotesk-Black') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Albra Grotesk';
+    src: url('AlbraGrotesk-Light.eot');
+    src: url('AlbraGrotesk-Light.eot?#iefix') format('embedded-opentype'),
+        url('AlbraGrotesk-Light.woff2') format('woff2'),
+        url('AlbraGrotesk-Light.woff') format('woff'),
+        url('AlbraGrotesk-Light.ttf') format('truetype'),
+        url('AlbraGrotesk-Light.svg#AlbraGrotesk-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Albra Grotesk';
+    src: url('AlbraGrotesk-Medium.eot');
+    src: url('AlbraGrotesk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('AlbraGrotesk-Medium.woff2') format('woff2'),
+        url('AlbraGrotesk-Medium.woff') format('woff'),
+        url('AlbraGrotesk-Medium.ttf') format('truetype'),
+        url('AlbraGrotesk-Medium.svg#AlbraGrotesk-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Albra Grotesk';
+    src: url('AlbraGrotesk-Regular.eot');
+    src: url('AlbraGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AlbraGrotesk-Regular.woff2') format('woff2'),
+        url('AlbraGrotesk-Regular.woff') format('woff'),
+        url('AlbraGrotesk-Regular.ttf') format('truetype'),
+        url('AlbraGrotesk-Regular.svg#AlbraGrotesk-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Albra Grotesk Semi';
+    src: url('AlbraGrotesk-Semi.eot');
+    src: url('AlbraGrotesk-Semi.eot?#iefix') format('embedded-opentype'),
+        url('AlbraGrotesk-Semi.woff2') format('woff2'),
+        url('AlbraGrotesk-Semi.woff') format('woff'),
+        url('AlbraGrotesk-Semi.ttf') format('truetype'),
+        url('AlbraGrotesk-Semi.svg#AlbraGrotesk-Semi') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

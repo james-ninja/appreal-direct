@@ -1,0 +1,62 @@
+.ajax2:before,
+.ajax:before { content: ''; display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: url('loader.gif') no-repeat center center rgba(255,255,255,.5); z-index: 999; }
+
+.block-quick-order { max-width: 78em; margin: 0 auto 5em; }
+.table { display: table; width: 100%; border-collapse: collapse; table-layout: fixed; }
+.table .row { display: table-row; }
+.table .cell { display: table-cell; border: 1px solid #e5e5e5; border-width: 0 0 1px 0; vertical-align: middle; padding: .833em; padding: .75em .5em; }
+.table .thead { font-weight: bold; background: #231f20; color: #fff; }
+.table .thead .cell { padding: 1.25em; font-size: .778em; text-transform: uppercase; font-weight: normal; }
+.table .tfoot { background: #f7f7f7; }
+.table .tfoot .left { padding: 1em; }
+.table .tfoot .right { padding: 1em; text-align: right;  }
+.table .tfoot .cell { border-bottom: none; }
+.table .tfoot .total { font-size: .7778em; color: #3d3d3d; font-weight: normal; letter-spacing: .05em; margin-right: 1em; letter-spacing: .075em; }
+.table .tfoot .total em { text-transform: uppercase; font-style: normal;font-weight: 900; }
+/*.table .tfoot .total b { font-weight: normal; }*/
+.table .tfoot .left .button.button-add-to-cart:before { content: '\f067'; color: #fff; background: #ef4344; font-family: 'FontAwesome'; font-style: normal; width: 2em; }
+.table .tfoot .button.button-add-to-cart.checkout-b:before { content: '\f00c'; color: #fff; background: #ef4344; font-size: 1.65em; font-family: 'FontAwesome'; font-style: normal; width: 2em; line-height: 1.85; }
+.table .tfoot .button.button-add-to-cart.add-item,
+.table .tfoot .button.button-add-to-cart.checkout-b { /*font-family: 'Lato', sans-serif;*/  letter-spacing: 0.065em; }
+
+.table .cell.product { padding-left: 1em; border-bottom: 1px solid #e5e5e5;}
+.table .cell.qty { width: 11%; }
+.table .cell.rxtray { width: 19%; }
+.table .cell.action { width: 8%; text-align: center; padding: .75em .6em; }
+.table .cell.remove { width: 5%; text-align: center; }
+
+.cell .input { max-width: 100%; font-size: .778em; height: 2.86em; }
+.cell .input:focus { border: 1px solid #ef4344; }
+.cell .attribute { font-size: .778em; height: 2.86em; }
+
+.cell a.remove { background: transparent; color: #ef4344; display: inline-block; height: 34px; line-height: 15px; transition: all 0.25s ease 0s; width: 34px; border: 2px solid #ef4344; border-radius: 50%; width: 1em; height: 1em; font-size: 1.65em; }
+.cell a.remove:focus,
+.cell a.remove:hover { background:  #ef4344 none repeat scroll 0 0; color: #fff; }
+
+.cell a.each { background: #b4a696; display: inline-block; height: 40px; line-height: 1; transition: all 0.25s ease 0s; font-size: .555em; font-weight: normal; text-align: center; position: relative; box-sizing: border-box; text-transform: uppercase; color: #fff; padding: 1em 0.75em 0 4.5em; }
+.cell a.each span { display: none; }
+.cell a.each:focus,
+.cell a.each:hover { background: #d2c4b1 none repeat scroll 0 0; color: #fff; }
+.cell a.each:before { content: '\f067'; background: #d2c4b1; color: #fff; position: absolute; top: 0; left: 0; bottom: 0; width: 40px; line-height: 100%; font-family: 'FontAwesome'; font-style: normal; font-weight: normal; line-height: 40px; font-size: 18px; text-align: center; }
+
+.block-quick-order .table:first-of-type { margin: 1em 0 0; }
+.block-quick-order .table { margin: 0 0 2em; }
+
+.row { transition: background 300ms ease-in-out; }
+.row.product-row { background: #ef434438; }
+.row.available { background: #f6f3ef; }
+.awesomplete > ul > li[aria-selected="true"] { background: #ef4344; }
+.awesomplete > ul > li { font-size: .778em; padding: .5em; }
+.awesomplete > ul > li:hover { background: rgba(35,161,168,.4); }
+.awesomplete > ul { border-radius: 0; border: 1px solid #ef4344; }
+
+.woocommerce-checkout .woocommerce-additional-fields__field-wrapper .form-row { padding-left: 0; }
+
+.block-quick-order div.product {
+    width: auto;
+    float: none;
+}
+
+
+/************Dev CSS 26-10-2018*************/
+.drill_chart{ margin-top: 40px; }
