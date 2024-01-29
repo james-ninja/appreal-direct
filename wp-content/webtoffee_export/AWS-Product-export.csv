@@ -1,0 +1,9 @@
+post_parent,ID,sku,parent_sku,meta:aws_url_field,meta:cdn_featured_image,meta:cdn_gallery_urls,meta:cdn_gallery_urls_0_cdn_gallery_link,meta:cdn_gallery_urls_1_cdn_gallery_link,meta:cdn_gallery_urls_2_cdn_gallery_link,meta:cdn_gallery_urls_3_cdn_gallery_link,meta:cdn_gallery_urls_4_cdn_gallery_link,meta:cdn_product_gallery,meta:cdn_url
+,198000,4192,,,https://nylimages.s3.amazonaws.com/HNS_GF567586412_CandidBlue_Front.jpg,4,https://nylimages.s3.amazonaws.com/HNS_GF567586412_CandidBlue_Front.jpg,https://nylimages.s3.amazonaws.com/HNS_GF567586412_White_Front.jpg,https://nylimages.s3.amazonaws.com/HNS_GF567Y08113_CandidBlue_Front.jpg,https://nylimages.s3.amazonaws.com/HNS_GF567Y08160_DeepForteBlue_Front.jpg,,"[""279538"",""279463""]",
+198000,198002,#62844,4192,https://nylimages.s3.amazonaws.com/HNS_GF567586412_CandidBlue_Front.jpg,,,,,,,,,
+198000,198003,#62845,4192,https://nylimages.s3.amazonaws.com/HNS_GF567586412_White_Front.jpg,,,,,,,,,
+198000,198004,#62846,4192,https://nylimages.s3.amazonaws.com/HNS_GF567Y08113_CandidBlue_Front.jpg,,,,,,,,,
+198000,198005,#62847,4192,https://nylimages.s3.amazonaws.com/HNS_GF567Y08160_DeepForteBlue_Front.jpg,,,,,,,,,
+,279554,123232,,,https://apparel-stag.s3.amazonaws.com/Hanes_O5995_Light_Steel.jpg,2,https://apparel-stag.s3.amazonaws.com/Hanes_O5995_Light_Steel.jpg,https://apparel-stag.s3.amazonaws.com/Hanes_O5995_Black.jpg,,,,,
+279554,279555,,123232,https://apparel-stag.s3.amazonaws.com/Hanes_O5995_Light_Steel.jpg,,,,,,,,,
+279554,279556,,123232,https://apparel-stag.s3.amazonaws.com/Hanes_O5995_Black.jpg,,,,,,,,,
