@@ -1,0 +1,13 @@
+{
+  "name": "USAepayTransAPI",
+  "version": "0.1.0",
+  "description": "WooCommerce USAepayTransAPI Payment Gateway",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "^0.5.1"
+  }
+}

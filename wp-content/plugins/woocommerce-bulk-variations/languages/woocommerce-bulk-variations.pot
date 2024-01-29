@@ -1,0 +1,365 @@
+# Copyright (C) 2021 Barn2 Plugins
+# This file is distributed under the same license as the WooCommerce Bulk Variations plugin.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce Bulk Variations 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-bulk-variations\n"
+"Last-Translator: Barn2 Plugins <support@barn2.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-07-16 15:00-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Poedit 2.4.3\n"
+"X-Domain: woocommerce-bulk-variations\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;_ex;_nx;esc_attr__;esc_attr_e;esc_attr_x;esc_html__;esc_html_e;esc_html_x;_n_noop;_nx_noop;translate_nooped_plural\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: vendor\n"
+
+#: lib/Plugin/Admin/Admin_Links.php:52
+msgid "Settings"
+msgstr ""
+
+#: lib/Plugin/Admin/Admin_Links.php:70
+#, php-format
+msgid "View %s documentation"
+msgstr ""
+
+#: lib/Plugin/Admin/Admin_Links.php:71
+msgid "Docs"
+msgstr ""
+
+#: lib/Plugin/Admin/Plugin_Updater.php:121
+#, php-format
+msgid "Activate %1$syour license key%2$s to enable updates."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:63
+msgid "License key successfully activated."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:64
+msgid "There was an error activating your license key."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:72
+msgid "License key successfully deactivated."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:73
+msgid "There was an error deactivating your license key, please try again."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:80
+msgid "The license key looks good!"
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:81
+msgid "There's a problem with your license key."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:89
+msgid "License key"
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:97
+msgid "The licence key is contained in your order confirmation email."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:100
+msgid "License Key"
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:241
+msgid "Activate"
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:242
+msgid "Deactivate"
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Key_Setting.php:253
+msgid "License key deactivated."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Notices.php:90
+#, php-format
+msgid "Thank you for installing %1$s. To get started, please %2$senter your license key%3$s."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Notices.php:107
+#, php-format
+msgid "Your license key for %1$s has expired. %2$sClick here to renew for 20%% discount%3$s."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Notices.php:124
+#, php-format
+msgid "You no longer have a valid license for %1$s. Please %2$spurchase a new license key%3$s to continue using the plugin."
+msgstr ""
+
+#: lib/Plugin/License/Admin/License_Notices.php:145
+#, php-format
+msgid "%1$s - your site has moved to a new domain. Please %2$sreactivate your license key%3$s."
+msgstr ""
+
+#: lib/Plugin/License/EDD_Licensing.php:184
+msgid "An error has occurred, please try again."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:93
+msgid "Your license key is active."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:113
+msgid "Please enter your license key."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:115
+#: lib/Plugin/License/Plugin_License.php:380
+msgid "Your license key is invalid."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:319
+#, php-format
+msgid "Invalid license key - please check your order confirmation email or %1$sAccount%2$s."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:325
+msgid "No URL was supplied for activation, please contact support."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:328
+msgid "License key mismatch, please contact support."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:331
+msgid "This license is for a bundled product and cannot be activated."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:335
+msgid "Your license key is not valid for this plugin."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:341
+#, php-format
+msgid "%s site active"
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:344
+#, php-format
+msgid "Your license key has reached its activation limit (%s)."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:345 lib/Util.php:29
+msgid "Read more"
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:348
+#: lib/Plugin/License/Plugin_License.php:369
+#, php-format
+msgid "%1$s %2$s"
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:362
+#, php-format
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:366
+#, php-format
+msgid "Renew now for 20% discount."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:617
+msgid "Your license key is not active. Please reactivate or save the settings."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:621
+msgid "Your license key expired has expired."
+msgstr ""
+
+#: lib/Plugin/License/Plugin_License.php:626
+#, php-format
+msgid "Your license key has been disabled. Please %1$spurchase a new license key%2$s to continue using the plugin."
+msgstr ""
+
+#: lib/WooCommerce/Admin/Custom_Settings_Fields.php:80
+#: lib/class-wc-settings-additional-field-types.php:51
+msgid "Color"
+msgstr ""
+
+#: lib/WooCommerce/Admin/Custom_Settings_Fields.php:91
+#: lib/class-wc-settings-additional-field-types.php:61
+msgid "Size"
+msgstr ""
+
+#: src/Admin/Admin_Controller.php:36
+msgid "Bulk Variations"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:55 src/Admin/Settings_Page.php:82
+msgid "Bulk variations"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:77
+msgid "Documentation"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:85
+msgid "The following options control the WooCommerce Bulk Variations extension."
+msgstr ""
+
+#: src/Admin/Settings_Page.php:88
+msgid "Support"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:107
+msgid "Variations grid"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:110
+msgid "Use the variations grid for all products with 1 or 2 variation attributes"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:115 templates/bulk-variation-data-panel.php:144
+msgid "Disable purchasing"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:118
+msgid "Display the variations grid without quantity boxes or add to cart button"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:123 templates/bulk-variation-data-panel.php:163
+msgid "Show stock level"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:126 templates/bulk-variation-data-panel.php:164
+msgid "Display stock information in the variations grid"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:131
+msgid "Variation images"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:134
+msgid "Display an image for each variation"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:139 templates/bulk-variation-data-panel.php:225
+msgid "Image lightbox"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:142 templates/bulk-variation-data-panel.php:226
+msgid "Open variation images in a lightbox"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:146
+msgid "Single variation attribute"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:150
+msgid "Display horizontally"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:151
+msgid "Display vertically"
+msgstr ""
+
+#: src/Admin/Settings_Page.php:153
+msgid "Grid layout for products with only one variation attribute."
+msgstr ""
+
+#: src/Args.php:352 src/Data/Data_Factory.php:165
+msgid "Price"
+msgstr ""
+
+#: src/Data/Data_Factory.php:208
+msgid "Qty"
+msgstr ""
+
+#: src/Data/Data_Factory.php:335
+msgid "on backorder"
+msgstr ""
+
+#: src/Data/Data_Factory.php:337
+msgid "out of stock"
+msgstr ""
+
+#: src/Data/Data_Factory.php:339
+msgid "in stock"
+msgstr ""
+
+#: src/Handlers/Cart.php:49
+msgid "Please select one or more products."
+msgstr ""
+
+#: src/Handlers/Cart.php:102
+msgid "No product selected. Please try again."
+msgstr ""
+
+#: src/Handlers/Cart.php:113
+msgid "This product is no longer available. Please select an alternative."
+msgstr ""
+
+#: src/Handlers/Cart.php:116
+msgid "Please enter a quantity greater than 0."
+msgstr ""
+
+#: src/Handlers/Cart.php:142
+msgid "This product cannot be purchased."
+msgstr ""
+
+#: src/Table.php:72
+msgid "Add to cart"
+msgstr ""
+
+#: src/Table.php:247
+msgid "Items"
+msgstr ""
+
+#: src/Table.php:247
+msgid "Total"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:18
+msgid "Select attribute"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:102
+msgid "Enable variations grid"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:103
+msgid "Replace the default variation dropdowns with a bulk variations grid."
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:123
+msgid "Hide default add to cart"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:124
+msgid "Remove the default variation dropdowns and add to cart button (recommended if you are using a shortcode to insert the variations grid manually)."
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:145
+msgid "Display the variations grid without quantity boxes or add to cart button."
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:175
+msgid "Horizontal"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:187
+msgid "Vertical"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:206
+msgid "Display variation images"
+msgstr ""
+
+#: templates/bulk-variation-data-panel.php:207
+msgid "Display an image for each variation."
+msgstr ""

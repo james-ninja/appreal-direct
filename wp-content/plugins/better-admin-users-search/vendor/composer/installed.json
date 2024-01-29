@@ -1,0 +1,106 @@
+{
+    "packages": [
+        {
+            "name": "cmb2/cmb2",
+            "version": "v2.9.0",
+            "version_normalized": "2.9.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CMB2/CMB2.git",
+                "reference": "cacbc8cedbfdf8ffe0e840858e6860f9333c33f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CMB2/CMB2/zipball/cacbc8cedbfdf8ffe0e840858e6860f9333c33f2",
+                "reference": "cacbc8cedbfdf8ffe0e840858e6860f9333c33f2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">5.2.4"
+            },
+            "require-dev": {
+                "apigen/apigen": "4.1.2",
+                "awesomemotive/am-cli-tools": ">=1.3.1",
+                "nette/utils": "2.5.3",
+                "phpunit/phpunit": "6.5.13"
+            },
+            "suggest": {
+                "composer/installers": "~1.0"
+            },
+            "time": "2021-03-04T02:18:53+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Justin Sternberg",
+                    "email": "justin@dsgnwrks.pro",
+                    "homepage": "https://dsgnwrks.pro",
+                    "role": "Developer"
+                },
+                {
+                    "name": "WebDevStudios",
+                    "email": "contact@webdevstudios.com",
+                    "homepage": "https://github.com/WebDevStudios",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CMB2 is a metabox, custom fields, and forms library for WordPress that will blow your mind.",
+            "homepage": "https://github.com/CMB2/CMB2",
+            "keywords": [
+                "metabox",
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "issues": "https://github.com/CMB2/CMB2/issues",
+                "source": "http://wordpress.org/support/plugin/cmb2"
+            },
+            "install-path": "../cmb2/cmb2"
+        },
+        {
+            "name": "podkot/cmb-field-select2",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://bitbucket.org/podkot/cmb-field-select2.git",
+                "reference": "9dea7d657b93ee6c8fb990036704b8a17efb8cbd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://bitbucket.org/podkot/cmb-field-select2/get/9dea7d657b93ee6c8fb990036704b8a17efb8cbd.zip",
+                "reference": "9dea7d657b93ee6c8fb990036704b8a17efb8cbd",
+                "shasum": ""
+            },
+            "time": "2016-10-23T03:15:04+00:00",
+            "type": "wordpress-plugin",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Phil Wylie",
+                    "homepage": "http://www.philwylie.co.uk/"
+                }
+            ],
+            "description": "Select2 field type for CMB2",
+            "homepage": "https://bitbucket.org/podkot/cmb-field-select2",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://bitbucket.org/podkot/cmb-field-select2/src/9dea7d657b93ee6c8fb990036704b8a17efb8cbd/?at=2.1.1"
+            },
+            "install-path": "../podkot/cmb-field-select2"
+        }
+    ],
+    "dev": false,
+    "dev-package-names": []
+}

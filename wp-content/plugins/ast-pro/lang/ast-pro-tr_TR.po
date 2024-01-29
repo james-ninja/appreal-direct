@@ -1,0 +1,1483 @@
+# Translation of Plugins - WooCommerce Advanced Shipment Tracking - Development (trunk) in Turkish
+# This file is distributed under the same license as the Plugins - WooCommerce Advanced Shipment Tracking - Development (trunk) package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Plugins - WooCommerce Advanced Shipment Tracking - "
+"Development (trunk)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-11 09:34+0000\n"
+"PO-Revision-Date: 2021-10-12 06:25+0000\n"
+"Last-Translator: John Doe\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.4; wp-5.8.1"
+
+#: includes/class-ast-pro-tpi.php:202 includes/class-ast-pro-tpi.php:361
+msgid " out of "
+msgstr " dışında"
+
+#. %s: replace with Shippinh provider page url
+#. %s: replace with Shipping provider page link
+#: includes/views/admin_options_shipping_provider.php:92
+#: includes/views/admin_options_shipping_provider.php:156
+#, php-format
+msgid "<a href=\"%s\" target=\"blank\">documentation</a>"
+msgstr "<a href=\"%s\" target=\"blank\">belgeler</a>"
+
+#: includes/class-ast-pro-admin.php:1842
+#: includes/views/fulfillment_dashboard.php:44
+#: includes/views/vendor_fulfillment_dashboard.php:26
+msgid "Actions"
+msgstr "Hareketler"
+
+#: includes/views/ast_pro_license_form.php:20
+#| msgid "Active"
+msgid "Activate"
+msgstr "etkinleştir"
+
+#: includes/views/admin_options_addons.php:20
+msgid ""
+"Activate your license to receive automatic updates, you can get the license "
+"key in your "
+msgstr ""
+"Otomatik güncellemeleri almak için lisansınızı etkinleştirin, lisans "
+"anahtarını telefonunuzdan alabilirsiniz."
+
+#: includes/class-ast-pro-admin.php:2360
+msgid "Add API Name alias"
+msgstr "API Adı takma adı ekleyin"
+
+#: includes/views/admin_options_shipping_provider.php:122
+msgid ""
+"Add API name aliases to map Shipping providers names with the provider names "
+"that are updated in the shipment tracking API by external shipping services"
+msgstr ""
+"Gönderi sağlayıcı adlarını, harici gönderim hizmetleri tarafından gönderi "
+"izleme API'sinde güncellenen sağlayıcı adlarıyla eşlemek için API adı takma "
+"adları ekleyin"
+
+#: includes/class-ast-pro-admin.php:1830 includes/class-ast-pro-admin.php:1970
+#: includes/views/admin_options_shipping_provider.php:98
+msgid "Add Custom Provider"
+msgstr "Özel Sağlayıcı Ekle"
+
+#: includes/views/admin_options_shipping_provider.php:49
+msgid "Add Custom Shipping Provider"
+msgstr "Özel Gönderim Sağlayıcı Ekle"
+
+#: includes/class-ast-pro-admin.php:512
+msgid "add the [wcast-track-order] shortcode in the selected page."
+msgstr "seçilen sayfaya [wcast-track-order] kısa kodunu ekleyin."
+
+#: includes/class-ast-pro-settings.php:720
+msgid "Add Tracking"
+msgstr "İzleme Ekle"
+
+#: includes/class-ast-pro-settings.php:512
+#: includes/class-ast-pro-vendor-compatibility.php:317
+msgid "Add Tracking - order\t"
+msgstr "Takip Ekle - sipariş"
+
+#: includes/class-ast-pro-admin.php:1723 includes/class-ast-pro-actions.php:558
+msgid "Add Tracking Info"
+msgstr "İzleme Bilgisi Ekle"
+
+#: includes/class-ast-pro-admin.php:1568
+msgid ""
+"Add Tracking Information in AST meta fields when you automatically sync "
+"tracking numbers from aliexpress orders"
+msgstr ""
+"Aliexpress siparişlerinden takip numaralarını otomatik olarak senkronize "
+"ettiğinizde AST meta alanlarına İzleme Bilgisi ekleyin"
+
+#: includes/class-ast-pro-admin.php:1578
+msgid ""
+"Add tracking information in invoice PDF generate by WooCommerce PDF Invoices "
+"& Packing Slips plugin By Ewout Fernhout"
+msgstr ""
+"WooCommerce PDF Faturalar ve Paket Fişleri eklentisi tarafından oluşturulan "
+"fatura PDF'sine izleme bilgilerini ekleyin By Ewout Fernhout"
+
+#: includes/class-ast-pro-admin.php:1588
+msgid ""
+"Add tracking information in invoice PDF generate by WooCommerce PDF Invoices "
+"plugin By Bas Elbers"
+msgstr ""
+"Bas Elbers tarafından WooCommerce PDF Faturalar eklentisi tarafından "
+"oluşturulan fatura PDF'sine izleme bilgilerini ekleyin"
+
+#: includes/views/admin_options_settings.php:17
+msgid "Add Tracking Options"
+msgstr "İzleme Seçenekleri Ekle"
+
+#: includes/class-ast-pro-admin.php:746
+msgid "Add Tracking Order action"
+msgstr "Takip Emri Ekle eylemi"
+
+#: includes/class-ast-pro-admin.php:1548
+msgid ""
+"Adding tracking information to your orders shipped with 3plwinner and "
+"automate your workflow"
+msgstr ""
+"3plwinner ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1508
+msgid ""
+"Adding tracking information to your orders shipped with CustomCat and "
+"automate your workflow"
+msgstr ""
+"CustomCat ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1518
+msgid ""
+"Adding tracking information to your orders shipped with Dear Systems and "
+"automate your workflow"
+msgstr ""
+"Dear Systems ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1558
+msgid ""
+"Adding tracking information to your orders shipped with Dianxiaomi and "
+"automate your workflow"
+msgstr ""
+"Dianxiaomi ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1538
+msgid ""
+"Adding tracking information to your orders shipped with Picqer and automate "
+"your workflow"
+msgstr ""
+"Picqer ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1528
+msgid ""
+"Adding tracking information to your orders shipped with Printify and "
+"automate your workflow"
+msgstr ""
+"Printify ile gönderilen siparişlerinize takip bilgilerini ekleyin ve iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1478
+msgid ""
+"Adding tracking information to your orders shipped with QuickBooks Commerce "
+"and automate your workflow"
+msgstr ""
+"QuickBooks Commerce ile gönderilen siparişlerinize izleme bilgileri ekleme "
+"ve iş akışınızı otomatikleştirme"
+
+#: includes/class-ast-pro-admin.php:1488
+msgid ""
+"Adding tracking information to your orders shipped with ReadyToShip and "
+"automate your workflow"
+msgstr ""
+"ReadyToShip ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1498
+msgid ""
+"Adding tracking information to your orders shipped with Royal Mail Click & "
+"Drop and automate your workflow"
+msgstr ""
+"Royal Mail Click & Drop ile gönderilen siparişlerinize takip bilgisi "
+"ekleyerek iş akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1448
+msgid ""
+"Adding tracking information to your orders shipped with ShipStation and "
+"automate your workflow"
+msgstr ""
+"ShipStation ile gönderilen siparişlerinize takip bilgilerini ekleyerek iş "
+"akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1458
+msgid ""
+"Adding tracking information to your orders shipped with WooCommerce Shipping "
+"to the Shipment Tracking and automate your workflow"
+msgstr ""
+"WooCommerce Shipping ile gönderilen siparişlerinize Gönderi Takibi'ne takip "
+"bilgilerini ekleyin ve iş akışınızı otomatikleştirin"
+
+#: includes/class-ast-pro-admin.php:1438
+msgid ""
+"Adding tracking information to your orders when generating shipping labels "
+"using the CartRover"
+msgstr ""
+"CartRover'ı kullanarak gönderi etiketleri oluştururken siparişlerinize "
+"izleme bilgileri ekleme"
+
+#: includes/class-ast-pro-admin.php:1428
+msgid ""
+"Adding tracking information to your orders when generating shipping labels "
+"using the Ordoro"
+msgstr ""
+"Ordoro kullanarak gönderi etiketleri oluştururken siparişlerinize takip "
+"bilgisi ekleme"
+
+#: includes/class-ast-pro-admin.php:1468
+msgid ""
+"Adding tracking information to your orders when generating shipping labels "
+"using the WooCommerce UPS Shipping Plugin with Print Label plugin by "
+"PluginHive"
+msgstr ""
+"PluginHive tarafından WooCommerce UPS Shipping Plugin with Print Label "
+"eklentisini kullanarak gönderi etiketleri oluştururken siparişlerinize "
+"izleme bilgileri ekleme"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:247
+msgid "Additional text after header"
+msgstr "Başlıktan sonra ek metin"
+
+#. Name of the plugin
+msgid "Advanced Shipment Tracking Pro"
+msgstr "Gelişmiş Gönderi Takibi Pro"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:174
+msgid "After Order Details"
+msgstr "Sipariş Detaylarından Sonra"
+
+#: includes/views/fulfillment_dashboard.php:21
+msgid "All Shipping Methods"
+msgstr "Tüm Nakliye Yöntemleri"
+
+#: includes/class-ast-pro-admin.php:1889
+msgid "API aliases"
+msgstr "API takma adları"
+
+#: includes/class-ast-pro-admin.php:874
+msgid "API Date Format"
+msgstr "API Tarih Biçimi"
+
+#: includes/views/admin_options_shipping_provider.php:124
+msgid "API Name"
+msgstr "API Adı"
+
+#. Description of the plugin
+msgid ""
+"AST PRO fulfilment manager provides powerful features to easily add tracking "
+"info to WooCommerce orders, automate the fulfillment workflows and keep "
+"customers happy and informed."
+msgstr ""
+"AST PRO yerine getirme yöneticisi, WooCommerce siparişlerine kolayca takip "
+"bilgisi eklemek, yerine getirme iş akışlarını otomatikleştirmek ve "
+"müşterileri mutlu ve bilgili tutmak için güçlü özellikler sunar."
+
+#: includes/class-ast-pro-admin.php:868
+msgid "Auto-complete orders that come from the API"
+msgstr "API'den gelen siparişleri otomatik tamamlama"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:170
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:194
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:219
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:239
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:169
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:192
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:216
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:235
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:130
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:153
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:177
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:196
+msgid "Available variables:"
+msgstr "Kullanılabilir değişkenler:"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:353
+msgid "Background color"
+msgstr "Arka plan rengi"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:173
+msgid "Before Order Details"
+msgstr "Sipariş Ayrıntılarından Önce"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:369
+msgid "Border color"
+msgstr "Sınır rengi"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:385
+msgid "Border radius"
+msgstr "Sınır yarıçapı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:477
+msgid "Button color"
+msgstr "Düğme rengi"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:493
+msgid "Button font color"
+msgstr "Düğme yazı tipi rengi"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:509
+msgid "Button radius"
+msgstr "Düğme yarıçapı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:458
+msgid "Button size"
+msgstr "Düğme boyutu"
+
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:222
+msgid "Cannot create existing order shipment tracking."
+msgstr "Mevcut sipariş sevkiyat takibi oluşturulamıyor."
+
+#: includes/class-ast-pro-settings.php:665
+msgid "Change order status to"
+msgstr "Sipariş durumunu şu şekilde değiştir:"
+
+#: includes/class-ast-pro-settings.php:467
+msgid "Change status to shipped"
+msgstr "Durumu gönderildi olarak değiştir"
+
+#: includes/class-ast-pro-admin.php:875
+msgid "Choose for which Order status to display"
+msgstr "Hangi Sipariş durumunun görüntüleneceğini seçin"
+
+#: includes/class-ast-pro-admin.php:990 includes/class-ast-pro-admin.php:993
+msgid "Choose for which Payment method you want to sync the tracking to PayPal"
+msgstr "İzlemeyi PayPal ile senkronize etmek istediğiniz Ödeme yöntemini seçin"
+
+#: includes/views/admin_options_bulk_upload.php:36
+msgid "Choose the Shipped Date format"
+msgstr "Sevk Tarihi biçimini seçin"
+
+#: includes/customizer/class-ast-pro-customizer.php:51
+msgid "Completed Order Email"
+msgstr "Tamamlanmış Sipariş E-postası"
+
+#: includes/views/admin_options_bulk_upload.php:65
+msgid "Continue"
+msgstr "Devam et"
+
+#: includes/views/admin_options_shipping_provider.php:63
+#: includes/views/admin_options_shipping_provider.php:129
+msgid "Country"
+msgstr "ülke"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:81
+msgid "CSV Import"
+msgstr "CSV İçe Aktarma"
+
+#: includes/views/admin_options_bulk_upload.php:10
+msgid "CSV importer"
+msgstr "CSV içe aktarıcı"
+
+#: includes/views/admin_options_shipping_provider.php:122
+msgid "Custom API name"
+msgstr "Özel API adı"
+
+#: includes/views/admin_options_shipping_provider.php:59
+msgid "Custom Display Name"
+msgstr "Özel Görünen Ad"
+
+#: includes/views/admin_options_shipping_provider.php:118
+msgid "Custom display name"
+msgstr "Özel görünen ad"
+
+#: includes/views/admin_options_shipping_provider.php:56
+msgid "Custom Provider"
+msgstr "Özel Sağlayıcı"
+
+#: includes/views/admin_options_shipping_provider.php:81
+#: includes/views/admin_options_shipping_provider.php:145
+msgid "Custom URL"
+msgstr "Özel URL"
+
+#: includes/views/fulfillment_dashboard.php:40
+#: includes/views/vendor_fulfillment_dashboard.php:21
+msgid "Customer"
+msgstr "Müşteri"
+
+#: includes/views/admin_options_settings.php:33
+msgid "Customer View"
+msgstr "Müşteri Görünümü"
+
+#: includes/class-ast-pro-admin.php:368 includes/class-ast-pro-admin.php:529
+#: includes/class-ast-pro-admin.php:590
+msgid "Customize"
+msgstr "Özelleştirme"
+
+#: includes/class-ast-pro-admin.php:584
+msgid "Customizer"
+msgstr "özelleştirici"
+
+#: includes/views/admin_options_osm.php:60
+msgid "Dark Font"
+msgstr "koyu yazı tipi"
+
+#: includes/class-ast-pro-admin.php:212 includes/class-ast-pro-admin.php:226
+msgid "Data saved successfully"
+msgstr "Veri başarıyla kaydedildi"
+
+#: includes/class-ast-pro-actions.php:403
+#: includes/class-ast-pro-settings.php:556
+#: includes/class-ast-pro-vendor-compatibility.php:361
+msgid "Date shipped:"
+msgstr "Gönderilme tarihi:"
+
+#: includes/views/ast_pro_license_form.php:18
+msgid "Deactivate"
+msgstr "Devre dışı bırakmak"
+
+#: includes/class-ast-pro-admin.php:1928
+msgid "default"
+msgstr "varsayılan"
+
+#: includes/class-ast-pro-settings.php:151
+#: includes/class-ast-pro-settings.php:199
+#: includes/class-ast-pro-settings.php:653
+msgid "Delivered"
+msgstr "teslim edildi"
+
+#. %s: replace with order count
+#: includes/class-ast-pro-settings.php:157
+#, php-format
+msgid "Delivered <span class=\"count\">(%s)</span>"
+msgid_plural "Delivered <span class=\"count\">(%s)</span>"
+msgstr[0] "Teslim edildi <span class=\"count\">(%s)</span>"
+msgstr[1] "Teslim edildi <span class=\"count\">(%s)</span>"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:341
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:332
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:293
+msgid "Display Billing Address"
+msgstr "Fatura Adresini Görüntüle"
+
+#: includes/class-ast-pro-admin.php:1839
+msgid "Display Name"
+msgstr "Ekran adı"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:256
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:251
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:212
+msgid "Display Options"
+msgstr "Görüntüleme seçenekleri"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:305
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:298
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:259
+msgid "Display product images"
+msgstr "Ürün resimlerini göster"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:288
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:281
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:242
+msgid "Display shipment item price"
+msgstr "Gönderi kalemi fiyatını göster"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:323
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:315
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:276
+msgid "Display Shipping Address"
+msgstr "Gönderim Adresini Görüntüle"
+
+#: includes/views/admin_options_bulk_upload.php:127
+msgid "Download sample csv"
+msgstr "Örnek csv'yi indirin"
+
+#: includes/class-ast-pro-admin.php:1917
+msgid "edit"
+msgstr "Düzenle"
+
+#: includes/views/admin_options_shipping_provider.php:108
+msgid "Edit Shipping Provider"
+msgstr "Gönderim Sağlayıcısını Düzenle"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:218
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:215
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:176
+msgid "Email content"
+msgstr "E-posta içeriği"
+
+#: includes/class-ast-pro-admin.php:740
+msgid "Enable Legacy add tracking panel in edit order"
+msgstr "Düzenleme sırasında Eski ekleme izleme panelini etkinleştir"
+
+#: includes/class-ast-pro-admin.php:1006
+msgid "Enable log"
+msgstr "Günlüğü etkinleştir"
+
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:150
+msgid "Enable Partially Shipped order status email"
+msgstr "Kısmen Sevk edildi sipariş durumu e-postasını etkinleştir"
+
+#: includes/class-ast-pro-admin.php:964
+msgid "Enable PayPal Sandbox"
+msgstr "PayPal Korumalı Alanını Etkinleştir"
+
+#: includes/class-ast-pro-admin.php:956
+msgid "Enable PayPal Tracking"
+msgstr "PayPal İzlemeyi Etkinleştir"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:150
+#| msgid "Enable Delivered order status email"
+msgid "Enable Shipped order status email"
+msgstr "Sevk edilmiş sipariş durumu e-postasını etkinleştir"
+
+#: includes/class-ast-pro-admin.php:734
+msgid "Enable Shipping Providers Auto-detection (Beta)"
+msgstr "Gönderi Sağlayıcılarının Otomatik Algılamasını Etkinleştir (Beta)"
+
+#: includes/class-ast-pro-admin.php:1547
+msgid "Enable the 3plwinner integration"
+msgstr "3plwinner entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1567
+msgid "Enable the AliExpress Dropshipping integration"
+msgstr "AliExpress Dropshipping entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1437
+msgid "Enable the CartRover tracking integration"
+msgstr "CartRover izleme entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1507
+msgid "Enable the CustomCat integration"
+msgstr "CustomCat entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1517
+msgid "Enable the Dear Systems integration"
+msgstr "Dear Systems entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1557
+msgid "Enable the Dianxiaomi integration"
+msgstr "Dianxiaomi entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1427
+msgid "Enable the Ordoro tracking integration"
+msgstr "Ordoro izleme entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1537
+msgid "Enable the Picqer integration"
+msgstr "Picqer entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1527
+msgid "Enable the Printify integration"
+msgstr "Printify entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1477
+msgid "Enable the QuickBooks Commerce (formerly TradeGecko) Integrations"
+msgstr ""
+"QuickBooks Commerce (eski adıyla TradeGecko) Entegrasyonlarını Etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1487
+msgid "Enable the ReadyToShip integration"
+msgstr "ReadyToShip entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1497
+msgid "Enable the Royal Mail Click & Drop integration"
+msgstr "Royal Mail Tıkla ve Bırak entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1447
+msgid "Enable the ShipStation integration"
+msgstr "ShipStation entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:709
+msgid "Enable the Tracking Per Item option by default"
+msgstr "Öğe Başına İzleme seçeneğini varsayılan olarak etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1457
+msgid "Enable the WC Shipping integration"
+msgstr "WC Shipping entegrasyonunu etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:1467
+msgid ""
+"Enable the WooCommerce UPS Shipping Plugin with Print Label plugin "
+"integration"
+msgstr ""
+"Etiket Yazdır eklenti entegrasyonu ile WooCommerce UPS Gönderi Eklentisini "
+"etkinleştirin"
+
+#: includes/class-ast-pro-admin.php:850
+msgid "Enable Track button in orders history (actions)"
+msgstr "Sipariş geçmişinde (işlemler) Takip Et düğmesini etkinleştir"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:530
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:546
+msgid "Expend the Track button"
+msgstr "Parça düğmesini genişlet"
+
+#: includes/class-ast-pro-paypal-tracking.php:108
+#: includes/class-ast-pro-paypal-tracking.php:186
+msgid "Export Tracking to PayPal"
+msgstr "İzlemeyi PayPal'a Aktarın"
+
+#: includes/class-ast-pro-admin.php:1386
+msgid "Filter by fullfillment status"
+msgstr "Doldurma durumuna göre filtrele"
+
+#: includes/class-ast-pro-settings.php:767
+msgid "Filter by shipping provider"
+msgstr "Gönderim sağlayıcısına göre filtrele"
+
+#: includes/class-ast-pro-settings.php:567
+#: includes/class-ast-pro-vendor-compatibility.php:373
+msgid "Fulfill Items"
+msgstr "Öğeleri Yerine Getir"
+
+#: includes/views/vendor_fulfillment_dashboard.php:12
+msgid "Fulfilled"
+msgstr "Yerine getirilmiştir"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:406
+msgid "Fulfilled Order Items"
+msgstr "Yerine Getirilen Sipariş Öğeleri"
+
+#: includes/views/admin_options_settings.php:81
+msgid "Fulfillement Dashboard"
+msgstr "Yerine Getirme Kontrol Paneli"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:79
+#: includes/class-ast-pro-vendor-compatibility.php:89
+#: includes/class-ast-pro-vendor-compatibility.php:89
+msgid "Fulfillment"
+msgstr "yerine getirme"
+
+#: includes/class-ast-pro-admin.php:1387
+msgid "Fullfilled"
+msgstr "Dolu"
+
+#: includes/views/admin_options_shipping_provider.php:66
+#: includes/views/admin_options_shipping_provider.php:132
+msgid "Global"
+msgstr "küresel"
+
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:117
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been partially shipped."
+msgstr ""
+"Merhaba. {site_title} adresinden son siparişinizin kısmen gönderildiğini "
+"bilmek isteyeceğinizi düşündük."
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:117
+#| msgid ""
+#| "Hi there. we thought you'd like to know that your recent order from "
+#| "{site_title} has been Delivered."
+msgid ""
+"Hi there. we thought you'd like to know that your recent order from "
+"{site_title} has been shipped."
+msgstr ""
+"Merhaba. {site_title} sitesinden son siparişinizin gönderildiğini bilmek "
+"isteyeceğinizi düşündük."
+
+#: includes/class-ast-pro-admin.php:2600 includes/class-ast-pro-admin.php:2617
+#: includes/class-ast-pro-admin.php:2634
+msgid "hide details"
+msgstr "detayları gizle"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:304
+#| msgid "Display shipping provider image"
+msgid "Hide shipping provider image"
+msgstr "Gönderim sağlayıcı resmini gizle"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:321
+#| msgid "Hide the shipped date"
+msgid "Hide the shipping date"
+msgstr "Gönderim tarihini gizle"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:205
+msgid "Hide Tracking Header"
+msgstr "İzleme Başlığını Gizle"
+
+#: includes/class-ast-pro-admin.php:984
+msgid "How to get your Paypal API credentials?"
+msgstr "Paypal API kimlik bilgilerinizi nasıl alırsınız?"
+
+#: includes/views/admin_options_bulk_upload.php:128
+msgid "How to import tracking number from CSV files?"
+msgstr "CSV dosyalarından takip numarası nasıl alınır?"
+
+#. URI of the plugin
+msgid "https://www.zorem.com/shop/tracking-per-item-ast-add-on/"
+msgstr "https://www.zorem.com/shop/tracking-per-item-ast-add-on/"
+
+#. Author URI of the plugin
+msgid "https://zorem.com"
+msgstr "https://zorem.com"
+
+#: includes/views/admin_options_bulk_upload.php:84
+msgid "Import in Progress"
+msgstr "İçe Aktarma Devam Ediyor"
+
+#: includes/class-ast-pro-admin.php:604
+#: includes/views/integrations_admin_options.php:3
+msgid "Integrations"
+msgstr "Entegrasyonlar"
+
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:231
+msgid "Invalid order ID."
+msgstr "Geçersiz sipariş kimliği."
+
+#: includes/views/fulfillment_dashboard.php:41
+#: includes/views/vendor_fulfillment_dashboard.php:22
+msgid "Items"
+msgstr "Öğeler"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:120
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:120
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:99
+msgid "Items in this shipment"
+msgstr "Bu gönderideki ürünler"
+
+#: includes/views/admin_options_bulk_upload.php:56
+msgid ""
+"Keep unchecked for the tracking info to be added to any existing tracking "
+"info added to the orders."
+msgstr ""
+"Siparişlere eklenen herhangi bir mevcut takip bilgisine eklenecek takip "
+"bilgisi için işaretlemeyiniz."
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:462
+msgid "Large"
+msgstr "Büyük"
+
+#: includes/class-ast-pro-admin.php:620 includes/class-ast-pro-admin.php:624
+#: includes/views/admin_options_addons.php:19
+msgid "License"
+msgstr "Lisans"
+
+#: includes/views/admin_options_osm.php:59
+msgid "Light Font"
+msgstr "Açık Yazı Tipi"
+
+#: includes/class-ast-pro-admin.php:1012
+msgid "Log will be added to WooCommerce > Status >"
+msgstr "WooCommerce > Durum >'a günlük eklenecek"
+
+#: includes/views/admin_options_shipping_provider.php:75
+#: includes/views/admin_options_shipping_provider.php:139
+msgid "Logo image"
+msgstr "Logo resmi"
+
+#: includes/class-ast-pro-actions.php:333
+msgid "Mark as Completed?"
+msgstr "Tamamlandı Olarak İşaretle?"
+
+#: includes/class-ast-pro-settings.php:729
+#| msgid "Partial Shipped"
+msgid "Mark as Shipped"
+msgstr "Sevk Edildi Olarak İşaretle"
+
+#: includes/class-ast-pro-actions.php:330
+msgid "Mark as Shipped?"
+msgstr "Sevk Edildi Olarak İşaretle?"
+
+#: includes/class-ast-pro-settings.php:700
+msgid "Mark order as delivered"
+msgstr "Siparişi teslim edildi olarak işaretle"
+
+#: includes/customizer/class-ast-pro-customizer.php:288
+msgid "Mockup Order"
+msgstr "Maket Siparişi"
+
+#: includes/views/admin_options_addons.php:42
+#: includes/views/admin_options_addons.php:60
+#: includes/views/admin_options_addons.php:78
+#: includes/views/admin_options_addons.php:96
+#: includes/views/admin_options_addons.php:114
+#: includes/views/admin_options_addons.php:132
+#| msgid "more info"
+msgid "More Info"
+msgstr "Daha fazla bilgi"
+
+#: includes/class-ast-pro-admin.php:513
+#: includes/views/integrations_admin_options.php:23
+msgid "more info"
+msgstr "Daha fazla bilgi"
+
+#: includes/class-ast-pro-admin.php:2360
+msgid "Multiple API names mapping is a pro features"
+msgstr "Birden çok API adı eşlemesi profesyonel bir özelliktir"
+
+#: includes/views/admin_options_shipping_provider.php:82
+msgid "My White Label Provider URL"
+msgstr "Beyaz Etiket Sağlayıcı URL'm"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:461
+msgid "Normal"
+msgstr "Normal"
+
+#: includes/class-ast-pro-admin.php:856
+msgid "Open the Track Button link in a new tab"
+msgstr "İzle Düğmesi bağlantısını yeni bir sekmede açın"
+
+#. %s: replace with settings page url
+#: includes/class-ast-pro-license-manager.php:361
+#, php-format
+#| msgid ""
+#| "Opps! your <strong>Advanced Shipment Tracking Pro</strong> licence key is "
+#| "not activated. To buy license %sclick here%s to activate it."
+msgid ""
+"Opps! your <strong>Advanced Shipment Tracking Pro</strong> licence key is "
+"not activated. To buy license %1$sclick here%2$s to activate it."
+msgstr ""
+"Opps! <strong>Advanced Shipment Tracking Pro</strong> lisans anahtarınız "
+"etkinleştirilmedi. Lisansı satın almak için %sburayı tıklayın%s onu "
+"etkinleştirin."
+
+#: includes/views/fulfillment_dashboard.php:36
+#: includes/views/vendor_fulfillment_dashboard.php:18
+msgid "Order Date"
+msgstr "Sipariş tarihi"
+
+#: includes/class-ast-pro-admin.php:843
+msgid "Order Emails Display"
+msgstr "Sipariş E-postaları Ekranı"
+
+#: includes/views/fulfillment_dashboard.php:13
+#: includes/views/vendor_fulfillment_dashboard.php:6
+msgid "Order ID"
+msgstr "Sipariş Kimliği"
+
+#: includes/emails/class-shipment-shipped-email.php:33
+#| msgid ""
+#| "Order delivered emails are sent to customers when their orders are marked "
+#| "delivered and usually indicate that their orders have been shipped."
+msgid ""
+"Order shipped emails are sent to customers when their orders are marked "
+"shipped and usually indicate that their orders have been shipped."
+msgstr ""
+"Sipariş sevk e-postaları, siparişleri sevk edildi olarak işaretlendiğinde "
+"müşterilere gönderilir ve genellikle siparişlerinin sevk edildiğini gösterir."
+
+#: includes/customizer/class-ast-pro-customizer.php:55
+msgid "Order Status Email Notifications"
+msgstr "Sipariş Durumu E-posta Bildirimleri"
+
+#: includes/views/admin_options_settings.php:65
+msgid "Order Statuses"
+msgstr "Sipariş Durumları"
+
+#: includes/class-ast-pro-admin.php:935
+msgid "Order Statuses to Display"
+msgstr "Görüntülenecek Sipariş Durumları"
+
+#. %1$s: replace with Shipping Provider %2$s: replace with tracking number
+#: includes/class-ast-pro-actions.php:1252
+#: includes/class-ast-pro-actions.php:1330
+#, php-format
+#| msgid "Order was shipped with %s and tracking number is: %s"
+msgid "Order was shipped with %1$s and tracking number is: %2$s"
+msgstr "Sipariş %s ile gönderildi ve takip numarası: %s"
+
+#: includes/class-ast-pro-admin.php:505
+msgid "Other"
+msgstr "Başka"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:406
+msgid "Padding"
+msgstr "Dolgu malzemesi"
+
+#: includes/class-ast-pro-admin.php:923 includes/class-ast-pro-admin.php:1610
+#: includes/class-ast-pro-settings.php:181
+#: includes/class-ast-pro-settings.php:228
+msgid "Partially Shipped"
+msgstr "Kısmen Sevk Edildi"
+
+#. %s: replace with order count
+#: includes/class-ast-pro-settings.php:187
+#, php-format
+msgid "Partially Shipped <span class=\"count\">(%s)</span>"
+msgid_plural "Partially Shipped <span class=\"count\">(%s)</span>"
+msgstr[0] "Kısmen Sevk Edildi <span class=\"count\">(%s)</span>"
+msgstr[1] "Kısmen Sevk Edildi <span class=\"count\">(%s)</span>"
+
+#: includes/customizer/class-ast-pro-customizer.php:71
+msgid "Partially Shipped Order Email"
+msgstr "Kısmen Sevk Edildi Sipariş E-postası"
+
+#: includes/class-ast-pro-admin.php:972
+msgid "PayPal API Client ID"
+msgstr "PayPal API İstemci Kimliği"
+
+#: includes/class-ast-pro-admin.php:979
+msgid "PayPal API Client Secret"
+msgstr "PayPal API İstemci Sırrı"
+
+#: includes/class-ast-pro-admin.php:989
+msgid "PayPal Payment Methods"
+msgstr "PayPal Ödeme Yöntemleri"
+
+#: includes/class-ast-pro-paypal-tracking.php:96
+#: includes/views/admin_options_settings.php:97
+#: includes/views/paypal_tracking_admin_options.php:4
+msgid "PayPal Tracking"
+msgstr "PayPal Takibi"
+
+#: includes/class-ast-pro-admin.php:1577
+msgid ""
+"PDF invoices integration for WooCommerce PDF Invoices & Packing Slips plugin "
+"By Ewout Fernhout"
+msgstr ""
+"WooCommerce PDF Faturaları ve Paket Fişleri eklentisi için PDF fatura "
+"entegrasyonu Ewout Fernhout tarafından"
+
+#: includes/class-ast-pro-admin.php:1587
+msgid ""
+"PDF invoices integration for WooCommerce PDF Invoices plugin By Bas Elbers"
+msgstr ""
+"Bas Elbers tarafından WooCommerce PDF Faturaları eklentisi için PDF fatura "
+"entegrasyonu"
+
+#: includes/class-ast-pro-tpi.php:213 includes/class-ast-pro-tpi.php:372
+msgid "Please choose at least one item quantity"
+msgstr "Lütfen en az bir ürün miktarı seçin"
+
+#. %s: search WooCommerce plugin link
+#: ast-pro.php:368
+#, php-format
+#| msgid ""
+#| "Please install and activate %sWooCommerce%s for Advanced Shipment "
+#| "Tracking Pro!"
+msgid ""
+"Please install and activate %1$sWooCommerce%2$s for Advanced Shipment "
+"Tracking Pro!"
+msgstr ""
+"Gelişmiş Gönderi Takibi Pro için lütfen %sWooCommerce%s'i kurun ve "
+"etkinleştirin!"
+
+#: ast-pro.php:87
+msgid ""
+"Please note, you can't activate the Advanced Shipment Tracking for "
+"WooCommerce version when the AST PRO is active."
+msgstr ""
+"AST PRO etkinken WooCommerce sürümü için Gelişmiş Gönderi Takibini "
+"etkinleştiremeyeceğinizi lütfen unutmayın."
+
+#: includes/class-ast-pro-admin.php:216
+msgid "Please upload a valid CSV file."
+msgstr "Lütfen geçerli bir CSV dosyası yükleyin."
+
+#: includes/class-ast-pro-settings.php:569
+#: includes/class-ast-pro-vendor-compatibility.php:375
+msgid "Preview:"
+msgstr "Ön izleme:"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:413
+msgid "Product"
+msgstr "Ürün"
+
+#: includes/class-ast-pro-actions.php:395
+#: includes/class-ast-pro-settings.php:552
+#: includes/class-ast-pro-vendor-compatibility.php:357
+msgid "Product Code:"
+msgstr "Ürün Kodu:"
+
+#: includes/views/admin_options_shipping_provider.php:55
+#: includes/views/admin_options_shipping_provider.php:114
+msgid "Provider Name"
+msgstr "Sağlayıcı Adı"
+
+#: includes/views/admin_options_shipping_provider.php:181
+msgid "Providers Added"
+msgstr "Sağlayıcılar Eklendi"
+
+#: includes/views/admin_options_shipping_provider.php:183
+msgid "Providers Deleted"
+msgstr "Sağlayıcılar Silindi"
+
+#: includes/views/admin_options_shipping_provider.php:182
+msgid "Providers Updated"
+msgstr "Sağlayıcılar Güncellendi"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:414
+msgid "Qty"
+msgstr "miktar"
+
+#: includes/class-ast-pro-admin.php:213
+msgid "Really delete this entry? This will not be undo."
+msgstr "Bu giriş gerçekten silinsin mi? Bu geri alınmayacaktır."
+
+#: includes/views/fulfillment_dashboard.php:18
+msgid "Recently fulfilled"
+msgstr "Yakın zamanda yerine getirildi"
+
+#: includes/views/admin_options_osm.php:11
+msgid "Rename the “Completed” Order status label to “Shipped”"
+msgstr ""
+"\"Tamamlandı\" Sipariş durumu etiketini \"Gönderildi\" olarak yeniden "
+"adlandırın"
+
+#: includes/views/admin_options_bulk_upload.php:56
+msgid "Replace tracking information?"
+msgstr "İzleme bilgileri değiştirilsin mi?"
+
+#: includes/views/admin_options_shipping_provider.php:165
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: includes/views/admin_options_shipping_provider.php:187
+msgid ""
+"Reset providers database, it will reset all your shipping provider database"
+msgstr ""
+"Sağlayıcı veritabanını sıfırlayın, tüm nakliye sağlayıcı veritabanınızı "
+"sıfırlayacaktır"
+
+#: includes/views/admin_options_settings.php:20
+#: includes/views/admin_options_settings.php:36
+#: includes/views/admin_options_settings.php:52
+#: includes/views/admin_options_settings.php:68
+#: includes/views/admin_options_settings.php:84
+#: includes/views/admin_options_settings.php:100
+msgid "Save & Close"
+msgstr "Kaydet kapat"
+
+#: includes/views/paypal_tracking_admin_options.php:7
+msgid "Save Changes"
+msgstr "Değişiklikleri Kaydet"
+
+#: includes/views/admin_options_shipping_provider.php:25
+msgid "Search by provider / country"
+msgstr "Sağlayıcıya / ülkeye göre ara"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:283
+msgid "Select Layout"
+msgstr "Düzen Seç"
+
+#: includes/views/admin_options_osm.php:64
+msgid "Send Email"
+msgstr "Eposta gönder"
+
+#: includes/class-ast-pro-admin.php:998
+msgid "Send tracking email to the the customer from PayPal"
+msgstr "PayPal'dan müşteriye izleme e-postası gönderin"
+
+#: includes/class-ast-pro-admin.php:728
+msgid ""
+"Set the \"mark as shipped\" option checked  when adding tracking info to "
+"orders"
+msgstr ""
+"Siparişlere takip bilgisi eklerken \"gönderildi olarak işaretle\" seçeneğini "
+"işaretleyin"
+
+#: includes/class-ast-pro-admin.php:575 includes/class-ast-pro-admin.php:579
+#: includes/views/admin_options_settings.php:10
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: includes/views/admin_options_bulk_upload.php:67
+msgid "Settings Saved."
+msgstr "Ayarlar kaydedildi."
+
+#: includes/class-ast-pro-admin.php:236 includes/class-ast-pro-actions.php:168
+#: includes/class-ast-pro-actions.php:249
+#: includes/views/vendor_fulfillment_dashboard.php:25
+msgid "Shipment Tracking"
+msgstr "Gönderi Takibi"
+
+#: includes/views/admin_options_settings.php:49
+msgid "Shipment Tracking API"
+msgstr "Gönderi Takip API'sı"
+
+#: includes/class-ast-pro-admin.php:634 includes/class-ast-pro-admin.php:758
+#: includes/class-ast-pro-admin.php:891 includes/class-ast-pro-admin.php:1622
+#: includes/class-ast-pro-admin.php:1785
+#: includes/class-ast-pro-settings.php:358
+#: includes/class-ast-pro-settings.php:376
+#: includes/class-ast-pro-settings.php:431
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:53
+msgid "Shipped"
+msgstr "sevk edildi"
+
+#. %s: replace with order count
+#: includes/class-ast-pro-settings.php:364
+#: includes/class-ast-pro-settings.php:451
+#, php-format
+msgid "Shipped <span class=\"count\">(%s)</span>"
+msgid_plural "Shipped <span class=\"count\">(%s)</span>"
+msgstr[0] "Sevk edildi <span class=\"count\">(%s)</span>"
+msgstr[1] "Sevk edildi <span class=\"count\">(%s)</span>"
+
+#. 1: shipping date
+#: includes/class-ast-pro-actions.php:288
+#: includes/class-ast-pro-vendor-compatibility.php:549
+#, php-format
+msgid "Shipped on %s"
+msgstr "%s tarihinde gönderildi"
+
+#: templates/emails/fluid-tracking-info.php:91
+#: templates/emails/fluid-tracking-info.php:138
+#: templates/emails/fluid-tpi-tracking-info.php:59
+#: templates/myaccount/fluid-tracking-info.php:84
+msgid "Shipped on:"
+msgstr "Gönderim tarihi:"
+
+#: includes/class-ast-pro-settings.php:747
+msgid "Shipped Order"
+msgstr "Sevk Edilen Sipariş"
+
+#: includes/emails/class-shipment-shipped-email.php:32
+msgid "Shipped order"
+msgstr "Sevk edilen sipariş"
+
+#: includes/customizer/class-ast-pro-customizer.php:81
+msgid "Shipped Order Email"
+msgstr "Sevk Edilen Sipariş E-postası"
+
+#: includes/customizer/class-ast-pro-customizer.php:49
+msgid "Shipped Order Email(Completed)"
+msgstr "Sevk Edilen Sipariş E-postası(Tamamlandı)"
+
+#: includes/class-ast-pro-tpi.php:580 includes/class-ast-pro-tpi.php:599
+msgid "Shipped with:"
+msgstr "İle birlikte gönderilir:"
+
+#: includes/views/admin_options_shipping_provider.php:65
+#: includes/views/admin_options_shipping_provider.php:131
+msgid "Shipping Country"
+msgstr "Nakliye ülkesi"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:271
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:265
+#: includes/customizer/class-ast-pro-completed-email-customizer.php:226
+msgid "Shipping items Heading"
+msgstr "Nakliye öğeleri Başlık"
+
+#: includes/views/fulfillment_dashboard.php:42
+#: includes/views/vendor_fulfillment_dashboard.php:23
+msgid "Shipping Method"
+msgstr "Nakliye Yöntemi"
+
+#: includes/views/admin_options_shipping_provider.php:115
+msgid "Shipping Provider"
+msgstr "Nakliye Sağlayıcı"
+
+#: includes/class-ast-pro-settings.php:523
+#: includes/class-ast-pro-settings.php:525
+#: includes/class-ast-pro-vendor-compatibility.php:328
+#: includes/class-ast-pro-vendor-compatibility.php:330
+msgid "Shipping Provider:"
+msgstr "Nakliye Sağlayıcı:"
+
+#: includes/class-ast-pro-admin.php:595 includes/class-ast-pro-admin.php:599
+#: includes/class-ast-pro-admin.php:1838
+msgid "Shipping Providers"
+msgstr "Nakliye Sağlayıcıları"
+
+#: includes/views/admin_options_shipping_provider.php:21
+msgid "Shipping Providers & Carriers"
+msgstr "Nakliye Sağlayıcıları ve Taşıyıcılar"
+
+#: includes/views/admin_options_shipping_provider.php:185
+msgid "Shipping providers database reset successfully."
+msgstr "Nakliye sağlayıcıları veritabanı başarıyla sıfırlandı."
+
+#: includes/views/fulfillment_dashboard.php:43
+#: includes/views/vendor_fulfillment_dashboard.php:24
+msgid "Shipping To"
+msgstr "Nakliye"
+
+#: includes/class-ast-pro-admin.php:716
+msgid "Show item SKU when adding tracking to orders"
+msgstr "Siparişlere izleme eklerken ürün SKU'sunu göster"
+
+#: includes/class-ast-pro-admin.php:722
+msgid "Show product image when adding tracking to orders"
+msgstr "Siparişlere takip eklerken ürün resmini göster"
+
+#: includes/class-ast-pro-tpi.php:189 includes/class-ast-pro-tpi.php:348
+msgid "SKU:"
+msgstr "Stok Kodu:"
+
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:235
+msgid "Special character not allowd in tracking number"
+msgstr "Takip numarasında özel karaktere izin verilmiyor"
+
+#: includes/views/fulfillment_dashboard.php:38
+#: includes/views/vendor_fulfillment_dashboard.php:20
+msgid "Status"
+msgstr "Durum"
+
+#: includes/views/admin_options_shipping_provider.php:175
+#: includes/views/admin_options_shipping_provider.php:189
+msgid "Sync Shipping Providers"
+msgstr "Gönderi Sağlayıcılarını Senkronize Et"
+
+#: includes/views/admin_options_shipping_provider.php:179
+msgid ""
+"Syncing the shipping providers list add or updates the pre-set shipping "
+"providers and will not effect custom shipping providers."
+msgstr ""
+"Gönderi sağlayıcıları listesinin senkronize edilmesi, önceden ayarlanmış "
+"nakliye sağlayıcılarını ekler veya günceller ve özel nakliye sağlayıcılarını "
+"etkilemez."
+
+#: includes/views/admin_options_shipping_provider.php:59
+#: includes/views/admin_options_shipping_provider.php:118
+msgid ""
+"The custom display name will show in the tracking info section on the "
+"customer order emails, my-account, and TrackShip's tracking page and email "
+"notifications"
+msgstr ""
+"Özel görünen ad, müşteri sipariş e-postaları, hesabım ve TrackShip'in izleme "
+"sayfası ve e-posta bildirimlerindeki izleme bilgileri bölümünde "
+"gösterilecektir."
+
+#: includes/class-ast-pro-admin.php:2582
+msgid "There are some issue with sync, Please Retry."
+msgstr "Senkronizasyonla ilgili bazı sorunlar var, Lütfen Yeniden Deneyin."
+
+#: includes/class-ast-pro-admin.php:215
+msgid "This browser does not support HTML5."
+msgstr "Bu tarayıcı HTML5'i desteklemiyor."
+
+#. %1$s: replace with license link, %2$s: replace with </a>
+#: includes/class-ast-pro-update-manager.php:161
+#, php-format
+#| msgid ""
+#| "To receive automatic updates license activation is required. Please visit "
+#| "%ssettings%s to activate your Advanced Shipment Tracking Pro."
+msgid ""
+"To receive automatic updates license activation is required. Please visit "
+"%1$ssettings%2$s to activate your Advanced Shipment Tracking Pro."
+msgstr ""
+"Otomatik güncellemeleri almak için lisans aktivasyonu gereklidir. Gelişmiş "
+"Gönderi Takibi Profesyonelinizi etkinleştirmek için lütfen %ssettings%s "
+"sayfasını ziyaret edin."
+
+#: includes/class-ast-pro-actions.php:832
+#: includes/class-ast-pro-actions.php:865
+#: includes/class-ast-pro-actions.php:883
+msgid "Track"
+msgstr "Izlemek"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:427
+msgid "Track button"
+msgstr "Parça düğmesi"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:441
+msgid "Track button Text"
+msgstr "Parça düğmesi Metin"
+
+#: includes/class-ast-pro-tpi.php:585 includes/class-ast-pro-tpi.php:604
+#: includes/class-ast-pro-tpi.php:667 includes/class-ast-pro-actions.php:275
+#: includes/class-ast-pro-settings.php:569
+#: includes/class-ast-pro-vendor-compatibility.php:375
+#: includes/class-ast-pro-vendor-compatibility.php:536
+msgid "Track Shipment"
+msgstr "Gönderiyi takip et"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:130
+msgid "Track Your Order"
+msgstr "Siparişinizi takip edin"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:169
+msgid "Tracking Display Position"
+msgstr "Görüntüleme Konumunu İzleme"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:223
+msgid "Tracking Header text"
+msgstr "İzleme Başlığı metni"
+
+#. %1$s: replace with tracking provider name, %2$s: replace with tracking number, %3$s: replace with status
+#: includes/class-ast-pro-paypal-tracking.php:413
+#, php-format
+#| msgid "Tracking info exported to PayPal: %s - %s(%s)"
+msgid "Tracking info exported to PayPal: %1$s - %2$s(%3$s)"
+msgstr "PayPal'a aktarılan izleme bilgileri: %s - %s(%s)"
+
+#. %1$s: replace with tracking provider name, %2$s: replace with tracking number, %3$s: replace with status
+#: includes/class-ast-pro-paypal-tracking.php:520
+#: includes/class-ast-pro-paypal-tracking.php:612
+#, php-format
+#| msgid "Tracking info updated to PayPal: %s - %s(%s)"
+msgid "Tracking info updated to PayPal: %1$s - %2$s(%3$s)"
+msgstr "Takip bilgisi PayPal'a güncellendi: %s - %s(%s)"
+
+#. %1$s: replace with Shipping Provider %2$s: replace with tracking number
+#: includes/class-ast-pro-actions.php:781
+#, php-format
+#| msgid ""
+#| "Tracking info was deleted for tracking provider %s with tracking number %s"
+msgid ""
+"Tracking info was deleted for tracking provider %1$s with tracking number "
+"%2$s"
+msgstr ""
+"Takip numarası %s olan takip sağlayıcısı %s için takip bilgileri silindi"
+
+#: includes/customizer/class-ast-pro-customizer.php:38
+msgid "Tracking Info Widget"
+msgstr "İzleme Bilgisi Widget'ı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:230
+msgid "Tracking Information"
+msgstr "İzleme Bilgileri"
+
+#: includes/class-ast-pro-actions.php:350
+#: includes/class-ast-pro-settings.php:519
+#: includes/class-ast-pro-vendor-compatibility.php:324
+msgid "Tracking number:"
+msgstr "Takip numarası:"
+
+#: includes/class-ast-pro-tpi.php:118 includes/class-ast-pro-tpi.php:286
+msgid "Tracking Per Item"
+msgstr "Öğe Başına İzleme"
+
+#: includes/class-ast-pro-admin.php:1841
+msgid "TrackShip"
+msgstr "TrackShip"
+
+#: includes/class-ast-pro-admin.php:1388
+#: includes/class-ast-pro-fulfillment-dashboard.php:80
+#: includes/class-ast-pro-vendor-compatibility.php:90
+#: includes/views/vendor_fulfillment_dashboard.php:11
+msgid "Unfulfilled"
+msgstr "yerine getirilmedi"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:80
+#: includes/class-ast-pro-vendor-compatibility.php:90
+#: includes/views/fulfillment_dashboard.php:3
+#: includes/views/fulfillment_dashboard.php:17
+#: includes/views/vendor_fulfillment_dashboard.php:3
+msgid "Unfulfilled Orders"
+msgstr "Karşılanmayan Siparişler"
+
+#: includes/views/admin_options_shipping_provider.php:164
+msgid "Update"
+msgstr "Güncelleme"
+
+#: includes/class-ast-pro-admin.php:1639
+#: includes/class-ast-pro-settings.php:166
+#: includes/class-ast-pro-settings.php:214
+#: includes/class-ast-pro-settings.php:347
+msgid "Updated Tracking"
+msgstr "Güncellenmiş İzleme"
+
+#. %s: replace with order count
+#: includes/class-ast-pro-settings.php:172
+#, php-format
+msgid "Updated Tracking <span class=\"count\">(%s)</span>"
+msgid_plural "Updated Tracking <span class=\"count\">(%s)</span>"
+msgstr[0] "Güncel İzleme <span class=\"count\">(%s)</span>"
+msgstr[1] "Güncel İzleme <span class=\"count\">(%s)</span>"
+
+#: includes/views/admin_options_shipping_provider.php:78
+#: includes/views/admin_options_shipping_provider.php:142
+msgid "Upload"
+msgstr "Yükle"
+
+#: includes/views/admin_options_bulk_upload.php:28
+msgid "Upload a CSV file from your computer:"
+msgstr "Bilgisayarınızdan bir CSV dosyası yükleyin:"
+
+#: includes/views/admin_options_bulk_upload.php:117
+msgid "Upload again"
+msgstr "tekrar yükle"
+
+#: includes/views/admin_options_bulk_upload.php:12
+msgid ""
+"Use our CSV Import Tool  to bulk Import tracking info to orders from a CSV "
+"file"
+msgstr ""
+"Bir CSV dosyasından siparişlere yönelik toplu İçe Aktarma izleme bilgileri "
+"için CSV İçe Aktarma Aracımızı kullanın"
+
+#: includes/class-ast-pro-admin.php:2599 includes/class-ast-pro-admin.php:2616
+#: includes/class-ast-pro-admin.php:2633
+#: includes/views/admin_options_bulk_upload.php:95
+msgid "view details"
+msgstr "detayları göster"
+
+#: includes/views/admin_options_bulk_upload.php:116
+msgid "View Orders"
+msgstr "Siparişleri Görüntüle"
+
+#. %s: replace with Partially Shipped order count
+#: ast-pro.php:639
+#, php-format
+msgid ""
+"We detected %s orders that use the Partially Shipped order status, You can "
+"reassign these orders to a different status"
+msgstr ""
+"Kısmen Gönderildi sipariş durumunu kullanan %s sipariş tespit ettik, Bu "
+"siparişleri farklı bir duruma yeniden atayabilirsiniz"
+
+#. %s: replace with Partially Shipped order count
+#: ast-pro.php:620
+#, php-format
+msgid ""
+"We detected %s orders that use the Shipped order status, You can reassign "
+"these orders to a different status"
+msgstr ""
+"Gönderildi sipariş durumunu kullanan %s sipariş tespit ettik, Bu siparişleri "
+"farklı bir duruma yeniden atayabilirsiniz"
+
+#: includes/views/admin_options_shipping_provider.php:60
+#: includes/views/admin_options_shipping_provider.php:119
+msgid "White Label Provider Name"
+msgstr "Beyaz Etiket Sağlayıcı Adı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:338
+msgid "Widget Design"
+msgstr "Widget Tasarımı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:189
+msgid "Widget Header"
+msgstr "Widget Başlığı"
+
+#: includes/customizer/class-ast-pro-tracking-info-customizer.php:268
+msgid "Widget Layout"
+msgstr "Widget Düzeni"
+
+#: includes/class-ast-pro-actions.php:404
+#: includes/class-ast-pro-actions.php:407
+#: includes/class-ast-pro-settings.php:557
+#: includes/class-ast-pro-settings.php:557
+#: includes/class-ast-pro-vendor-compatibility.php:362
+#: includes/class-ast-pro-vendor-compatibility.php:362
+msgid "Y-m-d"
+msgstr "y-m-d"
+
+#: includes/class-ast-pro-admin.php:214
+msgid "You can upload only csv file."
+msgstr "Yalnızca csv dosyası yükleyebilirsiniz."
+
+#. %: replace with tracking number, postal_code and country_code
+#: includes/views/admin_options_shipping_provider.php:88
+#: includes/views/admin_options_shipping_provider.php:152
+msgid ""
+"You can use the variables %number%, %postal_code% and %country_code% in the "
+"URL, for more info, check our "
+msgstr ""
+"URL'de %number%, %postal_code% ve %country_code% değişkenlerini "
+"kullanabilirsiniz, daha fazla bilgi için"
+
+#. %s: replace with status
+#: includes/class-ast-pro-admin.php:1965
+#, php-format
+msgid "You did not create any %s shipping providers yet."
+msgstr "Henüz %s nakliye sağlayıcısı oluşturmadınız."
+
+#. %s: replace with status
+#: includes/class-ast-pro-admin.php:1978
+#, php-format
+msgid "You don't have any %s shipping providers."
+msgstr "%s nakliye sağlayıcınız yok."
+
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:116
+msgid "Your Order is Partially Shipped"
+msgstr "Siparişiniz Kısmen Gönderildi"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:116
+#: includes/emails/class-shipment-shipped-email.php:90
+msgid "Your Order is Shipped"
+msgstr "Siparişiniz Gönderildi"
+
+#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:115
+msgid "Your {site_title} order is now partially shipped"
+msgstr "{site_title} siparişiniz şimdi kısmen gönderildi"
+
+#: includes/customizer/class-ast-pro-shipped-email-customizer.php:115
+#: includes/emails/class-shipment-shipped-email.php:80
+#| msgid "Your {site_title} order is now delivered"
+msgid "Your {site_title} order is now Shipped"
+msgstr "{site_title} siparişiniz artık Gönderildi"
+
+#. Author of the plugin
+msgid "zorem"
+msgstr "zorem"

@@ -1,0 +1,200 @@
+# Copyright (C) 2023 SaffireTech
+# This file is distributed under the same license as the Discontinued Product Stock Status for WooCommerce plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Discontinued Product Stock Status for WooCommerce 1.0.9\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/discontinued-product-stock-status-woocommerce\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-02-01T16:37:54+05:30\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.6.0\n"
+"X-Domain: discontinued-products-stock-status\n"
+
+#. Plugin Name of the plugin
+msgid "Discontinued Product Stock Status for WooCommerce"
+msgstr ""
+
+#. Description of the plugin
+msgid "Discontinued Product Stock Status for WooCommerce allows you to list a product as ‘Discontinued’ in your WooCommerce catalog, optionally write a custom message to guide your buyers to newer or other products and thus helping you recover lost sales and SEO traffic in the process."
+msgstr ""
+
+#. Author of the plugin
+msgid "SaffireTech"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://www.saffiretech.com/"
+msgstr ""
+
+#: includes/dpssw-functions.php:249
+#: includes/dpssw-functions.php:254
+#: includes/dpssw-functions.php:258
+#: includes/dpssw-functions.php:323
+#: includes/dpssw-functions.php:328
+#: includes/dpssw-functions.php:332
+#: includes/dpssw-product-data-tabs.php:347
+#: includes/dpssw-product-data-tabs.php:353
+msgid "This product has been discontinued"
+msgstr ""
+
+#: includes/dpssw-functions.php:431
+msgid "Permission Denied."
+msgstr ""
+
+#: includes/dpssw-functions.php:464
+msgid "Awesome, you've been using"
+msgstr ""
+
+#: includes/dpssw-functions.php:464
+msgid "for more than 1 week"
+msgstr ""
+
+#: includes/dpssw-functions.php:465
+msgid "If you like our plugin Would you like to rate our plugin at WordPress.org ?"
+msgstr ""
+
+#: includes/dpssw-functions.php:466
+msgid "Yes, I'd like to rate it!"
+msgstr ""
+
+#: includes/dpssw-functions.php:466
+msgid "I already did!"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:15
+#: includes/dpssw-product-data-tabs.php:177
+msgid "Discontinued Products"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:29
+msgid "General"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:30
+msgid "Restore"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:75
+msgid "Discontinued products global settings"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:81
+msgid "Show Disocntinued products in WooCommerce catalog?"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:85
+msgid "By default, discontinued products do not appear in WooCommerce Catalog. However if you want those products to appear in archieve page and WooCommerce shortcodes."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:88
+msgid "Enable custom discountined message for Discontinued products?"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:92
+msgid "Enable this if you want to set product-specific messages for particular products"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:95
+msgid "Enter the Global Message"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:98
+msgid "Set Custom Global Message for all Discontinued Products"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:101
+msgid "Hide Discontinued Products showing up in your Website's search results."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:105
+msgid "Enable this if you want to stop discontinued products from showing up in your website's search results."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:108
+msgid "Apply Grayscale effect on Discontinued products"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:112
+msgid "Enable this if you want to show the discontinued product's images with grayscale effect on archive page and WooCommerce shortcodes. Products with no image will use this."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:123
+msgid "Restore Settings"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:129
+msgid "Revert  products from \"Discontinued\" stock status to \"Out of Stock\" status?"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:130
+msgid "Enabling this setting will  set all the WooCommerce products in the  \"Discontinued\" stock status  to \"Out of Stock\" stock status on deactivation of this plugin."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:131
+msgid "NOTE - If this setting is enabled and plugin is deactivated for any reason, all the products in the \"discontinued\" stock status will be updated and those changes cannot be undone."
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:162
+msgid "Settings"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:202
+msgid "Discontinued Product:"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:203
+msgid "Check this box if you want to set the entire product as discontinued"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:210
+msgid "Product Message Type"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:214
+#: includes/dpssw-product-data-tabs.php:280
+msgid "Global Message"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:215
+msgid "Product Specific Message"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:218
+msgid "Choose type of message to be displayed for the Discontinued product"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:275
+msgid "Discontinued Message Type"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:281
+msgid "Variation Specific Message"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:284
+msgid "Choose type of message to be displayed for Discontinued product"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:293
+msgid "Discontinued description"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:397
+#: includes/dpssw-product-data-tabs.php:436
+#: includes/dpssw-product-data-tabs.php:443
+msgid "Discontinued"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:654
+#: includes/dpssw-product-data-tabs.php:691
+msgid "Mark as discontinued"
+msgstr ""
+
+#: includes/dpssw-product-data-tabs.php:656
+#: includes/dpssw-product-data-tabs.php:693
+msgid "Check this box if you want to set the stock status of this product to 'Discontinued' after stock quantity becomes zero."
+msgstr ""

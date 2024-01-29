@@ -1,0 +1,10 @@
+table.wp-list-table mark.discontinued {
+  color: #61cdda;
+  font-weight: 700;
+  background: transparent none;
+  line-height: 1;
+}
+
+.dpssw_discon label {
+  margin-left: 5px;
+}

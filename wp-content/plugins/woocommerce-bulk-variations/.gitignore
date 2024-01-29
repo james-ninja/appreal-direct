@@ -1,0 +1,13 @@
+._*
+.DS_Store
+node_modules
+*.log
+/vendor/*
+!/vendor/composer/
+!/vendor/autoload.php
+
+phpcs.xml
+
+.phpdoc/
+docs/
+phpdoc.dist.xml

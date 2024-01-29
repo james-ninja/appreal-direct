@@ -1,0 +1,2461 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Import Export for WooCommerce Wrapper\n"
+"POT-Creation-Date: 2020-12-09 12:56+0530\n"
+"PO-Revision-Date: 2020-12-09 13:15+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.4.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: wt-import-export-for-woo.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: admin/class-wt-import-export-for-woo-admin.php:122
+msgid "Settings updated."
+msgstr "Les paramètres ont été mis à jour."
+
+#: admin/class-wt-import-export-for-woo-admin.php:123
+#: admin/modules/ftp/ftp.php:85 admin/modules/ftp/ftp.php:517
+#: admin/modules/ftp/ftp.php:524
+msgid "All fields are mandatory"
+msgstr "Tous les champs sont obligatoires"
+
+#: admin/class-wt-import-export-for-woo-admin.php:124
+msgid "Unable to update Settings."
+msgstr "Impossible de mettre à jour les paramètres."
+
+#: admin/class-wt-import-export-for-woo-admin.php:125
+msgid "Value is empty."
+msgstr "La valeur est vide."
+
+#: admin/class-wt-import-export-for-woo-admin.php:126
+msgid "Error."
+msgstr "Erreur."
+
+#: admin/class-wt-import-export-for-woo-admin.php:127
+#: admin/modules/ftp/classes/class-ftpadapter.php:88
+msgid "Success."
+msgstr "Succès."
+
+#: admin/class-wt-import-export-for-woo-admin.php:128
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: admin/class-wt-import-export-for-woo-admin.php:129
+#: admin/modules/cron/cron.php:420 admin/modules/history/history.php:507
+#: admin/modules/licence_manager/licence_manager.php:548
+msgid "Are you sure?"
+msgstr "Êtes-vous sûr ?"
+
+#: admin/class-wt-import-export-for-woo-admin.php:130
+msgid "Use expression as value."
+msgstr "Utilisez l'expression comme valeur."
+
+#: admin/class-wt-import-export-for-woo-admin.php:131
+#: admin/modules/cron/views/_schedule_now.php:146
+#: admin/views/_save_template_popup.php:29
+msgid "Cancel"
+msgstr "Annuler"
+
+#: admin/class-wt-import-export-for-woo-admin.php:150
+#: admin/class-wt-import-export-for-woo-admin.php:151
+#: admin/class-wt-import-export-for-woo-admin.php:172
+#: admin/class-wt-import-export-for-woo-admin.php:173
+msgid "General Settings"
+msgstr "Réglages généraux"
+
+#: admin/class-wt-import-export-for-woo-admin.php:221
+#: admin/modules/cron/cron.php:126 admin/modules/export/export.php:218
+#: admin/modules/export/export.php:610
+#: admin/modules/ftp/classes/class-ftpadapter.php:47
+#: admin/modules/ftp/ftp.php:500 admin/modules/ftp/ftp.php:572
+#: admin/modules/ftp/ftp.php:581 admin/modules/history/history.php:96
+#: admin/modules/import/import.php:1314
+#: admin/modules/licence_manager/licence_manager.php:544
+msgid "Error"
+msgstr "Erreur"
+
+#: admin/class-wt-import-export-for-woo-admin.php:241
+msgid "Settings Updated"
+msgstr "Réglages Mis à Jour"
+
+#: admin/class-wt-import-export-for-woo-admin.php:348
+msgid "Settings"
+msgstr "Paramètres"
+
+#: admin/class-wt-import-export-for-woo-admin.php:349
+#: admin/views/admin-settings-help.php:17
+#: admin/views/admin-settings-help.php:20
+msgid "Documentation"
+msgstr "Documentation"
+
+#: admin/class-wt-import-export-for-woo-admin.php:350
+msgid "Support"
+msgstr "Support"
+
+#: admin/modules/cron/cron.php:44
+msgid "Not started"
+msgstr "Non démarré"
+
+#: admin/modules/cron/cron.php:45 admin/modules/export/export.php:623
+#: admin/modules/history/history.php:35 admin/modules/import/import.php:1265
+msgid "Finished"
+msgstr "Terminé"
+
+#: admin/modules/cron/cron.php:46
+msgid "Disabled"
+msgstr "Désactivé"
+
+#: admin/modules/cron/cron.php:47
+msgid "Running"
+msgstr "En cours"
+
+#: admin/modules/cron/cron.php:48
+msgid "Uploading"
+msgstr "Chargement en cours"
+
+#: admin/modules/cron/cron.php:49
+msgid "Downloading"
+msgstr "Téléchargement"
+
+#: admin/modules/cron/cron.php:153 admin/modules/cron/cron.php:154
+#: admin/modules/cron/views/settings.php:16
+msgid "Scheduled actions"
+msgstr "Actions planifiées"
+
+#: admin/modules/cron/cron.php:333
+msgid "Every minute"
+msgstr "Chaque minute"
+
+#: admin/modules/cron/cron.php:416
+msgid "Chosen date is invalid"
+msgstr "La date choisie n'est pas valide"
+
+#: admin/modules/cron/cron.php:418
+msgid "Please specify a file name."
+msgstr "Veuillez indiquer un nom de fichier."
+
+#: admin/modules/cron/cron.php:419
+msgid "Saving"
+msgstr "Sauvegarde"
+
+#: admin/modules/cron/cron.php:421
+msgid "Please enter a valid interval."
+msgstr "Veuillez saisir un intervalle valide."
+
+#: admin/modules/cron/cron.php:422
+#: admin/modules/cron/views/_schedule_now.php:139
+msgid "Use the generated URL to run cron."
+msgstr "Utilisez l'URL générée pour exécuter cron."
+
+#: admin/modules/cron/cron.php:453
+msgid "Import/Schedule"
+msgstr "Importer / planifier"
+
+#: admin/modules/cron/cron.php:458 admin/modules/cron/cron.php:497
+msgid "Schedule"
+msgstr "Planifier"
+
+#: admin/modules/cron/cron.php:492
+msgid "Export/Schedule"
+msgstr "Exporter / planifier"
+
+#: admin/modules/cron/cron.php:968
+#: admin/modules/history/views/_log_table.php:34
+#: admin/modules/licence_manager/licence_manager.php:545
+msgid "Success"
+msgstr "Succès"
+
+#: admin/modules/cron/views/_schedule_list.php:11
+#: admin/modules/history/views/_history_list.php:106
+msgid "No."
+msgstr "N."
+
+#: admin/modules/cron/views/_schedule_list.php:12
+#: admin/modules/history/history.php:351
+#: admin/modules/history/views/_history_list.php:109
+msgid "Action type"
+msgstr "Type d'action"
+
+#: admin/modules/cron/views/_schedule_list.php:13
+#: admin/modules/history/history.php:344
+#: admin/modules/history/views/_history_list.php:110
+msgid "Post type"
+msgstr "Type d’article"
+
+#: admin/modules/cron/views/_schedule_list.php:14
+msgid "Cron type"
+msgstr "Type de Cron"
+
+#: admin/modules/cron/views/_schedule_list.php:16
+#: admin/modules/history/history.php:358
+#: admin/modules/history/views/_history_list.php:113
+#: admin/modules/history/views/_log_table.php:21
+#: admin/modules/licence_manager/views/_licence_list.php:11
+#: admin/modules/licence_manager/views/admin-settings-licence.php:133
+msgid "Status"
+msgstr "Statut"
+
+#: admin/modules/cron/views/_schedule_list.php:19
+#, php-format
+msgid "%sFinished%s - Process completed"
+msgstr "%sFinished% s - Processus terminé"
+
+#: admin/modules/cron/views/_schedule_list.php:20
+#, php-format
+msgid "%sDisabled%s - The process has been disabled temporarily"
+msgstr "%sDisabled% s - Le processus a été temporairement désactivé"
+
+#: admin/modules/cron/views/_schedule_list.php:21
+#, php-format
+msgid "%sRunning%s - Process currently active and running"
+msgstr "%sRunning% s - Processus actuellement actif et en cours d'exécution"
+
+#: admin/modules/cron/views/_schedule_list.php:22
+#, php-format
+msgid ""
+"%sUploading%s - Processed records are being uploaded to the specified "
+"location, finalizing export."
+msgstr ""
+"%sUploading% s - Les enregistrements traités sont en cours de téléchargement "
+"vers l'emplacement spécifié, finalisant l'exportation."
+
+#: admin/modules/cron/views/_schedule_list.php:23
+#, php-format
+msgid ""
+"%sDownloading%s - Input records are being downloaded from the specified "
+"location prior to import process."
+msgstr ""
+"%sDownloading% s - Les enregistrements d'entrée sont en cours de "
+"téléchargement à partir de l'emplacement spécifié avant le processus "
+"d'importation."
+
+#: admin/modules/cron/views/_schedule_list.php:26
+msgid "Time"
+msgstr "Heure"
+
+#: admin/modules/cron/views/_schedule_list.php:27
+#: admin/modules/history/history.php:70 admin/modules/history/history.php:71
+msgid "History"
+msgstr "Historique"
+
+#: admin/modules/cron/views/_schedule_list.php:28
+#: admin/modules/ftp/views/_ftp-list.php:11
+#: admin/modules/history/views/_history_list.php:122
+#: admin/modules/history/views/_log_list.php:44
+#: admin/modules/licence_manager/views/_licence_list.php:13
+msgid "Actions"
+msgstr "Actions"
+
+#: admin/modules/cron/views/_schedule_list.php:42
+msgid "Server cron"
+msgstr "Cron du serveur"
+
+#: admin/modules/cron/views/_schedule_list.php:42
+msgid "Wordpress cron"
+msgstr "Wordpress cron"
+
+#: admin/modules/cron/views/_schedule_list.php:46
+#: admin/modules/history/views/_history_list.php:146
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: admin/modules/cron/views/_schedule_list.php:61
+msgid " Done"
+msgstr " Terminé"
+
+#: admin/modules/cron/views/_schedule_list.php:73
+#: admin/modules/cron/views/_schedule_list.php:89
+msgid "Last run: "
+msgstr "Dernière exécution : "
+
+#: admin/modules/cron/views/_schedule_list.php:81
+msgid "Next run: "
+msgstr "Prochaine exécution : "
+
+#: admin/modules/cron/views/_schedule_list.php:92
+msgid "Started at: "
+msgstr "Commencé à "
+
+#: admin/modules/cron/views/_schedule_list.php:98
+msgid "Will start at: "
+msgstr "Commencera à "
+
+#: admin/modules/cron/views/_schedule_list.php:118
+#: admin/modules/history/views/_log_list.php:57
+msgid "View"
+msgstr "Voir"
+
+#: admin/modules/cron/views/_schedule_list.php:125
+msgid "No entries found."
+msgstr "Aucun message trouvé."
+
+#: admin/modules/cron/views/_schedule_list.php:134
+msgid "Disable"
+msgstr "Désactiver"
+
+#: admin/modules/cron/views/_schedule_list.php:139
+msgid "Enable"
+msgstr "Activer"
+
+#: admin/modules/cron/views/_schedule_list.php:146 admin/modules/ftp/ftp.php:88
+#: admin/modules/ftp/views/_ftp-list.php:38
+#: admin/modules/history/views/_history_list.php:90
+#: admin/modules/history/views/_history_list.php:150
+#: admin/modules/history/views/_log_list.php:56
+msgid "Delete"
+msgstr "Supprimer"
+
+#: admin/modules/cron/views/_schedule_list.php:152
+msgid "Generate new cron URL."
+msgstr "Générez une nouvelle URL cron."
+
+#: admin/modules/cron/views/_schedule_list.php:152
+msgid "Cron URL"
+msgstr "URL Cron"
+
+#: admin/modules/cron/views/_schedule_list.php:161 admin/modules/ftp/ftp.php:83
+#: admin/modules/ftp/views/_ftp-list.php:38
+msgid "Edit"
+msgstr "Modifier"
+
+#: admin/modules/cron/views/_schedule_list.php:175
+msgid "No scheduled actions found."
+msgstr "Aucune action planifiée trouvée."
+
+#: admin/modules/cron/views/_schedule_now.php:26
+#: admin/modules/cron/views/_schedule_now.php:148 admin/modules/ftp/ftp.php:356
+msgid "Schedule now"
+msgstr "Planifiez maintenant"
+
+#: admin/modules/cron/views/_schedule_now.php:30
+#: admin/modules/cron/views/settings.php:16
+msgid "Current server time:"
+msgstr "Heure actuelle du serveur:"
+
+#: admin/modules/cron/views/_schedule_now.php:32
+msgid "Schedule type"
+msgstr "Type de planning"
+
+#: admin/modules/cron/views/_schedule_now.php:35
+msgid "Wordpress Cron"
+msgstr "Wordpress Cron"
+
+#: admin/modules/cron/views/_schedule_now.php:36
+msgid ""
+"This type of scheduler depends on the Wordpress for scheduling your job at "
+"the specified time. However this model is dependent on your website "
+"visitors. Upon a visit Wordpress cron will check to see if the time/date is "
+"later than the scheduled event/s, and if it is– it will fire those events."
+msgstr ""
+"Ce type de planificateur dépend de Wordpress pour planifier votre travail à "
+"l'heure spécifiée. Cependant, ce modèle dépend des visiteurs de votre site "
+"Web. Lors d'une visite, Wordpress cron vérifiera si l'heure / la date est "
+"postérieure au (x) événement (s) planifié (s), et si c'est le cas, il "
+"déclenchera ces événements."
+
+#: admin/modules/cron/views/_schedule_now.php:39
+msgid "Server Cron"
+msgstr "Cron du serveur"
+
+#: admin/modules/cron/views/_schedule_now.php:41
+msgid ""
+"You can use this option if you have a separate system to trigger the "
+"scheduled events. This method will generate a unique URL which can be added "
+"to your system inorder to trigger the events. You may need to trigger the "
+"URL every minute depending on the volume of data to be processed."
+msgstr ""
+"Vous pouvez utiliser cette option si vous disposez d'un système distinct "
+"pour déclencher les événements planifiés. Cette méthode générera une URL "
+"unique qui pourra être ajoutée à votre système afin de déclencher les "
+"événements. Vous devrez peut-être déclencher l'URL toutes les minutes en "
+"fonction du volume de données à traiter."
+
+#: admin/modules/cron/views/_schedule_now.php:50
+msgid "File name"
+msgstr "Nom du fichier"
+
+#: admin/modules/cron/views/_schedule_now.php:54
+msgid ""
+"Specify a filename for the exported file(the contents of this file will be "
+"overwritten for every export). If left blank the system generates a default "
+"name(a new filename is generated for every export)."
+msgstr ""
+"Spécifiez un nom de fichier pour le fichier exporté (le contenu de ce "
+"fichier sera écrasé à chaque exportation). Si ce champ est laissé vide, le "
+"système génère un nom par défaut (un nouveau nom de fichier est généré pour "
+"chaque exportation)."
+
+#: admin/modules/cron/views/_schedule_now.php:60
+msgid "Interval"
+msgstr "Intervalle"
+
+#: admin/modules/cron/views/_schedule_now.php:63
+msgid "Every day"
+msgstr "Tous les jours"
+
+#: admin/modules/cron/views/_schedule_now.php:64
+msgid "Every week"
+msgstr "Chaque semaine"
+
+#: admin/modules/cron/views/_schedule_now.php:65
+msgid "Biweekly"
+msgstr "Tous les quinze jours"
+
+#: admin/modules/cron/views/_schedule_now.php:66
+msgid "Every month"
+msgstr "Chaque mois"
+
+#: admin/modules/cron/views/_schedule_now.php:67
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: admin/modules/cron/views/_schedule_now.php:70
+#, fuzzy
+msgid "Custom interval"
+msgstr "Intervalle personnalisé"
+
+#: admin/modules/cron/views/_schedule_now.php:71
+#, fuzzy
+msgid "Interval in minutes."
+msgstr "Intervalle en minutes."
+
+#: admin/modules/cron/views/_schedule_now.php:72
+#, fuzzy
+msgid "Recommended: Minimum 2 hour(120 minutes)"
+msgstr "Recommandé: Minimum 2 heures (120 minutes)"
+
+#: admin/modules/cron/views/_schedule_now.php:75
+#, fuzzy
+msgid "Which day?"
+msgstr "Quel jour?"
+
+#: admin/modules/cron/views/_schedule_now.php:91
+#, fuzzy
+msgid "Day of the Month?"
+msgstr "Jour du mois?"
+
+#: admin/modules/cron/views/_schedule_now.php:101
+msgid "Last day"
+msgstr "Dernier jour"
+
+#: admin/modules/cron/views/_schedule_now.php:105
+msgid "Start time"
+msgstr "Heure de début"
+
+#: admin/modules/cron/views/_schedule_now.php:136
+msgid "Trigger URL"
+msgstr "URL de déclenchement"
+
+#: admin/modules/cron/views/settings.php:18
+#, fuzzy
+msgid "Lists all the scheduled processes for import and export."
+msgstr ""
+"Répertorie tous les processus planifiés pour l'importation et l'exportation."
+
+#: admin/modules/cron/views/settings.php:19
+#, fuzzy
+msgid ""
+"Disable or delete unwanted scheduled actions to reduce server load and "
+"reduce the chances for failure of actively scheduled actions."
+msgstr ""
+"Désactivez ou supprimez les actions planifiées indésirables pour réduire la "
+"charge du serveur et réduire les risques d'échec des actions planifiées "
+"activement."
+
+#: admin/modules/export/classes/class-export-ajax.php:118
+#: admin/modules/export/views/_export_mapping_page.php:28
+#: admin/modules/import/classes/class-import-ajax.php:228
+#: admin/modules/import/views/_import_mapping_page.php:96
+#, fuzzy
+msgid "Drag to rearrange the columns"
+msgstr "Faites glisser pour réorganiser les colonnes"
+
+#: admin/modules/export/classes/class-export-ajax.php:297
+#: admin/modules/import/classes/class-import-ajax.php:479
+#, fuzzy
+msgid "Please enter a different name"
+msgstr "Veuillez saisir un autre nom"
+
+#: admin/modules/export/classes/class-export-ajax.php:300
+#: admin/modules/import/classes/class-import-ajax.php:482
+#, fuzzy
+msgid "Template with same name already exists"
+msgstr "Un modèle avec le même nom existe déjà"
+
+#: admin/modules/export/classes/class-export-ajax.php:601
+#: admin/modules/import/classes/class-import-ajax.php:848
+#, fuzzy
+msgid "Hidden meta"
+msgstr "Méta cachée"
+
+#: admin/modules/export/classes/class-export-ajax.php:602
+#: admin/modules/import/classes/class-import-ajax.php:849
+msgid "Meta"
+msgstr "Meta"
+
+#: admin/modules/export/classes/class-export-ajax.php:642
+#: admin/modules/import/classes/class-import-ajax.php:890
+msgid "Back"
+msgstr "Retour"
+
+#: admin/modules/export/classes/class-export-ajax.php:655
+#: admin/modules/export/export.php:497
+#: admin/modules/import/classes/class-import-ajax.php:903
+#: admin/modules/import/import.php:476
+msgid "Step"
+msgstr "Étape"
+
+#: admin/modules/export/classes/class-export-ajax.php:662
+#: admin/modules/import/classes/class-import-ajax.php:910
+msgid "Or"
+msgstr "Ou"
+
+#: admin/modules/export/classes/class-export-ajax.php:681
+#: admin/modules/export/classes/class-export-ajax.php:699
+#: admin/modules/import/classes/class-import-ajax.php:929
+#: admin/modules/import/classes/class-import-ajax.php:947
+msgid "Save template"
+msgstr "Enregistrer le modèle"
+
+#: admin/modules/export/classes/class-export-ajax.php:685
+#: admin/modules/import/classes/class-import-ajax.php:933
+#: admin/views/_save_template_popup.php:13
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: admin/modules/export/classes/class-export-ajax.php:689
+#: admin/modules/import/classes/class-import-ajax.php:937
+msgid "Save As"
+msgstr "Enregistrer sous"
+
+#: admin/modules/export/classes/class-export-ajax.php:711
+msgid "Export images"
+msgstr "Images d'exportation"
+
+#: admin/modules/export/classes/class-export-ajax.php:720
+#: admin/modules/export/export.php:144 admin/modules/export/export.php:155
+#: admin/modules/export/export.php:156
+#: admin/modules/export/views/_export_header.php:8
+#: admin/modules/export/views/main.php:28 admin/modules/history/history.php:40
+msgid "Export"
+msgstr "Exporter"
+
+#: admin/modules/export/export.php:42 admin/modules/import/import.php:51
+msgid "CSV"
+msgstr "CSV"
+
+#: admin/modules/export/export.php:43 admin/modules/import/import.php:52
+msgid "XML"
+msgstr "XML"
+
+#: admin/modules/export/export.php:50
+msgid "Select a post type"
+msgstr "Sélectionnez un type d'article"
+
+#: admin/modules/export/export.php:51
+#, fuzzy
+msgid ""
+"Export and download the respective post type into a CSV or XML. This file "
+"can also be used to import data related to the specific post type back into "
+"your WooCommerce shop. As a first step you need to choose the post type to "
+"start the export."
+msgstr ""
+"Exportez et téléchargez le type de publication respectif dans un fichier CSV "
+"ou XML. Ce fichier peut également être utilisé pour importer des données "
+"liées au type de publication spécifique dans votre boutique WooCommerce. "
+"Dans un premier temps, vous devez choisir le type de publication pour "
+"démarrer l'exportation."
+
+#: admin/modules/export/export.php:54
+#: admin/modules/export/views/_export_method_export_page.php:19
+#, fuzzy
+msgid "Select an export method"
+msgstr "Sélectionnez une méthode d'exportation"
+
+#: admin/modules/export/export.php:55
+#, fuzzy
+msgid ""
+"Choose from the options below to continue with your export: quick export "
+"from DB, based on a pre-saved template or a new export with advanced options."
+msgstr ""
+"Choisissez parmi les options ci-dessous pour poursuivre votre export: export "
+"rapide depuis la base de données, basé sur un modèle pré-enregistré ou un "
+"nouvel export avec des options avancées."
+
+#: admin/modules/export/export.php:58
+msgid "Filter data"
+msgstr "Filtrer données"
+
+#: admin/modules/export/export.php:59
+#, fuzzy
+msgid "Filter data that needs to be exported as per the below criteria."
+msgstr ""
+"Filtrez les données qui doivent être exportées selon les critères ci-dessous."
+
+#: admin/modules/export/export.php:62
+#, fuzzy
+msgid "Map and reorder export columns"
+msgstr "Mapper et réorganiser les colonnes d'exportation"
+
+#: admin/modules/export/export.php:63
+#, fuzzy
+msgid ""
+"The default export column names can be seen in the screen below. You can "
+"edit these if required.  If you have chosen a pre-saved template you can see "
+"the preferred names and choices that were last saved. You may also drag the "
+"columns accordingly to reorder them within the output file."
+msgstr ""
+"Les noms de colonne d'exportation par défaut peuvent être vus dans l'écran "
+"ci-dessous. Vous pouvez les modifier si nécessaire. Si vous avez choisi un "
+"modèle pré-enregistré, vous pouvez voir les noms préférés et les choix qui "
+"ont été enregistrés en dernier. Vous pouvez également faire glisser les "
+"colonnes en conséquence pour les réorganiser dans le fichier de sortie."
+
+#: admin/modules/export/export.php:66
+#, fuzzy
+msgid "Advanced options/Batch export/Scheduling"
+msgstr "Options avancées / exportation par lots / planification"
+
+#: admin/modules/export/export.php:67
+#, fuzzy
+msgid ""
+"Use advanced options from below to decide on the batch export count, "
+"schedule an export and/or export images separately. You can also save the "
+"template file for future exports."
+msgstr ""
+"Utilisez les options avancées ci-dessous pour décider du nombre "
+"d'exportations par lots, planifier une exportation et / ou exporter des "
+"images séparément. Vous pouvez également enregistrer le fichier modèle pour "
+"de futures exportations."
+
+#: admin/modules/export/export.php:83
+#, fuzzy
+msgid "Quick export"
+msgstr "Exportation rapide"
+
+#: admin/modules/export/export.php:83
+#, fuzzy
+msgid ""
+"Quick export only exports all the basic/standard fields of the respective "
+"post type. You do not get to selectively filter the columns with this option "
+"except for the groups based on taxonomies/attributes/meta/hidden meta."
+msgstr ""
+"L'exportation rapide exporte uniquement tous les champs de base / standard "
+"du type de publication respectif. Vous ne pouvez pas filtrer sélectivement "
+"les colonnes avec cette option, sauf pour les groupes basés sur les "
+"taxonomies / attributs / méta / méta masqué."
+
+#: admin/modules/export/export.php:84 admin/modules/import/import.php:87
+#, fuzzy
+msgid "Pre-saved template"
+msgstr "Modèle pré-enregistré"
+
+#: admin/modules/export/export.php:84
+#, fuzzy
+msgid ""
+"Using a pre-saved template retains the previous filter criteria and other "
+"column specifications as per the chosen file and exports data accordingly. "
+"You can also edit this file in the process and export accordingly or export "
+"straightaway."
+msgstr ""
+"L'utilisation d'un modèle préenregistré conserve les critères de filtre "
+"précédents et les autres spécifications de colonne selon le fichier choisi "
+"et exporte les données en conséquence. Vous pouvez également modifier ce "
+"fichier au cours du processus et l'exporter en conséquence ou l'exporter "
+"immédiatement."
+
+#: admin/modules/export/export.php:85
+msgid "New export"
+msgstr "Nouvelle exportation"
+
+#: admin/modules/export/export.php:85
+#, fuzzy
+msgid ""
+"A new export will take you through the entire process of filtering/column "
+"selection/advanced options that may be required for your export. You can "
+"also save this file for future use."
+msgstr ""
+"Une nouvelle exportation vous guidera tout au long du processus de "
+"filtrage / sélection de colonne / options avancées qui peuvent être "
+"nécessaires pour votre exportation. Vous pouvez également enregistrer ce "
+"fichier pour une utilisation future."
+
+#: admin/modules/export/export.php:118
+msgid "Default Export method"
+msgstr "Mode d’exportation par défaut"
+
+#: admin/modules/export/export.php:123
+#, fuzzy
+msgid "Select the default method of export."
+msgstr "Sélectionnez la méthode d'exportation par défaut."
+
+#: admin/modules/export/export.php:126
+msgid "Default Export batch count"
+msgstr "Nombre de lots d’exportation par défaut"
+
+#: admin/modules/export/export.php:130
+#, fuzzy
+msgid "Provide the default count for the records to be exported in a batch."
+msgstr ""
+"Indiquez le nombre par défaut des enregistrements à exporter dans un lot."
+
+#: admin/modules/export/export.php:145
+#, fuzzy
+msgid "WebToffee Import Export (Pro)"
+msgstr "Importation et exportation WebToffee (Pro)"
+
+#: admin/modules/export/export.php:238
+msgid "Offset"
+msgstr "Décalage"
+
+#: admin/modules/export/export.php:241
+#, fuzzy
+msgid ""
+"Specify the number of records that should be skipped from the beginning. e."
+"g. An offset of 10 skips the first 10 records."
+msgstr ""
+"Spécifiez le nombre d'enregistrements à ignorer depuis le début. par "
+"exemple. Un décalage de 10 saute les 10 premiers enregistrements."
+
+#: admin/modules/export/export.php:245
+msgid "Limit"
+msgstr "Limite"
+
+#: admin/modules/export/export.php:249
+#, fuzzy
+msgid ""
+"The actual number of records you want to export. e.g. A limit of 500 with an "
+"offset 10 will export records from 11th to 510th position."
+msgstr ""
+"Le nombre réel d'enregistrements que vous souhaitez exporter. par exemple. "
+"Une limite de 500 avec un décalage de 10 exportera les enregistrements de la "
+"11e à la 510e position."
+
+#: admin/modules/export/export.php:259 admin/modules/import/import.php:184
+msgid "Local"
+msgstr "Local"
+
+#: admin/modules/export/export.php:274
+#, fuzzy
+msgid "Download the file into my"
+msgstr "Téléchargez le fichier dans mon"
+
+#: admin/modules/export/export.php:286
+#, fuzzy
+msgid "Enable FTP export?"
+msgstr "Activer l'exportation FTP?"
+
+#: admin/modules/export/export.php:289 admin/modules/export/export.php:299
+#: admin/modules/export/export.php:354 admin/modules/ftp/ftp.php:300
+#: admin/modules/ftp/ftp.php:388 admin/modules/history/history.php:204
+#: admin/modules/import/import.php:122 admin/modules/import/import.php:217
+#: admin/modules/import/import.php:227
+#: admin/partials/_form_field_generator.php:291
+msgid "No"
+msgstr "Non"
+
+#: admin/modules/export/export.php:296 admin/modules/import/import.php:224
+msgid "Enable "
+msgstr "Activer "
+
+#: admin/modules/export/export.php:300 admin/modules/export/export.php:353
+#: admin/modules/ftp/ftp.php:299 admin/modules/ftp/ftp.php:387
+#: admin/modules/history/history.php:203 admin/modules/import/import.php:121
+#: admin/modules/import/import.php:228
+#: admin/partials/_form_field_generator.php:290
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/modules/export/export.php:307
+#, fuzzy
+msgid "Export file name"
+msgstr "Exporter le nom du fichier"
+
+#: admin/modules/export/export.php:310
+#, fuzzy
+msgid ""
+"Specify a filename for the exported file. If left blank the system generates "
+"a default name."
+msgstr ""
+"Spécifiez un nom de fichier pour le fichier exporté. Si ce champ est laissé "
+"vide, le système génère un nom par défaut."
+
+#: admin/modules/export/export.php:316
+#, fuzzy
+msgid "Export file format"
+msgstr "Format de fichier d'exportation"
+
+#: admin/modules/export/export.php:326 admin/modules/import/import.php:268
+msgid "Delimiter"
+msgstr "Délimiteur"
+
+#: admin/modules/export/export.php:338
+#, fuzzy
+msgid ""
+"Separator for differentiating the columns in the CSV file. Assumes ‘,’ by "
+"default."
+msgstr ""
+"Séparateur pour différencier les colonnes dans le fichier CSV. Suppose «,» "
+"par défaut."
+
+#: admin/modules/export/export.php:345 admin/modules/import/import.php:158
+msgid "Advanced options"
+msgstr "Options avancées"
+
+#: admin/modules/export/export.php:350
+msgid "Convert shortcodes to HTML"
+msgstr "Convertir les shortcodes en HTML"
+
+#: admin/modules/export/export.php:359
+#, fuzzy
+msgid "Option 'Yes' converts the shortcode to HTML within the exported CSV."
+msgstr "L'option «Oui» convertit le shortcode en HTML dans le CSV exporté."
+
+#: admin/modules/export/export.php:362
+msgid "Export in batches of"
+msgstr "Exporter par lots de"
+
+#: admin/modules/export/export.php:367
+#, fuzzy
+msgid ""
+"The number of records that the server will process for every iteration "
+"within the configured timeout interval. If the export fails you can lower "
+"this number accordingly and try again. Defaulted to 0 records."
+msgstr ""
+"Nombre d'enregistrements que le serveur traitera pour chaque itération dans "
+"le délai d'expiration configuré. Si l'exportation échoue, vous pouvez "
+"réduire ce nombre en conséquence et réessayer. Valeur par défaut de 0 "
+"enregistrement."
+
+#: admin/modules/export/export.php:494 admin/modules/import/import.php:473
+msgid "Choosed template: "
+msgstr "Modèle choisi: "
+
+#: admin/modules/export/export.php:495
+#, fuzzy
+msgid "Please select an export method."
+msgstr "Veuillez sélectionner une méthode d'exportation."
+
+#: admin/modules/export/export.php:496
+#: admin/modules/export/views/_export_method_export_page.php:14
+#, fuzzy
+msgid "Please select an export template."
+msgstr "Veuillez sélectionner un modèle d'exportation."
+
+#: admin/modules/export/export.php:498 admin/modules/import/import.php:477
+#, fuzzy
+msgid "Please select an FTP profile."
+msgstr "Veuillez sélectionner un profil FTP."
+
+#: admin/modules/export/export.php:761
+#, fuzzy
+msgid "Export Images file processing completed"
+msgstr "Traitement du fichier d'exportation d'images terminé"
+
+#: admin/modules/export/export.php:764 admin/modules/export/export.php:970
+#: admin/modules/import/import.php:1280
+msgid "Close"
+msgstr "Fermer"
+
+#: admin/modules/export/export.php:765 admin/modules/export/export.php:971
+msgid "Download file"
+msgstr "Télécharger le fichier"
+
+#: admin/modules/export/export.php:783 admin/modules/export/export.php:990
+#, fuzzy, php-format
+msgid "Exporting...(%d out of %d)"
+msgstr "Exportation en cours… (%d sur %d)"
+
+#: admin/modules/export/export.php:955
+#, php-format
+msgid "Uploading to %s"
+msgstr "Envoi vers %s"
+
+#: admin/modules/export/export.php:960
+#, fuzzy
+msgid "Export file processing completed"
+msgstr "Traitement du fichier d'exportation terminé"
+
+#: admin/modules/export/export.php:967
+#, fuzzy
+msgid "You can manage exports from History section."
+msgstr "Vous pouvez gérer les exportations à partir de la section Historique."
+
+#: admin/modules/export/views/_export_mapping_page.php:11
+#: admin/modules/import/views/_import_mapping_page.php:79
+#, fuzzy
+msgid "Default fields"
+msgstr "Champs par défaut"
+
+#: admin/modules/export/views/_export_mapping_page.php:12
+#: admin/modules/export/views/_export_mapping_page.php:87
+#: admin/modules/import/views/_import_mapping_page.php:80
+#: admin/modules/import/views/_import_mapping_page.php:271
+#, fuzzy
+msgid " columns(s) selected"
+msgstr " colonne (s) sélectionnée (s)"
+
+#: admin/modules/export/views/_export_mapping_page.php:22
+#: admin/modules/export/views/_export_meta_step_page.php:16
+#: admin/modules/import/views/_import_mapping_page.php:90
+#: admin/modules/import/views/_import_meta_step_page.php:16
+msgid "Column"
+msgstr "Colonne"
+
+#: admin/modules/export/views/_export_mapping_page.php:23
+#: admin/modules/export/views/_export_meta_step_page.php:17
+#: admin/modules/import/views/_import_mapping_page.php:91
+#: admin/modules/import/views/_import_meta_step_page.php:17
+msgid "Column name"
+msgstr "Nom de colonne"
+
+#: admin/modules/export/views/_export_mapping_page.php:54
+#: admin/modules/export/views/_export_meta_step_page.php:49
+#: admin/modules/import/views/_import_mapping_page.php:237
+#: admin/modules/import/views/_import_meta_step_page.php:36
+msgid "No fields found."
+msgstr "Aucun champs trouvé."
+
+#: admin/modules/export/views/_export_method_export_page.php:10
+#, fuzzy
+msgid "Please select an export method"
+msgstr "Veuillez sélectionner une méthode d'exportation"
+
+#: admin/modules/export/views/_export_method_export_page.php:39
+#, fuzzy
+msgid "Include fields from the respective groups"
+msgstr "Inclure les champs des groupes respectifs"
+
+#: admin/modules/export/views/_export_method_export_page.php:64
+#, fuzzy
+msgid ""
+"Enabling any of these ensures that all the fields from the respective groups "
+"are included in your export."
+msgstr ""
+"L'activation de l'un de ces éléments garantit que tous les champs des "
+"groupes respectifs sont inclus dans votre exportation."
+
+#: admin/modules/export/views/_export_method_export_page.php:70
+msgid "Export template"
+msgstr "Insérer la description du modèle"
+
+#: admin/modules/export/views/_export_method_export_page.php:73
+#: admin/modules/import/views/_import_method_import_page.php:35
+msgid "Select a template"
+msgstr "Choisissez un modèle"
+
+#: admin/modules/export/views/_export_post_type_page.php:9
+#: admin/modules/import/views/_import_post_type_page.php:9
+msgid "Please select a post type"
+msgstr "S'il vous plaît sélectionner un type de poste"
+
+#: admin/modules/export/views/_export_post_type_page.php:14
+#, fuzzy, php-format
+msgid ""
+"Atleast one of the <b>WebToffee add-ons(Product/Reviews, User, Order/Coupon/"
+"Subscription)</b> should be activated to start exporting the respective post "
+"type.\n"
+"                        Go to <a href=\"%s\" target=\"_blank\">My accounts-"
+">API Downloads</a> to download and activate the add-on. If already installed "
+"activate the respective add-on plugin under <a href=\"%s\" target=\"_blank"
+"\">Plugins</a>."
+msgstr ""
+"Au moins l'un des <b>modules complémentaires WebToffee (produit / avis, "
+"utilisateur, commande / coupon / abonnement)</b> doit être activé pour "
+"commencer à exporter le type de publication respectif. Accédez à <a href=\"%s"
+"\" target=\"_blank\">Mes comptes-> Téléchargements d'API</a> pour "
+"télécharger et activer le module complémentaire. S'il est déjà installé, "
+"activez le plugin complémentaire correspondant sous <a href=\"%s\" target="
+"\"_blank\">Plugins</a> ."
+
+#: admin/modules/export/views/_export_post_type_page.php:21
+#, fuzzy
+msgid "What do you want to export ?"
+msgstr "Que souhaitez-vous exporter?"
+
+#: admin/modules/export/views/_export_post_type_page.php:24
+#: admin/modules/import/import.php:62
+#: admin/modules/import/views/_import_post_type_page.php:22
+msgid "Select post type"
+msgstr "Selectionner type d'article"
+
+#: admin/modules/export/views/main.php:35
+#: admin/modules/import/views/main.php:34
+#, fuzzy
+msgid "Unable to handle Re-Run request."
+msgstr "Impossible de gérer la demande de réexécution."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:17
+#: admin/modules/ftp/ftp.php:189
+msgid "FTP"
+msgstr "FTP"
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:55
+#: admin/modules/ftp/classes/class-ftpadapter.php:138
+#: admin/modules/ftp/classes/class-ftpadapter.php:145
+#: admin/modules/ftp/classes/class-ftpadapter.php:232
+#: admin/modules/ftp/classes/class-ftpadapter.php:238
+#, fuzzy
+msgid "FTP profile not found."
+msgstr "Profil FTP introuvable."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:78
+#: admin/modules/ftp/classes/class-ftpadapter.php:174
+#: admin/modules/ftp/classes/class-ftpadapter.php:265
+#, fuzzy
+msgid "Failed to enable passive mode."
+msgstr "Échec de l'activation du mode passif."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:83
+#: admin/modules/ftp/classes/class-sftp.php:22
+#, fuzzy
+msgid "Successfully tested."
+msgstr "Testé avec succès."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:93
+#, fuzzy
+msgid ""
+"Connected to host but could not login. Server UserID or Password may be "
+"wrong or try again with/without FTPS."
+msgstr ""
+"Connecté à l'hôte mais impossible de se connecter. L'ID utilisateur ou le "
+"mot de passe du serveur sont peut-être erronés ou réessayez avec / sans FTPS."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:97
+#, fuzzy
+msgid ""
+"Failed to establish FTP connection. Server host/IP or port specified may be "
+"wrong."
+msgstr ""
+"Échec de l'établissement de la connexion FTP. L'hôte / IP du serveur ou le "
+"port spécifié est peut-être incorrect."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:113
+#: admin/modules/import/import.php:604
+msgid "File not found."
+msgstr "Fichier non trouvé."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:122
+#: admin/modules/import/import.php:600
+msgid "File type not allowed."
+msgstr "Type de fichier non autorisé."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:130
+#: admin/modules/import/import.php:596 admin/modules/import/import.php:644
+#, fuzzy
+msgid "Unable to create temp directory."
+msgstr "Impossible de créer le répertoire temporaire."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:186
+#: admin/modules/ftp/classes/class-sftp.php:55
+#, fuzzy
+msgid "Failed to download file."
+msgstr "Échec du téléchargement du fichier."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:189
+#: admin/modules/ftp/classes/class-sftp.php:47
+msgid "Downloaded successfully."
+msgstr "Téléchargé."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:194
+#: admin/modules/ftp/classes/class-ftpadapter.php:285
+#, fuzzy
+msgid "FTP login failed."
+msgstr "La connexion FTP a échoué."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:198
+#: admin/modules/ftp/classes/class-ftpadapter.php:289
+#, fuzzy
+msgid "Failed to establish FTP connection."
+msgstr "Échec de l'établissement de la connexion FTP."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:277
+#: admin/modules/ftp/classes/class-sftp.php:80
+msgid "Failed to upload file."
+msgstr "Échec du téléchargement de fichier."
+
+#: admin/modules/ftp/classes/class-ftpadapter.php:280
+#: admin/modules/ftp/classes/class-sftp.php:76
+msgid "Uploaded successfully."
+msgstr "Téléchargé avec succès."
+
+#: admin/modules/ftp/classes/class-sftp.php:26
+#: admin/modules/ftp/classes/class-sftp.php:59
+#, fuzzy
+msgid "SFTP connection failed."
+msgstr "La connexion SFTP a échoué."
+
+#: admin/modules/ftp/classes/class-sftp.php:30
+#: admin/modules/ftp/classes/class-sftp.php:63
+#: admin/modules/ftp/classes/class-sftp.php:88
+#, fuzzy
+msgid "Failed to establish SFTP connection."
+msgstr "Échec de l'établissement de la connexion SFTP."
+
+#: admin/modules/ftp/classes/class-sftp.php:51
+#: admin/modules/import/import.php:591 admin/modules/import/import.php:635
+#, fuzzy
+msgid "Unable to create temp file."
+msgstr "Impossible de créer un fichier temporaire."
+
+#: admin/modules/ftp/classes/class-sftp.php:84
+#, fuzzy
+msgid "SFTP login failed."
+msgstr "La connexion SFTP a échoué."
+
+#: admin/modules/ftp/ftp.php:62
+#, fuzzy
+msgid "Select atleast one."
+msgstr "Sélectionnez au moins un."
+
+#: admin/modules/ftp/ftp.php:63 admin/modules/ftp/views/_ftp-list.php:56
+#, fuzzy
+msgid "No FTP profiles found."
+msgstr "Aucun profil FTP trouvé."
+
+#: admin/modules/ftp/ftp.php:81 admin/modules/ftp/views/_ftp-list.php:56
+#: admin/modules/ftp/views/_settings_page.php:8
+msgid "Add new"
+msgstr "Ajouter"
+
+#: admin/modules/ftp/ftp.php:82 admin/modules/ftp/ftp.php:277
+#: admin/modules/ftp/ftp.php:366 admin/modules/ftp/views/_settings_page.php:12
+#, fuzzy
+msgid "Add new FTP profile"
+msgstr "Ajouter un nouveau profil FTP"
+
+#: admin/modules/ftp/ftp.php:84
+#, fuzzy
+msgid "Edit FTP profile"
+msgstr "Modifier le profil FTP"
+
+#: admin/modules/ftp/ftp.php:86
+#, fuzzy
+msgid ""
+"Confirm? All import/export profiles associated with this FTP profile will "
+"not work. You can't undo this action."
+msgstr ""
+"Confirmer? Tous les profils d'importation / exportation associés à ce profil "
+"FTP ne fonctionneront pas. Vous ne pouvez pas annuler cette action."
+
+#: admin/modules/ftp/ftp.php:87
+#: admin/modules/licence_manager/licence_manager.php:543
+msgid "Please wait..."
+msgstr "Veuillez patienter..."
+
+#: admin/modules/ftp/ftp.php:89
+#, fuzzy
+msgid "Aborted"
+msgstr "Avorté"
+
+#: admin/modules/ftp/ftp.php:90
+msgid "Please fill mandatory fields"
+msgstr "Veuillez remplir les champs obligatoires"
+
+#: admin/modules/ftp/ftp.php:91
+#, fuzzy
+msgid "Please choose an FTP profile"
+msgstr "Veuillez choisir un profil FTP"
+
+#: admin/modules/ftp/ftp.php:92
+#, fuzzy
+msgid "Export path is mandatory."
+msgstr "Le chemin d'exportation est obligatoire."
+
+#: admin/modules/ftp/ftp.php:93
+#, fuzzy
+msgid "Import path is mandatory."
+msgstr "Le chemin d'importation est obligatoire."
+
+#: admin/modules/ftp/ftp.php:94
+#, fuzzy
+msgid "Import file is mandatory."
+msgstr "L'importation du fichier est obligatoire."
+
+#: admin/modules/ftp/ftp.php:113 admin/modules/ftp/views/_settings_page.php:7
+#: admin/modules/ftp/views/_settings_page.php:117
+#, fuzzy
+msgid "FTP profiles"
+msgstr "Profils FTP"
+
+#: admin/modules/ftp/ftp.php:222 admin/modules/ftp/ftp.php:227
+#, fuzzy
+msgid "FTP settings"
+msgstr "Paramètres FTP"
+
+#: admin/modules/ftp/ftp.php:276 admin/modules/ftp/ftp.php:365
+#, fuzzy
+msgid "View/Add FTP profiles"
+msgstr "Afficher / ajouter des profils FTP"
+
+#: admin/modules/ftp/ftp.php:280 admin/modules/ftp/ftp.php:369
+#, fuzzy
+msgid "Select an FTP profile"
+msgstr "Sélectionnez un profil FTP"
+
+#: admin/modules/ftp/ftp.php:295 admin/modules/ftp/ftp.php:383
+#, fuzzy
+msgid "Use default path"
+msgstr "Utiliser le chemin par défaut"
+
+#: admin/modules/ftp/ftp.php:309
+#, fuzzy
+msgid "Use import path from FTP profile."
+msgstr "Utilisez le chemin d'importation du profil FTP."
+
+#: admin/modules/ftp/ftp.php:312
+#, fuzzy
+msgid "Import path"
+msgstr "Importer le chemin"
+
+#: admin/modules/ftp/ftp.php:326
+msgid "Import file"
+msgstr "Importer fichier"
+
+#: admin/modules/ftp/ftp.php:352
+msgid "Export now"
+msgstr "Exporter maintenant"
+
+#: admin/modules/ftp/ftp.php:397
+#, fuzzy
+msgid "Use export path from FTP profile."
+msgstr "Utilisez le chemin d'exportation à partir du profil FTP."
+
+#: admin/modules/ftp/ftp.php:400
+#, fuzzy
+msgid "Export path"
+msgstr "Chemin d'exportation"
+
+#: admin/modules/ftp/ftp.php:452 admin/modules/ftp/ftp.php:459
+#, fuzzy
+msgid " is mandatory"
+msgstr " est obligatoire"
+
+#: admin/modules/ftp/ftp.php:540 admin/modules/ftp/ftp.php:546
+#, fuzzy
+msgid "FTP profile with same name already exists."
+msgstr "Un profil FTP avec le même nom existe déjà."
+
+#: admin/modules/ftp/views/_ftp-list.php:9
+#: admin/modules/ftp/views/_settings_page.php:26
+msgid "Profile name"
+msgstr "Nom de profil"
+
+#: admin/modules/ftp/views/_ftp-list.php:10
+#, fuzzy
+msgid "Server Host/IP"
+msgstr "Hôte / IP du serveur"
+
+#: admin/modules/ftp/views/_ftp-list.php:43
+#, fuzzy
+msgid "Use this profile"
+msgstr "Utilisez ce profil"
+
+#: admin/modules/ftp/views/_ftp-list.php:56
+msgid "Click here to"
+msgstr "Cliquez ici pour"
+
+#: admin/modules/ftp/views/_settings_page.php:33
+#, fuzzy
+msgid "FTP Server Host/IP"
+msgstr "Hôte / IP du serveur FTP"
+
+#: admin/modules/ftp/views/_settings_page.php:36
+#, fuzzy
+msgid "Enter your FTP server hostname."
+msgstr "Entrez le nom d'hôte de votre serveur FTP."
+
+#: admin/modules/ftp/views/_settings_page.php:41
+#, fuzzy
+msgid "FTP User Name"
+msgstr "Nom d'utilisateur FTP"
+
+#: admin/modules/ftp/views/_settings_page.php:44
+#, fuzzy
+msgid "Enter your FTP username."
+msgstr "Entrez votre nom d'utilisateur FTP."
+
+#: admin/modules/ftp/views/_settings_page.php:49
+msgid "FTP Password"
+msgstr "Mot de passe FTP"
+
+#: admin/modules/ftp/views/_settings_page.php:52
+#, fuzzy
+msgid "Enter your FTP password."
+msgstr "Entrez votre mot de passe FTP."
+
+#: admin/modules/ftp/views/_settings_page.php:57
+#, fuzzy
+msgid "FTP Port"
+msgstr "Port FTP"
+
+#: admin/modules/ftp/views/_settings_page.php:60
+#, fuzzy
+msgid "Enter your FTP port."
+msgstr "Entrez votre port FTP."
+
+#: admin/modules/ftp/views/_settings_page.php:65
+#, fuzzy
+msgid "Default export path"
+msgstr "Chemin d'exportation par défaut"
+
+#: admin/modules/ftp/views/_settings_page.php:68
+#, fuzzy
+msgid "Default export path. You can add specific path while exporting."
+msgstr ""
+"Chemin d'exportation par défaut. Vous pouvez ajouter un chemin spécifique "
+"lors de l'exportation."
+
+#: admin/modules/ftp/views/_settings_page.php:73
+#, fuzzy
+msgid "Default import path"
+msgstr "Chemin d'importation par défaut"
+
+#: admin/modules/ftp/views/_settings_page.php:76
+#, fuzzy
+msgid "Default import path. You can add specific path while importing."
+msgstr ""
+"Chemin d'importation par défaut. Vous pouvez ajouter un chemin spécifique "
+"lors de l'importation."
+
+#: admin/modules/ftp/views/_settings_page.php:81
+#, fuzzy
+msgid "Use FTPS"
+msgstr "Utiliser FTPS"
+
+#: admin/modules/ftp/views/_settings_page.php:85
+#, fuzzy
+msgid "Enable this send data over a network with SSL encryption"
+msgstr "Activez cet envoi de données sur un réseau avec cryptage SSL"
+
+#: admin/modules/ftp/views/_settings_page.php:90
+#, fuzzy
+msgid "Enable Passive mode"
+msgstr "Activer le mode passif"
+
+#: admin/modules/ftp/views/_settings_page.php:94
+#, fuzzy
+msgid "Enable this to turns passive mode on or off"
+msgstr "Activez cette option pour activer ou désactiver le mode passif"
+
+#: admin/modules/ftp/views/_settings_page.php:99
+#, fuzzy
+msgid "Is SFTP"
+msgstr "Est SFTP"
+
+#: admin/modules/ftp/views/_settings_page.php:108
+msgid "Save settings"
+msgstr "Enregistrer les paramètres"
+
+#: admin/modules/ftp/views/_settings_page.php:109
+#, fuzzy
+msgid "Use this profile and close the popup"
+msgstr "Utilisez ce profil et fermez le popup"
+
+#: admin/modules/ftp/views/_settings_page.php:110
+#, fuzzy
+msgid "Abort FTP testing"
+msgstr "Annuler le test FTP"
+
+#: admin/modules/ftp/views/_settings_page.php:111
+msgid "Test FTP"
+msgstr "Test du FTP"
+
+#: admin/modules/history/history.php:34
+#, fuzzy
+msgid "Running/Incomplete"
+msgstr "En cours d'exécution / incomplet"
+
+#: admin/modules/history/history.php:36
+msgid "Failed"
+msgstr "Echec"
+
+#: admin/modules/history/history.php:41
+#: admin/modules/import/classes/class-import-ajax.php:956
+#: admin/modules/import/import.php:314 admin/modules/import/import.php:315
+#: admin/modules/import/views/_import_header.php:8
+#: admin/modules/import/views/main.php:27
+msgid "Import"
+msgstr "Importer"
+
+#: admin/modules/history/history.php:42
+#, fuzzy
+msgid "Image Export"
+msgstr "Exportation d'image"
+
+#: admin/modules/history/history.php:79 admin/modules/history/history.php:80
+#: admin/modules/history/views/_log_list.php:16
+msgid "Logs"
+msgstr "Journaux"
+
+#: admin/modules/history/history.php:200
+#, fuzzy
+msgid "Enable history auto delete"
+msgstr "Activer la suppression automatique de l'historique"
+
+#: admin/modules/history/history.php:208
+#, fuzzy
+msgid "Enable auto delete for records within the history section."
+msgstr ""
+"Activez la suppression automatique des enregistrements dans la section "
+"historique."
+
+#: admin/modules/history/history.php:217
+#, fuzzy
+msgid "Maximum entries"
+msgstr "Entrées maximum"
+
+#: admin/modules/history/history.php:224
+#, fuzzy
+msgid ""
+"Indicates the maximum records to retain in history. Limit the number of "
+"records with status ‘Finished’. E.g if you input a count of 50 the system "
+"will retain only the most recent 50 number of records with status "
+"‘Finished’. All other records of any other status e.g In Progress(that maybe "
+"active as a part of the cron operation) will not be impacted by this count."
+msgstr ""
+"Indique le nombre maximal d'enregistrements à conserver dans l'historique. "
+"Limitez le nombre d’enregistrements avec le statut «Terminé». Par exemple, "
+"si vous saisissez un nombre de 50, le système ne conservera que les 50 "
+"derniers enregistrements avec le statut «Terminé». Tous les autres "
+"enregistrements de tout autre statut, par exemple En cours (qui peuvent être "
+"actifs dans le cadre de l'opération cron) ne seront pas affectés par ce "
+"décompte."
+
+#: admin/modules/history/history.php:378
+msgid "Date descending"
+msgstr "Date decroissante"
+
+#: admin/modules/history/history.php:379
+msgid "Date ascending"
+msgstr "Date croissante"
+
+#: admin/modules/history/history.php:810
+#, fuzzy
+msgid " record(s)"
+msgstr " enregistrement (s)"
+
+#: admin/modules/history/views/_history_list.php:7
+msgid "Import/Export history"
+msgstr "Historique des Importations/Exportations"
+
+#: admin/modules/history/views/_history_list.php:10
+#, fuzzy
+msgid ""
+"Lists the runs and the status corresponding to every import/export with "
+"options to re-run, view detailed log or delete entry."
+msgstr ""
+"Répertorie les exécutions et l'état correspondant à chaque importation / "
+"exportation avec des options pour réexécuter, afficher le journal détaillé "
+"ou supprimer une entrée."
+
+#: admin/modules/history/views/_history_list.php:21
+msgid "Filter"
+msgstr "Filtre"
+
+#: admin/modules/history/views/_history_list.php:32
+msgid "All"
+msgstr "Tout"
+
+#: admin/modules/history/views/_history_list.php:55
+msgid "Sort by"
+msgstr "Trier par"
+
+#: admin/modules/history/views/_history_list.php:68
+msgid "Max record/page"
+msgstr "Max enregistrement/page"
+
+#: admin/modules/history/views/_history_list.php:82
+#: admin/modules/history/views/_history_list.php:92
+msgid "Apply"
+msgstr "Appliquer"
+
+#: admin/modules/history/views/_history_list.php:89
+msgid "Bulk Actions"
+msgstr "Actions groupées"
+
+#: admin/modules/history/views/_history_list.php:108
+msgid "Id"
+msgstr "Id"
+
+#: admin/modules/history/views/_history_list.php:111
+msgid "Started at"
+msgstr "Commencé à"
+
+#: admin/modules/history/views/_history_list.php:116
+#, php-format
+msgid "%sSuccess%s - Process completed successfully"
+msgstr "%sSuccess%s - Processus terminé avec succès"
+
+#: admin/modules/history/views/_history_list.php:117
+#, fuzzy, php-format
+msgid ""
+"%sFailed%s - Failed process triggered due to connection/permission or "
+"similar issues(unable to establish FTP/DB connection, write permission "
+"issues etc.)"
+msgstr ""
+"%sFailed% s - Échec du processus déclenché en raison d'une connexion / "
+"autorisation ou de problèmes similaires (impossible d'établir une connexion "
+"FTP / DB, problèmes d'autorisation d'écriture, etc.)"
+
+#: admin/modules/history/views/_history_list.php:118
+#, php-format
+msgid ""
+"%sRunning/Incomplete%s - Process that are running currently or that may have "
+"been terminated unknowingly(e.g, closing a browser tab while in progress etc)"
+msgstr ""
+"%sEn cours d’exécution / incomplete%s - Processus en cours ou qui a été "
+"interrompu sans le savoir (par exemple, fermeture d'un onglet de navigateur "
+"en cours, etc.)"
+
+#: admin/modules/history/views/_history_list.php:124
+#, fuzzy
+msgid ""
+"Re-run will take the user to the respective screen depending on the "
+"corresponding action type and the user can initiate the process accordingly."
+msgstr ""
+"La réexécution amènera l'utilisateur à l'écran respectif en fonction du type "
+"d'action correspondant et l'utilisateur peut lancer le processus en "
+"conséquence."
+
+#: admin/modules/history/views/_history_list.php:164
+msgid "Re-Run"
+msgstr "Rediffusion"
+
+#: admin/modules/history/views/_history_list.php:177
+#, fuzzy
+msgid "Details"
+msgstr "Détails"
+
+#: admin/modules/history/views/_history_list.php:194
+#: admin/modules/history/views/_log_table.php:77
+msgid "No records found."
+msgstr "Pas enregistrement trouvé."
+
+#: admin/modules/history/views/_log_list.php:18
+#, fuzzy
+msgid ""
+"Lists developer logs mostly required for debugging purposes. Options to view "
+"detailed logs are available along with delete and download(that can be "
+"shared with the support team in case of issues)."
+msgstr ""
+"Répertorie les journaux de développeur principalement requis à des fins de "
+"débogage. Des options pour afficher les journaux détaillés sont disponibles, "
+"ainsi que la suppression et le téléchargement (qui peuvent être partagés "
+"avec l'équipe d'assistance en cas de problème)."
+
+#: admin/modules/history/views/_log_list.php:43
+msgid "File"
+msgstr "Fichier"
+
+#: admin/modules/history/views/_log_list.php:58
+msgid "Download"
+msgstr "Télécharger"
+
+#: admin/modules/history/views/_log_list.php:70
+msgid "No logs found."
+msgstr "Aucun journal trouvé."
+
+#: admin/modules/history/views/_log_table.php:20
+msgid "Row No."
+msgstr "Ligne Num."
+
+#: admin/modules/history/views/_log_table.php:22
+msgid "Message"
+msgstr "Message"
+
+#: admin/modules/history/views/_log_table.php:23
+msgid "Item"
+msgstr "Article"
+
+#: admin/modules/history/views/_log_table.php:34
+msgid "Failed/Skipped"
+msgstr "Échec/Ignoré"
+
+#: admin/modules/history/views/_log_table.php:69
+msgid "Load more."
+msgstr "Charger plus."
+
+#: admin/modules/history/views/_log_table.php:70
+msgid "Loading...."
+msgstr "Chargement…"
+
+#: admin/modules/history/views/settings.php:31
+msgid "View log"
+msgstr "Afficher le journal"
+
+#: admin/modules/import/classes/class-import-ajax.php:158
+#, fuzzy
+msgid ""
+"Unable to upload file. Please check write permission of your `wp-content` "
+"folder."
+msgstr ""
+"Incapable de télécharger le fichier. Veuillez vérifier l'autorisation "
+"d'écriture de votre dossier `wp-content`."
+
+#: admin/modules/import/classes/class-import-ajax.php:162
+#, fuzzy, php-format
+msgid "File size exceeds the limit. %dMB max"
+msgstr "La taille du fichier dépasse la limite. %d Mo maximum"
+
+#: admin/modules/import/classes/class-import-ajax.php:166
+#, fuzzy, php-format
+msgid "Invalid file type. Only %s are allowed."
+msgstr "Type de fichier invalide. Seuls %s sont autorisés."
+
+#: admin/modules/import/classes/class-import-ajax.php:724
+#, fuzzy
+msgid "Product taxonomies"
+msgstr "Taxonomies de produits"
+
+#: admin/modules/import/classes/class-import-ajax.php:727
+msgid "New taxonomy: "
+msgstr "Nouvelle taxonomie: "
+
+#: admin/modules/import/classes/class-import-ajax.php:733
+msgid "Custom Field: "
+msgstr "Champ personnalisé: "
+
+#: admin/modules/import/classes/class-import-ajax.php:740
+#, fuzzy
+msgid "Taxonomy attributes"
+msgstr "Attributs de taxonomie"
+
+#: admin/modules/import/classes/class-import-ajax.php:743
+msgid "New attribute: "
+msgstr "Nouvel attribut: "
+
+#: admin/modules/import/classes/class-import-ajax.php:749
+msgid "Attribute data: "
+msgstr "Données d’attribut: "
+
+#: admin/modules/import/classes/class-import-ajax.php:754
+msgid "Attribute default value: "
+msgstr "Valeur par défaut de l’attribut: "
+
+#: admin/modules/import/import.php:63
+#, fuzzy
+msgid ""
+"Import the respective post type from a CSV/XML. As a first step you need to "
+"choose the post type to start the import."
+msgstr ""
+"Importez le type de publication respectif à partir d'un CSV / XML. Dans un "
+"premier temps, vous devez choisir le type de publication pour démarrer "
+"l'importation."
+
+#: admin/modules/import/import.php:66
+#, fuzzy
+msgid "Select import method"
+msgstr "Sélectionnez la méthode d'importation"
+
+#: admin/modules/import/import.php:67
+#, fuzzy
+msgid ""
+"Choose from the options below to continue with your import: quick import, "
+"based on a pre-saved template or a new import with advanced options."
+msgstr ""
+"Choisissez parmi les options ci-dessous pour poursuivre votre importation: "
+"importation rapide, basée sur un modèle pré-enregistré ou une nouvelle "
+"importation avec des options avancées."
+
+#: admin/modules/import/import.php:70
+#, fuzzy
+msgid "Map and reorder import columns"
+msgstr "Mapper et réorganiser les colonnes d'importation"
+
+#: admin/modules/import/import.php:71
+#, fuzzy
+msgid ""
+"Map the standard/meta/attributes/taxonomies and hidden meta columns with "
+"your CSV/XML column names."
+msgstr ""
+"Mappez les colonnes standard / meta / attributes / taxonomies et les méta-"
+"colonnes masquées avec vos noms de colonnes CSV / XML."
+
+#: admin/modules/import/import.php:74
+#, fuzzy
+msgid "Advanced options/Batch import/Scheduling"
+msgstr "Options avancées / importation par lots / planification"
+
+#: admin/modules/import/import.php:75
+#, fuzzy
+msgid ""
+"Use advanced options from below to decide on the delimiter options, updates "
+"to existing products, batch import count or schedule an import. You can also "
+"save the template file for future imports."
+msgstr ""
+"Utilisez les options avancées ci-dessous pour décider des options de "
+"délimiteur, des mises à jour des produits existants, du nombre "
+"d'importations par lots ou de la planification d'une importation. Vous "
+"pouvez également enregistrer le fichier modèle pour de futures importations."
+
+#: admin/modules/import/import.php:86
+#, fuzzy
+msgid "Quick import"
+msgstr "Importation rapide"
+
+#: admin/modules/import/import.php:86
+#, fuzzy
+msgid ""
+"Quick import only imports the fields from the input file that conforms to "
+"the specific column headers as required by the plugin. You do not get to "
+"selectively filter the columns with this option except for the groups based "
+"on taxonomies/attributes/meta/hidden meta. Use this option primarily when "
+"your input file was exported using the same plugin."
+msgstr ""
+"L'importation rapide importe uniquement les champs du fichier d'entrée qui "
+"sont conformes aux en-têtes de colonne spécifiques comme requis par le "
+"plugin. Vous ne pouvez pas filtrer sélectivement les colonnes avec cette "
+"option, sauf pour les groupes basés sur les taxonomies / attributs / méta / "
+"méta masqué. Utilisez cette option principalement lorsque votre fichier "
+"d'entrée a été exporté à l'aide du même plugin."
+
+#: admin/modules/import/import.php:87
+#, fuzzy
+msgid ""
+"Using a pre-saved template retains the previous filter criteria and other "
+"column specifications as per the chosen file and imports data accordingly. "
+"You can also edit this file in the process and import accordingly or import "
+"straightaway."
+msgstr ""
+"L'utilisation d'un modèle préenregistré conserve les critères de filtre "
+"précédents et les autres spécifications de colonne selon le fichier choisi "
+"et importe les données en conséquence. Vous pouvez également modifier ce "
+"fichier dans le processus et l'importer en conséquence ou l'importer "
+"immédiatement."
+
+#: admin/modules/import/import.php:88
+#, fuzzy
+msgid "New import"
+msgstr "Nouvelle importation"
+
+#: admin/modules/import/import.php:88
+#, fuzzy
+msgid ""
+"A new import will take you through the entire process of filtering/column "
+"selection/advanced options that may be required for your import. You can "
+"also save this file as a template for future use."
+msgstr ""
+"Une nouvelle importation vous guidera tout au long du processus de "
+"filtrage / sélection de colonne / options avancées pouvant être requises "
+"pour votre importation. Vous pouvez également enregistrer ce fichier en tant "
+"que modèle pour une utilisation future."
+
+#: admin/modules/import/import.php:118
+#, fuzzy
+msgid "Save Import log"
+msgstr "Enregistrer le journal d'importation"
+
+#: admin/modules/import/import.php:126
+#, fuzzy
+msgid ""
+"Save import log as text file and make it available in the history section "
+"for debugging purposes."
+msgstr ""
+"Enregistrez le journal d'importation en tant que fichier texte et rendez-le "
+"disponible dans la section historique à des fins de débogage."
+
+#: admin/modules/import/import.php:131
+#, fuzzy
+msgid "Default Import method"
+msgstr "Méthode d'importation par défaut"
+
+#: admin/modules/import/import.php:136
+#, fuzzy
+msgid "Select the default method of import."
+msgstr "Sélectionnez la méthode d'importation par défaut."
+
+#: admin/modules/import/import.php:139
+msgid "Default Import batch count"
+msgstr "Nombre de lots d’importation par défaut"
+
+#: admin/modules/import/import.php:143
+#, fuzzy
+msgid "Provide the default number of records to be imported in a batch."
+msgstr ""
+"Indiquez le nombre par défaut d'enregistrements à importer dans un lot."
+
+#: admin/modules/import/import.php:163
+#, fuzzy
+msgid "Import in batches of"
+msgstr "Importer par lots de"
+
+#: admin/modules/import/import.php:167
+#, fuzzy, php-format
+msgid ""
+"The number of records that the server will process for every iteration "
+"within the configured timeout interval. If the import fails you can lower "
+"this number accordingly and try again. Defaulted to %d records."
+msgstr ""
+"Nombre d'enregistrements que le serveur traitera pour chaque itération dans "
+"le délai d'expiration configuré. Si l'importation échoue, vous pouvez "
+"réduire ce nombre en conséquence et réessayer. Par défaut, %d "
+"enregistrements."
+
+#: admin/modules/import/import.php:185
+msgid "URL"
+msgstr "URL"
+
+#: admin/modules/import/import.php:201
+msgid "Import from"
+msgstr "Importation depuis"
+
+#: admin/modules/import/import.php:214
+#, fuzzy
+msgid "Enable FTP import?"
+msgstr "Activer l'importation FTP?"
+
+#: admin/modules/import/import.php:235
+msgid "Select a file"
+msgstr "Séléctionner un fichier"
+
+#: admin/modules/import/import.php:250
+msgid "Enter file URL"
+msgstr "Entrez l'URL du fichier"
+
+#: admin/modules/import/import.php:276
+#, fuzzy
+msgid ""
+"Only applicable for CSV imports in order to separate the columns in the CSV "
+"file. Takes comma(,) by default."
+msgstr ""
+"Applicable uniquement pour les importations CSV afin de séparer les colonnes "
+"du fichier CSV. Prend une virgule (,) par défaut."
+
+#: admin/modules/import/import.php:282
+msgid "Date format"
+msgstr "Format de date"
+
+#: admin/modules/import/import.php:293
+#: helpers/class-wt-import-export-helper.php:25
+msgid "Other"
+msgstr "Autre"
+
+#: admin/modules/import/import.php:295
+#, fuzzy, php-format
+msgid ""
+"Date format in the input file. Click %shere%s for more info about the date "
+"formats."
+msgstr ""
+"Format de date dans le fichier d'entrée. Cliquez sur %shere% s pour plus "
+"d'informations sur les formats de date."
+
+#: admin/modules/import/import.php:474
+#, fuzzy
+msgid "Please select an import method."
+msgstr "Veuillez sélectionner une méthode d'importation."
+
+#: admin/modules/import/import.php:475 admin/modules/import/import.php:480
+#: admin/modules/import/views/_import_method_import_page.php:9
+#, fuzzy
+msgid "Please select an import template."
+msgstr "Veuillez sélectionner un modèle d'importation."
+
+#: admin/modules/import/import.php:478
+msgid "Please choose import from."
+msgstr "Veuillez choisir l’importation depuis."
+
+#: admin/modules/import/import.php:479
+#, fuzzy
+msgid "Please choose an import file."
+msgstr "Veuillez choisir un fichier d'importation."
+
+#: admin/modules/import/import.php:481
+#, fuzzy
+msgid "Creating temp file and validating."
+msgstr "Création du fichier temporaire et validation."
+
+#: admin/modules/import/import.php:482 admin/modules/import/import.php:983
+#, fuzzy
+msgid "Processing input file..."
+msgstr "Traitement du fichier d'entrée ..."
+
+#: admin/modules/import/import.php:483
+#, fuzzy
+msgid ""
+"This column is not present in the import list. Please tick the checkbox to "
+"include."
+msgstr ""
+"Cette colonne n'est pas présente dans la liste d'importation. Veuillez "
+"cocher la case à inclure."
+
+#: admin/modules/import/import.php:484
+msgid "Uploading..."
+msgstr "Téléchargement..."
+
+#: admin/modules/import/import.php:485
+#, fuzzy
+msgid "You are using an outdated browser. Please upgarde your browser."
+msgstr ""
+"Vous utilisez un navigateur obsolète. Veuillez mettre à jour votre "
+"navigateur."
+
+#: admin/modules/import/import.php:486
+msgid "An error occured."
+msgstr "Une erreur est survenue."
+
+#: admin/modules/import/import.php:487
+#, fuzzy, php-format
+msgid "Invalid file type. Only %s are allowed"
+msgstr "Type de fichier invalide. Seuls %s sont autorisés"
+
+#: admin/modules/import/import.php:488
+#: admin/partials/_form_field_generator.php:337
+msgid "Drop files here or click to upload"
+msgstr "Glissez-déposez vos fichiers ici ou cliquez pour les charger"
+
+#: admin/modules/import/import.php:489
+#, php-format
+msgid "%s Done."
+msgstr "%s Terminé."
+
+#: admin/modules/import/import.php:490
+msgid "Remove"
+msgstr "Supprimer"
+
+#: admin/modules/import/import.php:639
+#, fuzzy
+msgid "Unable to fetch file data."
+msgstr "Impossible de récupérer les données du fichier."
+
+#: admin/modules/import/import.php:665 admin/modules/import/import.php:694
+#, fuzzy
+msgid "The specified URL is not valid."
+msgstr "L'URL spécifiée n'est pas valide."
+
+#: admin/modules/import/import.php:904
+#, fuzzy
+msgid "Temp file missing."
+msgstr "Fichier temporaire manquant."
+
+#: admin/modules/import/import.php:1041 admin/modules/import/import.php:1268
+#, php-format
+msgid "Importing...(%d done)"
+msgstr "Importation...(%d terminée)"
+
+#: admin/modules/import/import.php:1270
+msgid "Total success: "
+msgstr "Succès total: "
+
+#: admin/modules/import/import.php:1270
+msgid "Total failed: "
+msgstr "Echec total: "
+
+#: admin/modules/import/import.php:1278
+#, php-format
+msgid "View detailed log from %s History %s section"
+msgstr ""
+"Afficher le journal détaillé à partir de la section Historique de %s %s"
+
+#: admin/modules/import/views/_import_mapping_page.php:7
+#, fuzzy
+msgid "Click to use"
+msgstr "Cliquez pour utiliser"
+
+#: admin/modules/import/views/_import_mapping_page.php:17
+#, fuzzy
+msgid "Set value for column:"
+msgstr "Définissez la valeur de la colonne:"
+
+#: admin/modules/import/views/_import_mapping_page.php:19
+#, fuzzy
+msgid ""
+"Select and map any column from the input file or compute values with "
+"expressions."
+msgstr ""
+"Sélectionnez et mappez n'importe quelle colonne du fichier d'entrée ou "
+"calculez des valeurs avec des expressions."
+
+#: admin/modules/import/views/_import_mapping_page.php:21
+msgid "Expression"
+msgstr "Expression"
+
+#: admin/modules/import/views/_import_mapping_page.php:23
+#, fuzzy
+msgid ""
+"Any of the operators +*/-()&@ or string constants can be used along with the "
+"attributes to manipulate the respective value."
+msgstr ""
+"N'importe lequel des opérateurs + * / - () & @ ou des constantes de chaîne "
+"peut être utilisé avec les attributs pour manipuler la valeur respective."
+
+#: admin/modules/import/views/_import_mapping_page.php:25
+#, fuzzy, php-format
+msgid ""
+"Enclose the operations within square brackets. e.g. if you want to increase "
+"the stock quantity of %sall imported products%s by 5 units during import "
+"simply use [{_stock}+5]."
+msgstr ""
+"Mettez les opérations entre crochets. par exemple. si vous souhaitez "
+"augmenter la quantité en stock de %s tous les produits importés %s de 5 "
+"unités lors de l'importation, utilisez simplement [{_stock} +5]."
+
+#: admin/modules/import/views/_import_mapping_page.php:32
+#, fuzzy
+msgid "Input file columns"
+msgstr "Colonnes du fichier d'entrée"
+
+#: admin/modules/import/views/_import_mapping_page.php:34
+msgid "Type here to search"
+msgstr "Saisir votre recherche"
+
+#: admin/modules/import/views/_import_mapping_page.php:52
+#, fuzzy
+msgid "No column found."
+msgstr "Aucune colonne trouvée."
+
+#: admin/modules/import/views/_import_mapping_page.php:56
+msgid "Output"
+msgstr "Sortie"
+
+#: admin/modules/import/views/_import_mapping_page.php:58
+#, fuzzy
+msgid ""
+"Sample value based on first record from input file. Columns that have no "
+"values in the input file may cause syntax errors if used in an expression as "
+"above."
+msgstr ""
+"Exemple de valeur basée sur le premier enregistrement du fichier d'entrée. "
+"Les colonnes qui n'ont aucune valeur dans le fichier d'entrée peuvent "
+"provoquer des erreurs de syntaxe si elles sont utilisées dans une expression "
+"comme ci-dessus."
+
+#: admin/modules/import/views/_import_mapping_page.php:71
+#, fuzzy
+msgid ""
+"Columns are mapped automatically only if a matching header name is found in "
+"the input file. If not the value is left blank."
+msgstr ""
+"Les colonnes sont mappées automatiquement uniquement si un nom d'en-tête "
+"correspondant est trouvé dans le fichier d'entrée. Sinon, la valeur est "
+"laissée vide."
+
+#: admin/modules/import/views/_import_mapping_page.php:73
+#, fuzzy
+msgid ""
+"If your input file header does not have exact names or if you need to edit "
+"the existing mapping you can simply click on the respective value fields "
+"corresponding to each row. Furthermore you can also assign expressions based "
+"on the existing input file columns."
+msgstr ""
+"Si l'en-tête de votre fichier d'entrée n'a pas de noms exacts ou si vous "
+"devez modifier le mappage existant, vous pouvez simplement cliquer sur les "
+"champs de valeur respectifs correspondant à chaque ligne. En outre, vous "
+"pouvez également attribuer des expressions basées sur les colonnes du "
+"fichier d'entrée existantes."
+
+#: admin/modules/import/views/_import_method_import_page.php:13
+#, fuzzy
+msgid "Import method"
+msgstr "Méthode d'importation"
+
+#: admin/modules/import/views/_import_method_import_page.php:32
+msgid "Import template"
+msgstr "Importer un modèle"
+
+#: admin/modules/import/views/_import_post_type_page.php:13
+#, fuzzy, php-format
+msgid ""
+"Atleast one of the <b>WebToffee add-ons(Product/Reviews, User, Order/Coupon/"
+"Subscription)</b> should be activated to start importing the respective post "
+"type.\n"
+"                        Go to <a href=\"%s\" target=\"_blank\">My accounts-"
+">API Downloads</a> to download and activate the add-on. If already installed "
+"activate the respective add-on plugin under <a href=\"%s\" target=\"_blank"
+"\">Plugins</a>."
+msgstr ""
+"Au moins l'un des <b>modules complémentaires WebToffee (produit / avis, "
+"utilisateur, commande / coupon / abonnement)</b> doit être activé pour "
+"commencer à importer le type de publication respectif. Accédez à <a href=\"%s"
+"\" target=\"_blank\">Mes comptes-> Téléchargements d'API</a> pour "
+"télécharger et activer le module complémentaire. S'il est déjà installé, "
+"activez le plugin complémentaire correspondant sous <a href=\"%s\" target="
+"\"_blank\">Plugins</a> ."
+
+#: admin/modules/import/views/_import_post_type_page.php:19
+#, fuzzy
+msgid "What do you want to import"
+msgstr "Que voulez-vous importer"
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:94
+#, php-format
+msgid ""
+"The license key for %s has expired. You can reactivate or purchase a license "
+"key from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"La clé de licence de %s est expirée. Vous pouvez réactiver ou acheter une "
+"clé de licence depuis votre <a href=\" %s\" target=\"_blank\">tableau de "
+"bord</a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:105
+#, php-format
+msgid ""
+"The subscription for %s is on-hold. You can reactivate the subscription from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement à %s est en attente. Vous pouvez réactiver votre abonnement "
+"depuis votre <a href=\"%s\" target=\"_blank\">tableau de bord</a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:116
+#, php-format
+msgid ""
+"The subscription for %s has been cancelled. You can renew the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>. A new "
+"license key will be emailed to you after your order has been completed."
+msgstr ""
+"L'abonnement %s a été annulé. Vous pouvez renouveler votre abonnement depuis "
+"votre <a href=\" %s \" target=\"_blank\">tableau de bord</a>. Une nouvelle "
+"clé de licence vous sera envoyé une fois vore commande terminée."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:127
+#, php-format
+msgid ""
+"The subscription for %s has expired. You can reactivate the subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement %s a expiré. Vous pouvez réactiver l'abonnement de votre "
+"compte : <a href=\" %s \" target=\"_blank\"> tableau de bord </a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:138
+#, php-format
+msgid ""
+"The subscription for %s has been suspended. You can reactivate the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement %s a été suspendu. Vous pouvez réactiver l'abonnement de votre "
+"compte : <a href=\" %s \" target=\"_blank\"> tableau de bord </a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:149
+#, php-format
+msgid ""
+"The subscription for %s is still pending. You can check on the status of the "
+"subscription from your account <a href=\"%s\" target=\"_blank\">dashboard</"
+"a>."
+msgstr ""
+"L'abonnement %s est toujours en attente. Vous pouvez vérifier l'état votre "
+"abonnement ici: <a href=\" %s \" target=\"_blank\"> tableau de bord </a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:160
+#, php-format
+msgid ""
+"The subscription for %s has been placed in the trash and will be deleted "
+"soon. You can purchase a new subscription from your account <a href=\"%s\" "
+"target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'abonnement %s a été placé dans la corbeille et sera bientôt supprimé Vous "
+"pouvez souscrire à un nouvel abonnement ici : <a href=\" %s \" target="
+"\"_blank\"> tableau de bord </a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:171
+#, php-format
+msgid ""
+"A subscription for %s could not be found. You can purchase a subscription "
+"from your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"Aucun abonnement à %s n'a été trouvé. Vous pouvez souscrire à un abonnement "
+"depuis <a href=\" %s \" target=\"_blank\">votre tableau de bord</a>."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:182
+#, php-format
+msgid ""
+"A license key for %s could not be found. Maybe you forgot to enter a license "
+"key when setting up %s, or the key was deactivated in your account. You can "
+"reactivate license key at your plugin <a href=\"%s\" target=\"_blank"
+"\">settings page</a>."
+msgstr ""
+"La clé de licence pour %s ne peut être trouvée. Peut être avez-vous oublié "
+"de la saisir dans la page Réglages lors de l'installation de %s, ou bien la "
+"clé a été désactivée dans votre compte. Vous pouvez réactiver ou acquérir "
+"une clé de licence depuis le <a href=\"%s\" target=\"_blank\">tableau de "
+"bord</a> de votre compte."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:193
+#, php-format
+msgid ""
+"Download permission for %s has been revoked possibly due to a license key or "
+"subscription expiring. You can reactivate or purchase a license key from "
+"your account <a href=\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"L'autorisation de téléchargement pour %s a échoué probablement à cause d'une "
+"clé de licence ou dun abonnement expiré. Vous pouvez réactiver ou acheter "
+"une clé de licence au <a href=\"%s\" target=\"_blank\">tableau de bord</a> "
+"de votre compte."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:204
+#, php-format
+msgid ""
+"%s has not been activated. Go to the plugin <a href=\"%s\" target=\"_blank"
+"\">settings page</a> and enter the license key and license email to activate "
+"%s."
+msgstr ""
+"%s n'a pas été activée. Allez à la <a href=« %s » target=« _blank »>page des "
+"paramètres</a> et entrez la clé et l'e-mail de licence pour activer %s."
+
+#: admin/modules/licence_manager/classes/class-wt-response-error-messages.php:215
+#, php-format
+msgid ""
+"You changed the subscription for %s, so you will need to enter your new API "
+"License Key in the settings page. The License Key should have arrived in "
+"your email inbox, if not you can get it by logging into your account <a href="
+"\"%s\" target=\"_blank\">dashboard</a>."
+msgstr ""
+"Vous avez changé l'abonnement pour %s, aussi devez vous saisir votre "
+"nouvelle clé de licence API dans la page Réglages. La clé de licence doit "
+"être arrivée dans vos courriers entrants, autrement vous pouvez l'obtenir en "
+"vous identifiant dans le <a href=\"%s\" target=\"_blank\">tableau de bord</"
+"a> de votre compte."
+
+#: admin/modules/licence_manager/licence_manager.php:360
+#: admin/modules/licence_manager/licence_manager.php:369
+#, fuzzy
+msgid "Error !!!"
+msgstr "Erreur !!!"
+
+#: admin/modules/licence_manager/licence_manager.php:388
+#: admin/modules/licence_manager/licence_manager.php:482
+#, fuzzy
+msgid "Request failed, Please try again"
+msgstr "La demande a échoué, veuillez réessayer"
+
+#: admin/modules/licence_manager/licence_manager.php:393
+#, fuzzy
+msgid "Successfully deactivated."
+msgstr "Désactivé avec succès."
+
+#: admin/modules/licence_manager/licence_manager.php:438
+#: admin/modules/licence_manager/licence_manager.php:541
+#, fuzzy
+msgid "Please enter Licence key"
+msgstr "Veuillez saisir la clé de licence"
+
+#: admin/modules/licence_manager/licence_manager.php:443
+#: admin/modules/licence_manager/licence_manager.php:542
+msgid "Please enter Email"
+msgstr "Veuillez saisir votre email"
+
+#: admin/modules/licence_manager/licence_manager.php:452
+#, fuzzy
+msgid "This Licence key already exits in this site."
+msgstr "Cette clé de licence existe déjà sur ce site."
+
+#: admin/modules/licence_manager/licence_manager.php:498
+#, fuzzy
+msgid "Successfully activated."
+msgstr "Activé avec succès."
+
+#: admin/modules/licence_manager/licence_manager.php:525
+#: admin/modules/licence_manager/views/admin-settings-licence.php:131
+msgid "Licence"
+msgstr "Licence"
+
+#: admin/modules/licence_manager/licence_manager.php:546
+#, fuzzy
+msgid "Unable to fetch Licence details"
+msgstr "Impossible de récupérer les détails de la licence"
+
+#: admin/modules/licence_manager/licence_manager.php:547
+#: admin/modules/licence_manager/views/_licence_list.php:49
+#, fuzzy
+msgid "No Licence details found."
+msgstr "Aucun détail de licence trouvé."
+
+#: admin/modules/licence_manager/views/_licence_list.php:9
+msgid "Licence key"
+msgstr "Clé de licence"
+
+#: admin/modules/licence_manager/views/_licence_list.php:10
+#, fuzzy
+msgid "Email"
+msgstr "E-mail"
+
+#: admin/modules/licence_manager/views/_licence_list.php:12
+msgid "Products"
+msgstr "Produits"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:105
+#, fuzzy
+msgid "Licence activation"
+msgstr "Activation de la licence"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:109
+msgid "API Licence Key:"
+msgstr "Clé de licence:"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:113
+#: admin/modules/licence_manager/views/licence-settings.php:33
+msgid "Email:"
+msgstr "Email :"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:118
+#: admin/modules/licence_manager/views/licence-settings.php:38
+msgid "Activate"
+msgstr "Activer"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:123
+#, fuzzy, php-format
+msgid "Check %sMy Account%s for API Keys and API Downloads."
+msgstr ""
+"Consultez %s Mon compte %s pour les clés API et les téléchargements d'API."
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:132
+msgid "Mail"
+msgstr "Email"
+
+#: admin/modules/licence_manager/views/admin-settings-licence.php:134
+msgid "Deactive"
+msgstr "Désactivé"
+
+#: admin/modules/licence_manager/views/licence-settings.php:14
+#, fuzzy
+msgid "Activate new Licence"
+msgstr "Activer une nouvelle licence"
+
+#: admin/modules/licence_manager/views/licence-settings.php:29
+msgid "Licence Key:"
+msgstr "Clé de la licence:"
+
+#: admin/modules/licence_manager/views/licence-settings.php:44
+#, fuzzy
+msgid "Licence details"
+msgstr "Détails de la licence"
+
+#: admin/partials/_form_field_generator.php:325
+#, fuzzy
+msgid "Choose a file."
+msgstr "Choisissez un fichier."
+
+#: admin/partials/_form_field_generator.php:325
+msgid "Select"
+msgstr "Sélectionner"
+
+#: admin/partials/_form_field_generator.php:325
+msgid "Upload"
+msgstr "Téléverser"
+
+#: admin/partials/wt-import-export-for-woo-admin-display.php:10
+msgid "Import Export for WooCommerce"
+msgstr "Import Export pour WooCommerce"
+
+#: admin/partials/wt-import-export-for-woo-admin-display.php:15
+msgid "General"
+msgstr "Général"
+
+#: admin/partials/wt-import-export-for-woo-admin-display.php:16
+msgid "Help Guide"
+msgstr "Guide d'aide"
+
+#: admin/views/_save_template_popup.php:13
+msgid "Save as"
+msgstr "Enregistrer sous"
+
+#: admin/views/_save_template_popup.php:21
+msgid "Please enter name"
+msgstr "S'il vous plaît entrer le nom"
+
+#: admin/views/_save_template_popup.php:25
+msgid "Template name"
+msgstr "Nom du modèle"
+
+#: admin/views/admin-settings-help.php:8 admin/views/admin-settings-help.php:13
+msgid "Help Links"
+msgstr "Liens Aide"
+
+#: admin/views/admin-settings-help.php:9
+msgid "Help doc"
+msgstr "Aide doc"
+
+#: admin/views/admin-settings-help.php:18
+msgid "Refer to our documentation to set up and get started."
+msgstr "Reportez-vous à notre documentation pour configurer et démarrer."
+
+#: admin/views/admin-settings-help.php:25
+msgid "Help and Support"
+msgstr "Aide et Assistance"
+
+#: admin/views/admin-settings-help.php:26
+msgid "We would love to help you on any queries or issues."
+msgstr ""
+"Nous serions ravis de vous aider si vous avez des questions ou des problèmes."
+
+#: admin/views/admin-settings-help.php:28
+msgid "Contact Us"
+msgstr "Contactez-nous"
+
+#: helpers/class-wt-common-helper.php:70
+#, php-format
+msgid ""
+"The %s requires a minimum version of %s %s. Please upgrade the %s "
+"accordingly."
+msgstr ""
+"%s nécessite une version minimale de %s %s. Veuillez mettre à jour %s en "
+"conséquence."
+
+#: helpers/class-wt-import-export-helper.php:21
+msgid "Comma"
+msgstr "Virgule"
+
+#: helpers/class-wt-import-export-helper.php:22
+msgid "Semicolon"
+msgstr "Point-virgule"
+
+#: helpers/class-wt-import-export-helper.php:23
+msgid "Tab"
+msgstr "Onglet"
+
+#: helpers/class-wt-import-export-helper.php:24
+msgid "Space"
+msgstr "Espace"
+
+#: helpers/class-wt-import-export-helper.php:187
+msgid "Refresh the step"
+msgstr "Actualisez l’étape"
+
+#: helpers/class-wt-import-export-helper.php:192
+msgid "Console form data"
+msgstr "Données du formulaire de la console"
+
+#: helpers/class-wt-import-export-helper.php:203
+msgid "For debugging process"
+msgstr "Pour le processus de débogage"
+
+#: helpers/class-wt-import-export-helper.php:204
+msgid "Debug panel"
+msgstr "Panel de Panneau de débogage"
+
+#: helpers/class-wt-import-export-helper.php:364
+msgid "Sorry, allow_url_fopen not activated. Please setup in php.ini"
+msgstr ""
+"Désolé, allow_url_fopen n'est pas activé. Veuillez configurer dans php.ini"
+
+#. Plugin Name of the plugin/theme
+msgid "Import Export for WooCommerce Wrapper"
+msgstr "Import Export pour WooCommerce Wrapper"
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.webtoffee.com/product/import-export-woocommerce/"
+msgstr "https://www.webtoffee.com/product/import-export-woocommerce/"
+
+#. Description of the plugin/theme
+msgid "Import Export Wrapper for WooCommerce"
+msgstr "Import Export Wrapper pour WooCommerce"
+
+#. Author of the plugin/theme
+msgid "Webtoffee"
+msgstr "WebToffee"
+
+#. Author URI of the plugin/theme
+msgid "https://www.webtoffee.com/"
+msgstr "https://www.webtoffee.com/"

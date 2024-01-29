@@ -1,0 +1,22 @@
+{
+  "name": "woocommerce-bulk-variations",
+  "version": "1.1.9",
+  "description": "WooCommerce Bulk Variations plugin",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/barn2media/woocommerce-bulk-variations.git"
+  },
+  "author": "Barn2 Plugins",
+  "license": "GPL-3.0",
+  "homepage": "https://bitbucket.org/barn2media/woocommerce-bulk-variations#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
