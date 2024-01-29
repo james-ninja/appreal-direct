@@ -1,9 +1,6 @@
 <?php 
 global $wpdb, $woocommerce;
 	$headers[] = 'From: Apparel Direct Distributor <website@appareldirectdistributor.com>';
-	//$headers = 'MIME-Version: 1.0' . "\r\n";
-	//$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
-	//$headers .= 'From: Apparel Direct Distributor <website@appareldirectdistributor.com>';
 
     // Define the WooCommerce product variation price table and product table.
     $product_variation_price_table = $wpdb->prefix . 'postmeta';
@@ -21,7 +18,6 @@ global $wpdb, $woocommerce;
 	
     $results = $wpdb->get_results($query);
 	$totalProducts = count($results);
-
     if ($results) {
 				ob_start();
 				do_action( 'woocommerce_email_header', $email_heading );
@@ -45,16 +41,15 @@ global $wpdb, $woocommerce;
 				echo '</ul></td></tr>';
 				echo '</tbody></table>';
 			
-				do_action( 'woocommerce_email_footer', $email );
+				do_action( 'woocommerce_email_footer', $email ); 
 				$message = ob_get_clean();
 				
 				add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
+				$admin_email = get_field('set_email_id','option');
 
-
-				$to = "james@ninjatechnolabs.com";
 				$subject = "Apparel Direct - Product Variation Price 0 (Total Count ".$totalProducts.")";
 				
-				$retval = wp_mail($to, $subject, $message,$headers);
+				$retval = wp_mail($admin_email, $subject, $message,$headers);
 				remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 		
 			//wp_mail($to, $subject, implode("<br>", $message),$headers);  

@@ -59,10 +59,7 @@ get_header();?>
                         </div>
                         <div class="col-md-6 align-self-center text-right">
                             <span class="cart_total_custom">
-                                <?php echo '<label>Subtotal</label>';?> <?php wc_cart_totals_subtotal_html(); 
-								
-								
-								?>
+                                <?php echo '<label>Subtotal</label>';?> <?php wc_cart_totals_subtotal_html(); ?>
                             </span>
                             <a href="<?php echo wc_get_checkout_url(); ?>" class="btn primary-btn ad_checkout_btn_custom">Checkout</a>
                             <a href="javascript:void(0)" class="btn ad_updatecart_btn_custom primary-btn">Update cart</a>
@@ -75,6 +72,7 @@ get_header();?>
 <?php } ?>
 
 <?php get_footer(); ?>
+
 <script>
 // Check cart status when the cart is updated
 $('body').on('updated_cart_totals', function() {

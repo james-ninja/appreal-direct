@@ -186,24 +186,21 @@
                     global $product;
                     $place_image = get_template_directory_uri() . '/assets/images/woocommerce-placeholder-353x447.png';
                     $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($loop->post->ID), 'product-recommended');
-                    $cdn_featured_image  = get_field('cdn_featured_image', $loop->post->ID);
+					$cdn_featured_image  = get_field('cdn_featured_image');
                     
-                    if($cdn_featured_image){
-                        $featured_image['0'] = $cdn_featured_image;
-                    } else if(empty($featured_image)) {
-                        $featured_image['0'] = $place_image;
-                    } else {
-                        $featured_image['0'] = $featured_image['0']; 
-                    }
-                   /* if (empty($featured_image)) {
-                        $featured_image['0'] = $place_image;
-                    }*/
+					if($cdn_featured_image){
+					$featured_image['0'] = $cdn_featured_image;
+					} else if(empty($featured_image)) {
+					$featured_image['0'] = $place_image;
+					} else {
+					$featured_image['0'] = $featured_image['0'];
+					}
 
                 ?>
                     <div class="col-lg-4 col-md-4">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" class="recommed-box">
                             <div class="rec-img">
-                                <img src="<?php echo $featured_image['0']; ?>" data-id="<?php echo $loop->post->ID; ?>" alt="<?php the_title(); ?>">
+                                <img src="<?php echo $featured_image[0]; ?>" data-id="<?php echo $loop->post->ID; ?>" alt="<?php the_title(); ?>">
                             </div>
                             <div class="shop-prdct"><?php the_title(); ?></div>
                         </a>
@@ -246,11 +243,10 @@
                         if (!empty($new_select_products) && is_array($new_select_products)) {
                             foreach ($new_select_products as $new_select_product) {
                                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($new_select_product), 'product-thumb');
+								$cdn_featured_image  = get_field('cdn_featured_image', $new_select_product);
+								 $place_image = get_template_directory_uri() . '/assets/images/woocommerce-placeholder-353x447.png';
 
-                                $cdn_featured_image  = get_field('cdn_featured_image', $new_select_product);
-                                $place_image = get_template_directory_uri() . '/assets/images/woocommerce-placeholder-353x447.png';
-
-                                 if($cdn_featured_image){
+								if($cdn_featured_image){
                                         $featured_image['0'] = $cdn_featured_image;
                                     } else if(empty($featured_image)) {
                                         $featured_image['0'] = $place_image;
@@ -263,7 +259,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <div class="product-box">
                                         <a href="<?php echo $product->get_permalink(); ?>" title="" class="product-img">
-                                            <img src="<?php echo $featured_image['0']; ?>" alt="">
+                                            <img src="<?php echo $featured_image['0'] ?>" alt="">
                                         </a>
                                         <div class="product-info">
                                             <div class="prdct-desc">
@@ -285,10 +281,10 @@
                     $featured_image_last = wp_get_attachment_image_src(get_post_thumbnail_id($new_select_products_last_id), 'full');
                     $product_last = wc_get_product($new_select_products_last_id);
 
-                    $cdn_featured_image  = get_field('cdn_featured_image', $new_select_products_last_id);
+					 $cdn_featured_image  = get_field('cdn_featured_image', $new_select_products_last_id);
                     $place_image = get_template_directory_uri() . '/assets/images/woocommerce-placeholder-353x447.png';
-                    
-                     if($cdn_featured_image){
+
+					 if($cdn_featured_image){
                             $featured_image_last['0'] = $cdn_featured_image;
                         } else if(empty($featured_image_last)) {
                             $featured_image_last['0'] = $place_image;
@@ -299,7 +295,7 @@
                     <div class="col-lg-6 col-md-12 product-box-right">
                         <div class="product-box d-flex align-items-center flex-wrap">
                             <a href="<?php echo $product_last->get_permalink(); ?>" title="" class="product-img">
-                                <img src="<?php echo $featured_image_last['0']; ?>" alt="">
+                                <img src="<?php echo $featured_image_last['0'] ?>" alt="">
                             </a>
                             <div class="product-info">
                                 <div class="prdct-desc">
@@ -389,18 +385,15 @@
             if($varinstock == true){ 
                 $place_image = get_template_directory_uri() . '/assets/images/woocommerce-placeholder-150x150.png';
                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumbnail');
+				$cdn_featured_image  = get_field('cdn_featured_image', $post->ID);
                 // wc_get_template_part( 'content', 'product' );
-                $cdn_featured_image  = get_field('cdn_featured_image', $post->ID);
-                    
-                    
-                     if($cdn_featured_image){
+				if($cdn_featured_image){
                             $featured_image['0'] = $cdn_featured_image;
                         } else if(empty($featured_image_last)) {
                             $featured_image['0'] = $place_image;
                         } else {
                             $featured_image['0'] = $featured_image['0'];
-                        }
-
+                        }	
                 if (empty($featured_image)) {
                     $featured_image['0'] = $place_image;
                 }

@@ -4275,3 +4275,11 @@ span.selected_items_total i {
     margin: auto; max-width:100%;
     min-height: 250px; object-fit:cover;
 }
+
+@media (max-width:991.98px){
+.woocommerce ul.products li.product a img{max-height:200px; min-height:200px;}
+}
+
+@media (max-width:479.98px){
+    .woocommerce ul.products li.product a img{max-height:180px; min-height:180px;}
+}

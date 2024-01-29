@@ -79,20 +79,12 @@ $text = sprintf(_n('%s Product', '%s Products', count($savelist_items), 'yith-wo
 										</td>
 										<td class="product-thumbnail">
 											<?php
-											$variation_id = $item['variation_id'];
-											$variation_image = get_post_meta($variation_id,'aws_url_field', true);
-											if ($variation_image) {
-												$thumbnail = '<a href="'.$product->get_permalink($item).'"><img src="' . $variation_image. '" class="attachment-thumbnail" width="128" height="128" /></a>';
-												echo $thumbnail;
-											}
-											else { 
 											$thumbnail = $product->get_image();
 
 											if (!$product_permalink) {
 												echo $thumbnail; //phpcs:ignore WordPress.Security.EscapeOutput
 											} else {
 												printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); //phpcs:ignore WordPress.Security.EscapeOutput
-											}
 											}
 											?>
 										</td>
