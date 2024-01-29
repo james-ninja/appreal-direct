@@ -1,0 +1,11 @@
+.addify_apnu_main_wrap h2 { padding: 23px 0 !important; }
+
+.addify_apnu_main_wrap .setting_fields{ width: 50%; padding: 5px;  }
+
+.addify_apnu_main_wrap .all_user_roles { width: 50%; border: solid 1px #b6b1b1; border-radius: 4px; padding: 10px; float: left; }
+
+.addify_apnu_main_wrap .par_user_role { width: auto; padding: 5px; }
+
+.addify_apnu_main_wrap .description{ width: 100%; float: left; }
+
+#changeit{float: left;}

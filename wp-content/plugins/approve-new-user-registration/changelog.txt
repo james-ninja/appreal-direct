@@ -1,0 +1,27 @@
+*** Approve New User Registration Plugin Change log ***
+
+2021-02-19 - version 1.4.1
+* Fixed issue of pending users filter in admin.
+* Fixed issue of menu not show if WooCommerce is not installed.
+* Improved WPML Compatibility.
+
+2020-08-31 - version 1.4.0
+* Option to enable or disable approve new user on checkout page.
+* Option to add admin/shop manager email address to receive pending user email.
+* Support for user data variables to use inside the email body.
+* Option to enable/disable admin and user emails.
+* Option to customize email colors etc from WooCommerce email settings.
+* Customizable subject and heading for emails.
+* Add user approve and disapprove link in the admin email.
+
+2019-07-26 - version 1.3.0
+* Issue fixed with login when the module is active and but not enabled.
+
+2019-14-23 - version 1.2.0
+* Some typo errors fixed.
+
+2019-01-05 - version 1.1.0
+* Double email sent issue is fixed when the account is pending for approval.
+
+2018-10-23 - version 1.0.0
+* Initial release of the plugin.

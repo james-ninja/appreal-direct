@@ -1,0 +1,19 @@
+<wpml-config>
+  <admin-texts>
+    <key name="addify_apnu_account_creation_message"/>
+    <key name="addify_apnu_account_disapproved_message"/>
+    <key name="addify_apnu_account_pending_message"/>
+    <key name="addify_apnu_admin_email_heading"/>
+    <key name="addify_apnu_admin_email_subject"/>
+    <key name="addify_apnu_admin_email_text"/>
+    <key name="addify_apnu_approved_email_heading"/>
+    <key name="addify_apnu_approved_email_subject"/>
+    <key name="addify_apnu_approved_email_text"/>
+    <key name="addify_apnu_disapproved_email_heading"/>
+    <key name="addify_apnu_disapproved_email_subject"/>
+    <key name="addify_apnu_disapproved_email_text"/>
+    <key name="addify_apnu_pending_email_heading"/>
+    <key name="addify_apnu_pending_email_subject"/>
+    <key name="addify_apnu_pending_email_text"/>
+  </admin-texts>
+</wpml-config>
