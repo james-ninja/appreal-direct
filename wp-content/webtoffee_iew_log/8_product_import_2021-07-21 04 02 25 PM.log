@@ -1,0 +1,1417 @@
+07-21-2021 @ 16:02:25 - ---[ New import started at 2021-07-21 16:02:25 ] PHP Memory: 4 GB, WP Memory: 40 MB
+07-21-2021 @ 16:02:25 - Preparing for import.
+07-21-2021 @ 16:02:25 - Row :1 - Parsing item.
+07-21-2021 @ 16:02:25 - Importing as new product ID:1126
+07-21-2021 @ 16:02:25 - Row :1 - Processing item.
+07-21-2021 @ 16:02:25 - Found variable product object. ID:1126
+07-21-2021 @ 16:02:25 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:26 - Attachment ID:1127
+07-21-2021 @ 16:02:26 - Setting Gallery Images.
+07-21-2021 @ 16:02:26 - Image URL:https://nylimages.s3.amazonaws.com/HNS_22803_Black.jpg
+07-21-2021 @ 16:02:27 - Attachment ID:1128
+07-21-2021 @ 16:02:27 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-21-2021 @ 16:02:29 - Attachment ID:1129
+07-21-2021 @ 16:02:29 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_HeatherGrey.jpg
+07-21-2021 @ 16:02:30 - Attachment ID:1130
+07-21-2021 @ 16:02:30 - Image URL:https://nylimages.s3.amazonaws.com/HBI_28559_HeatherGrey.jpg
+07-21-2021 @ 16:02:32 - Attachment ID:1131
+07-21-2021 @ 16:02:32 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-21-2021 @ 16:02:33 - Attachment ID:1132
+07-21-2021 @ 16:02:33 - Image URL:https://nylimages.s3.amazonaws.com/HBI_28559_Natural.jpg
+07-21-2021 @ 16:02:34 - Attachment ID:1133
+07-21-2021 @ 16:02:34 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-21-2021 @ 16:02:36 - Attachment ID:1134
+07-21-2021 @ 16:02:36 - Image URL:https://nylimages.s3.amazonaws.com/EBY_22803_Natural.jpg
+07-21-2021 @ 16:02:37 - Attachment ID:1135
+07-21-2021 @ 16:02:37 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Natural.jpg
+07-21-2021 @ 16:02:38 - Attachment ID:1136
+07-21-2021 @ 16:02:38 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:38 - Attachment ID:1127
+07-21-2021 @ 16:02:38 - Image URL:NULL
+07-21-2021 @ 16:02:38 - Unable to use image "NULL".
+07-21-2021 @ 16:02:38 - Image URL:NULL
+07-21-2021 @ 16:02:38 - Unable to use image "NULL".
+07-21-2021 @ 16:02:38 - Image URL:NULL
+07-21-2021 @ 16:02:38 - Unable to use image "NULL".
+07-21-2021 @ 16:02:38 - Row :1 - Product imported successfully.
+07-21-2021 @ 16:02:38 - Row :2 - Parsing item.
+07-21-2021 @ 16:02:38 - Importing as new product ID:1137
+07-21-2021 @ 16:02:38 - Row :2 - Processing item.
+07-21-2021 @ 16:02:38 - Found variation product object. ID:1137
+07-21-2021 @ 16:02:38 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:38 - Attachment ID:1127
+07-21-2021 @ 16:02:38 - Setting Gallery Images.
+07-21-2021 @ 16:02:38 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:38 - Attachment ID:1127
+07-21-2021 @ 16:02:38 - Image URL:NULL
+07-21-2021 @ 16:02:38 - Unable to use image "NULL".
+07-21-2021 @ 16:02:38 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :2 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :3 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1138
+07-21-2021 @ 16:02:39 - Row :3 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1138
+07-21-2021 @ 16:02:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_22803_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1128
+07-21-2021 @ 16:02:39 - Setting Gallery Images.
+07-21-2021 @ 16:02:39 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :3 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :4 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1139
+07-21-2021 @ 16:02:39 - Row :4 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1139
+07-21-2021 @ 16:02:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_22803_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1128
+07-21-2021 @ 16:02:39 - Setting Gallery Images.
+07-21-2021 @ 16:02:39 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :4 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :5 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1140
+07-21-2021 @ 16:02:39 - Row :5 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1140
+07-21-2021 @ 16:02:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Setting Gallery Images.
+07-21-2021 @ 16:02:39 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :5 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :6 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1141
+07-21-2021 @ 16:02:39 - Row :6 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1141
+07-21-2021 @ 16:02:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1129
+07-21-2021 @ 16:02:39 - Setting Gallery Images.
+07-21-2021 @ 16:02:39 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :6 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :7 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1142
+07-21-2021 @ 16:02:39 - Row :7 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1142
+07-21-2021 @ 16:02:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_HeatherGrey.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1130
+07-21-2021 @ 16:02:39 - Setting Gallery Images.
+07-21-2021 @ 16:02:39 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:39 - Attachment ID:1127
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Image URL:NULL
+07-21-2021 @ 16:02:39 - Unable to use image "NULL".
+07-21-2021 @ 16:02:39 - Row :7 - Product imported successfully.
+07-21-2021 @ 16:02:39 - Row :8 - Parsing item.
+07-21-2021 @ 16:02:39 - Importing as new product ID:1143
+07-21-2021 @ 16:02:39 - Row :8 - Processing item.
+07-21-2021 @ 16:02:39 - Found variation product object. ID:1143
+07-21-2021 @ 16:02:40 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_HeatherGrey.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1130
+07-21-2021 @ 16:02:40 - Setting Gallery Images.
+07-21-2021 @ 16:02:40 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1127
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Row :8 - Product imported successfully.
+07-21-2021 @ 16:02:40 - Row :9 - Parsing item.
+07-21-2021 @ 16:02:40 - Importing as new product ID:1144
+07-21-2021 @ 16:02:40 - Row :9 - Processing item.
+07-21-2021 @ 16:02:40 - Found variation product object. ID:1144
+07-21-2021 @ 16:02:40 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_28559_HeatherGrey.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1131
+07-21-2021 @ 16:02:40 - Setting Gallery Images.
+07-21-2021 @ 16:02:40 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1127
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Row :9 - Product imported successfully.
+07-21-2021 @ 16:02:40 - Row :10 - Parsing item.
+07-21-2021 @ 16:02:40 - Importing as new product ID:1145
+07-21-2021 @ 16:02:40 - Row :10 - Processing item.
+07-21-2021 @ 16:02:40 - Found variation product object. ID:1145
+07-21-2021 @ 16:02:40 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1132
+07-21-2021 @ 16:02:40 - Setting Gallery Images.
+07-21-2021 @ 16:02:40 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:40 - Attachment ID:1127
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Image URL:NULL
+07-21-2021 @ 16:02:40 - Unable to use image "NULL".
+07-21-2021 @ 16:02:40 - Row :10 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Preparing for import.
+07-21-2021 @ 16:02:43 - Row :11 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1146
+07-21-2021 @ 16:02:43 - Row :11 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1146
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1132
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :11 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :12 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1147
+07-21-2021 @ 16:02:43 - Row :12 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1147
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_28559_Natural.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1133
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :12 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :13 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1148
+07-21-2021 @ 16:02:43 - Row :13 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1148
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1134
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :13 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :14 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1149
+07-21-2021 @ 16:02:43 - Row :14 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1149
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/EBY_22803_Natural.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1135
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :14 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :15 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1150
+07-21-2021 @ 16:02:43 - Row :15 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1150
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Natural.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1136
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :15 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :16 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1151
+07-21-2021 @ 16:02:43 - Row :16 - Processing item.
+07-21-2021 @ 16:02:43 - Found variation product object. ID:1151
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Natural.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1136
+07-21-2021 @ 16:02:43 - Setting Gallery Images.
+07-21-2021 @ 16:02:43 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-21-2021 @ 16:02:43 - Attachment ID:1127
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Image URL:NULL
+07-21-2021 @ 16:02:43 - Unable to use image "NULL".
+07-21-2021 @ 16:02:43 - Row :16 - Product imported successfully.
+07-21-2021 @ 16:02:43 - Row :17 - Parsing item.
+07-21-2021 @ 16:02:43 - Importing as new product ID:1152
+07-21-2021 @ 16:02:43 - Row :17 - Processing item.
+07-21-2021 @ 16:02:43 - Found simple product object. ID:1152
+07-21-2021 @ 16:02:43 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:44 - Attachment ID:1153
+07-21-2021 @ 16:02:44 - Setting Gallery Images.
+07-21-2021 @ 16:02:44 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1154
+07-21-2021 @ 16:02:45 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1154
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Row :17 - Product imported successfully.
+07-21-2021 @ 16:02:45 - Row :18 - Parsing item.
+07-21-2021 @ 16:02:45 - Importing as new product ID:1155
+07-21-2021 @ 16:02:45 - Row :18 - Processing item.
+07-21-2021 @ 16:02:45 - Found variation product object. ID:1155
+07-21-2021 @ 16:02:45 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1153
+07-21-2021 @ 16:02:45 - Setting Gallery Images.
+07-21-2021 @ 16:02:45 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1154
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Row :18 - Product imported successfully.
+07-21-2021 @ 16:02:45 - Row :19 - Parsing item.
+07-21-2021 @ 16:02:45 - Importing as new product ID:1156
+07-21-2021 @ 16:02:45 - Row :19 - Processing item.
+07-21-2021 @ 16:02:45 - Found variation product object. ID:1156
+07-21-2021 @ 16:02:45 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1153
+07-21-2021 @ 16:02:45 - Setting Gallery Images.
+07-21-2021 @ 16:02:45 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1154
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Row :19 - Product imported successfully.
+07-21-2021 @ 16:02:45 - Row :20 - Parsing item.
+07-21-2021 @ 16:02:45 - Importing as new product ID:1157
+07-21-2021 @ 16:02:45 - Row :20 - Processing item.
+07-21-2021 @ 16:02:45 - Found variation product object. ID:1157
+07-21-2021 @ 16:02:45 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1153
+07-21-2021 @ 16:02:45 - Setting Gallery Images.
+07-21-2021 @ 16:02:45 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:45 - Attachment ID:1154
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Image URL:NULL
+07-21-2021 @ 16:02:45 - Unable to use image "NULL".
+07-21-2021 @ 16:02:45 - Row :20 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Preparing for import.
+07-21-2021 @ 16:02:47 - Row :21 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1158
+07-21-2021 @ 16:02:47 - Row :21 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1158
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1153
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :21 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :22 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1159
+07-21-2021 @ 16:02:47 - Row :22 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1159
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1153
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :22 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :23 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1160
+07-21-2021 @ 16:02:47 - Row :23 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1160
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :23 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :24 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1161
+07-21-2021 @ 16:02:47 - Row :24 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1161
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :24 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :25 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1162
+07-21-2021 @ 16:02:47 - Row :25 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1162
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :25 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :26 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1163
+07-21-2021 @ 16:02:47 - Row :26 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1163
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :26 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :27 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1164
+07-21-2021 @ 16:02:47 - Row :27 - Processing item.
+07-21-2021 @ 16:02:47 - Found variation product object. ID:1164
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Setting Gallery Images.
+07-21-2021 @ 16:02:47 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-21-2021 @ 16:02:47 - Attachment ID:1154
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Image URL:NULL
+07-21-2021 @ 16:02:47 - Unable to use image "NULL".
+07-21-2021 @ 16:02:47 - Row :27 - Product imported successfully.
+07-21-2021 @ 16:02:47 - Row :28 - Parsing item.
+07-21-2021 @ 16:02:47 - Importing as new product ID:1165
+07-21-2021 @ 16:02:47 - Row :28 - Processing item.
+07-21-2021 @ 16:02:47 - Found simple product object. ID:1165
+07-21-2021 @ 16:02:47 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:48 - Attachment ID:1166
+07-21-2021 @ 16:02:48 - Setting Gallery Images.
+07-21-2021 @ 16:02:48 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:48 - Attachment ID:1166
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:48 - Row :28 - Product imported successfully.
+07-21-2021 @ 16:02:48 - Row :29 - Parsing item.
+07-21-2021 @ 16:02:48 - Importing as new product ID:1167
+07-21-2021 @ 16:02:48 - Row :29 - Processing item.
+07-21-2021 @ 16:02:48 - Found variation product object. ID:1167
+07-21-2021 @ 16:02:48 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:48 - Attachment ID:1166
+07-21-2021 @ 16:02:48 - Setting Gallery Images.
+07-21-2021 @ 16:02:48 - Image URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:48 - Attachment ID:1168
+07-21-2021 @ 16:02:48 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:48 - Attachment ID:1166
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:48 - Image URL:NULL
+07-21-2021 @ 16:02:48 - Unable to use image "NULL".
+07-21-2021 @ 16:02:49 - Row :29 - Product imported successfully.
+07-21-2021 @ 16:02:49 - Row :30 - Parsing item.
+07-21-2021 @ 16:02:49 - Importing as new product ID:1169
+07-21-2021 @ 16:02:49 - Row :30 - Processing item.
+07-21-2021 @ 16:02:49 - Found variation product object. ID:1169
+07-21-2021 @ 16:02:49 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:49 - Attachment ID:1166
+07-21-2021 @ 16:02:49 - Setting Gallery Images.
+07-21-2021 @ 16:02:49 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:49 - Attachment ID:1166
+07-21-2021 @ 16:02:49 - Image URL:NULL
+07-21-2021 @ 16:02:49 - Unable to use image "NULL".
+07-21-2021 @ 16:02:49 - Image URL:NULL
+07-21-2021 @ 16:02:49 - Unable to use image "NULL".
+07-21-2021 @ 16:02:49 - Image URL:NULL
+07-21-2021 @ 16:02:49 - Unable to use image "NULL".
+07-21-2021 @ 16:02:49 - Row :30 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Preparing for import.
+07-21-2021 @ 16:02:51 - Row :31 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1170
+07-21-2021 @ 16:02:51 - Row :31 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1170
+07-21-2021 @ 16:02:51 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Setting Gallery Images.
+07-21-2021 @ 16:02:51 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Row :31 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Row :32 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1171
+07-21-2021 @ 16:02:51 - Row :32 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1171
+07-21-2021 @ 16:02:51 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Setting Gallery Images.
+07-21-2021 @ 16:02:51 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Row :32 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Row :33 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1172
+07-21-2021 @ 16:02:51 - Row :33 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1172
+07-21-2021 @ 16:02:51 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Setting Gallery Images.
+07-21-2021 @ 16:02:51 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Row :33 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Row :34 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1173
+07-21-2021 @ 16:02:51 - Row :34 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1173
+07-21-2021 @ 16:02:51 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1168
+07-21-2021 @ 16:02:51 - Setting Gallery Images.
+07-21-2021 @ 16:02:51 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Row :34 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Row :35 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1174
+07-21-2021 @ 16:02:51 - Row :35 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1174
+07-21-2021 @ 16:02:51 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1168
+07-21-2021 @ 16:02:51 - Setting Gallery Images.
+07-21-2021 @ 16:02:51 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:51 - Attachment ID:1166
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Image URL:NULL
+07-21-2021 @ 16:02:51 - Unable to use image "NULL".
+07-21-2021 @ 16:02:51 - Row :35 - Product imported successfully.
+07-21-2021 @ 16:02:51 - Row :36 - Parsing item.
+07-21-2021 @ 16:02:51 - Importing as new product ID:1175
+07-21-2021 @ 16:02:51 - Row :36 - Processing item.
+07-21-2021 @ 16:02:51 - Found variation product object. ID:1175
+07-21-2021 @ 16:02:52 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1168
+07-21-2021 @ 16:02:52 - Setting Gallery Images.
+07-21-2021 @ 16:02:52 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1166
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Row :36 - Product imported successfully.
+07-21-2021 @ 16:02:52 - Row :37 - Parsing item.
+07-21-2021 @ 16:02:52 - Importing as new product ID:1176
+07-21-2021 @ 16:02:52 - Row :37 - Processing item.
+07-21-2021 @ 16:02:52 - Found variation product object. ID:1176
+07-21-2021 @ 16:02:52 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1168
+07-21-2021 @ 16:02:52 - Setting Gallery Images.
+07-21-2021 @ 16:02:52 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1166
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Row :37 - Product imported successfully.
+07-21-2021 @ 16:02:52 - Row :38 - Parsing item.
+07-21-2021 @ 16:02:52 - Importing as new product ID:1177
+07-21-2021 @ 16:02:52 - Row :38 - Processing item.
+07-21-2021 @ 16:02:52 - Found variation product object. ID:1177
+07-21-2021 @ 16:02:52 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1168
+07-21-2021 @ 16:02:52 - Setting Gallery Images.
+07-21-2021 @ 16:02:52 - Image URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-21-2021 @ 16:02:52 - Attachment ID:1166
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Image URL:NULL
+07-21-2021 @ 16:02:52 - Unable to use image "NULL".
+07-21-2021 @ 16:02:52 - Row :38 - Product imported successfully.
+07-21-2021 @ 16:02:52 - Row :39 - Parsing item.
+07-21-2021 @ 16:02:52 - Importing as new product ID:1178
+07-21-2021 @ 16:02:52 - Row :39 - Processing item.
+07-21-2021 @ 16:02:52 - Found simple product object. ID:1178
+07-21-2021 @ 16:02:52 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:02:53 - Attachment ID:1179
+07-21-2021 @ 16:02:53 - Setting Gallery Images.
+07-21-2021 @ 16:02:53 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:02:55 - Attachment ID:1180
+07-21-2021 @ 16:02:55 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:02:58 - Attachment ID:1181
+07-21-2021 @ 16:02:58 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:02:59 - Attachment ID:1182
+07-21-2021 @ 16:02:59 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:00 - Attachment ID:1183
+07-21-2021 @ 16:03:00 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:00 - Attachment ID:1179
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Row :39 - Product imported successfully.
+07-21-2021 @ 16:03:00 - Row :40 - Parsing item.
+07-21-2021 @ 16:03:00 - Importing as new product ID:1184
+07-21-2021 @ 16:03:00 - Row :40 - Processing item.
+07-21-2021 @ 16:03:00 - Found variation product object. ID:1184
+07-21-2021 @ 16:03:00 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:00 - Attachment ID:1179
+07-21-2021 @ 16:03:00 - Setting Gallery Images.
+07-21-2021 @ 16:03:00 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:00 - Attachment ID:1179
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Image URL:NULL
+07-21-2021 @ 16:03:00 - Unable to use image "NULL".
+07-21-2021 @ 16:03:00 - Row :40 - Product imported successfully.
+07-21-2021 @ 16:03:02 - Preparing for import.
+07-21-2021 @ 16:03:02 - Row :41 - Parsing item.
+07-21-2021 @ 16:03:02 - Importing as new product ID:1185
+07-21-2021 @ 16:03:02 - Row :41 - Processing item.
+07-21-2021 @ 16:03:02 - Found variation product object. ID:1185
+07-21-2021 @ 16:03:02 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:02 - Attachment ID:1179
+07-21-2021 @ 16:03:02 - Setting Gallery Images.
+07-21-2021 @ 16:03:02 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:02 - Attachment ID:1179
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Row :41 - Product imported successfully.
+07-21-2021 @ 16:03:02 - Row :42 - Parsing item.
+07-21-2021 @ 16:03:02 - Importing as new product ID:1186
+07-21-2021 @ 16:03:02 - Row :42 - Processing item.
+07-21-2021 @ 16:03:02 - Found variation product object. ID:1186
+07-21-2021 @ 16:03:02 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:02 - Attachment ID:1179
+07-21-2021 @ 16:03:02 - Setting Gallery Images.
+07-21-2021 @ 16:03:02 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:02 - Attachment ID:1179
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Image URL:NULL
+07-21-2021 @ 16:03:02 - Unable to use image "NULL".
+07-21-2021 @ 16:03:02 - Row :42 - Product imported successfully.
+07-21-2021 @ 16:03:02 - Row :43 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1187
+07-21-2021 @ 16:03:03 - Row :43 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1187
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :43 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :44 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1188
+07-21-2021 @ 16:03:03 - Row :44 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1188
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :44 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :45 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1189
+07-21-2021 @ 16:03:03 - Row :45 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1189
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :45 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :46 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1190
+07-21-2021 @ 16:03:03 - Row :46 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1190
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :46 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :47 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1191
+07-21-2021 @ 16:03:03 - Row :47 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1191
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1180
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :47 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :48 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1192
+07-21-2021 @ 16:03:03 - Row :48 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1192
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1180
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :48 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :49 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1193
+07-21-2021 @ 16:03:03 - Row :49 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1193
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1180
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :49 - Product imported successfully.
+07-21-2021 @ 16:03:03 - Row :50 - Parsing item.
+07-21-2021 @ 16:03:03 - Importing as new product ID:1194
+07-21-2021 @ 16:03:03 - Row :50 - Processing item.
+07-21-2021 @ 16:03:03 - Found variation product object. ID:1194
+07-21-2021 @ 16:03:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1180
+07-21-2021 @ 16:03:03 - Setting Gallery Images.
+07-21-2021 @ 16:03:03 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:03 - Attachment ID:1179
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Image URL:NULL
+07-21-2021 @ 16:03:03 - Unable to use image "NULL".
+07-21-2021 @ 16:03:03 - Row :50 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Preparing for import.
+07-21-2021 @ 16:03:05 - Row :51 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1195
+07-21-2021 @ 16:03:05 - Row :51 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1195
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1180
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :51 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :52 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1196
+07-21-2021 @ 16:03:05 - Row :52 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1196
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1180
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :52 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :53 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1197
+07-21-2021 @ 16:03:05 - Row :53 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1197
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1180
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :53 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :54 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1198
+07-21-2021 @ 16:03:05 - Row :54 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1198
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1181
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :54 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :55 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1199
+07-21-2021 @ 16:03:05 - Row :55 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1199
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1181
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :55 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :56 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1200
+07-21-2021 @ 16:03:05 - Row :56 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1200
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1181
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :56 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :57 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1201
+07-21-2021 @ 16:03:05 - Row :57 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1201
+07-21-2021 @ 16:03:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1181
+07-21-2021 @ 16:03:05 - Setting Gallery Images.
+07-21-2021 @ 16:03:05 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:05 - Attachment ID:1179
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Image URL:NULL
+07-21-2021 @ 16:03:05 - Unable to use image "NULL".
+07-21-2021 @ 16:03:05 - Row :57 - Product imported successfully.
+07-21-2021 @ 16:03:05 - Row :58 - Parsing item.
+07-21-2021 @ 16:03:05 - Importing as new product ID:1202
+07-21-2021 @ 16:03:05 - Row :58 - Processing item.
+07-21-2021 @ 16:03:05 - Found variation product object. ID:1202
+07-21-2021 @ 16:03:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1181
+07-21-2021 @ 16:03:06 - Setting Gallery Images.
+07-21-2021 @ 16:03:06 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1179
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Row :58 - Product imported successfully.
+07-21-2021 @ 16:03:06 - Row :59 - Parsing item.
+07-21-2021 @ 16:03:06 - Importing as new product ID:1203
+07-21-2021 @ 16:03:06 - Row :59 - Processing item.
+07-21-2021 @ 16:03:06 - Found variation product object. ID:1203
+07-21-2021 @ 16:03:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1181
+07-21-2021 @ 16:03:06 - Setting Gallery Images.
+07-21-2021 @ 16:03:06 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1179
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Row :59 - Product imported successfully.
+07-21-2021 @ 16:03:06 - Row :60 - Parsing item.
+07-21-2021 @ 16:03:06 - Importing as new product ID:1204
+07-21-2021 @ 16:03:06 - Row :60 - Processing item.
+07-21-2021 @ 16:03:06 - Found variation product object. ID:1204
+07-21-2021 @ 16:03:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1181
+07-21-2021 @ 16:03:06 - Setting Gallery Images.
+07-21-2021 @ 16:03:06 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:06 - Attachment ID:1179
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Image URL:NULL
+07-21-2021 @ 16:03:06 - Unable to use image "NULL".
+07-21-2021 @ 16:03:06 - Row :60 - Product imported successfully.
+07-21-2021 @ 16:03:07 - Preparing for import.
+07-21-2021 @ 16:03:07 - Row :61 - Parsing item.
+07-21-2021 @ 16:03:07 - Importing as new product ID:1205
+07-21-2021 @ 16:03:07 - Row :61 - Processing item.
+07-21-2021 @ 16:03:07 - Found variation product object. ID:1205
+07-21-2021 @ 16:03:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1182
+07-21-2021 @ 16:03:07 - Setting Gallery Images.
+07-21-2021 @ 16:03:07 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1179
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Row :61 - Product imported successfully.
+07-21-2021 @ 16:03:07 - Row :62 - Parsing item.
+07-21-2021 @ 16:03:07 - Importing as new product ID:1206
+07-21-2021 @ 16:03:07 - Row :62 - Processing item.
+07-21-2021 @ 16:03:07 - Found variation product object. ID:1206
+07-21-2021 @ 16:03:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1182
+07-21-2021 @ 16:03:07 - Setting Gallery Images.
+07-21-2021 @ 16:03:07 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1179
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Row :62 - Product imported successfully.
+07-21-2021 @ 16:03:07 - Row :63 - Parsing item.
+07-21-2021 @ 16:03:07 - Importing as new product ID:1207
+07-21-2021 @ 16:03:07 - Row :63 - Processing item.
+07-21-2021 @ 16:03:07 - Found variation product object. ID:1207
+07-21-2021 @ 16:03:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1182
+07-21-2021 @ 16:03:07 - Setting Gallery Images.
+07-21-2021 @ 16:03:07 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:07 - Attachment ID:1179
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:07 - Image URL:NULL
+07-21-2021 @ 16:03:07 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :63 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :64 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1208
+07-21-2021 @ 16:03:08 - Row :64 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1208
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1182
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :64 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :65 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1209
+07-21-2021 @ 16:03:08 - Row :65 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1209
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1182
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :65 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :66 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1210
+07-21-2021 @ 16:03:08 - Row :66 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1210
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1182
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :66 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :67 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1211
+07-21-2021 @ 16:03:08 - Row :67 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1211
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1182
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :67 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :68 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1212
+07-21-2021 @ 16:03:08 - Row :68 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1212
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1183
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :68 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :69 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1213
+07-21-2021 @ 16:03:08 - Row :69 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1213
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1183
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :69 - Product imported successfully.
+07-21-2021 @ 16:03:08 - Row :70 - Parsing item.
+07-21-2021 @ 16:03:08 - Importing as new product ID:1214
+07-21-2021 @ 16:03:08 - Row :70 - Processing item.
+07-21-2021 @ 16:03:08 - Found variation product object. ID:1214
+07-21-2021 @ 16:03:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1183
+07-21-2021 @ 16:03:08 - Setting Gallery Images.
+07-21-2021 @ 16:03:08 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:08 - Attachment ID:1179
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Image URL:NULL
+07-21-2021 @ 16:03:08 - Unable to use image "NULL".
+07-21-2021 @ 16:03:08 - Row :70 - Product imported successfully.
+07-21-2021 @ 16:03:10 - Preparing for import.
+07-21-2021 @ 16:03:10 - Row :71 - Parsing item.
+07-21-2021 @ 16:03:10 - Importing as new product ID:1215
+07-21-2021 @ 16:03:10 - Row :71 - Processing item.
+07-21-2021 @ 16:03:10 - Found variation product object. ID:1215
+07-21-2021 @ 16:03:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1183
+07-21-2021 @ 16:03:10 - Setting Gallery Images.
+07-21-2021 @ 16:03:10 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1179
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Row :71 - Product imported successfully.
+07-21-2021 @ 16:03:10 - Row :72 - Parsing item.
+07-21-2021 @ 16:03:10 - Importing as new product ID:1216
+07-21-2021 @ 16:03:10 - Row :72 - Processing item.
+07-21-2021 @ 16:03:10 - Found variation product object. ID:1216
+07-21-2021 @ 16:03:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1183
+07-21-2021 @ 16:03:10 - Setting Gallery Images.
+07-21-2021 @ 16:03:10 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1179
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Row :72 - Product imported successfully.
+07-21-2021 @ 16:03:10 - Row :73 - Parsing item.
+07-21-2021 @ 16:03:10 - Importing as new product ID:1217
+07-21-2021 @ 16:03:10 - Row :73 - Processing item.
+07-21-2021 @ 16:03:10 - Found variation product object. ID:1217
+07-21-2021 @ 16:03:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1183
+07-21-2021 @ 16:03:10 - Setting Gallery Images.
+07-21-2021 @ 16:03:10 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1179
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Row :73 - Product imported successfully.
+07-21-2021 @ 16:03:10 - Row :74 - Parsing item.
+07-21-2021 @ 16:03:10 - Importing as new product ID:1218
+07-21-2021 @ 16:03:10 - Row :74 - Processing item.
+07-21-2021 @ 16:03:10 - Found variation product object. ID:1218
+07-21-2021 @ 16:03:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1183
+07-21-2021 @ 16:03:10 - Setting Gallery Images.
+07-21-2021 @ 16:03:10 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-21-2021 @ 16:03:10 - Attachment ID:1179
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Image URL:NULL
+07-21-2021 @ 16:03:10 - Unable to use image "NULL".
+07-21-2021 @ 16:03:10 - Row :74 - Product imported successfully.
+07-21-2021 @ 16:03:10 - Row :75 - Parsing item.
+07-21-2021 @ 16:03:10 - Importing as new product ID:1219
+07-21-2021 @ 16:03:10 - Row :75 - Processing item.
+07-21-2021 @ 16:03:10 - Found simple product object. ID:1219
+07-21-2021 @ 16:03:10 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :75 - Product imported successfully.
+07-21-2021 @ 16:03:11 - Row :76 - Parsing item.
+07-21-2021 @ 16:03:11 - Importing as new product ID:1221
+07-21-2021 @ 16:03:11 - Row :76 - Processing item.
+07-21-2021 @ 16:03:11 - Found variation product object. ID:1221
+07-21-2021 @ 16:03:11 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :76 - Product imported successfully.
+07-21-2021 @ 16:03:11 - Row :77 - Parsing item.
+07-21-2021 @ 16:03:11 - Importing as new product ID:1222
+07-21-2021 @ 16:03:11 - Row :77 - Processing item.
+07-21-2021 @ 16:03:11 - Found variation product object. ID:1222
+07-21-2021 @ 16:03:11 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :77 - Product imported successfully.
+07-21-2021 @ 16:03:11 - Row :78 - Parsing item.
+07-21-2021 @ 16:03:11 - Importing as new product ID:1223
+07-21-2021 @ 16:03:11 - Row :78 - Processing item.
+07-21-2021 @ 16:03:11 - Found variation product object. ID:1223
+07-21-2021 @ 16:03:11 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :78 - Product imported successfully.
+07-21-2021 @ 16:03:11 - Row :79 - Parsing item.
+07-21-2021 @ 16:03:11 - Importing as new product ID:1224
+07-21-2021 @ 16:03:11 - Row :79 - Processing item.
+07-21-2021 @ 16:03:11 - Found variation product object. ID:1224
+07-21-2021 @ 16:03:11 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :79 - Product imported successfully.
+07-21-2021 @ 16:03:11 - Row :80 - Parsing item.
+07-21-2021 @ 16:03:11 - Importing as new product ID:1225
+07-21-2021 @ 16:03:11 - Row :80 - Processing item.
+07-21-2021 @ 16:03:11 - Found variation product object. ID:1225
+07-21-2021 @ 16:03:11 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Setting Gallery Images.
+07-21-2021 @ 16:03:11 - Image URL:https://cdn1.nuorder.com/product/be3a150263dcccf4212053836e73067a.jpg
+07-21-2021 @ 16:03:11 - Attachment ID:1220
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Image URL:NULL
+07-21-2021 @ 16:03:11 - Unable to use image "NULL".
+07-21-2021 @ 16:03:11 - Row :80 - Product imported successfully.
+07-21-2021 @ 16:03:13 - Preparing for import.
+07-21-2021 @ 16:03:13 - Row :81 - Parsing item.
+07-21-2021 @ 16:03:13 - Importing as new product ID:1226
+07-21-2021 @ 16:03:13 - Row :81 - Processing item.
+07-21-2021 @ 16:03:13 - Found simple product object. ID:1226
+07-21-2021 @ 16:03:13 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:13 - Attachment ID:1227
+07-21-2021 @ 16:03:13 - Setting Gallery Images.
+07-21-2021 @ 16:03:13 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:13 - Attachment ID:1227
+07-21-2021 @ 16:03:13 - Image URL:NULL
+07-21-2021 @ 16:03:13 - Unable to use image "NULL".
+07-21-2021 @ 16:03:13 - Image URL:NULL
+07-21-2021 @ 16:03:13 - Unable to use image "NULL".
+07-21-2021 @ 16:03:13 - Image URL:NULL
+07-21-2021 @ 16:03:13 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :81 - Product imported successfully.
+07-21-2021 @ 16:03:14 - Row :82 - Parsing item.
+07-21-2021 @ 16:03:14 - Importing as new product ID:1228
+07-21-2021 @ 16:03:14 - Row :82 - Processing item.
+07-21-2021 @ 16:03:14 - Found variation product object. ID:1228
+07-21-2021 @ 16:03:14 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Setting Gallery Images.
+07-21-2021 @ 16:03:14 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :82 - Product imported successfully.
+07-21-2021 @ 16:03:14 - Row :83 - Parsing item.
+07-21-2021 @ 16:03:14 - Importing as new product ID:1229
+07-21-2021 @ 16:03:14 - Row :83 - Processing item.
+07-21-2021 @ 16:03:14 - Found variation product object. ID:1229
+07-21-2021 @ 16:03:14 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Setting Gallery Images.
+07-21-2021 @ 16:03:14 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :83 - Product imported successfully.
+07-21-2021 @ 16:03:14 - Row :84 - Parsing item.
+07-21-2021 @ 16:03:14 - Importing as new product ID:1230
+07-21-2021 @ 16:03:14 - Row :84 - Processing item.
+07-21-2021 @ 16:03:14 - Found variation product object. ID:1230
+07-21-2021 @ 16:03:14 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Setting Gallery Images.
+07-21-2021 @ 16:03:14 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :84 - Product imported successfully.
+07-21-2021 @ 16:03:14 - Row :85 - Parsing item.
+07-21-2021 @ 16:03:14 - Importing as new product ID:1231
+07-21-2021 @ 16:03:14 - Row :85 - Processing item.
+07-21-2021 @ 16:03:14 - Found variation product object. ID:1231
+07-21-2021 @ 16:03:14 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Setting Gallery Images.
+07-21-2021 @ 16:03:14 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :85 - Product imported successfully.
+07-21-2021 @ 16:03:14 - Row :86 - Parsing item.
+07-21-2021 @ 16:03:14 - Importing as new product ID:1232
+07-21-2021 @ 16:03:14 - Row :86 - Processing item.
+07-21-2021 @ 16:03:14 - Found variation product object. ID:1232
+07-21-2021 @ 16:03:14 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Setting Gallery Images.
+07-21-2021 @ 16:03:14 - Image URL:https://cdn1.nuorder.com/product/b53874e2ac7ad4d00ca95d91edb5d175.jpg
+07-21-2021 @ 16:03:14 - Attachment ID:1227
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Image URL:NULL
+07-21-2021 @ 16:03:14 - Unable to use image "NULL".
+07-21-2021 @ 16:03:14 - Row :86 - Product imported successfully.
+07-21-2021 @ 16:03:14 - ---[ Import ended at 2021-07-21 16:03:14]---

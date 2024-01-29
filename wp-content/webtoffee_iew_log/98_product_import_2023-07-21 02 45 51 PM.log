@@ -1,0 +1,15 @@
+07-21-2023 @ 10:45:51 - ---[ New import started at 2023-07-21 14:45:51 ] PHP Memory: 0 B, WP Memory: 2 GB
+07-21-2023 @ 10:45:51 - Preparing for import.
+07-21-2023 @ 10:45:51 - Row :1 - Parsing item.
+07-21-2023 @ 10:45:51 - Row :1 - Processing item.
+07-21-2023 @ 10:45:51 - Found variable product object. ID:191476
+07-21-2023 @ 10:45:51 - Row :1 - Product updated successfully.
+07-21-2023 @ 10:45:51 - Row :2 - Parsing item.
+07-21-2023 @ 10:45:51 - Row :2 - Processing item.
+07-21-2023 @ 10:45:51 - Found variation product object. ID:79133
+07-21-2023 @ 10:45:51 - Row :2 - Product updated successfully.
+07-21-2023 @ 10:45:51 - Row :3 - Parsing item.
+07-21-2023 @ 10:45:52 - Row :3 - Processing item.
+07-21-2023 @ 10:45:52 - Found variation product object. ID:191478
+07-21-2023 @ 10:45:52 - Row :3 - Product updated successfully.
+07-21-2023 @ 10:45:52 - ---[ Import ended at 2023-07-21 14:45:52]---

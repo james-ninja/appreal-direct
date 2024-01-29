@@ -1,0 +1,17 @@
+08-17-2021 @ 12:38:57 - ---[ New import started at 2021-08-17 16:38:57 ] PHP Memory: 512 MB, WP Memory: 40 MB
+08-17-2021 @ 12:38:57 - Preparing for import.
+08-17-2021 @ 12:38:57 - Row :1 - Parsing item.
+08-17-2021 @ 12:38:57 - Importing as new product ID:46313
+08-17-2021 @ 12:38:57 - Row :1 - Processing item.
+08-17-2021 @ 12:38:57 - Found variable product object. ID:46313
+08-17-2021 @ 12:38:57 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/941c023a6ae907e632ef7e0f2d98b419.jpg
+08-17-2021 @ 12:38:58 - Attachment ID:46314
+08-17-2021 @ 12:38:59 - Row :1 - Product imported successfully.
+08-17-2021 @ 12:38:59 - Row :2 - Parsing item.
+08-17-2021 @ 12:38:59 - Importing as new product ID:46315
+08-17-2021 @ 12:38:59 - Row :2 - Processing item.
+08-17-2021 @ 12:38:59 - Found variation product object. ID:46315
+08-17-2021 @ 12:38:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/EBY_120443_White_sw.jpg
+08-17-2021 @ 12:38:59 - Attachment ID:24183
+08-17-2021 @ 12:38:59 - Row :2 - Product imported successfully.
+08-17-2021 @ 12:38:59 - ---[ Import ended at 2021-08-17 16:38:59]---

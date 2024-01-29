@@ -1,0 +1,647 @@
+07-26-2021 @ 10:10:12 - ---[ New import started at 2021-07-26 10:10:12 ] PHP Memory: 4 GB, WP Memory: 40 MB
+07-26-2021 @ 10:10:12 - Preparing for import.
+07-26-2021 @ 10:10:12 - Row :1 - Parsing item.
+07-26-2021 @ 10:10:12 - Importing as new product ID:1344
+07-26-2021 @ 10:10:12 - Row :1 - Processing item.
+07-26-2021 @ 10:10:12 - Found variable product object. ID:1344
+07-26-2021 @ 10:10:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HNS_25439_Black.jpg
+07-26-2021 @ 10:10:14 - Attachment ID:1345
+07-26-2021 @ 10:10:14 - Setting Gallery Images.
+07-26-2021 @ 10:10:14 - Image URL:https://nylimages.s3.amazonaws.com/HNS_22803_Black.jpg
+07-26-2021 @ 10:10:15 - Attachment ID:1346
+07-26-2021 @ 10:10:15 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:16 - Attachment ID:1347
+07-26-2021 @ 10:10:16 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_HeatherGrey.jpg
+07-26-2021 @ 10:10:18 - Attachment ID:1348
+07-26-2021 @ 10:10:18 - Image URL:https://nylimages.s3.amazonaws.com/HBI_28559_HeatherGrey.jpg
+07-26-2021 @ 10:10:20 - Attachment ID:1349
+07-26-2021 @ 10:10:20 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:21 - Attachment ID:1350
+07-26-2021 @ 10:10:21 - Image URL:https://nylimages.s3.amazonaws.com/HBI_28559_Natural.jpg
+07-26-2021 @ 10:10:22 - Attachment ID:1351
+07-26-2021 @ 10:10:22 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:24 - Attachment ID:1352
+07-26-2021 @ 10:10:24 - Image URL:https://nylimages.s3.amazonaws.com/EBY_22803_Natural.jpg
+07-26-2021 @ 10:10:25 - Attachment ID:1353
+07-26-2021 @ 10:10:25 - Image URL:https://nylimages.s3.amazonaws.com/HNS_25439_Natural.jpg
+07-26-2021 @ 10:10:27 - Attachment ID:1354
+07-26-2021 @ 10:10:27 - Row :1 - Product imported successfully.
+07-26-2021 @ 10:10:27 - Row :2 - Parsing item.
+07-26-2021 @ 10:10:27 - Importing as new product ID:1355
+07-26-2021 @ 10:10:27 - Row :2 - Processing item.
+07-26-2021 @ 10:10:27 - Found variation product object. ID:1355
+07-26-2021 @ 10:10:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:27 - Attachment ID:1347
+07-26-2021 @ 10:10:27 - Row :2 - Product imported successfully.
+07-26-2021 @ 10:10:27 - Row :3 - Parsing item.
+07-26-2021 @ 10:10:27 - Importing as new product ID:1356
+07-26-2021 @ 10:10:27 - Row :3 - Processing item.
+07-26-2021 @ 10:10:27 - Found variation product object. ID:1356
+07-26-2021 @ 10:10:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:27 - Attachment ID:1347
+07-26-2021 @ 10:10:27 - Row :3 - Product imported successfully.
+07-26-2021 @ 10:10:27 - Row :4 - Parsing item.
+07-26-2021 @ 10:10:27 - Importing as new product ID:1357
+07-26-2021 @ 10:10:27 - Row :4 - Processing item.
+07-26-2021 @ 10:10:27 - Found variation product object. ID:1357
+07-26-2021 @ 10:10:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:27 - Attachment ID:1347
+07-26-2021 @ 10:10:27 - Row :4 - Product imported successfully.
+07-26-2021 @ 10:10:27 - Row :5 - Parsing item.
+07-26-2021 @ 10:10:27 - Importing as new product ID:1358
+07-26-2021 @ 10:10:27 - Row :5 - Processing item.
+07-26-2021 @ 10:10:27 - Found variation product object. ID:1358
+07-26-2021 @ 10:10:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:27 - Attachment ID:1347
+07-26-2021 @ 10:10:27 - Row :5 - Product imported successfully.
+07-26-2021 @ 10:10:27 - Row :6 - Parsing item.
+07-26-2021 @ 10:10:28 - Importing as new product ID:1359
+07-26-2021 @ 10:10:28 - Row :6 - Processing item.
+07-26-2021 @ 10:10:28 - Found variation product object. ID:1359
+07-26-2021 @ 10:10:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Black.jpg
+07-26-2021 @ 10:10:28 - Attachment ID:1347
+07-26-2021 @ 10:10:28 - Row :6 - Product imported successfully.
+07-26-2021 @ 10:10:28 - Row :7 - Parsing item.
+07-26-2021 @ 10:10:28 - Importing as new product ID:1360
+07-26-2021 @ 10:10:28 - Row :7 - Processing item.
+07-26-2021 @ 10:10:28 - Found variation product object. ID:1360
+07-26-2021 @ 10:10:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:28 - Attachment ID:1350
+07-26-2021 @ 10:10:28 - Row :7 - Product imported successfully.
+07-26-2021 @ 10:10:28 - Row :8 - Parsing item.
+07-26-2021 @ 10:10:28 - Importing as new product ID:1361
+07-26-2021 @ 10:10:28 - Row :8 - Processing item.
+07-26-2021 @ 10:10:28 - Found variation product object. ID:1361
+07-26-2021 @ 10:10:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:28 - Attachment ID:1350
+07-26-2021 @ 10:10:28 - Row :8 - Product imported successfully.
+07-26-2021 @ 10:10:28 - Row :9 - Parsing item.
+07-26-2021 @ 10:10:28 - Importing as new product ID:1362
+07-26-2021 @ 10:10:28 - Row :9 - Processing item.
+07-26-2021 @ 10:10:29 - Found variation product object. ID:1362
+07-26-2021 @ 10:10:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:29 - Attachment ID:1350
+07-26-2021 @ 10:10:29 - Row :9 - Product imported successfully.
+07-26-2021 @ 10:10:29 - Row :10 - Parsing item.
+07-26-2021 @ 10:10:29 - Importing as new product ID:1363
+07-26-2021 @ 10:10:29 - Row :10 - Processing item.
+07-26-2021 @ 10:10:29 - Found variation product object. ID:1363
+07-26-2021 @ 10:10:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:29 - Attachment ID:1350
+07-26-2021 @ 10:10:29 - Row :10 - Product imported successfully.
+07-26-2021 @ 10:10:31 - Preparing for import.
+07-26-2021 @ 10:10:31 - Row :11 - Parsing item.
+07-26-2021 @ 10:10:31 - Importing as new product ID:1364
+07-26-2021 @ 10:10:31 - Row :11 - Processing item.
+07-26-2021 @ 10:10:31 - Found variation product object. ID:1364
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_HeatherGrey.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1350
+07-26-2021 @ 10:10:32 - Row :11 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :12 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1365
+07-26-2021 @ 10:10:32 - Row :12 - Processing item.
+07-26-2021 @ 10:10:32 - Found variation product object. ID:1365
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1352
+07-26-2021 @ 10:10:32 - Row :12 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :13 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1366
+07-26-2021 @ 10:10:32 - Row :13 - Processing item.
+07-26-2021 @ 10:10:32 - Found variation product object. ID:1366
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1352
+07-26-2021 @ 10:10:32 - Row :13 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :14 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1367
+07-26-2021 @ 10:10:32 - Row :14 - Processing item.
+07-26-2021 @ 10:10:32 - Found variation product object. ID:1367
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1352
+07-26-2021 @ 10:10:32 - Row :14 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :15 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1368
+07-26-2021 @ 10:10:32 - Row :15 - Processing item.
+07-26-2021 @ 10:10:32 - Found variation product object. ID:1368
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1352
+07-26-2021 @ 10:10:32 - Row :15 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :16 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1369
+07-26-2021 @ 10:10:32 - Row :16 - Processing item.
+07-26-2021 @ 10:10:32 - Found variation product object. ID:1369
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125439_Natural.jpg
+07-26-2021 @ 10:10:32 - Attachment ID:1352
+07-26-2021 @ 10:10:32 - Row :16 - Product imported successfully.
+07-26-2021 @ 10:10:32 - Row :17 - Parsing item.
+07-26-2021 @ 10:10:32 - Importing as new product ID:1370
+07-26-2021 @ 10:10:32 - Row :17 - Processing item.
+07-26-2021 @ 10:10:32 - Found variable product object. ID:1370
+07-26-2021 @ 10:10:32 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/ef3f17e20555e0b0f5e25a29c65ebe73.jpg
+07-26-2021 @ 10:10:33 - Attachment ID:1371
+07-26-2021 @ 10:10:33 - Setting Gallery Images.
+07-26-2021 @ 10:10:33 - Image URL:https://cdn1.nuorder.com/product/154edc1b94edc174abc318a6e9709ac0.jpg
+07-26-2021 @ 10:10:34 - Attachment ID:1372
+07-26-2021 @ 10:10:34 - Row :17 - Product imported successfully.
+07-26-2021 @ 10:10:34 - Row :18 - Parsing item.
+07-26-2021 @ 10:10:34 - Importing as new product ID:1373
+07-26-2021 @ 10:10:34 - Row :18 - Processing item.
+07-26-2021 @ 10:10:34 - Found variation product object. ID:1373
+07-26-2021 @ 10:10:34 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_PeacoatPeacoatSpaceDye.jpg
+07-26-2021 @ 10:10:36 - Attachment ID:1374
+07-26-2021 @ 10:10:36 - Row :18 - Product imported successfully.
+07-26-2021 @ 10:10:36 - Row :19 - Parsing item.
+07-26-2021 @ 10:10:36 - Importing as new product ID:1375
+07-26-2021 @ 10:10:36 - Row :19 - Processing item.
+07-26-2021 @ 10:10:36 - Found variation product object. ID:1375
+07-26-2021 @ 10:10:36 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_PeacoatPeacoatSpaceDye.jpg
+07-26-2021 @ 10:10:36 - Attachment ID:1374
+07-26-2021 @ 10:10:36 - Row :19 - Product imported successfully.
+07-26-2021 @ 10:10:36 - Row :20 - Parsing item.
+07-26-2021 @ 10:10:36 - Importing as new product ID:1376
+07-26-2021 @ 10:10:36 - Row :20 - Processing item.
+07-26-2021 @ 10:10:37 - Found variation product object. ID:1376
+07-26-2021 @ 10:10:37 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_PeacoatPeacoatSpaceDye.jpg
+07-26-2021 @ 10:10:37 - Attachment ID:1374
+07-26-2021 @ 10:10:37 - Row :20 - Product imported successfully.
+07-26-2021 @ 10:10:40 - Preparing for import.
+07-26-2021 @ 10:10:40 - Row :21 - Parsing item.
+07-26-2021 @ 10:10:40 - Importing as new product ID:1377
+07-26-2021 @ 10:10:40 - Row :21 - Processing item.
+07-26-2021 @ 10:10:40 - Found variation product object. ID:1377
+07-26-2021 @ 10:10:40 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_PeacoatPeacoatSpaceDye.jpg
+07-26-2021 @ 10:10:40 - Attachment ID:1374
+07-26-2021 @ 10:10:40 - Row :21 - Product imported successfully.
+07-26-2021 @ 10:10:40 - Row :22 - Parsing item.
+07-26-2021 @ 10:10:40 - Importing as new product ID:1378
+07-26-2021 @ 10:10:40 - Row :22 - Processing item.
+07-26-2021 @ 10:10:40 - Found variation product object. ID:1378
+07-26-2021 @ 10:10:40 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_PeacoatPeacoatSpaceDye.jpg
+07-26-2021 @ 10:10:40 - Attachment ID:1374
+07-26-2021 @ 10:10:41 - Row :22 - Product imported successfully.
+07-26-2021 @ 10:10:41 - Row :23 - Parsing item.
+07-26-2021 @ 10:10:41 - Importing as new product ID:1379
+07-26-2021 @ 10:10:41 - Row :23 - Processing item.
+07-26-2021 @ 10:10:41 - Found variation product object. ID:1379
+07-26-2021 @ 10:10:41 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_AsphaltAsphaltSpaceDye.jpg
+07-26-2021 @ 10:10:42 - Attachment ID:1380
+07-26-2021 @ 10:10:42 - Row :23 - Product imported successfully.
+07-26-2021 @ 10:10:42 - Row :24 - Parsing item.
+07-26-2021 @ 10:10:42 - Importing as new product ID:1381
+07-26-2021 @ 10:10:42 - Row :24 - Processing item.
+07-26-2021 @ 10:10:42 - Found variation product object. ID:1381
+07-26-2021 @ 10:10:42 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_AsphaltAsphaltSpaceDye.jpg
+07-26-2021 @ 10:10:42 - Attachment ID:1380
+07-26-2021 @ 10:10:42 - Row :24 - Product imported successfully.
+07-26-2021 @ 10:10:42 - Row :25 - Parsing item.
+07-26-2021 @ 10:10:42 - Importing as new product ID:1382
+07-26-2021 @ 10:10:42 - Row :25 - Processing item.
+07-26-2021 @ 10:10:42 - Found variation product object. ID:1382
+07-26-2021 @ 10:10:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_AsphaltAsphaltSpaceDye.jpg
+07-26-2021 @ 10:10:43 - Attachment ID:1380
+07-26-2021 @ 10:10:43 - Row :25 - Product imported successfully.
+07-26-2021 @ 10:10:43 - Row :26 - Parsing item.
+07-26-2021 @ 10:10:43 - Importing as new product ID:1383
+07-26-2021 @ 10:10:43 - Row :26 - Processing item.
+07-26-2021 @ 10:10:43 - Found variation product object. ID:1383
+07-26-2021 @ 10:10:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_AsphaltAsphaltSpaceDye.jpg
+07-26-2021 @ 10:10:43 - Attachment ID:1380
+07-26-2021 @ 10:10:43 - Row :26 - Product imported successfully.
+07-26-2021 @ 10:10:43 - Row :27 - Parsing item.
+07-26-2021 @ 10:10:43 - Importing as new product ID:1384
+07-26-2021 @ 10:10:43 - Row :27 - Processing item.
+07-26-2021 @ 10:10:43 - Found variation product object. ID:1384
+07-26-2021 @ 10:10:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125462_AsphaltAsphaltSpaceDye.jpg
+07-26-2021 @ 10:10:43 - Attachment ID:1380
+07-26-2021 @ 10:10:43 - Row :27 - Product imported successfully.
+07-26-2021 @ 10:10:43 - Row :28 - Parsing item.
+07-26-2021 @ 10:10:43 - Importing as new product ID:1385
+07-26-2021 @ 10:10:43 - Row :28 - Processing item.
+07-26-2021 @ 10:10:43 - Found variable product object. ID:1385
+07-26-2021 @ 10:10:43 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/265ff924cace96d5780f0dd4386e96b0.jpg
+07-26-2021 @ 10:10:43 - Attachment ID:1386
+07-26-2021 @ 10:10:43 - Setting Gallery Images.
+07-26-2021 @ 10:10:43 - Image URL:https://cdn1.nuorder.com/product/4a173e65776bbb5e1aa92f39de47ce40.jpg
+07-26-2021 @ 10:10:44 - Attachment ID:1387
+07-26-2021 @ 10:10:44 - Row :28 - Product imported successfully.
+07-26-2021 @ 10:10:44 - Row :29 - Parsing item.
+07-26-2021 @ 10:10:44 - Importing as new product ID:1388
+07-26-2021 @ 10:10:44 - Row :29 - Processing item.
+07-26-2021 @ 10:10:44 - Found variation product object. ID:1388
+07-26-2021 @ 10:10:44 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_Black_sw.jpg
+07-26-2021 @ 10:10:45 - Attachment ID:1389
+07-26-2021 @ 10:10:45 - Row :29 - Product imported successfully.
+07-26-2021 @ 10:10:45 - Row :30 - Parsing item.
+07-26-2021 @ 10:10:45 - Importing as new product ID:1390
+07-26-2021 @ 10:10:45 - Row :30 - Processing item.
+07-26-2021 @ 10:10:45 - Found variation product object. ID:1390
+07-26-2021 @ 10:10:45 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_Black_sw.jpg
+07-26-2021 @ 10:10:45 - Attachment ID:1389
+07-26-2021 @ 10:10:45 - Row :30 - Product imported successfully.
+07-26-2021 @ 10:10:47 - Preparing for import.
+07-26-2021 @ 10:10:47 - Row :31 - Parsing item.
+07-26-2021 @ 10:10:47 - Importing as new product ID:1391
+07-26-2021 @ 10:10:47 - Row :31 - Processing item.
+07-26-2021 @ 10:10:47 - Found variation product object. ID:1391
+07-26-2021 @ 10:10:47 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_Black_sw.jpg
+07-26-2021 @ 10:10:47 - Attachment ID:1389
+07-26-2021 @ 10:10:47 - Row :31 - Product imported successfully.
+07-26-2021 @ 10:10:47 - Row :32 - Parsing item.
+07-26-2021 @ 10:10:47 - Importing as new product ID:1392
+07-26-2021 @ 10:10:47 - Row :32 - Processing item.
+07-26-2021 @ 10:10:47 - Found variation product object. ID:1392
+07-26-2021 @ 10:10:47 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_Black_sw.jpg
+07-26-2021 @ 10:10:47 - Attachment ID:1389
+07-26-2021 @ 10:10:47 - Row :32 - Product imported successfully.
+07-26-2021 @ 10:10:47 - Row :33 - Parsing item.
+07-26-2021 @ 10:10:47 - Importing as new product ID:1393
+07-26-2021 @ 10:10:47 - Row :33 - Processing item.
+07-26-2021 @ 10:10:47 - Found variation product object. ID:1393
+07-26-2021 @ 10:10:47 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_Black_sw.jpg
+07-26-2021 @ 10:10:47 - Attachment ID:1389
+07-26-2021 @ 10:10:47 - Row :33 - Product imported successfully.
+07-26-2021 @ 10:10:47 - Row :34 - Parsing item.
+07-26-2021 @ 10:10:47 - Importing as new product ID:1394
+07-26-2021 @ 10:10:47 - Row :34 - Processing item.
+07-26-2021 @ 10:10:47 - Found variation product object. ID:1394
+07-26-2021 @ 10:10:47 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_LatteLift_sw.jpg
+07-26-2021 @ 10:10:48 - Attachment ID:1395
+07-26-2021 @ 10:10:48 - Row :34 - Product imported successfully.
+07-26-2021 @ 10:10:48 - Row :35 - Parsing item.
+07-26-2021 @ 10:10:48 - Importing as new product ID:1396
+07-26-2021 @ 10:10:48 - Row :35 - Processing item.
+07-26-2021 @ 10:10:48 - Found variation product object. ID:1396
+07-26-2021 @ 10:10:48 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_LatteLift_sw.jpg
+07-26-2021 @ 10:10:48 - Attachment ID:1395
+07-26-2021 @ 10:10:48 - Row :35 - Product imported successfully.
+07-26-2021 @ 10:10:48 - Row :36 - Parsing item.
+07-26-2021 @ 10:10:48 - Importing as new product ID:1397
+07-26-2021 @ 10:10:48 - Row :36 - Processing item.
+07-26-2021 @ 10:10:48 - Found variation product object. ID:1397
+07-26-2021 @ 10:10:48 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_LatteLift_sw.jpg
+07-26-2021 @ 10:10:48 - Attachment ID:1395
+07-26-2021 @ 10:10:48 - Row :36 - Product imported successfully.
+07-26-2021 @ 10:10:48 - Row :37 - Parsing item.
+07-26-2021 @ 10:10:48 - Importing as new product ID:1398
+07-26-2021 @ 10:10:48 - Row :37 - Processing item.
+07-26-2021 @ 10:10:48 - Found variation product object. ID:1398
+07-26-2021 @ 10:10:48 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_LatteLift_sw.jpg
+07-26-2021 @ 10:10:48 - Attachment ID:1395
+07-26-2021 @ 10:10:48 - Row :37 - Product imported successfully.
+07-26-2021 @ 10:10:48 - Row :38 - Parsing item.
+07-26-2021 @ 10:10:48 - Importing as new product ID:1399
+07-26-2021 @ 10:10:48 - Row :38 - Processing item.
+07-26-2021 @ 10:10:48 - Found variation product object. ID:1399
+07-26-2021 @ 10:10:48 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_M09729_LatteLift_sw.jpg
+07-26-2021 @ 10:10:48 - Attachment ID:1395
+07-26-2021 @ 10:10:48 - Row :38 - Product imported successfully.
+07-26-2021 @ 10:10:48 - Row :39 - Parsing item.
+07-26-2021 @ 10:10:48 - Importing as new product ID:1400
+07-26-2021 @ 10:10:48 - Row :39 - Processing item.
+07-26-2021 @ 10:10:48 - Found variable product object. ID:1400
+07-26-2021 @ 10:10:48 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:50 - Attachment ID:1401
+07-26-2021 @ 10:10:50 - Setting Gallery Images.
+07-26-2021 @ 10:10:50 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:10:51 - Attachment ID:1402
+07-26-2021 @ 10:10:51 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:10:53 - Attachment ID:1403
+07-26-2021 @ 10:10:53 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:10:55 - Attachment ID:1404
+07-26-2021 @ 10:10:55 - Image URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:10:57 - Attachment ID:1405
+07-26-2021 @ 10:10:57 - Row :39 - Product imported successfully.
+07-26-2021 @ 10:10:57 - Row :40 - Parsing item.
+07-26-2021 @ 10:10:57 - Importing as new product ID:1406
+07-26-2021 @ 10:10:57 - Row :40 - Processing item.
+07-26-2021 @ 10:10:57 - Found variation product object. ID:1406
+07-26-2021 @ 10:10:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:57 - Attachment ID:1401
+07-26-2021 @ 10:10:57 - Row :40 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Preparing for import.
+07-26-2021 @ 10:10:59 - Row :41 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1407
+07-26-2021 @ 10:10:59 - Row :41 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1407
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :41 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :42 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1408
+07-26-2021 @ 10:10:59 - Row :42 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1408
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :42 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :43 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1409
+07-26-2021 @ 10:10:59 - Row :43 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1409
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :43 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :44 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1410
+07-26-2021 @ 10:10:59 - Row :44 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1410
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :44 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :45 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1411
+07-26-2021 @ 10:10:59 - Row :45 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1411
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :45 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :46 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1412
+07-26-2021 @ 10:10:59 - Row :46 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1412
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_Black.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1401
+07-26-2021 @ 10:10:59 - Row :46 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :47 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1413
+07-26-2021 @ 10:10:59 - Row :47 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1413
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1402
+07-26-2021 @ 10:10:59 - Row :47 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :48 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1414
+07-26-2021 @ 10:10:59 - Row :48 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1414
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1402
+07-26-2021 @ 10:10:59 - Row :48 - Product imported successfully.
+07-26-2021 @ 10:10:59 - Row :49 - Parsing item.
+07-26-2021 @ 10:10:59 - Importing as new product ID:1415
+07-26-2021 @ 10:10:59 - Row :49 - Processing item.
+07-26-2021 @ 10:10:59 - Found variation product object. ID:1415
+07-26-2021 @ 10:10:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:10:59 - Attachment ID:1402
+07-26-2021 @ 10:11:00 - Row :49 - Product imported successfully.
+07-26-2021 @ 10:11:00 - Row :50 - Parsing item.
+07-26-2021 @ 10:11:00 - Importing as new product ID:1416
+07-26-2021 @ 10:11:00 - Row :50 - Processing item.
+07-26-2021 @ 10:11:00 - Found variation product object. ID:1416
+07-26-2021 @ 10:11:00 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:11:00 - Attachment ID:1402
+07-26-2021 @ 10:11:00 - Row :50 - Product imported successfully.
+07-26-2021 @ 10:11:02 - Preparing for import.
+07-26-2021 @ 10:11:02 - Row :51 - Parsing item.
+07-26-2021 @ 10:11:02 - Importing as new product ID:1417
+07-26-2021 @ 10:11:02 - Row :51 - Processing item.
+07-26-2021 @ 10:11:02 - Found variation product object. ID:1417
+07-26-2021 @ 10:11:02 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:11:02 - Attachment ID:1402
+07-26-2021 @ 10:11:02 - Row :51 - Product imported successfully.
+07-26-2021 @ 10:11:02 - Row :52 - Parsing item.
+07-26-2021 @ 10:11:02 - Importing as new product ID:1418
+07-26-2021 @ 10:11:02 - Row :52 - Processing item.
+07-26-2021 @ 10:11:02 - Found variation product object. ID:1418
+07-26-2021 @ 10:11:02 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:11:02 - Attachment ID:1402
+07-26-2021 @ 10:11:02 - Row :52 - Product imported successfully.
+07-26-2021 @ 10:11:02 - Row :53 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1419
+07-26-2021 @ 10:11:03 - Row :53 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1419
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_HeatherGrey.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1402
+07-26-2021 @ 10:11:03 - Row :53 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :54 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1420
+07-26-2021 @ 10:11:03 - Row :54 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1420
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :54 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :55 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1421
+07-26-2021 @ 10:11:03 - Row :55 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1421
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :55 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :56 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1422
+07-26-2021 @ 10:11:03 - Row :56 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1422
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :56 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :57 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1423
+07-26-2021 @ 10:11:03 - Row :57 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1423
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :57 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :58 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1424
+07-26-2021 @ 10:11:03 - Row :58 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1424
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :58 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :59 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1425
+07-26-2021 @ 10:11:03 - Row :59 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1425
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :59 - Product imported successfully.
+07-26-2021 @ 10:11:03 - Row :60 - Parsing item.
+07-26-2021 @ 10:11:03 - Importing as new product ID:1426
+07-26-2021 @ 10:11:03 - Row :60 - Processing item.
+07-26-2021 @ 10:11:03 - Found variation product object. ID:1426
+07-26-2021 @ 10:11:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_DustyBlue.jpg
+07-26-2021 @ 10:11:03 - Attachment ID:1403
+07-26-2021 @ 10:11:03 - Row :60 - Product imported successfully.
+07-26-2021 @ 10:11:05 - Preparing for import.
+07-26-2021 @ 10:11:05 - Row :61 - Parsing item.
+07-26-2021 @ 10:11:05 - Importing as new product ID:1427
+07-26-2021 @ 10:11:05 - Row :61 - Processing item.
+07-26-2021 @ 10:11:05 - Found variation product object. ID:1427
+07-26-2021 @ 10:11:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:05 - Attachment ID:1404
+07-26-2021 @ 10:11:05 - Row :61 - Product imported successfully.
+07-26-2021 @ 10:11:05 - Row :62 - Parsing item.
+07-26-2021 @ 10:11:05 - Importing as new product ID:1428
+07-26-2021 @ 10:11:05 - Row :62 - Processing item.
+07-26-2021 @ 10:11:05 - Found variation product object. ID:1428
+07-26-2021 @ 10:11:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:05 - Attachment ID:1404
+07-26-2021 @ 10:11:05 - Row :62 - Product imported successfully.
+07-26-2021 @ 10:11:05 - Row :63 - Parsing item.
+07-26-2021 @ 10:11:05 - Importing as new product ID:1429
+07-26-2021 @ 10:11:05 - Row :63 - Processing item.
+07-26-2021 @ 10:11:05 - Found variation product object. ID:1429
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1404
+07-26-2021 @ 10:11:06 - Row :63 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :64 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1430
+07-26-2021 @ 10:11:06 - Row :64 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1430
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1404
+07-26-2021 @ 10:11:06 - Row :64 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :65 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1431
+07-26-2021 @ 10:11:06 - Row :65 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1431
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1404
+07-26-2021 @ 10:11:06 - Row :65 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :66 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1432
+07-26-2021 @ 10:11:06 - Row :66 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1432
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1404
+07-26-2021 @ 10:11:06 - Row :66 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :67 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1433
+07-26-2021 @ 10:11:06 - Row :67 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1433
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_SeaportCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1404
+07-26-2021 @ 10:11:06 - Row :67 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :68 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1434
+07-26-2021 @ 10:11:06 - Row :68 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1434
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1405
+07-26-2021 @ 10:11:06 - Row :68 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :69 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1435
+07-26-2021 @ 10:11:06 - Row :69 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1435
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1405
+07-26-2021 @ 10:11:06 - Row :69 - Product imported successfully.
+07-26-2021 @ 10:11:06 - Row :70 - Parsing item.
+07-26-2021 @ 10:11:06 - Importing as new product ID:1436
+07-26-2021 @ 10:11:06 - Row :70 - Processing item.
+07-26-2021 @ 10:11:06 - Found variation product object. ID:1436
+07-26-2021 @ 10:11:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:06 - Attachment ID:1405
+07-26-2021 @ 10:11:06 - Row :70 - Product imported successfully.
+07-26-2021 @ 10:11:08 - Preparing for import.
+07-26-2021 @ 10:11:08 - Row :71 - Parsing item.
+07-26-2021 @ 10:11:08 - Importing as new product ID:1437
+07-26-2021 @ 10:11:08 - Row :71 - Processing item.
+07-26-2021 @ 10:11:08 - Found variation product object. ID:1437
+07-26-2021 @ 10:11:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:08 - Attachment ID:1405
+07-26-2021 @ 10:11:08 - Row :71 - Product imported successfully.
+07-26-2021 @ 10:11:08 - Row :72 - Parsing item.
+07-26-2021 @ 10:11:08 - Importing as new product ID:1438
+07-26-2021 @ 10:11:08 - Row :72 - Processing item.
+07-26-2021 @ 10:11:08 - Found variation product object. ID:1438
+07-26-2021 @ 10:11:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:08 - Attachment ID:1405
+07-26-2021 @ 10:11:08 - Row :72 - Product imported successfully.
+07-26-2021 @ 10:11:08 - Row :73 - Parsing item.
+07-26-2021 @ 10:11:08 - Importing as new product ID:1439
+07-26-2021 @ 10:11:08 - Row :73 - Processing item.
+07-26-2021 @ 10:11:08 - Found variation product object. ID:1439
+07-26-2021 @ 10:11:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:08 - Attachment ID:1405
+07-26-2021 @ 10:11:08 - Row :73 - Product imported successfully.
+07-26-2021 @ 10:11:08 - Row :74 - Parsing item.
+07-26-2021 @ 10:11:08 - Importing as new product ID:1440
+07-26-2021 @ 10:11:08 - Row :74 - Processing item.
+07-26-2021 @ 10:11:08 - Found variation product object. ID:1440
+07-26-2021 @ 10:11:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125601_FlintStoneCombo.jpg
+07-26-2021 @ 10:11:08 - Attachment ID:1405
+07-26-2021 @ 10:11:08 - Row :74 - Product imported successfully.
+07-26-2021 @ 10:11:08 - Row :75 - Parsing item.
+07-26-2021 @ 10:11:08 - Importing as new product ID:1441
+07-26-2021 @ 10:11:08 - Row :75 - Processing item.
+07-26-2021 @ 10:11:08 - Found variable product object. ID:1441
+07-26-2021 @ 10:11:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:10 - Attachment ID:1442
+07-26-2021 @ 10:11:10 - Row :75 - Product imported successfully.
+07-26-2021 @ 10:11:10 - Row :76 - Parsing item.
+07-26-2021 @ 10:11:10 - Importing as new product ID:1443
+07-26-2021 @ 10:11:10 - Row :76 - Processing item.
+07-26-2021 @ 10:11:10 - Found variation product object. ID:1443
+07-26-2021 @ 10:11:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:10 - Attachment ID:1442
+07-26-2021 @ 10:11:10 - Row :76 - Product imported successfully.
+07-26-2021 @ 10:11:10 - Row :77 - Parsing item.
+07-26-2021 @ 10:11:10 - Importing as new product ID:1444
+07-26-2021 @ 10:11:10 - Row :77 - Processing item.
+07-26-2021 @ 10:11:10 - Found variation product object. ID:1444
+07-26-2021 @ 10:11:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:10 - Attachment ID:1442
+07-26-2021 @ 10:11:10 - Row :77 - Product imported successfully.
+07-26-2021 @ 10:11:10 - Row :78 - Parsing item.
+07-26-2021 @ 10:11:10 - Importing as new product ID:1445
+07-26-2021 @ 10:11:10 - Row :78 - Processing item.
+07-26-2021 @ 10:11:10 - Found variation product object. ID:1445
+07-26-2021 @ 10:11:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:10 - Attachment ID:1442
+07-26-2021 @ 10:11:10 - Row :78 - Product imported successfully.
+07-26-2021 @ 10:11:10 - Row :79 - Parsing item.
+07-26-2021 @ 10:11:10 - Importing as new product ID:1446
+07-26-2021 @ 10:11:10 - Row :79 - Processing item.
+07-26-2021 @ 10:11:10 - Found variation product object. ID:1446
+07-26-2021 @ 10:11:10 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:10 - Attachment ID:1442
+07-26-2021 @ 10:11:11 - Row :79 - Product imported successfully.
+07-26-2021 @ 10:11:11 - Row :80 - Parsing item.
+07-26-2021 @ 10:11:11 - Importing as new product ID:1447
+07-26-2021 @ 10:11:11 - Row :80 - Processing item.
+07-26-2021 @ 10:11:11 - Found variation product object. ID:1447
+07-26-2021 @ 10:11:11 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125605_TealCombo.jpg
+07-26-2021 @ 10:11:11 - Attachment ID:1442
+07-26-2021 @ 10:11:11 - Row :80 - Product imported successfully.
+07-26-2021 @ 10:11:12 - Preparing for import.
+07-26-2021 @ 10:11:12 - Row :81 - Parsing item.
+07-26-2021 @ 10:11:12 - Importing as new product ID:1448
+07-26-2021 @ 10:11:12 - Row :81 - Processing item.
+07-26-2021 @ 10:11:12 - Found variable product object. ID:1448
+07-26-2021 @ 10:11:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:14 - Attachment ID:1449
+07-26-2021 @ 10:11:14 - Row :81 - Product imported successfully.
+07-26-2021 @ 10:11:14 - Row :82 - Parsing item.
+07-26-2021 @ 10:11:14 - Importing as new product ID:1450
+07-26-2021 @ 10:11:14 - Row :82 - Processing item.
+07-26-2021 @ 10:11:14 - Found variation product object. ID:1450
+07-26-2021 @ 10:11:14 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:14 - Attachment ID:1449
+07-26-2021 @ 10:11:14 - Row :82 - Product imported successfully.
+07-26-2021 @ 10:11:14 - Row :83 - Parsing item.
+07-26-2021 @ 10:11:14 - Importing as new product ID:1451
+07-26-2021 @ 10:11:14 - Row :83 - Processing item.
+07-26-2021 @ 10:11:14 - Found variation product object. ID:1451
+07-26-2021 @ 10:11:14 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:14 - Attachment ID:1449
+07-26-2021 @ 10:11:14 - Row :83 - Product imported successfully.
+07-26-2021 @ 10:11:14 - Row :84 - Parsing item.
+07-26-2021 @ 10:11:14 - Importing as new product ID:1452
+07-26-2021 @ 10:11:14 - Row :84 - Processing item.
+07-26-2021 @ 10:11:14 - Found variation product object. ID:1452
+07-26-2021 @ 10:11:14 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:14 - Attachment ID:1449
+07-26-2021 @ 10:11:15 - Row :84 - Product imported successfully.
+07-26-2021 @ 10:11:15 - Row :85 - Parsing item.
+07-26-2021 @ 10:11:15 - Importing as new product ID:1453
+07-26-2021 @ 10:11:15 - Row :85 - Processing item.
+07-26-2021 @ 10:11:15 - Found variation product object. ID:1453
+07-26-2021 @ 10:11:15 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:15 - Attachment ID:1449
+07-26-2021 @ 10:11:15 - Row :85 - Product imported successfully.
+07-26-2021 @ 10:11:15 - Row :86 - Parsing item.
+07-26-2021 @ 10:11:15 - Importing as new product ID:1454
+07-26-2021 @ 10:11:15 - Row :86 - Processing item.
+07-26-2021 @ 10:11:15 - Found variation product object. ID:1454
+07-26-2021 @ 10:11:15 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/HBI_125606_TealCombo.jpg
+07-26-2021 @ 10:11:15 - Attachment ID:1449
+07-26-2021 @ 10:11:15 - Row :86 - Product imported successfully.
+07-26-2021 @ 10:11:15 - ---[ Import ended at 2021-07-26 10:11:15]---

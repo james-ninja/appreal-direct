@@ -1,0 +1,787 @@
+08-17-2021 @ 13:17:26 - ---[ New import started at 2021-08-17 17:17:26 ] PHP Memory: 512 MB, WP Memory: 40 MB
+08-17-2021 @ 13:17:26 - Preparing for import.
+08-17-2021 @ 13:17:26 - Row :1 - Parsing item.
+08-17-2021 @ 13:17:26 - Row :1 - Processing item.
+08-17-2021 @ 13:17:26 - Found variable product object. ID:31997
+08-17-2021 @ 13:17:26 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/9c95ce2bb181d29614de1981524547ca.jpg
+08-17-2021 @ 13:17:30 - Attachment ID:46317
+08-17-2021 @ 13:17:30 - Setting Gallery Images.
+08-17-2021 @ 13:17:30 - Image URL:https://cdn1.nuorder.com/product/426bcced971bb4f344a5090718cbfd6c.jpg
+08-17-2021 @ 13:17:34 - Attachment ID:46318
+08-17-2021 @ 13:17:34 - Image URL:https://cdn1.nuorder.com/product/434cbd2355964a164ccd3fadc458ce3c.jpg
+08-17-2021 @ 13:17:37 - Attachment ID:46319
+08-17-2021 @ 13:17:37 - Image URL:https://cdn1.nuorder.com/product/c08e3c87a423c3aaf6c51cd3e261d429.jpg
+08-17-2021 @ 13:17:41 - Attachment ID:46320
+08-17-2021 @ 13:17:41 - Image URL:https://cdn1.nuorder.com/product/d83ecd720cefb0a93c418bfc757bf6ea.jpg
+08-17-2021 @ 13:17:45 - Attachment ID:46321
+08-17-2021 @ 13:17:45 - Image URL:https://cdn1.nuorder.com/product/02f6526ca8b0ab8fb45cf324015ce51f.jpg
+08-17-2021 @ 13:17:48 - Attachment ID:46322
+08-17-2021 @ 13:17:48 - Image URL:https://cdn1.nuorder.com/product/29097f726829fa58cb54cc862b278405.jpg
+08-17-2021 @ 13:17:52 - Attachment ID:46323
+08-17-2021 @ 13:17:52 - Image URL:https://cdn1.nuorder.com/product/5f5d40c7860ba98db84e4412af6f244b.jpg
+08-17-2021 @ 13:17:56 - Attachment ID:46324
+08-17-2021 @ 13:17:56 - Image URL:https://cdn1.nuorder.com/product/326325b5aada4142a55be53ff01ef7bf.jpg
+08-17-2021 @ 13:17:59 - Attachment ID:46325
+08-17-2021 @ 13:17:59 - Image URL:https://cdn1.nuorder.com/product/e47171da11b894fed48f7ac0493f7695.jpg
+08-17-2021 @ 13:18:03 - Attachment ID:46326
+08-17-2021 @ 13:18:03 - Image URL:https://cdn1.nuorder.com/product/54ab9b1911274414386fcd34f1558487.jpg
+08-17-2021 @ 13:18:07 - Attachment ID:46327
+08-17-2021 @ 13:18:07 - Image URL:https://cdn1.nuorder.com/product/039f1d57b813cfbb97663b826e5ee84c.jpg
+08-17-2021 @ 13:18:11 - Attachment ID:46328
+08-17-2021 @ 13:18:11 - Image URL:https://cdn1.nuorder.com/product/ef712e0bfd8a26c19ad6abdc6c0dc349.jpg
+08-17-2021 @ 13:18:14 - Attachment ID:46329
+08-17-2021 @ 13:18:14 - Image URL:https://cdn1.nuorder.com/product/32f065513431811d07fe4e596ec17e88.jpg
+08-17-2021 @ 13:18:18 - Attachment ID:46330
+08-17-2021 @ 13:18:18 - Image URL:https://cdn1.nuorder.com/product/0952cf91dabe3992501c1c62ab44155f.jpg
+08-17-2021 @ 13:18:22 - Attachment ID:46331
+08-17-2021 @ 13:18:22 - Row :1 - Product updated successfully.
+08-17-2021 @ 13:18:22 - Row :2 - Parsing item.
+08-17-2021 @ 13:18:22 - Row :2 - Processing item.
+08-17-2021 @ 13:18:22 - Found variation product object. ID:31998
+08-17-2021 @ 13:18:25 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:25 - Attachment ID:31999
+08-17-2021 @ 13:18:25 - Row :2 - Product updated successfully.
+08-17-2021 @ 13:18:25 - Row :3 - Parsing item.
+08-17-2021 @ 13:18:26 - Row :3 - Processing item.
+08-17-2021 @ 13:18:26 - Found variation product object. ID:32000
+08-17-2021 @ 13:18:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:29 - Attachment ID:31999
+08-17-2021 @ 13:18:29 - Row :3 - Product updated successfully.
+08-17-2021 @ 13:18:29 - Row :4 - Parsing item.
+08-17-2021 @ 13:18:29 - Row :4 - Processing item.
+08-17-2021 @ 13:18:29 - Found variation product object. ID:32001
+08-17-2021 @ 13:18:32 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:32 - Attachment ID:31999
+08-17-2021 @ 13:18:32 - Row :4 - Product updated successfully.
+08-17-2021 @ 13:18:32 - Row :5 - Parsing item.
+08-17-2021 @ 13:18:32 - Row :5 - Processing item.
+08-17-2021 @ 13:18:32 - Found variation product object. ID:32002
+08-17-2021 @ 13:18:36 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:36 - Attachment ID:31999
+08-17-2021 @ 13:18:36 - Row :5 - Product updated successfully.
+08-17-2021 @ 13:18:36 - Row :6 - Parsing item.
+08-17-2021 @ 13:18:36 - Row :6 - Processing item.
+08-17-2021 @ 13:18:36 - Found variation product object. ID:32003
+08-17-2021 @ 13:18:39 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:39 - Attachment ID:31999
+08-17-2021 @ 13:18:39 - Row :6 - Product updated successfully.
+08-17-2021 @ 13:18:39 - Row :7 - Parsing item.
+08-17-2021 @ 13:18:39 - Row :7 - Processing item.
+08-17-2021 @ 13:18:39 - Found variation product object. ID:32004
+08-17-2021 @ 13:18:43 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:43 - Attachment ID:31999
+08-17-2021 @ 13:18:43 - Row :7 - Product updated successfully.
+08-17-2021 @ 13:18:43 - Row :8 - Parsing item.
+08-17-2021 @ 13:18:43 - Row :8 - Processing item.
+08-17-2021 @ 13:18:43 - Found variation product object. ID:32005
+08-17-2021 @ 13:18:46 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:46 - Attachment ID:31999
+08-17-2021 @ 13:18:46 - Row :8 - Product updated successfully.
+08-17-2021 @ 13:18:46 - Row :9 - Parsing item.
+08-17-2021 @ 13:18:46 - Row :9 - Processing item.
+08-17-2021 @ 13:18:46 - Found variation product object. ID:32006
+08-17-2021 @ 13:18:50 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:50 - Attachment ID:31999
+08-17-2021 @ 13:18:50 - Row :9 - Product updated successfully.
+08-17-2021 @ 13:18:50 - Row :10 - Parsing item.
+08-17-2021 @ 13:18:50 - Row :10 - Processing item.
+08-17-2021 @ 13:18:50 - Found variation product object. ID:32007
+08-17-2021 @ 13:18:53 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:53 - Attachment ID:31999
+08-17-2021 @ 13:18:53 - Row :10 - Product updated successfully.
+08-17-2021 @ 13:18:56 - Preparing for import.
+08-17-2021 @ 13:18:56 - Row :11 - Parsing item.
+08-17-2021 @ 13:18:56 - Row :11 - Processing item.
+08-17-2021 @ 13:18:56 - Found variation product object. ID:32008
+08-17-2021 @ 13:18:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:57 - Attachment ID:31999
+08-17-2021 @ 13:18:57 - Row :11 - Product updated successfully.
+08-17-2021 @ 13:18:57 - Row :12 - Parsing item.
+08-17-2021 @ 13:18:57 - Row :12 - Processing item.
+08-17-2021 @ 13:18:57 - Found variation product object. ID:32009
+08-17-2021 @ 13:18:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:57 - Attachment ID:31999
+08-17-2021 @ 13:18:57 - Row :12 - Product updated successfully.
+08-17-2021 @ 13:18:57 - Row :13 - Parsing item.
+08-17-2021 @ 13:18:57 - Row :13 - Processing item.
+08-17-2021 @ 13:18:57 - Found variation product object. ID:32010
+08-17-2021 @ 13:18:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:57 - Attachment ID:31999
+08-17-2021 @ 13:18:57 - Row :13 - Product updated successfully.
+08-17-2021 @ 13:18:57 - Row :14 - Parsing item.
+08-17-2021 @ 13:18:57 - Row :14 - Processing item.
+08-17-2021 @ 13:18:57 - Found variation product object. ID:32011
+08-17-2021 @ 13:18:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:57 - Attachment ID:31999
+08-17-2021 @ 13:18:57 - Row :14 - Product updated successfully.
+08-17-2021 @ 13:18:57 - Row :15 - Parsing item.
+08-17-2021 @ 13:18:57 - Row :15 - Processing item.
+08-17-2021 @ 13:18:57 - Found variation product object. ID:32012
+08-17-2021 @ 13:18:57 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:57 - Attachment ID:31999
+08-17-2021 @ 13:18:57 - Row :15 - Product updated successfully.
+08-17-2021 @ 13:18:57 - Row :16 - Parsing item.
+08-17-2021 @ 13:18:57 - Row :16 - Processing item.
+08-17-2021 @ 13:18:57 - Found variation product object. ID:32013
+08-17-2021 @ 13:18:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:58 - Attachment ID:31999
+08-17-2021 @ 13:18:58 - Row :16 - Product updated successfully.
+08-17-2021 @ 13:18:58 - Row :17 - Parsing item.
+08-17-2021 @ 13:18:58 - Row :17 - Processing item.
+08-17-2021 @ 13:18:58 - Found variation product object. ID:32014
+08-17-2021 @ 13:18:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:58 - Attachment ID:31999
+08-17-2021 @ 13:18:58 - Row :17 - Product updated successfully.
+08-17-2021 @ 13:18:58 - Row :18 - Parsing item.
+08-17-2021 @ 13:18:58 - Row :18 - Processing item.
+08-17-2021 @ 13:18:58 - Found variation product object. ID:32015
+08-17-2021 @ 13:18:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:58 - Attachment ID:31999
+08-17-2021 @ 13:18:58 - Row :18 - Product updated successfully.
+08-17-2021 @ 13:18:58 - Row :19 - Parsing item.
+08-17-2021 @ 13:18:58 - Row :19 - Processing item.
+08-17-2021 @ 13:18:58 - Found variation product object. ID:32016
+08-17-2021 @ 13:18:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Black.jpg
+08-17-2021 @ 13:18:58 - Attachment ID:31999
+08-17-2021 @ 13:18:58 - Row :19 - Product updated successfully.
+08-17-2021 @ 13:18:58 - Row :20 - Parsing item.
+08-17-2021 @ 13:18:58 - Row :20 - Processing item.
+08-17-2021 @ 13:18:58 - Found variation product object. ID:32017
+08-17-2021 @ 13:18:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:18:58 - Attachment ID:32018
+08-17-2021 @ 13:18:58 - Row :20 - Product updated successfully.
+08-17-2021 @ 13:19:02 - Preparing for import.
+08-17-2021 @ 13:19:02 - Row :21 - Parsing item.
+08-17-2021 @ 13:19:02 - Row :21 - Processing item.
+08-17-2021 @ 13:19:02 - Found variation product object. ID:32019
+08-17-2021 @ 13:19:02 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:02 - Attachment ID:32018
+08-17-2021 @ 13:19:02 - Row :21 - Product updated successfully.
+08-17-2021 @ 13:19:02 - Row :22 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :22 - Processing item.
+08-17-2021 @ 13:19:03 - Found variation product object. ID:32020
+08-17-2021 @ 13:19:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:03 - Attachment ID:32018
+08-17-2021 @ 13:19:03 - Row :22 - Product updated successfully.
+08-17-2021 @ 13:19:03 - Row :23 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :23 - Processing item.
+08-17-2021 @ 13:19:03 - Found variation product object. ID:32021
+08-17-2021 @ 13:19:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:03 - Attachment ID:32018
+08-17-2021 @ 13:19:03 - Row :23 - Product updated successfully.
+08-17-2021 @ 13:19:03 - Row :24 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :24 - Processing item.
+08-17-2021 @ 13:19:03 - Found variation product object. ID:32022
+08-17-2021 @ 13:19:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:03 - Attachment ID:32018
+08-17-2021 @ 13:19:03 - Row :24 - Product updated successfully.
+08-17-2021 @ 13:19:03 - Row :25 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :25 - Processing item.
+08-17-2021 @ 13:19:03 - Found variation product object. ID:32023
+08-17-2021 @ 13:19:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:03 - Attachment ID:32018
+08-17-2021 @ 13:19:03 - Row :25 - Product updated successfully.
+08-17-2021 @ 13:19:03 - Row :26 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :26 - Processing item.
+08-17-2021 @ 13:19:03 - Found variation product object. ID:32024
+08-17-2021 @ 13:19:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:03 - Attachment ID:32018
+08-17-2021 @ 13:19:03 - Row :26 - Product updated successfully.
+08-17-2021 @ 13:19:03 - Row :27 - Parsing item.
+08-17-2021 @ 13:19:03 - Row :27 - Processing item.
+08-17-2021 @ 13:19:04 - Found variation product object. ID:32025
+08-17-2021 @ 13:19:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:04 - Attachment ID:32018
+08-17-2021 @ 13:19:04 - Row :27 - Product updated successfully.
+08-17-2021 @ 13:19:04 - Row :28 - Parsing item.
+08-17-2021 @ 13:19:04 - Row :28 - Processing item.
+08-17-2021 @ 13:19:04 - Found variation product object. ID:32026
+08-17-2021 @ 13:19:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:04 - Attachment ID:32018
+08-17-2021 @ 13:19:04 - Row :28 - Product updated successfully.
+08-17-2021 @ 13:19:04 - Row :29 - Parsing item.
+08-17-2021 @ 13:19:04 - Row :29 - Processing item.
+08-17-2021 @ 13:19:04 - Found variation product object. ID:32027
+08-17-2021 @ 13:19:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:04 - Attachment ID:32018
+08-17-2021 @ 13:19:04 - Row :29 - Product updated successfully.
+08-17-2021 @ 13:19:04 - Row :30 - Parsing item.
+08-17-2021 @ 13:19:04 - Row :30 - Processing item.
+08-17-2021 @ 13:19:04 - Found variation product object. ID:32028
+08-17-2021 @ 13:19:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:04 - Attachment ID:32018
+08-17-2021 @ 13:19:04 - Row :30 - Product updated successfully.
+08-17-2021 @ 13:19:07 - Preparing for import.
+08-17-2021 @ 13:19:07 - Row :31 - Parsing item.
+08-17-2021 @ 13:19:07 - Row :31 - Processing item.
+08-17-2021 @ 13:19:07 - Found variation product object. ID:32029
+08-17-2021 @ 13:19:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:07 - Attachment ID:32018
+08-17-2021 @ 13:19:07 - Row :31 - Product updated successfully.
+08-17-2021 @ 13:19:07 - Row :32 - Parsing item.
+08-17-2021 @ 13:19:07 - Row :32 - Processing item.
+08-17-2021 @ 13:19:07 - Found variation product object. ID:32030
+08-17-2021 @ 13:19:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:07 - Attachment ID:32018
+08-17-2021 @ 13:19:07 - Row :32 - Product updated successfully.
+08-17-2021 @ 13:19:07 - Row :33 - Parsing item.
+08-17-2021 @ 13:19:07 - Row :33 - Processing item.
+08-17-2021 @ 13:19:07 - Found variation product object. ID:32031
+08-17-2021 @ 13:19:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:07 - Attachment ID:32018
+08-17-2021 @ 13:19:07 - Row :33 - Product updated successfully.
+08-17-2021 @ 13:19:07 - Row :34 - Parsing item.
+08-17-2021 @ 13:19:07 - Row :34 - Processing item.
+08-17-2021 @ 13:19:07 - Found variation product object. ID:32032
+08-17-2021 @ 13:19:07 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:07 - Attachment ID:32018
+08-17-2021 @ 13:19:07 - Row :34 - Product updated successfully.
+08-17-2021 @ 13:19:07 - Row :35 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :35 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32033
+08-17-2021 @ 13:19:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:08 - Attachment ID:32018
+08-17-2021 @ 13:19:08 - Row :35 - Product updated successfully.
+08-17-2021 @ 13:19:08 - Row :36 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :36 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32034
+08-17-2021 @ 13:19:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:08 - Attachment ID:32018
+08-17-2021 @ 13:19:08 - Row :36 - Product updated successfully.
+08-17-2021 @ 13:19:08 - Row :37 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :37 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32035
+08-17-2021 @ 13:19:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_White.jpg
+08-17-2021 @ 13:19:08 - Attachment ID:32018
+08-17-2021 @ 13:19:08 - Row :37 - Product updated successfully.
+08-17-2021 @ 13:19:08 - Row :38 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :38 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32036
+08-17-2021 @ 13:19:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:08 - Attachment ID:32037
+08-17-2021 @ 13:19:08 - Row :38 - Product updated successfully.
+08-17-2021 @ 13:19:08 - Row :39 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :39 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32038
+08-17-2021 @ 13:19:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:08 - Attachment ID:32037
+08-17-2021 @ 13:19:08 - Row :39 - Product updated successfully.
+08-17-2021 @ 13:19:08 - Row :40 - Parsing item.
+08-17-2021 @ 13:19:08 - Row :40 - Processing item.
+08-17-2021 @ 13:19:08 - Found variation product object. ID:32039
+08-17-2021 @ 13:19:09 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:09 - Attachment ID:32037
+08-17-2021 @ 13:19:09 - Row :40 - Product updated successfully.
+08-17-2021 @ 13:19:11 - Preparing for import.
+08-17-2021 @ 13:19:11 - Row :41 - Parsing item.
+08-17-2021 @ 13:19:11 - Row :41 - Processing item.
+08-17-2021 @ 13:19:11 - Found variation product object. ID:32040
+08-17-2021 @ 13:19:11 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:11 - Attachment ID:32037
+08-17-2021 @ 13:19:11 - Row :41 - Product updated successfully.
+08-17-2021 @ 13:19:11 - Row :42 - Parsing item.
+08-17-2021 @ 13:19:11 - Row :42 - Processing item.
+08-17-2021 @ 13:19:11 - Found variation product object. ID:32041
+08-17-2021 @ 13:19:11 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:11 - Attachment ID:32037
+08-17-2021 @ 13:19:11 - Row :42 - Product updated successfully.
+08-17-2021 @ 13:19:11 - Row :43 - Parsing item.
+08-17-2021 @ 13:19:11 - Row :43 - Processing item.
+08-17-2021 @ 13:19:11 - Found variation product object. ID:32042
+08-17-2021 @ 13:19:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:12 - Attachment ID:32037
+08-17-2021 @ 13:19:12 - Row :43 - Product updated successfully.
+08-17-2021 @ 13:19:12 - Row :44 - Parsing item.
+08-17-2021 @ 13:19:12 - Row :44 - Processing item.
+08-17-2021 @ 13:19:12 - Found variation product object. ID:32043
+08-17-2021 @ 13:19:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:12 - Attachment ID:32037
+08-17-2021 @ 13:19:12 - Row :44 - Product updated successfully.
+08-17-2021 @ 13:19:12 - Row :45 - Parsing item.
+08-17-2021 @ 13:19:12 - Row :45 - Processing item.
+08-17-2021 @ 13:19:12 - Found variation product object. ID:32044
+08-17-2021 @ 13:19:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:12 - Attachment ID:32037
+08-17-2021 @ 13:19:12 - Row :45 - Product updated successfully.
+08-17-2021 @ 13:19:12 - Row :46 - Parsing item.
+08-17-2021 @ 13:19:12 - Row :46 - Processing item.
+08-17-2021 @ 13:19:12 - Found variation product object. ID:32045
+08-17-2021 @ 13:19:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:12 - Attachment ID:32037
+08-17-2021 @ 13:19:12 - Row :46 - Product updated successfully.
+08-17-2021 @ 13:19:12 - Row :47 - Parsing item.
+08-17-2021 @ 13:19:12 - Row :47 - Processing item.
+08-17-2021 @ 13:19:12 - Found variation product object. ID:32046
+08-17-2021 @ 13:19:12 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:12 - Attachment ID:32037
+08-17-2021 @ 13:19:12 - Row :47 - Product updated successfully.
+08-17-2021 @ 13:19:12 - Row :48 - Parsing item.
+08-17-2021 @ 13:19:12 - Row :48 - Processing item.
+08-17-2021 @ 13:19:12 - Found variation product object. ID:32047
+08-17-2021 @ 13:19:13 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:13 - Attachment ID:32037
+08-17-2021 @ 13:19:13 - Row :48 - Product updated successfully.
+08-17-2021 @ 13:19:13 - Row :49 - Parsing item.
+08-17-2021 @ 13:19:13 - Row :49 - Processing item.
+08-17-2021 @ 13:19:13 - Found variation product object. ID:32048
+08-17-2021 @ 13:19:13 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:13 - Attachment ID:32037
+08-17-2021 @ 13:19:13 - Row :49 - Product updated successfully.
+08-17-2021 @ 13:19:13 - Row :50 - Parsing item.
+08-17-2021 @ 13:19:13 - Row :50 - Processing item.
+08-17-2021 @ 13:19:13 - Found variation product object. ID:32049
+08-17-2021 @ 13:19:13 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:13 - Attachment ID:32037
+08-17-2021 @ 13:19:13 - Row :50 - Product updated successfully.
+08-17-2021 @ 13:19:15 - Preparing for import.
+08-17-2021 @ 13:19:15 - Row :51 - Parsing item.
+08-17-2021 @ 13:19:15 - Row :51 - Processing item.
+08-17-2021 @ 13:19:15 - Found variation product object. ID:32050
+08-17-2021 @ 13:19:15 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:15 - Attachment ID:32037
+08-17-2021 @ 13:19:15 - Row :51 - Product updated successfully.
+08-17-2021 @ 13:19:15 - Row :52 - Parsing item.
+08-17-2021 @ 13:19:15 - Row :52 - Processing item.
+08-17-2021 @ 13:19:15 - Found variation product object. ID:32051
+08-17-2021 @ 13:19:15 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:15 - Attachment ID:32037
+08-17-2021 @ 13:19:15 - Row :52 - Product updated successfully.
+08-17-2021 @ 13:19:15 - Row :53 - Parsing item.
+08-17-2021 @ 13:19:16 - Row :53 - Processing item.
+08-17-2021 @ 13:19:16 - Found variation product object. ID:32052
+08-17-2021 @ 13:19:16 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:16 - Attachment ID:32037
+08-17-2021 @ 13:19:16 - Row :53 - Product updated successfully.
+08-17-2021 @ 13:19:16 - Row :54 - Parsing item.
+08-17-2021 @ 13:19:16 - Row :54 - Processing item.
+08-17-2021 @ 13:19:16 - Found variation product object. ID:32053
+08-17-2021 @ 13:19:16 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:16 - Attachment ID:32037
+08-17-2021 @ 13:19:16 - Row :54 - Product updated successfully.
+08-17-2021 @ 13:19:16 - Row :55 - Parsing item.
+08-17-2021 @ 13:19:16 - Row :55 - Processing item.
+08-17-2021 @ 13:19:16 - Found variation product object. ID:32054
+08-17-2021 @ 13:19:16 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_Nude.jpg
+08-17-2021 @ 13:19:16 - Attachment ID:32037
+08-17-2021 @ 13:19:16 - Row :55 - Product updated successfully.
+08-17-2021 @ 13:19:16 - Row :56 - Parsing item.
+08-17-2021 @ 13:19:16 - Row :56 - Processing item.
+08-17-2021 @ 13:19:16 - Found variation product object. ID:32055
+08-17-2021 @ 13:19:16 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:16 - Attachment ID:32056
+08-17-2021 @ 13:19:16 - Row :56 - Product updated successfully.
+08-17-2021 @ 13:19:16 - Row :57 - Parsing item.
+08-17-2021 @ 13:19:16 - Row :57 - Processing item.
+08-17-2021 @ 13:19:16 - Found variation product object. ID:32057
+08-17-2021 @ 13:19:16 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:16 - Attachment ID:32056
+08-17-2021 @ 13:19:16 - Row :57 - Product updated successfully.
+08-17-2021 @ 13:19:16 - Row :58 - Parsing item.
+08-17-2021 @ 13:19:17 - Row :58 - Processing item.
+08-17-2021 @ 13:19:17 - Found variation product object. ID:32058
+08-17-2021 @ 13:19:17 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:17 - Attachment ID:32056
+08-17-2021 @ 13:19:17 - Row :58 - Product updated successfully.
+08-17-2021 @ 13:19:17 - Row :59 - Parsing item.
+08-17-2021 @ 13:19:17 - Row :59 - Processing item.
+08-17-2021 @ 13:19:17 - Found variation product object. ID:32059
+08-17-2021 @ 13:19:17 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:17 - Attachment ID:32056
+08-17-2021 @ 13:19:17 - Row :59 - Product updated successfully.
+08-17-2021 @ 13:19:17 - Row :60 - Parsing item.
+08-17-2021 @ 13:19:17 - Row :60 - Processing item.
+08-17-2021 @ 13:19:17 - Found variation product object. ID:32060
+08-17-2021 @ 13:19:17 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:17 - Attachment ID:32056
+08-17-2021 @ 13:19:17 - Row :60 - Product updated successfully.
+08-17-2021 @ 13:19:19 - Preparing for import.
+08-17-2021 @ 13:19:19 - Row :61 - Parsing item.
+08-17-2021 @ 13:19:19 - Row :61 - Processing item.
+08-17-2021 @ 13:19:19 - Found variation product object. ID:32061
+08-17-2021 @ 13:19:19 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:19 - Attachment ID:32056
+08-17-2021 @ 13:19:19 - Row :61 - Product updated successfully.
+08-17-2021 @ 13:19:19 - Row :62 - Parsing item.
+08-17-2021 @ 13:19:19 - Row :62 - Processing item.
+08-17-2021 @ 13:19:19 - Found variation product object. ID:32062
+08-17-2021 @ 13:19:19 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:19 - Attachment ID:32056
+08-17-2021 @ 13:19:19 - Row :62 - Product updated successfully.
+08-17-2021 @ 13:19:19 - Row :63 - Parsing item.
+08-17-2021 @ 13:19:19 - Row :63 - Processing item.
+08-17-2021 @ 13:19:19 - Found variation product object. ID:32063
+08-17-2021 @ 13:19:19 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:19 - Attachment ID:32056
+08-17-2021 @ 13:19:19 - Row :63 - Product updated successfully.
+08-17-2021 @ 13:19:19 - Row :64 - Parsing item.
+08-17-2021 @ 13:19:19 - Row :64 - Processing item.
+08-17-2021 @ 13:19:19 - Found variation product object. ID:32064
+08-17-2021 @ 13:19:19 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:19 - Attachment ID:32056
+08-17-2021 @ 13:19:19 - Row :64 - Product updated successfully.
+08-17-2021 @ 13:19:19 - Row :65 - Parsing item.
+08-17-2021 @ 13:19:19 - Row :65 - Processing item.
+08-17-2021 @ 13:19:19 - Found variation product object. ID:32065
+08-17-2021 @ 13:19:20 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:20 - Attachment ID:32056
+08-17-2021 @ 13:19:20 - Row :65 - Product updated successfully.
+08-17-2021 @ 13:19:20 - Row :66 - Parsing item.
+08-17-2021 @ 13:19:20 - Row :66 - Processing item.
+08-17-2021 @ 13:19:20 - Found variation product object. ID:32066
+08-17-2021 @ 13:19:20 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:20 - Attachment ID:32056
+08-17-2021 @ 13:19:20 - Row :66 - Product updated successfully.
+08-17-2021 @ 13:19:20 - Row :67 - Parsing item.
+08-17-2021 @ 13:19:20 - Row :67 - Processing item.
+08-17-2021 @ 13:19:20 - Found variation product object. ID:32067
+08-17-2021 @ 13:19:20 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:20 - Attachment ID:32056
+08-17-2021 @ 13:19:20 - Row :67 - Product updated successfully.
+08-17-2021 @ 13:19:20 - Row :68 - Parsing item.
+08-17-2021 @ 13:19:20 - Row :68 - Processing item.
+08-17-2021 @ 13:19:20 - Found variation product object. ID:32068
+08-17-2021 @ 13:19:20 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:20 - Attachment ID:32056
+08-17-2021 @ 13:19:20 - Row :68 - Product updated successfully.
+08-17-2021 @ 13:19:20 - Row :69 - Parsing item.
+08-17-2021 @ 13:19:20 - Row :69 - Processing item.
+08-17-2021 @ 13:19:20 - Found variation product object. ID:32069
+08-17-2021 @ 13:19:20 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:20 - Attachment ID:32056
+08-17-2021 @ 13:19:20 - Row :69 - Product updated successfully.
+08-17-2021 @ 13:19:20 - Row :70 - Parsing item.
+08-17-2021 @ 13:19:20 - Row :70 - Processing item.
+08-17-2021 @ 13:19:20 - Found variation product object. ID:32070
+08-17-2021 @ 13:19:21 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:21 - Attachment ID:32056
+08-17-2021 @ 13:19:21 - Row :70 - Product updated successfully.
+08-17-2021 @ 13:19:22 - Preparing for import.
+08-17-2021 @ 13:19:22 - Row :71 - Parsing item.
+08-17-2021 @ 13:19:22 - Row :71 - Processing item.
+08-17-2021 @ 13:19:22 - Found variation product object. ID:32071
+08-17-2021 @ 13:19:22 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:22 - Attachment ID:32056
+08-17-2021 @ 13:19:22 - Row :71 - Product updated successfully.
+08-17-2021 @ 13:19:22 - Row :72 - Parsing item.
+08-17-2021 @ 13:19:22 - Row :72 - Processing item.
+08-17-2021 @ 13:19:22 - Found variation product object. ID:32072
+08-17-2021 @ 13:19:22 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:22 - Attachment ID:32056
+08-17-2021 @ 13:19:22 - Row :72 - Product updated successfully.
+08-17-2021 @ 13:19:22 - Row :73 - Parsing item.
+08-17-2021 @ 13:19:23 - Row :73 - Processing item.
+08-17-2021 @ 13:19:23 - Found variation product object. ID:32073
+08-17-2021 @ 13:19:23 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SandshellGloss.jpg
+08-17-2021 @ 13:19:23 - Attachment ID:32056
+08-17-2021 @ 13:19:23 - Row :73 - Product updated successfully.
+08-17-2021 @ 13:19:23 - Row :74 - Parsing item.
+08-17-2021 @ 13:19:23 - Row :74 - Processing item.
+08-17-2021 @ 13:19:23 - Found variation product object. ID:32074
+08-17-2021 @ 13:19:23 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:23 - Attachment ID:32075
+08-17-2021 @ 13:19:23 - Row :74 - Product updated successfully.
+08-17-2021 @ 13:19:23 - Row :75 - Parsing item.
+08-17-2021 @ 13:19:23 - Row :75 - Processing item.
+08-17-2021 @ 13:19:23 - Found variation product object. ID:32076
+08-17-2021 @ 13:19:23 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:23 - Attachment ID:32075
+08-17-2021 @ 13:19:23 - Row :75 - Product updated successfully.
+08-17-2021 @ 13:19:23 - Row :76 - Parsing item.
+08-17-2021 @ 13:19:23 - Row :76 - Processing item.
+08-17-2021 @ 13:19:23 - Found variation product object. ID:32077
+08-17-2021 @ 13:19:24 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:24 - Attachment ID:32075
+08-17-2021 @ 13:19:24 - Row :76 - Product updated successfully.
+08-17-2021 @ 13:19:24 - Row :77 - Parsing item.
+08-17-2021 @ 13:19:24 - Row :77 - Processing item.
+08-17-2021 @ 13:19:24 - Found variation product object. ID:32078
+08-17-2021 @ 13:19:24 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:24 - Attachment ID:32075
+08-17-2021 @ 13:19:24 - Row :77 - Product updated successfully.
+08-17-2021 @ 13:19:24 - Row :78 - Parsing item.
+08-17-2021 @ 13:19:24 - Row :78 - Processing item.
+08-17-2021 @ 13:19:24 - Found variation product object. ID:32079
+08-17-2021 @ 13:19:24 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:24 - Attachment ID:32075
+08-17-2021 @ 13:19:24 - Row :78 - Product updated successfully.
+08-17-2021 @ 13:19:24 - Row :79 - Parsing item.
+08-17-2021 @ 13:19:24 - Row :79 - Processing item.
+08-17-2021 @ 13:19:25 - Found variation product object. ID:32080
+08-17-2021 @ 13:19:25 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:25 - Attachment ID:32075
+08-17-2021 @ 13:19:25 - Row :79 - Product updated successfully.
+08-17-2021 @ 13:19:25 - Row :80 - Parsing item.
+08-17-2021 @ 13:19:25 - Row :80 - Processing item.
+08-17-2021 @ 13:19:25 - Found variation product object. ID:32081
+08-17-2021 @ 13:19:25 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:25 - Attachment ID:32075
+08-17-2021 @ 13:19:25 - Row :80 - Product updated successfully.
+08-17-2021 @ 13:19:27 - Preparing for import.
+08-17-2021 @ 13:19:27 - Row :81 - Parsing item.
+08-17-2021 @ 13:19:27 - Row :81 - Processing item.
+08-17-2021 @ 13:19:27 - Found variation product object. ID:32082
+08-17-2021 @ 13:19:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:27 - Attachment ID:32075
+08-17-2021 @ 13:19:27 - Row :81 - Product updated successfully.
+08-17-2021 @ 13:19:27 - Row :82 - Parsing item.
+08-17-2021 @ 13:19:27 - Row :82 - Processing item.
+08-17-2021 @ 13:19:27 - Found variation product object. ID:32083
+08-17-2021 @ 13:19:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:27 - Attachment ID:32075
+08-17-2021 @ 13:19:27 - Row :82 - Product updated successfully.
+08-17-2021 @ 13:19:27 - Row :83 - Parsing item.
+08-17-2021 @ 13:19:27 - Row :83 - Processing item.
+08-17-2021 @ 13:19:27 - Found variation product object. ID:32084
+08-17-2021 @ 13:19:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:27 - Attachment ID:32075
+08-17-2021 @ 13:19:27 - Row :83 - Product updated successfully.
+08-17-2021 @ 13:19:27 - Row :84 - Parsing item.
+08-17-2021 @ 13:19:27 - Row :84 - Processing item.
+08-17-2021 @ 13:19:27 - Found variation product object. ID:32085
+08-17-2021 @ 13:19:27 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:27 - Attachment ID:32075
+08-17-2021 @ 13:19:28 - Row :84 - Product updated successfully.
+08-17-2021 @ 13:19:28 - Row :85 - Parsing item.
+08-17-2021 @ 13:19:28 - Row :85 - Processing item.
+08-17-2021 @ 13:19:28 - Found variation product object. ID:32086
+08-17-2021 @ 13:19:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:28 - Attachment ID:32075
+08-17-2021 @ 13:19:28 - Row :85 - Product updated successfully.
+08-17-2021 @ 13:19:28 - Row :86 - Parsing item.
+08-17-2021 @ 13:19:28 - Row :86 - Processing item.
+08-17-2021 @ 13:19:28 - Found variation product object. ID:32087
+08-17-2021 @ 13:19:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:28 - Attachment ID:32075
+08-17-2021 @ 13:19:28 - Row :86 - Product updated successfully.
+08-17-2021 @ 13:19:28 - Row :87 - Parsing item.
+08-17-2021 @ 13:19:28 - Row :87 - Processing item.
+08-17-2021 @ 13:19:28 - Found variation product object. ID:32088
+08-17-2021 @ 13:19:28 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:28 - Attachment ID:32075
+08-17-2021 @ 13:19:28 - Row :87 - Product updated successfully.
+08-17-2021 @ 13:19:28 - Row :88 - Parsing item.
+08-17-2021 @ 13:19:29 - Row :88 - Processing item.
+08-17-2021 @ 13:19:29 - Found variation product object. ID:32089
+08-17-2021 @ 13:19:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:29 - Attachment ID:32075
+08-17-2021 @ 13:19:29 - Row :88 - Product updated successfully.
+08-17-2021 @ 13:19:29 - Row :89 - Parsing item.
+08-17-2021 @ 13:19:29 - Row :89 - Processing item.
+08-17-2021 @ 13:19:29 - Found variation product object. ID:32090
+08-17-2021 @ 13:19:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:29 - Attachment ID:32075
+08-17-2021 @ 13:19:29 - Row :89 - Product updated successfully.
+08-17-2021 @ 13:19:29 - Row :90 - Parsing item.
+08-17-2021 @ 13:19:29 - Row :90 - Processing item.
+08-17-2021 @ 13:19:29 - Found variation product object. ID:32091
+08-17-2021 @ 13:19:29 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:29 - Attachment ID:32075
+08-17-2021 @ 13:19:29 - Row :90 - Product updated successfully.
+08-17-2021 @ 13:19:31 - Preparing for import.
+08-17-2021 @ 13:19:31 - Row :91 - Parsing item.
+08-17-2021 @ 13:19:31 - Row :91 - Processing item.
+08-17-2021 @ 13:19:31 - Found variation product object. ID:32092
+08-17-2021 @ 13:19:31 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3449_SpicyBronzeSandshell.jpg
+08-17-2021 @ 13:19:31 - Attachment ID:32075
+08-17-2021 @ 13:19:31 - Row :91 - Product updated successfully.
+08-17-2021 @ 13:19:31 - Row :92 - Parsing item.
+08-17-2021 @ 13:19:31 - Row :92 - Processing item.
+08-17-2021 @ 13:19:31 - Found variable product object. ID:32093
+08-17-2021 @ 13:19:31 - Setting Featured Image. URL:https://cdn1.nuorder.com/product/e5ffb9aeb51abbb56efd7c0630587cdb.jpg
+08-17-2021 @ 13:19:34 - Attachment ID:46332
+08-17-2021 @ 13:19:34 - Setting Gallery Images.
+08-17-2021 @ 13:19:34 - Image URL:https://cdn1.nuorder.com/product/776a1137aeedd5a819115024a8d63536.jpg
+08-17-2021 @ 13:19:38 - Attachment ID:46333
+08-17-2021 @ 13:19:38 - Image URL:https://cdn1.nuorder.com/product/98ea7edbc92b6cd35cccb44fdd4a4c2f.jpg
+08-17-2021 @ 13:19:42 - Attachment ID:46334
+08-17-2021 @ 13:19:42 - Image URL:https://cdn1.nuorder.com/product/fe8d146900bb91f9848f5615d9a74f33.jpg
+08-17-2021 @ 13:19:45 - Attachment ID:46335
+08-17-2021 @ 13:19:45 - Image URL:https://cdn1.nuorder.com/product/a39d7778c17f3d91e27d81b49c6d34ba.jpg
+08-17-2021 @ 13:19:49 - Attachment ID:46336
+08-17-2021 @ 13:19:49 - Image URL:https://cdn1.nuorder.com/product/f802a05eef96b758f7a8282edd89bf68.jpg
+08-17-2021 @ 13:19:53 - Attachment ID:46337
+08-17-2021 @ 13:19:53 - Row :92 - Product updated successfully.
+08-17-2021 @ 13:19:53 - Row :93 - Parsing item.
+08-17-2021 @ 13:19:53 - Row :93 - Processing item.
+08-17-2021 @ 13:19:53 - Found variation product object. ID:32094
+08-17-2021 @ 13:19:53 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:53 - Attachment ID:32095
+08-17-2021 @ 13:19:53 - Row :93 - Product updated successfully.
+08-17-2021 @ 13:19:53 - Row :94 - Parsing item.
+08-17-2021 @ 13:19:53 - Row :94 - Processing item.
+08-17-2021 @ 13:19:53 - Found variation product object. ID:32096
+08-17-2021 @ 13:19:53 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:53 - Attachment ID:32095
+08-17-2021 @ 13:19:54 - Row :94 - Product updated successfully.
+08-17-2021 @ 13:19:54 - Row :95 - Parsing item.
+08-17-2021 @ 13:19:54 - Row :95 - Processing item.
+08-17-2021 @ 13:19:54 - Found variation product object. ID:32097
+08-17-2021 @ 13:19:54 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:54 - Attachment ID:32095
+08-17-2021 @ 13:19:54 - Row :95 - Product updated successfully.
+08-17-2021 @ 13:19:54 - Row :96 - Parsing item.
+08-17-2021 @ 13:19:54 - Row :96 - Processing item.
+08-17-2021 @ 13:19:54 - Found variation product object. ID:32098
+08-17-2021 @ 13:19:54 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:54 - Attachment ID:32095
+08-17-2021 @ 13:19:54 - Row :96 - Product updated successfully.
+08-17-2021 @ 13:19:54 - Row :97 - Parsing item.
+08-17-2021 @ 13:19:54 - Row :97 - Processing item.
+08-17-2021 @ 13:19:54 - Found variation product object. ID:32099
+08-17-2021 @ 13:19:54 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:54 - Attachment ID:32095
+08-17-2021 @ 13:19:54 - Row :97 - Product updated successfully.
+08-17-2021 @ 13:19:54 - Row :98 - Parsing item.
+08-17-2021 @ 13:19:55 - Row :98 - Processing item.
+08-17-2021 @ 13:19:55 - Found variation product object. ID:32100
+08-17-2021 @ 13:19:55 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:55 - Attachment ID:32095
+08-17-2021 @ 13:19:55 - Row :98 - Product updated successfully.
+08-17-2021 @ 13:19:55 - Row :99 - Parsing item.
+08-17-2021 @ 13:19:55 - Row :99 - Processing item.
+08-17-2021 @ 13:19:55 - Found variation product object. ID:32101
+08-17-2021 @ 13:19:55 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:55 - Attachment ID:32095
+08-17-2021 @ 13:19:55 - Row :99 - Product updated successfully.
+08-17-2021 @ 13:19:55 - Row :100 - Parsing item.
+08-17-2021 @ 13:19:55 - Row :100 - Processing item.
+08-17-2021 @ 13:19:55 - Found variation product object. ID:32102
+08-17-2021 @ 13:19:55 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:55 - Attachment ID:32095
+08-17-2021 @ 13:19:55 - Row :100 - Product updated successfully.
+08-17-2021 @ 13:19:58 - Preparing for import.
+08-17-2021 @ 13:19:58 - Row :101 - Parsing item.
+08-17-2021 @ 13:19:58 - Row :101 - Processing item.
+08-17-2021 @ 13:19:58 - Found variation product object. ID:32103
+08-17-2021 @ 13:19:58 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:58 - Attachment ID:32095
+08-17-2021 @ 13:19:59 - Row :101 - Product updated successfully.
+08-17-2021 @ 13:19:59 - Row :102 - Parsing item.
+08-17-2021 @ 13:19:59 - Row :102 - Processing item.
+08-17-2021 @ 13:19:59 - Found variation product object. ID:32104
+08-17-2021 @ 13:19:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:59 - Attachment ID:32095
+08-17-2021 @ 13:19:59 - Row :102 - Product updated successfully.
+08-17-2021 @ 13:19:59 - Row :103 - Parsing item.
+08-17-2021 @ 13:19:59 - Row :103 - Processing item.
+08-17-2021 @ 13:19:59 - Found variation product object. ID:32105
+08-17-2021 @ 13:19:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:59 - Attachment ID:32095
+08-17-2021 @ 13:19:59 - Row :103 - Product updated successfully.
+08-17-2021 @ 13:19:59 - Row :104 - Parsing item.
+08-17-2021 @ 13:19:59 - Row :104 - Processing item.
+08-17-2021 @ 13:19:59 - Found variation product object. ID:32106
+08-17-2021 @ 13:19:59 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:19:59 - Attachment ID:32095
+08-17-2021 @ 13:20:00 - Row :104 - Product updated successfully.
+08-17-2021 @ 13:20:00 - Row :105 - Parsing item.
+08-17-2021 @ 13:20:00 - Row :105 - Processing item.
+08-17-2021 @ 13:20:00 - Found variation product object. ID:32107
+08-17-2021 @ 13:20:00 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:20:00 - Attachment ID:32095
+08-17-2021 @ 13:20:00 - Row :105 - Product updated successfully.
+08-17-2021 @ 13:20:00 - Row :106 - Parsing item.
+08-17-2021 @ 13:20:00 - Row :106 - Processing item.
+08-17-2021 @ 13:20:00 - Found variation product object. ID:32108
+08-17-2021 @ 13:20:00 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:20:00 - Attachment ID:32095
+08-17-2021 @ 13:20:00 - Row :106 - Product updated successfully.
+08-17-2021 @ 13:20:00 - Row :107 - Parsing item.
+08-17-2021 @ 13:20:00 - Row :107 - Processing item.
+08-17-2021 @ 13:20:00 - Found variation product object. ID:32109
+08-17-2021 @ 13:20:00 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Black.jpg
+08-17-2021 @ 13:20:00 - Attachment ID:32095
+08-17-2021 @ 13:20:01 - Row :107 - Product updated successfully.
+08-17-2021 @ 13:20:01 - Row :108 - Parsing item.
+08-17-2021 @ 13:20:01 - Row :108 - Processing item.
+08-17-2021 @ 13:20:01 - Found variation product object. ID:32110
+08-17-2021 @ 13:20:01 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:01 - Attachment ID:32111
+08-17-2021 @ 13:20:01 - Row :108 - Product updated successfully.
+08-17-2021 @ 13:20:01 - Row :109 - Parsing item.
+08-17-2021 @ 13:20:01 - Row :109 - Processing item.
+08-17-2021 @ 13:20:01 - Found variation product object. ID:32112
+08-17-2021 @ 13:20:01 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:01 - Attachment ID:32111
+08-17-2021 @ 13:20:01 - Row :109 - Product updated successfully.
+08-17-2021 @ 13:20:01 - Row :110 - Parsing item.
+08-17-2021 @ 13:20:01 - Row :110 - Processing item.
+08-17-2021 @ 13:20:01 - Found variation product object. ID:32113
+08-17-2021 @ 13:20:01 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:01 - Attachment ID:32111
+08-17-2021 @ 13:20:02 - Row :110 - Product updated successfully.
+08-17-2021 @ 13:20:03 - Preparing for import.
+08-17-2021 @ 13:20:03 - Row :111 - Parsing item.
+08-17-2021 @ 13:20:03 - Row :111 - Processing item.
+08-17-2021 @ 13:20:03 - Found variation product object. ID:32114
+08-17-2021 @ 13:20:03 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:03 - Attachment ID:32111
+08-17-2021 @ 13:20:03 - Row :111 - Product updated successfully.
+08-17-2021 @ 13:20:03 - Row :112 - Parsing item.
+08-17-2021 @ 13:20:03 - Row :112 - Processing item.
+08-17-2021 @ 13:20:04 - Found variation product object. ID:32115
+08-17-2021 @ 13:20:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:04 - Attachment ID:32111
+08-17-2021 @ 13:20:04 - Row :112 - Product updated successfully.
+08-17-2021 @ 13:20:04 - Row :113 - Parsing item.
+08-17-2021 @ 13:20:04 - Row :113 - Processing item.
+08-17-2021 @ 13:20:04 - Found variation product object. ID:32116
+08-17-2021 @ 13:20:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:04 - Attachment ID:32111
+08-17-2021 @ 13:20:04 - Row :113 - Product updated successfully.
+08-17-2021 @ 13:20:04 - Row :114 - Parsing item.
+08-17-2021 @ 13:20:04 - Row :114 - Processing item.
+08-17-2021 @ 13:20:04 - Found variation product object. ID:32117
+08-17-2021 @ 13:20:04 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:04 - Attachment ID:32111
+08-17-2021 @ 13:20:04 - Row :114 - Product updated successfully.
+08-17-2021 @ 13:20:04 - Row :115 - Parsing item.
+08-17-2021 @ 13:20:04 - Row :115 - Processing item.
+08-17-2021 @ 13:20:04 - Found variation product object. ID:32118
+08-17-2021 @ 13:20:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:05 - Attachment ID:32111
+08-17-2021 @ 13:20:05 - Row :115 - Product updated successfully.
+08-17-2021 @ 13:20:05 - Row :116 - Parsing item.
+08-17-2021 @ 13:20:05 - Row :116 - Processing item.
+08-17-2021 @ 13:20:05 - Found variation product object. ID:32119
+08-17-2021 @ 13:20:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:05 - Attachment ID:32111
+08-17-2021 @ 13:20:05 - Row :116 - Product updated successfully.
+08-17-2021 @ 13:20:05 - Row :117 - Parsing item.
+08-17-2021 @ 13:20:05 - Row :117 - Processing item.
+08-17-2021 @ 13:20:05 - Found variation product object. ID:32120
+08-17-2021 @ 13:20:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:05 - Attachment ID:32111
+08-17-2021 @ 13:20:05 - Row :117 - Product updated successfully.
+08-17-2021 @ 13:20:05 - Row :118 - Parsing item.
+08-17-2021 @ 13:20:05 - Row :118 - Processing item.
+08-17-2021 @ 13:20:05 - Found variation product object. ID:32121
+08-17-2021 @ 13:20:05 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:05 - Attachment ID:32111
+08-17-2021 @ 13:20:05 - Row :118 - Product updated successfully.
+08-17-2021 @ 13:20:05 - Row :119 - Parsing item.
+08-17-2021 @ 13:20:06 - Row :119 - Processing item.
+08-17-2021 @ 13:20:06 - Found variation product object. ID:32122
+08-17-2021 @ 13:20:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:06 - Attachment ID:32111
+08-17-2021 @ 13:20:06 - Row :119 - Product updated successfully.
+08-17-2021 @ 13:20:06 - Row :120 - Parsing item.
+08-17-2021 @ 13:20:06 - Row :120 - Processing item.
+08-17-2021 @ 13:20:06 - Found variation product object. ID:32123
+08-17-2021 @ 13:20:06 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:06 - Attachment ID:32111
+08-17-2021 @ 13:20:06 - Row :120 - Product updated successfully.
+08-17-2021 @ 13:20:08 - Preparing for import.
+08-17-2021 @ 13:20:08 - Row :121 - Parsing item.
+08-17-2021 @ 13:20:08 - Row :121 - Processing item.
+08-17-2021 @ 13:20:08 - Found variation product object. ID:32124
+08-17-2021 @ 13:20:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:08 - Attachment ID:32111
+08-17-2021 @ 13:20:08 - Row :121 - Product updated successfully.
+08-17-2021 @ 13:20:08 - Row :122 - Parsing item.
+08-17-2021 @ 13:20:08 - Row :122 - Processing item.
+08-17-2021 @ 13:20:08 - Found variation product object. ID:32125
+08-17-2021 @ 13:20:08 - Setting Featured Image. URL:https://nylimages.s3.amazonaws.com/DF3450_Nude.jpg
+08-17-2021 @ 13:20:08 - Attachment ID:32111
+08-17-2021 @ 13:20:08 - Row :122 - Product updated successfully.
+08-17-2021 @ 13:20:08 - ---[ Import ended at 2021-08-17 17:20:08]---
