@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WooCommerce Advanced Shipment Tracking\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-11 09:34+0000\n"
-"PO-Revision-Date: 2021-10-12 06:24+0000\n"
+"PO-Revision-Date: 2023-06-05 11:28+0000\n"
 "Last-Translator: John Doe\n"
 "Language-Team: Hindi\n"
 "Language: hi_IN\n"
@@ -12,44 +12,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.5.4; wp-5.8.1"
+"X-Loco-Version: 2.6.4; wp-6.2.2"
 
-#: includes/class-ast-pro-tpi.php:202 includes/class-ast-pro-tpi.php:361
+#: includes/class-ast-pro-tpi.php:192 includes/class-ast-pro-tpi.php:361
 msgid " out of "
 msgstr " से बाहर"
 
+#: includes/class-ast-pro-integration-options.php:311
+msgid "3plwinner"
+msgstr "3प्लविनर"
+
 #. %s: replace with Shippinh provider page url
 #. %s: replace with Shipping provider page link
-#: includes/views/admin_options_shipping_provider.php:92
-#: includes/views/admin_options_shipping_provider.php:156
+#: includes/views/admin_options_shipping_provider.php:98
+#: includes/views/admin_options_shipping_provider.php:165
 #, php-format
 msgid "<a href=\"%s\" target=\"blank\">documentation</a>"
 msgstr "<a href=\"%s\" target=\"blank\">प्रलेखन</a>"
 
-#: includes/class-ast-pro-admin.php:1842
-#: includes/views/fulfillment_dashboard.php:44
-#: includes/views/vendor_fulfillment_dashboard.php:26
+#: includes/views/fulfillment_dashboard.php:39
+#: includes/views/fulfillment_dashboard.php:82
+#: includes/views/vendor_fulfillment_dashboard.php:23
 msgid "Actions"
 msgstr "कार्रवाई"
 
-#: includes/views/ast_pro_license_form.php:20
+#: includes/views/ast_pro_license_form.php:52
 #| msgid "Active"
 msgid "Activate"
 msgstr "सक्रिय"
 
-#: includes/views/admin_options_addons.php:20
-msgid ""
-"Activate your license to receive automatic updates, you can get the license "
-"key in your "
-msgstr ""
-"स्वचालित अपडेट प्राप्त करने के लिए अपना लाइसेंस सक्रिय करें, आप अपने में "
-"लाइसेंस कुंजी प्राप्त कर सकते हैं"
+#: includes/views/ast_pro_license_form.php:20
+#: includes/views/ast_pro_license_form.php:22
+#: includes/views/ast_pro_license_form.php:26
+msgid "Activate License"
+msgstr "लाइसेंस सक्रिय करें"
 
-#: includes/class-ast-pro-admin.php:2360
+#: includes/views/ast_pro_license_form.php:21
+msgid "Activate your license to receive automatic updates and premium support"
+msgstr ""
+"स्वचालित अपडेट और प्रीमियम समर्थन प्राप्त करने के लिए अपना लाइसेंस सक्रिय "
+"करें"
+
+#: includes/views/ast_pro_license_form.php:27
+msgid "Activate your license to receive automatic updates and premium support."
+msgstr ""
+"स्वचालित अपडेट और प्रीमियम समर्थन प्राप्त करने के लिए अपना लाइसेंस सक्रिय "
+"करें।"
+
+#: includes/class-ast-pro-admin.php:2062
 msgid "Add API Name alias"
 msgstr "एपीआई नाम उपनाम जोड़ें"
 
-#: includes/views/admin_options_shipping_provider.php:122
+#: includes/views/admin_options_shipping_provider.php:131
 msgid ""
 "Add API name aliases to map Shipping providers names with the provider names "
 "that are updated in the shipment tracking API by external shipping services"
@@ -58,33 +72,35 @@ msgstr ""
 "नामों के साथ शिपिंग प्रदाताओं के नामों को मैप करने के लिए एपीआई नाम उपनाम "
 "जोड़ें"
 
-#: includes/class-ast-pro-admin.php:1830 includes/class-ast-pro-admin.php:1970
-#: includes/views/admin_options_shipping_provider.php:98
+#: includes/views/admin_options_shipping_provider.php:37
+#: includes/views/admin_options_shipping_provider.php:104
 msgid "Add Custom Provider"
 msgstr "कस्टम प्रदाता जोड़ें"
 
-#: includes/views/admin_options_shipping_provider.php:49
+#: includes/views/admin_options_shipping_provider.php:55
 msgid "Add Custom Shipping Provider"
 msgstr "कस्टम शिपिंग प्रदाता जोड़ें"
 
-#: includes/class-ast-pro-admin.php:512
+#: includes/class-ast-pro-admin.php:466
 msgid "add the [wcast-track-order] shortcode in the selected page."
 msgstr "चयनित पृष्ठ में [wcast-track-order] शोर्टकोड जोड़ें।"
 
-#: includes/class-ast-pro-settings.php:720
+#: includes/class-ast-pro-settings.php:835
 msgid "Add Tracking"
 msgstr "ट्रैकिंग जोड़ें"
 
-#: includes/class-ast-pro-settings.php:512
-#: includes/class-ast-pro-vendor-compatibility.php:317
+#: includes/class-ast-pro-settings.php:675
+#: includes/class-ast-pro-vendor-compatibility.php:415
 msgid "Add Tracking - order\t"
 msgstr "ट्रैकिंग जोड़ें - आदेश"
 
-#: includes/class-ast-pro-admin.php:1723 includes/class-ast-pro-actions.php:558
+#: includes/class-ast-pro-actions.php:567
+#: includes/class-ast-pro-actions.php:574
+#: includes/class-ast-pro-dokan-compatibility.php:92
 msgid "Add Tracking Info"
 msgstr "ट्रैकिंग जानकारी जोड़ें"
 
-#: includes/class-ast-pro-admin.php:1568
+#: includes/class-ast-pro-integration-options.php:388
 msgid ""
 "Add Tracking Information in AST meta fields when you automatically sync "
 "tracking numbers from aliexpress orders"
@@ -92,31 +108,15 @@ msgstr ""
 "एएसटी मेटा फ़ील्ड में ट्रैकिंग जानकारी जोड़ें जब आप स्वचालित रूप से "
 "एलीएक्सप्रेस ऑर्डर से ट्रैकिंग नंबर सिंक करते हैं"
 
-#: includes/class-ast-pro-admin.php:1578
-msgid ""
-"Add tracking information in invoice PDF generate by WooCommerce PDF Invoices "
-"& Packing Slips plugin By Ewout Fernhout"
-msgstr ""
-"इनवॉइस पीडीएफ में ट्रैकिंग जानकारी जोड़ें WooCommerce पीडीएफ चालान और पैकिंग "
-"स्लिप प्लगइन द्वारा उत्पन्न Ewout Fernhout द्वारा"
-
-#: includes/class-ast-pro-admin.php:1588
-msgid ""
-"Add tracking information in invoice PDF generate by WooCommerce PDF Invoices "
-"plugin By Bas Elbers"
-msgstr ""
-"बास एल्बर्स द्वारा WooCommerce पीडीएफ चालान प्लगइन द्वारा उत्पन्न इनवॉइस "
-"पीडीएफ में ट्रैकिंग जानकारी जोड़ें"
-
-#: includes/views/admin_options_settings.php:17
+#: includes/views/admin_options_settings.php:31
 msgid "Add Tracking Options"
 msgstr "ट्रैकिंग विकल्प जोड़ें"
 
-#: includes/class-ast-pro-admin.php:746
+#: includes/class-ast-pro-admin.php:698
 msgid "Add Tracking Order action"
 msgstr "ट्रैकिंग आदेश क्रिया जोड़ें"
 
-#: includes/class-ast-pro-admin.php:1548
+#: includes/class-ast-pro-integration-options.php:312
 msgid ""
 "Adding tracking information to your orders shipped with 3plwinner and "
 "automate your workflow"
@@ -124,7 +124,11 @@ msgstr ""
 "3plwinner के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1508
+#: includes/class-ast-pro-integration-options.php:578
+msgid "Adding tracking information to your orders shipped with Byrd"
+msgstr "Byrd के साथ शिप किए गए आपके ऑर्डर में ट्रैकिंग जानकारी जोड़ना"
+
+#: includes/class-ast-pro-integration-options.php:236
 msgid ""
 "Adding tracking information to your orders shipped with CustomCat and "
 "automate your workflow"
@@ -132,7 +136,7 @@ msgstr ""
 "CustomCat के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1518
+#: includes/class-ast-pro-integration-options.php:255
 msgid ""
 "Adding tracking information to your orders shipped with Dear Systems and "
 "automate your workflow"
@@ -140,7 +144,19 @@ msgstr ""
 "डियर सिस्टम्स के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और "
 "अपने वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1558
+#: includes/class-ast-pro-integration-options.php:540
+msgid "Adding tracking information to your orders shipped with Delivery From"
+msgstr "डिलीवरी फ्रॉम के साथ शिप किए गए आपके ऑर्डर में ट्रैकिंग जानकारी जोड़ना"
+
+#: includes/class-ast-pro-integration-options.php:160
+msgid ""
+"Adding tracking information to your orders shipped with DHL for WooCommerce "
+"to the Shipment Tracking and automate your workflow"
+msgstr ""
+"शिपमेंट ट्रैकिंग के लिए WooCommerce के लिए डीएचएल के साथ भेजे गए अपने ऑर्डर "
+"में ट्रैकिंग जानकारी जोड़ना और अपने वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:331
 msgid ""
 "Adding tracking information to your orders shipped with Dianxiaomi and "
 "automate your workflow"
@@ -148,7 +164,31 @@ msgstr ""
 "Dianxiaomi के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1538
+#: includes/class-ast-pro-integration-options.php:350
+msgid ""
+"Adding tracking information to your orders shipped with EIZ and automate "
+"your workflow"
+msgstr ""
+"EIZ के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने वर्कफ़्लो "
+"को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:521
+msgid ""
+"Adding tracking information to your orders shipped with GLS Sell & Send and "
+"automate your workflow"
+msgstr ""
+"GLS के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना अपने वर्कफ़्लो "
+"को बेचें और भेजें और स्वचालित करें"
+
+#: includes/class-ast-pro-integration-options.php:502
+msgid ""
+"Adding tracking information to your orders shipped with Inventory source and "
+"automate your workflow"
+msgstr ""
+"इन्वेंट्री स्रोत के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और "
+"अपने वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:293
 msgid ""
 "Adding tracking information to your orders shipped with Picqer and automate "
 "your workflow"
@@ -156,15 +196,19 @@ msgstr ""
 "Picqer के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1528
+#: includes/class-ast-pro-integration-options.php:407
 msgid ""
-"Adding tracking information to your orders shipped with Printify and "
+"Adding tracking information to your orders shipped with pirate Ship and "
 "automate your workflow"
 msgstr ""
-"Printify के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
-"वर्कफ़्लो को स्वचालित करना"
+"समुद्री डाकू जहाज के साथ भेजे गए अपने आदेशों में ट्रैकिंग जानकारी जोड़ना और "
+"अपने वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1478
+#: includes/class-ast-pro-integration-options.php:559
+msgid "Adding tracking information to your orders shipped with Printful"
+msgstr "प्रिंटफुल के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना"
+
+#: includes/class-ast-pro-integration-options.php:179
 msgid ""
 "Adding tracking information to your orders shipped with QuickBooks Commerce "
 "and automate your workflow"
@@ -172,7 +216,7 @@ msgstr ""
 "QuickBooks कॉमर्स के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना "
 "और अपने वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1488
+#: includes/class-ast-pro-integration-options.php:198
 msgid ""
 "Adding tracking information to your orders shipped with ReadyToShip and "
 "automate your workflow"
@@ -180,7 +224,7 @@ msgstr ""
 "रेडीटॉशिप के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1498
+#: includes/class-ast-pro-integration-options.php:217
 msgid ""
 "Adding tracking information to your orders shipped with Royal Mail Click & "
 "Drop and automate your workflow"
@@ -188,7 +232,23 @@ msgstr ""
 "रॉयल मेल क्लिक एंड ड्रॉप के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी "
 "जोड़ना और अपने वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1448
+#: includes/class-ast-pro-integration-options.php:483
+msgid ""
+"Adding tracking information to your orders shipped with Shippo and automate "
+"your workflow"
+msgstr ""
+"शिप्पो के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
+"वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:369
+msgid ""
+"Adding tracking information to your orders shipped with shippypro and "
+"automate your workflow"
+msgstr ""
+"Shippypro के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
+"वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:84
 msgid ""
 "Adding tracking information to your orders shipped with ShipStation and "
 "automate your workflow"
@@ -196,7 +256,23 @@ msgstr ""
 "शिपस्टेशन के साथ भेजे गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
 "वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1458
+#: includes/class-ast-pro-integration-options.php:445
+msgid ""
+"Adding tracking information to your orders shipped with shiptheory and "
+"automate your workflow"
+msgstr ""
+"शिपथ्योरी के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
+"वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:464
+msgid ""
+"Adding tracking information to your orders shipped with stamps.com and "
+"automate your workflow"
+msgstr ""
+"Stamps.com के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना और अपने "
+"वर्कफ़्लो को स्वचालित करना"
+
+#: includes/class-ast-pro-integration-options.php:103
 msgid ""
 "Adding tracking information to your orders shipped with WooCommerce Shipping "
 "to the Shipment Tracking and automate your workflow"
@@ -204,7 +280,7 @@ msgstr ""
 "WooCommerce शिपिंग के साथ शिप किए गए अपने ऑर्डर में ट्रैकिंग जानकारी को "
 "शिपमेंट ट्रैकिंग में जोड़ना और अपने वर्कफ़्लो को स्वचालित करना"
 
-#: includes/class-ast-pro-admin.php:1438
+#: includes/class-ast-pro-integration-options.php:62
 msgid ""
 "Adding tracking information to your orders when generating shipping labels "
 "using the CartRover"
@@ -212,7 +288,7 @@ msgstr ""
 "CartRover का उपयोग करके शिपिंग लेबल जेनरेट करते समय अपने ऑर्डर में ट्रैकिंग "
 "जानकारी जोड़ना"
 
-#: includes/class-ast-pro-admin.php:1428
+#: includes/class-ast-pro-integration-options.php:51
 msgid ""
 "Adding tracking information to your orders when generating shipping labels "
 "using the Ordoro"
@@ -220,7 +296,25 @@ msgstr ""
 "Ordoro . का उपयोग करके शिपिंग लेबल जेनरेट करते समय अपने ऑर्डर में ट्रैकिंग "
 "जानकारी जोड़ना"
 
-#: includes/class-ast-pro-admin.php:1468
+#: includes/class-ast-pro-integration-options.php:73
+msgid ""
+"Adding tracking information to your orders when generating shipping labels "
+"using the ParcelForce"
+msgstr ""
+"ParcelForce का उपयोग करके शिपिंग लेबल बनाते समय अपने ऑर्डर में ट्रैकिंग "
+"जानकारी जोड़ना"
+
+#: includes/class-ast-pro-integration-options.php:141
+msgid ""
+"Adding tracking information to your orders when generating shipping labels "
+"using the WooCommerce Canada Post Shipping Plugin with Print Label plugin by "
+"PluginHive"
+msgstr ""
+"प्लगइनहाइव द्वारा प्रिंट लेबल प्लगइन के साथ WooCommerce कनाडा पोस्ट शिपिंग "
+"प्लगइन का उपयोग करके शिपिंग लेबल बनाते समय अपने ऑर्डर में ट्रैकिंग जानकारी "
+"जोड़ना"
+
+#: includes/class-ast-pro-integration-options.php:122
 msgid ""
 "Adding tracking information to your orders when generating shipping labels "
 "using the WooCommerce UPS Shipping Plugin with Print Label plugin by "
@@ -229,7 +323,7 @@ msgstr ""
 "प्लगइनहाइव द्वारा प्रिंट लेबल प्लगइन के साथ WooCommerce UPS शिपिंग प्लगइन का "
 "उपयोग करके शिपिंग लेबल बनाते समय अपने ऑर्डर में ट्रैकिंग जानकारी जोड़ना"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:247
+#: includes/customizer/ast-customizer.php:504
 msgid "Additional text after header"
 msgstr "शीर्षलेख के बाद अतिरिक्त पाठ"
 
@@ -237,25 +331,34 @@ msgstr "शीर्षलेख के बाद अतिरिक्त प�
 msgid "Advanced Shipment Tracking Pro"
 msgstr "उन्नत शिपमेंट ट्रैकिंग प्रो"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:174
-msgid "After Order Details"
-msgstr "आदेश विवरण के बाद"
+#: includes/class-ast-pro-integration-options.php:387
+msgid "AliExpress Dropshipping"
+msgstr "अलीएक्सप्रेस ड्रॉपशीपिंग"
 
-#: includes/views/fulfillment_dashboard.php:21
+#: includes/views/fulfillment_dashboard.php:16
+#: includes/views/fulfillment_dashboard.php:58
 msgid "All Shipping Methods"
 msgstr "सभी शिपिंग तरीके"
 
-#: includes/class-ast-pro-admin.php:1889
+#: includes/class-ast-pro-admin.php:1616
 msgid "API aliases"
 msgstr "एपीआई उपनाम"
 
-#: includes/class-ast-pro-admin.php:874
+#: includes/class-ast-pro-admin.php:846
 msgid "API Date Format"
 msgstr "एपीआई दिनांक प्रारूप"
 
-#: includes/views/admin_options_shipping_provider.php:124
+#: includes/views/admin_options_shipping_provider.php:133
 msgid "API Name"
 msgstr "एपीआई नाम"
+
+#: includes/customizer/ast-customizer.php:91
+msgid "AST Customizer"
+msgstr "एएसटी अनुकूलक"
+
+#: includes/class-ast-pro-admin.php:223
+msgid "AST Fulfillment Manager"
+msgstr "एएसटी पूर्ति प्रबंधक"
 
 #. Description of the plugin
 msgid ""
@@ -267,382 +370,425 @@ msgstr ""
 "जोड़ने, पूर्ति वर्कफ़्लो को स्वचालित करने और ग्राहकों को खुश और सूचित रखने "
 "के लिए शक्तिशाली सुविधाएँ प्रदान करता है।"
 
-#: includes/class-ast-pro-admin.php:868
+#: includes/class-ast-pro-admin.php:831
 msgid "Auto-complete orders that come from the API"
 msgstr "API से आने वाले स्वतः पूर्ण आदेश"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:170
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:194
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:219
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:239
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:169
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:192
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:216
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:235
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:130
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:153
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:177
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:196
-msgid "Available variables:"
-msgstr "उपलब्ध चर:"
+#: includes/class-ast-pro-integration-options.php:91
+#: includes/class-ast-pro-integration-options.php:110
+#: includes/class-ast-pro-integration-options.php:129
+#: includes/class-ast-pro-integration-options.php:148
+#: includes/class-ast-pro-integration-options.php:167
+#: includes/class-ast-pro-integration-options.php:186
+#: includes/class-ast-pro-integration-options.php:205
+#: includes/class-ast-pro-integration-options.php:224
+#: includes/class-ast-pro-integration-options.php:243
+#: includes/class-ast-pro-integration-options.php:262
+#: includes/class-ast-pro-integration-options.php:300
+#: includes/class-ast-pro-integration-options.php:319
+#: includes/class-ast-pro-integration-options.php:338
+#: includes/class-ast-pro-integration-options.php:357
+#: includes/class-ast-pro-integration-options.php:376
+#: includes/class-ast-pro-integration-options.php:395
+#: includes/class-ast-pro-integration-options.php:414
+#: includes/class-ast-pro-integration-options.php:452
+#: includes/class-ast-pro-integration-options.php:471
+#: includes/class-ast-pro-integration-options.php:490
+#: includes/class-ast-pro-integration-options.php:509
+#: includes/class-ast-pro-integration-options.php:528
+#: includes/class-ast-pro-integration-options.php:547
+#: includes/class-ast-pro-integration-options.php:566
+#: includes/class-ast-pro-integration-options.php:585
+#: includes/views/integrations_admin_options.php:73
+msgid "AutoComplete orders when they are Shipped"
+msgstr "शिप किए जाने पर स्वत: पूर्ण आदेश"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:353
+#: includes/customizer/ast-customizer.php:714
+msgid "Available Placeholders:"
+msgstr "उपलब्ध प्लेसहोल्डर:"
+
+#: includes/customizer/ast-customizer.php:545
 msgid "Background color"
 msgstr "पीछे का रंग"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:173
-msgid "Before Order Details"
-msgstr "आदेश विवरण से पहले"
-
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:369
+#: includes/customizer/ast-customizer.php:553
 msgid "Border color"
 msgstr "सीमा रंग"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:385
+#: includes/customizer/ast-customizer.php:561
 msgid "Border radius"
 msgstr "सीमा त्रिज्या"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:477
+#: includes/customizer/ast-customizer.php:609
 msgid "Button color"
 msgstr "बटन का रंग"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:493
+#: includes/customizer/ast-customizer.php:617
 msgid "Button font color"
 msgstr "बटन फ़ॉन्ट रंग"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:509
+#: includes/customizer/ast-customizer.php:625
 msgid "Button radius"
 msgstr "बटन त्रिज्या"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:458
+#: includes/customizer/ast-customizer.php:597
 msgid "Button size"
 msgstr "बटन के आकार"
 
-#: includes/api/class-wc-ast-pro-rest-api-controller.php:222
+#: includes/customizer/ast-customizer.php:587
+msgid "Button text"
+msgstr "टेक्स्ट बटन"
+
+#: includes/class-ast-pro-integration-options.php:577
+msgid "Byrd Fulfillment"
+msgstr "बर्ड पूर्ति"
+
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:215
 msgid "Cannot create existing order shipment tracking."
 msgstr "मौजूदा ऑर्डर शिपमेंट ट्रैकिंग नहीं बना सकता।"
 
-#: includes/class-ast-pro-settings.php:665
+#: includes/class-ast-pro-integration-options.php:61
+msgid "CartRover"
+msgstr "कार्टरोवर"
+
+#: includes/class-ast-pro-settings.php:293
 msgid "Change order status to"
 msgstr "आदेश की स्थिति को बदलें"
 
-#: includes/class-ast-pro-settings.php:467
+#. %s: search order status label
+#: includes/class-ast-pro-settings.php:259
+#: includes/class-ast-pro-settings.php:475
+#: includes/class-ast-pro-settings.php:486
+#: includes/class-ast-pro-settings.php:581
+#, php-format
+msgid "Change status to %s"
+msgstr "स्थिति को %s . में बदलें"
+
+#: includes/class-ast-pro-settings.php:641
 msgid "Change status to shipped"
 msgstr "स्थिति को शिप किए गए में बदलें"
 
-#: includes/class-ast-pro-admin.php:875
+#: includes/class-ast-pro-admin.php:848
 msgid "Choose for which Order status to display"
 msgstr "चुनें कि किस ऑर्डर की स्थिति प्रदर्शित करनी है"
 
-#: includes/class-ast-pro-admin.php:990 includes/class-ast-pro-admin.php:993
+#: includes/class-ast-pro-admin.php:968 includes/class-ast-pro-admin.php:971
 msgid "Choose for which Payment method you want to sync the tracking to PayPal"
 msgstr ""
 "चुनें कि आप किस भुगतान विधि के लिए ट्रैकिंग को PayPal के साथ सिंक करना चाहते "
 "हैं"
 
-#: includes/views/admin_options_bulk_upload.php:36
+#: includes/views/admin_options_bulk_upload.php:37
 msgid "Choose the Shipped Date format"
 msgstr "शिप किया गया दिनांक प्रारूप चुनें"
 
-#: includes/customizer/class-ast-pro-customizer.php:51
-msgid "Completed Order Email"
-msgstr "पूर्ण आदेश ईमेल"
+#: includes/customizer/ast-customizer.php:128
+#: includes/customizer/ast-customizer.php:368
+#: includes/customizer/ast-customizer.php:638
+msgid "Completed"
+msgstr "पुरा होना।"
 
-#: includes/views/admin_options_bulk_upload.php:65
+#: includes/views/ast_pro_license_form.php:28
+msgid "Connect & Activate"
+msgstr "कनेक्ट और सक्रिय करें"
+
+#: includes/views/admin_options_bulk_upload.php:66
 msgid "Continue"
 msgstr "जारी रखें"
 
-#: includes/views/admin_options_shipping_provider.php:63
-#: includes/views/admin_options_shipping_provider.php:129
+#: includes/views/admin_options_shipping_provider.php:69
+#: includes/views/admin_options_shipping_provider.php:138
 msgid "Country"
 msgstr "देश"
 
-#: includes/class-ast-pro-fulfillment-dashboard.php:81
+#: includes/class-ast-pro-admin.php:562 includes/class-ast-pro-admin.php:568
 msgid "CSV Import"
 msgstr "सीएसवी आयात"
 
-#: includes/views/admin_options_bulk_upload.php:10
+#: includes/views/admin_options_bulk_upload.php:11
 msgid "CSV importer"
 msgstr "सीएसवी आयातक"
 
-#: includes/views/admin_options_shipping_provider.php:122
+#: includes/views/admin_options_shipping_provider.php:131
 msgid "Custom API name"
 msgstr "कस्टम एपीआई नाम"
 
-#: includes/views/admin_options_shipping_provider.php:59
+#: includes/views/admin_options_shipping_provider.php:65
 msgid "Custom Display Name"
 msgstr "कस्टम प्रदर्शन नाम"
 
-#: includes/views/admin_options_shipping_provider.php:118
+#: includes/views/admin_options_shipping_provider.php:127
 msgid "Custom display name"
 msgstr "कस्टम प्रदर्शन नाम"
 
-#: includes/views/admin_options_shipping_provider.php:56
+#: includes/views/admin_options_shipping_provider.php:62
 msgid "Custom Provider"
 msgstr "कस्टम प्रदाता"
 
-#: includes/views/admin_options_shipping_provider.php:81
-#: includes/views/admin_options_shipping_provider.php:145
+#: includes/views/admin_options_shipping_provider.php:87
 msgid "Custom URL"
 msgstr "कस्टम यूआरएल"
 
-#: includes/views/fulfillment_dashboard.php:40
-#: includes/views/vendor_fulfillment_dashboard.php:21
+#: includes/class-ast-pro-integration-options.php:235
+msgid "CustomCat"
+msgstr "कस्टम कैट"
+
+#: includes/views/fulfillment_dashboard.php:35
+#: includes/views/fulfillment_dashboard.php:77
+#: includes/views/vendor_fulfillment_dashboard.php:18
 msgid "Customer"
 msgstr "ग्राहक"
 
-#: includes/views/admin_options_settings.php:33
+#: includes/views/admin_options_settings.php:47
 msgid "Customer View"
 msgstr "ग्राहक दृश्य"
 
-#: includes/class-ast-pro-admin.php:368 includes/class-ast-pro-admin.php:529
-#: includes/class-ast-pro-admin.php:590
+#: includes/class-ast-pro-admin.php:483
 msgid "Customize"
 msgstr "अनुकूलित करें"
 
-#: includes/class-ast-pro-admin.php:584
-msgid "Customizer"
-msgstr "कस्टमाइज़ किया गया"
-
-#: includes/views/admin_options_osm.php:60
+#: includes/views/admin_options_osm.php:64
 msgid "Dark Font"
 msgstr "डार्क फ़ॉन्ट"
 
-#: includes/class-ast-pro-admin.php:212 includes/class-ast-pro-admin.php:226
+#: includes/class-ast-pro-admin.php:179 includes/class-ast-pro-admin.php:193
 msgid "Data saved successfully"
 msgstr "डेटा सफलतापूर्वक सहेजा गया"
 
-#: includes/class-ast-pro-actions.php:403
-#: includes/class-ast-pro-settings.php:556
-#: includes/class-ast-pro-vendor-compatibility.php:361
+#: includes/class-ast-pro-actions.php:414
+#: includes/class-ast-pro-settings.php:719
+#: includes/class-ast-pro-vendor-compatibility.php:459
+#: includes/class-ast-pro-dokan-compatibility.php:127
 msgid "Date shipped:"
 msgstr "जिस तारीख पर भेजा गया:"
 
-#: includes/views/ast_pro_license_form.php:18
+#: includes/views/ast_pro_license_form.php:15
+#: includes/views/ast_pro_license_form.php:50
 msgid "Deactivate"
 msgstr "निष्क्रिय करें"
 
-#: includes/class-ast-pro-admin.php:1928
-msgid "default"
-msgstr "चूक जाना"
+#: includes/class-ast-pro-integration-options.php:254
+msgid "Dear Systems"
+msgstr "प्रिय सिस्टम"
 
-#: includes/class-ast-pro-settings.php:151
-#: includes/class-ast-pro-settings.php:199
-#: includes/class-ast-pro-settings.php:653
+#: includes/class-ast-pro-admin.php:1428
+#: includes/class-ast-pro-settings.php:209
+#: includes/class-ast-pro-settings.php:227
+#: includes/class-ast-pro-settings.php:281
 msgid "Delivered"
 msgstr "पहुंचा दिया"
 
-#. %s: replace with order count
-#: includes/class-ast-pro-settings.php:157
+#. %s: search number of order
+#: includes/class-ast-pro-settings.php:215
 #, php-format
 msgid "Delivered <span class=\"count\">(%s)</span>"
 msgid_plural "Delivered <span class=\"count\">(%s)</span>"
 msgstr[0] "वितरित <span class=\"count\">(%s)</span>"
 msgstr[1] "वितरित <span class=\"count\">(%s)</span>"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:341
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:332
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:293
+#: includes/class-ast-pro-integration-options.php:159
+msgid "DHL Shipping Germany for WooCommerce"
+msgstr "WooCommerce के लिए डीएचएल शिपिंग जर्मनी"
+
+#: includes/class-ast-pro-integration-options.php:330
+msgid "Dianxiaomi"
+msgstr "डियानक्सिओमी"
+
+#: includes/views/admin_options_shipping_provider.php:40
+msgid "Disable All Providers"
+msgstr "सभी प्रदाताओं को अक्षम करें"
+
+#: includes/customizer/ast-customizer.php:763
 msgid "Display Billing Address"
 msgstr "बिलिंग पता प्रदर्शित करें"
 
-#: includes/class-ast-pro-admin.php:1839
-msgid "Display Name"
-msgstr "प्रदर्शित होने वाला नाम"
-
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:256
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:251
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:212
-msgid "Display Options"
-msgstr "प्रदर्शन विकल्प"
-
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:305
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:298
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:259
+#: includes/customizer/ast-customizer.php:743
 msgid "Display product images"
 msgstr "उत्पाद चित्र प्रदर्शित करें"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:288
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:281
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:242
+#: includes/customizer/ast-customizer.php:733
 msgid "Display shipment item price"
 msgstr "शिपमेंट आइटम की कीमत प्रदर्शित करें"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:323
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:315
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:276
+#: includes/customizer/ast-customizer.php:522
+msgid "Display shipment status section"
+msgstr "शिपमेंट स्थिति अनुभाग प्रदर्शित करें"
+
+#: includes/customizer/ast-customizer.php:753
 msgid "Display Shipping Address"
 msgstr "शिपिंग पता प्रदर्शित करें"
 
-#: includes/views/admin_options_bulk_upload.php:127
+#: includes/views/admin_options_bulk_upload.php:131
 msgid "Download sample csv"
 msgstr "नमूना सीएसवी डाउनलोड करें"
 
-#: includes/class-ast-pro-admin.php:1917
-msgid "edit"
-msgstr "संपादित करें"
-
-#: includes/views/admin_options_shipping_provider.php:108
+#: includes/views/admin_options_shipping_provider.php:114
 msgid "Edit Shipping Provider"
 msgstr "शिपिंग प्रदाता संपादित करें"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:218
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:215
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:176
+#: includes/class-ast-pro-integration-options.php:349
+msgid "EIZ"
+msgstr "EIZ"
+
+#: includes/customizer/ast-customizer.php:413
+#: includes/customizer/ast-customizer.php:414
+#: includes/customizer/ast-customizer.php:423
+#: includes/customizer/ast-customizer.php:467
+#: includes/customizer/ast-customizer.php:468
+#: includes/customizer/ast-customizer.php:646
+msgid "Email Content"
+msgstr "ईमेल सामग्री"
+
+#: includes/customizer/ast-customizer.php:690
 msgid "Email content"
 msgstr "ईमेल सामग्री"
 
-#: includes/class-ast-pro-admin.php:740
+#: includes/customizer/ast-customizer.php:791
+msgid "Email Customizer"
+msgstr "ईमेल अनुकूलक"
+
+#: includes/customizer/ast-customizer.php:678
+msgid "Email heading"
+msgstr "ईमेल शीर्षक"
+
+#: includes/customizer/ast-customizer.php:667
+msgid "Email Subject"
+msgstr "ईमेल विषय"
+
+#: includes/customizer/ast-customizer.php:653
+msgid "Email type"
+msgstr "ईमेल प्रकार"
+
+#: includes/views/admin_options_shipping_provider.php:39
+msgid "Enable All Providers"
+msgstr "सभी प्रदाताओं को सक्षम करें"
+
+#: includes/customizer/ast-customizer.php:950
+msgid "Enable email"
+msgstr "ईमेल सक्षम करें"
+
+#: includes/class-ast-pro-admin.php:691
 msgid "Enable Legacy add tracking panel in edit order"
 msgstr "संपादन क्रम में लीगेसी ऐड ट्रैकिंग पैनल सक्षम करें"
 
-#: includes/class-ast-pro-admin.php:1006
+#: includes/class-ast-pro-admin.php:985
 msgid "Enable log"
 msgstr "लॉग सक्षम करें"
 
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:150
-msgid "Enable Partially Shipped order status email"
-msgstr "आंशिक रूप से शिप किए गए ऑर्डर की स्थिति ईमेल सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:964
+#: includes/class-ast-pro-admin.php:939
 msgid "Enable PayPal Sandbox"
 msgstr "पेपैल सैंडबॉक्स सक्षम करें"
 
-#: includes/class-ast-pro-admin.php:956
+#: includes/class-ast-pro-admin.php:930
 msgid "Enable PayPal Tracking"
 msgstr "पेपैल ट्रैकिंग सक्षम करें"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:150
-#| msgid "Enable Delivered order status email"
-msgid "Enable Shipped order status email"
-msgstr "शिप किए गए ऑर्डर की स्थिति ईमेल सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:734
+#: includes/class-ast-pro-admin.php:684
 msgid "Enable Shipping Providers Auto-detection (Beta)"
 msgstr "शिपिंग प्रदाताओं को ऑटो-डिटेक्शन (बीटा) सक्षम करें"
 
-#: includes/class-ast-pro-admin.php:1547
-msgid "Enable the 3plwinner integration"
-msgstr "3plwinner एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1567
-msgid "Enable the AliExpress Dropshipping integration"
-msgstr "AliExpress ड्रॉपशीपिंग एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1437
-msgid "Enable the CartRover tracking integration"
-msgstr "कार्टरोवर ट्रैकिंग एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1507
-msgid "Enable the CustomCat integration"
-msgstr "CustomCat एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1517
-msgid "Enable the Dear Systems integration"
-msgstr "प्रिय सिस्टम एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1557
-msgid "Enable the Dianxiaomi integration"
-msgstr "Dianxiaomi एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1427
-msgid "Enable the Ordoro tracking integration"
-msgstr "Ordoro ट्रैकिंग एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1537
-msgid "Enable the Picqer integration"
-msgstr "Picqer एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1527
-msgid "Enable the Printify integration"
-msgstr "Printify एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1477
-msgid "Enable the QuickBooks Commerce (formerly TradeGecko) Integrations"
-msgstr "QuickBooks वाणिज्य (पूर्व में TradeGecko) एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1487
-msgid "Enable the ReadyToShip integration"
-msgstr "रेडी टूशिप एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1497
-msgid "Enable the Royal Mail Click & Drop integration"
-msgstr "रॉयल मेल क्लिक और ड्रॉप एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1447
-msgid "Enable the ShipStation integration"
-msgstr "शिपस्टेशन एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:709
+#: includes/class-ast-pro-admin.php:677
 msgid "Enable the Tracking Per Item option by default"
 msgstr "डिफ़ॉल्ट रूप से प्रति आइटम ट्रैकिंग विकल्प सक्षम करें"
 
-#: includes/class-ast-pro-admin.php:1457
-msgid "Enable the WC Shipping integration"
-msgstr "WC शिपिंग एकीकरण सक्षम करें"
-
-#: includes/class-ast-pro-admin.php:1467
+#: includes/class-ast-pro-admin.php:931
 msgid ""
-"Enable the WooCommerce UPS Shipping Plugin with Print Label plugin "
-"integration"
+"Enable this option to synchronize tracking information between your store "
+"and PayPal transactions. When you fulfill an order and add tracking "
+"information, the tracking number, shipping provider, and date will be sent "
+"to the corresponding PayPal transaction."
 msgstr ""
-"प्रिंट लेबल प्लगइन एकीकरण के साथ WooCommerce UPS शिपिंग प्लगइन सक्षम करें"
+"अपने स्टोर और पेपाल लेन-देन के बीच ट्रैकिंग जानकारी को सिंक्रनाइज़ करने के "
+"लिए इस विकल्प को सक्षम करें। जब आप किसी ऑर्डर को पूरा करते हैं और ट्रैकिंग "
+"जानकारी जोड़ते हैं, तो ट्रैकिंग नंबर, शिपिंग प्रदाता और दिनांक संबंधित पेपाल "
+"लेनदेन को भेजे जाएंगे।"
 
-#: includes/class-ast-pro-admin.php:850
+#: includes/class-ast-pro-admin.php:811
 msgid "Enable Track button in orders history (actions)"
 msgstr "ऑर्डर इतिहास (कार्रवाइयां) में ट्रैक बटन सक्षम करें"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:530
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:546
-msgid "Expend the Track button"
-msgstr "ट्रैक बटन का विस्तार करें"
+#: includes/class-ast-pro-admin.php:986
+msgid ""
+"Enabling this option will save logs of any errors that may occur when "
+"syncing tracking information with the PayPal Tracking API. This can be "
+"helpful for troubleshooting any issues that may arise"
+msgstr ""
+"इस विकल्प को सक्षम करने से ट्रैकिंग जानकारी को PayPal ट्रैकिंग API के साथ "
+"समन्वयित करते समय उत्पन्न होने वाली किसी भी त्रुटि के लॉग सहेजे जाएँगे। यह "
+"उत्पन्न होने वाली किसी भी समस्या के निवारण के लिए सहायक हो सकता है"
 
-#: includes/class-ast-pro-paypal-tracking.php:108
-#: includes/class-ast-pro-paypal-tracking.php:186
+#: includes/class-ast-pro-admin.php:949
+msgid "Enter your PayPal REST API Client ID"
+msgstr "अपना PayPal REST API क्लाइंट आईडी दर्ज करें"
+
+#: includes/class-ast-pro-admin.php:957
+msgid "Enter your PayPal REST API Client Secret"
+msgstr "अपना PayPal REST API क्लाइंट सीक्रेट दर्ज करें"
+
+#: includes/class-ast-pro-paypal-tracking.php:121
+#: includes/class-ast-pro-paypal-tracking.php:241
 msgid "Export Tracking to PayPal"
 msgstr "पेपैल को निर्यात ट्रैकिंग"
 
-#: includes/class-ast-pro-admin.php:1386
-msgid "Filter by fullfillment status"
-msgstr "फुलफिलमेंट स्थिति के अनुसार फ़िल्टर करें"
-
-#: includes/class-ast-pro-settings.php:767
+#: includes/class-ast-pro-settings.php:883
+#: includes/class-ast-pro-settings.php:900
 msgid "Filter by shipping provider"
 msgstr "शिपिंग प्रदाता द्वारा फ़िल्टर करें"
 
-#: includes/class-ast-pro-settings.php:567
-#: includes/class-ast-pro-vendor-compatibility.php:373
+#: includes/class-ast-pro-paypal-tracking.php:707
+#: includes/class-ast-pro-paypal-tracking.php:719
+msgid "Filter orders with PayPal Tracking"
+msgstr "पेपाल ट्रैकिंग के साथ ऑर्डर फ़िल्टर करें"
+
+#: includes/class-ast-pro-settings.php:730
+#: includes/class-ast-pro-vendor-compatibility.php:469
+#: includes/class-ast-pro-dokan-compatibility.php:142
 msgid "Fulfill Items"
 msgstr "आइटम पूरा करें"
 
-#: includes/views/vendor_fulfillment_dashboard.php:12
+#: includes/views/vendor_fulfillment_dashboard.php:6
 msgid "Fulfilled"
 msgstr "पूरा"
 
-#: includes/class-ast-pro-fulfillment-dashboard.php:406
-msgid "Fulfilled Order Items"
-msgstr "पूरे किए गए ऑर्डर आइटम"
-
-#: includes/views/admin_options_settings.php:81
-msgid "Fulfillement Dashboard"
-msgstr "पूर्ति डैशबोर्ड"
+#: includes/class-ast-pro-fulfillment-dashboard.php:749
+msgid "Fulfilled Product"
+msgstr "पूरा उत्पाद"
 
 #: includes/class-ast-pro-fulfillment-dashboard.php:79
-#: includes/class-ast-pro-vendor-compatibility.php:89
-#: includes/class-ast-pro-vendor-compatibility.php:89
+#: includes/class-ast-pro-fulfillment-dashboard.php:149
+#: includes/class-ast-pro-vendor-compatibility.php:85
+#: includes/class-ast-pro-vendor-compatibility.php:85
 msgid "Fulfillment"
 msgstr "पूर्ति"
 
-#: includes/class-ast-pro-admin.php:1387
-msgid "Fullfilled"
-msgstr "पूरा"
+#: includes/views/admin_options_settings.php:79
+#| msgid "Fulfillment Dashboard"
+msgid "Fulfilment Dashboard"
+msgstr "पूर्ति डैशबोर्ड"
 
-#: includes/views/admin_options_shipping_provider.php:66
-#: includes/views/admin_options_shipping_provider.php:132
+#: includes/views/admin_options_settings.php:15
+#| msgid "Fulfillement WorkFlow"
+msgid "Fulfilment WorkFlow"
+msgstr "पूर्ति कार्यप्रवाह"
+
+#: includes/views/admin_options_shipping_provider.php:72
+#: includes/views/admin_options_shipping_provider.php:141
 msgid "Global"
 msgstr "वैश्विक"
 
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:117
+#: includes/class-ast-pro-integration-options.php:520
+msgid "GLS Sell & Send Italy"
+msgstr "GLS इटली को बेचें और भेजें"
+
+#: templates/emails/customer-updated-tracking-order.php:9
+msgid ""
+"Hi there. we thought you'd like to know that the shipment tracking for your "
+"recent order from {site_title} has been updated."
+msgstr ""
+"नमस्ते। हमने सोचा था कि आप जानना चाहेंगे कि {site_title} से आपके हाल के आदेश "
+"की शिपमेंट ट्रैकिंग अपडेट कर दी गई है."
+
+#: includes/customizer/ast-customizer.php:337
 msgid ""
 "Hi there. we thought you'd like to know that your recent order from "
 "{site_title} has been partially shipped."
@@ -650,7 +796,7 @@ msgstr ""
 "नमस्ते। हमने सोचा था कि आप जानना चाहेंगे कि {site_title} से आपका हाल का आदेश "
 "आंशिक रूप से शिप कर दिया गया है।"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:117
+#: includes/customizer/ast-customizer.php:341
 #| msgid ""
 #| "Hi there. we thought you'd like to know that your recent order from "
 #| "{site_title} has been Delivered."
@@ -661,173 +807,187 @@ msgstr ""
 "नमस्ते। हमने सोचा था कि आप जानना चाहेंगे कि {site_title} से आपका हाल ही का "
 "आदेश शिप कर दिया गया है।"
 
-#: includes/class-ast-pro-admin.php:2600 includes/class-ast-pro-admin.php:2617
-#: includes/class-ast-pro-admin.php:2634
+#: includes/class-ast-pro-admin.php:2330 includes/class-ast-pro-admin.php:2347
+#: includes/class-ast-pro-admin.php:2364
 msgid "hide details"
-msgstr "जानकारी छिपाएँ"
+msgstr "विवरण छुपाना"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:304
+#: includes/customizer/ast-customizer.php:571
 #| msgid "Display shipping provider image"
 msgid "Hide shipping provider image"
 msgstr "शिपिंग प्रदाता छवि छुपाएं"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:321
-#| msgid "Hide the shipped date"
-msgid "Hide the shipping date"
-msgstr "शिपिंग तिथि छुपाएं"
-
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:205
-msgid "Hide Tracking Header"
+#: includes/customizer/ast-customizer.php:485
+#| msgid "Hide Tracking Header"
+msgid "Hide tracking header"
 msgstr "ट्रैकिंग हैडर छुपाएं"
 
-#: includes/class-ast-pro-admin.php:984
+#: includes/class-ast-pro-admin.php:962
 msgid "How to get your Paypal API credentials?"
 msgstr "अपने पेपैल एपीआई क्रेडेंशियल कैसे प्राप्त करें?"
 
-#: includes/views/admin_options_bulk_upload.php:128
+#: includes/views/admin_options_bulk_upload.php:137
 msgid "How to import tracking number from CSV files?"
 msgstr "सीएसवी फाइलों से ट्रैकिंग नंबर कैसे आयात करें?"
 
 #. URI of the plugin
-msgid "https://www.zorem.com/shop/tracking-per-item-ast-add-on/"
-msgstr "https://www.zorem.com/shop/tracking-per-item-ast-add-on/"
+msgid "https://www.zorem.com/product/woocommerce-advanced-shipment-tracking/"
+msgstr "https://www.zorem.com/product/woocommerce-advanced-shipment-tracking/"
 
 #. Author URI of the plugin
 msgid "https://zorem.com"
 msgstr "https://zorem.com"
 
-#: includes/views/admin_options_bulk_upload.php:84
+#: includes/class-ast-pro-admin.php:940
+msgid ""
+"If you are using the PayPal Sandbox for testing purposes, enable this option"
+msgstr ""
+"यदि आप परीक्षण उद्देश्यों के लिए पेपैल सैंडबॉक्स का उपयोग कर रहे हैं, तो इस "
+"विकल्प को सक्षम करें"
+
+#: includes/class-ast-pro-admin.php:977
+msgid ""
+"If you want to send an email notification to your customer when tracking "
+"information is added to their PayPal transaction, enable this option"
+msgstr ""
+"यदि आप अपने ग्राहकों के पेपाल लेनदेन में ट्रैकिंग जानकारी जोड़े जाने पर "
+"उन्हें एक ईमेल सूचना भेजना चाहते हैं, तो इस विकल्प को सक्षम करें"
+
+#: includes/views/admin_options_bulk_upload.php:85
 msgid "Import in Progress"
 msgstr "आयात प्रगति पर है"
 
-#: includes/class-ast-pro-admin.php:604
-#: includes/views/integrations_admin_options.php:3
+#: includes/class-ast-pro-admin.php:554
 msgid "Integrations"
 msgstr "एकीकरण"
 
-#: includes/api/class-wc-ast-pro-rest-api-controller.php:231
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:224
 msgid "Invalid order ID."
 msgstr "अमान्य आदेश आईडी।"
 
-#: includes/views/fulfillment_dashboard.php:41
-#: includes/views/vendor_fulfillment_dashboard.php:22
+#: includes/class-ast-pro-integration-options.php:501
+msgid "Inventory source"
+msgstr "इन्वेंटरी स्रोत"
+
+#: includes/views/fulfillment_dashboard.php:36
+#: includes/views/fulfillment_dashboard.php:78
+#: includes/views/vendor_fulfillment_dashboard.php:19
 msgid "Items"
 msgstr "आइटम"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:120
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:120
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:99
+#: includes/customizer/ast-customizer.php:347
+#: includes/customizer/ast-customizer.php:723
+#: templates/myaccount/fluid-tracking-info.php:83
 msgid "Items in this shipment"
 msgstr "इस शिपमेंट में आइटम"
 
-#: includes/views/admin_options_bulk_upload.php:56
+#: includes/views/admin_options_bulk_upload.php:57
+#| msgid ""
+#| "Keep unchecked for the tracking info to be added to any existing tracking "
+#| "info added to the orders."
 msgid ""
-"Keep unchecked for the tracking info to be added to any existing tracking "
+"Keep unchecked for the \ttracking info to be added to any existing tracking "
 "info added to the orders."
 msgstr ""
 "ऑर्डर में जोड़ी गई किसी भी मौजूदा ट्रैकिंग जानकारी में ट्रैकिंग जानकारी "
-"जोड़े जाने के लिए अनियंत्रित रखें।"
+"जोड़ने के लिए अनचेक रखें।"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:462
+#: includes/customizer/ast-customizer.php:603
 msgid "Large"
 msgstr "विशाल"
 
-#: includes/class-ast-pro-admin.php:620 includes/class-ast-pro-admin.php:624
-#: includes/views/admin_options_addons.php:19
+#: includes/class-ast-pro-admin.php:582 includes/class-ast-pro-admin.php:586
+#: includes/views/admin_options_addons.php:3
 msgid "License"
 msgstr "लाइसेंस"
 
-#: includes/views/admin_options_osm.php:59
+#: includes/views/admin_options_osm.php:63
 msgid "Light Font"
 msgstr "लाइट फ़ॉन्ट"
 
-#: includes/class-ast-pro-admin.php:1012
+#: includes/class-ast-pro-admin.php:992
 msgid "Log will be added to WooCommerce > Status >"
 msgstr "लॉग को WooCommerce > Status > . में जोड़ा जाएगा"
 
-#: includes/views/admin_options_shipping_provider.php:75
-#: includes/views/admin_options_shipping_provider.php:139
+#: includes/views/admin_options_shipping_provider.php:81
+#: includes/views/admin_options_shipping_provider.php:148
 msgid "Logo image"
 msgstr "लोगो छवि"
 
-#: includes/class-ast-pro-actions.php:333
+#: includes/class-ast-pro-actions.php:345
 msgid "Mark as Completed?"
 msgstr "पूर्ण के रूप में चिह्नित करें?"
 
-#: includes/class-ast-pro-settings.php:729
+#: includes/class-ast-pro-settings.php:344
+#: includes/class-ast-pro-settings.php:844
 #| msgid "Partial Shipped"
 msgid "Mark as Shipped"
 msgstr "शिप किए गए के रूप में चिह्नित करें"
 
-#: includes/class-ast-pro-actions.php:330
+#: includes/class-ast-pro-actions.php:342
 msgid "Mark as Shipped?"
 msgstr "भेज दिया गया के रूप में चिह्नित करें?"
 
-#: includes/class-ast-pro-settings.php:700
+#: includes/class-ast-pro-settings.php:318
 msgid "Mark order as delivered"
 msgstr "आदेश को वितरित के रूप में चिह्नित करें"
 
-#: includes/customizer/class-ast-pro-customizer.php:288
+#: includes/customizer/ast-customizer.php:1180
 msgid "Mockup Order"
 msgstr "नकली आदेश"
 
-#: includes/views/admin_options_addons.php:42
-#: includes/views/admin_options_addons.php:60
-#: includes/views/admin_options_addons.php:78
-#: includes/views/admin_options_addons.php:96
-#: includes/views/admin_options_addons.php:114
-#: includes/views/admin_options_addons.php:132
+#: includes/views/admin_options_addons.php:25
+#: includes/views/admin_options_addons.php:43
+#: includes/views/admin_options_addons.php:61
+#: includes/views/admin_options_addons.php:79
+#: includes/views/admin_options_addons.php:97
+#: includes/views/admin_options_addons.php:115
 #| msgid "more info"
 msgid "More Info"
 msgstr "और जानकारी"
 
-#: includes/class-ast-pro-admin.php:513
-#: includes/views/integrations_admin_options.php:23
+#: includes/class-ast-pro-admin.php:467
+#: includes/views/integrations_admin_options.php:44
 msgid "more info"
 msgstr "और जानकारी"
 
-#: includes/class-ast-pro-admin.php:2360
+#: includes/class-ast-pro-admin.php:2062
 msgid "Multiple API names mapping is a pro features"
 msgstr "एकाधिक एपीआई नाम मानचित्रण एक समर्थक विशेषताएं हैं"
 
-#: includes/views/admin_options_shipping_provider.php:82
+#: includes/views/admin_options_shipping_provider.php:88
 msgid "My White Label Provider URL"
 msgstr "मेरा व्हाइट लेबल प्रदाता URL"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:461
+#: includes/customizer/ast-customizer.php:602
 msgid "Normal"
 msgstr "साधारण"
 
-#: includes/class-ast-pro-admin.php:856
+#: includes/class-ast-pro-admin.php:818
 msgid "Open the Track Button link in a new tab"
 msgstr "ट्रैक बटन लिंक को एक नए टैब में खोलें"
 
-#. %s: replace with settings page url
-#: includes/class-ast-pro-license-manager.php:361
-#, php-format
-#| msgid ""
-#| "Opps! your <strong>Advanced Shipment Tracking Pro</strong> licence key is "
-#| "not activated. To buy license %sclick here%s to activate it."
-msgid ""
-"Opps! your <strong>Advanced Shipment Tracking Pro</strong> licence key is "
-"not activated. To buy license %1$sclick here%2$s to activate it."
-msgstr ""
-"ओह! आपकी <strong>उन्नत शिपमेंट ट्रैकिंग प्रो</strong> लाइसेंस कुंजी सक्रिय "
-"नहीं है। लाइसेंस खरीदने के लिए %s इसे सक्रिय करने के लिए यहां%s क्लिक करें।"
-
-#: includes/views/fulfillment_dashboard.php:36
-#: includes/views/vendor_fulfillment_dashboard.php:18
+#: includes/views/fulfillment_dashboard.php:31
+#: includes/views/fulfillment_dashboard.php:73
+#: includes/views/vendor_fulfillment_dashboard.php:16
 msgid "Order Date"
 msgstr "आदेश की तारीख"
 
-#: includes/class-ast-pro-admin.php:843
+#: includes/integration/class-automatewoo-delivered-trigger.php:21
+msgid "Order Delivered"
+msgstr "आदेश दिया गया"
+
+#: includes/class-ast-pro-admin.php:803
 msgid "Order Emails Display"
 msgstr "आदेश ईमेल प्रदर्शन"
 
-#: includes/views/fulfillment_dashboard.php:13
-#: includes/views/vendor_fulfillment_dashboard.php:6
+#: includes/views/vendor_fulfillment_dashboard.php:8
 msgid "Order ID"
 msgstr "आदेश कामतत्व"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:742
+msgid "Order Items"
+msgstr "चिजें मँगाओ"
 
 #: includes/emails/class-shipment-shipped-email.php:33
 #| msgid ""
@@ -841,90 +1001,97 @@ msgstr ""
 "के रूप में चिह्नित होते हैं और आमतौर पर संकेत देते हैं कि उनके ऑर्डर शिप कर "
 "दिए गए हैं।"
 
-#: includes/customizer/class-ast-pro-customizer.php:55
-msgid "Order Status Email Notifications"
-msgstr "आदेश स्थिति ईमेल सूचनाएं Notification"
-
-#: includes/views/admin_options_settings.php:65
-msgid "Order Statuses"
-msgstr "आदेश की स्थिति"
-
-#: includes/class-ast-pro-admin.php:935
+#: includes/class-ast-pro-admin.php:908
 msgid "Order Statuses to Display"
 msgstr "प्रदर्शित करने के लिए आदेश स्थिति"
 
 #. %1$s: replace with Shipping Provider %2$s: replace with tracking number
-#: includes/class-ast-pro-actions.php:1252
-#: includes/class-ast-pro-actions.php:1330
+#: includes/class-ast-pro-actions.php:1283
+#: includes/class-ast-pro-actions.php:1363
 #, php-format
-#| msgid "Order was shipped with %s and tracking number is: %s"
+#| msgid "Order was shipped with %1s and tracking number is: %2s"
 msgid "Order was shipped with %1$s and tracking number is: %2$s"
-msgstr "ऑर्डर %s के साथ शिप किया गया था और ट्रैकिंग नंबर है: %s"
+msgstr "आदेश %1$s के साथ भेज दिया गया था और ट्रैकिंग नंबर है: %2$s"
 
-#: includes/class-ast-pro-admin.php:505
+#: includes/class-ast-pro-paypal-tracking.php:709
+#: includes/class-ast-pro-paypal-tracking.php:721
+msgid "Orders with tracking info that were paid with PayPal and exported"
+msgstr ""
+"ट्रैकिंग जानकारी वाले आदेश जिनका भुगतान PayPal के साथ किया गया था और निर्यात "
+"किया गया था"
+
+#: includes/class-ast-pro-paypal-tracking.php:708
+#: includes/class-ast-pro-paypal-tracking.php:720
+msgid "Orders with tracking info that were paid with PayPal and not exported"
+msgstr ""
+"ट्रैकिंग जानकारी वाले आदेश जिनका भुगतान पेपाल के साथ किया गया था और निर्यात "
+"नहीं किया गया था"
+
+#: includes/class-ast-pro-integration-options.php:50
+msgid "Ordoro"
+msgstr "ओरडोरो"
+
+#: includes/class-ast-pro-admin.php:459
 msgid "Other"
 msgstr "अन्य"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:406
-msgid "Padding"
-msgstr "गद्दी"
+#: includes/class-ast-pro-integration-options.php:72
+msgid "ParcelForce"
+msgstr "पार्सल फोर्स"
 
-#: includes/class-ast-pro-admin.php:923 includes/class-ast-pro-admin.php:1610
-#: includes/class-ast-pro-settings.php:181
-#: includes/class-ast-pro-settings.php:228
+#: includes/class-ast-pro-admin.php:896 includes/class-ast-pro-admin.php:1404
+#: includes/class-ast-pro-settings.php:374
+#: includes/class-ast-pro-settings.php:406
+#: includes/customizer/ast-customizer.php:134
+#: includes/customizer/ast-customizer.php:380
+#: includes/customizer/ast-customizer.php:639
 msgid "Partially Shipped"
 msgstr "आंशिक रूप से भेजा गया"
 
 #. %s: replace with order count
-#: includes/class-ast-pro-settings.php:187
+#: includes/class-ast-pro-settings.php:380
 #, php-format
 msgid "Partially Shipped <span class=\"count\">(%s)</span>"
 msgid_plural "Partially Shipped <span class=\"count\">(%s)</span>"
 msgstr[0] "आंशिक रूप से भेज दिया गया <span class=\"count\">(%s)</span>"
 msgstr[1] "आंशिक रूप से भेज दिया गया <span class=\"count\">(%s)</span>"
 
-#: includes/customizer/class-ast-pro-customizer.php:71
-msgid "Partially Shipped Order Email"
-msgstr "आंशिक रूप से शिप किया गया ऑर्डर ईमेल"
-
-#: includes/class-ast-pro-admin.php:972
+#: includes/class-ast-pro-admin.php:948
 msgid "PayPal API Client ID"
 msgstr "पेपैल एपीआई क्लाइंट आईडी"
 
-#: includes/class-ast-pro-admin.php:979
+#: includes/class-ast-pro-admin.php:956
 msgid "PayPal API Client Secret"
 msgstr "पेपैल एपीआई क्लाइंट सीक्रेट"
 
-#: includes/class-ast-pro-admin.php:989
+#: includes/class-ast-pro-admin.php:967
 msgid "PayPal Payment Methods"
 msgstr "पेपैल भुगतान के तरीके"
 
-#: includes/class-ast-pro-paypal-tracking.php:96
-#: includes/views/admin_options_settings.php:97
+#: includes/class-ast-pro-paypal-tracking.php:109
+#: includes/views/admin_options_settings.php:95
 #: includes/views/paypal_tracking_admin_options.php:4
 msgid "PayPal Tracking"
 msgstr "पेपैल ट्रैकिंग"
 
-#: includes/class-ast-pro-admin.php:1577
-msgid ""
-"PDF invoices integration for WooCommerce PDF Invoices & Packing Slips plugin "
-"By Ewout Fernhout"
-msgstr ""
-"WooCommerce के लिए पीडीएफ चालान एकीकरण पीडीएफ चालान और पैकिंग स्लिप प्लगइन "
-"Ewout Fernhout द्वारा"
+#: includes/customizer/ast-customizer.php:721
+msgid "Pickup items Heading Text"
+msgstr "पिकअप आइटम शीर्षक टेक्स्ट"
 
-#: includes/class-ast-pro-admin.php:1587
-msgid ""
-"PDF invoices integration for WooCommerce PDF Invoices plugin By Bas Elbers"
-msgstr ""
-"WooCommerce के लिए पीडीएफ चालान एकीकरण बास एल्बर्स द्वारा पीडीएफ चालान प्लगइन"
+#: includes/class-ast-pro-integration-options.php:292
+msgid "Picqer"
+msgstr "पिककर"
 
-#: includes/class-ast-pro-tpi.php:213 includes/class-ast-pro-tpi.php:372
+#: includes/class-ast-pro-integration-options.php:406
+msgid "Pirate Ship"
+msgstr "समुद्री डाकूओं का जहाज"
+
+#: includes/class-ast-pro-tpi.php:204 includes/class-ast-pro-tpi.php:373
 msgid "Please choose at least one item quantity"
 msgstr "कृपया कम से कम एक आइटम मात्रा चुनें"
 
 #. %s: search WooCommerce plugin link
-#: ast-pro.php:368
+#: ast-pro.php:444
 #, php-format
 #| msgid ""
 #| "Please install and activate %sWooCommerce%s for Advanced Shipment "
@@ -936,7 +1103,7 @@ msgstr ""
 "कृपया उन्नत शिपमेंट ट्रैकिंग प्रो के लिए %sWooCommerce%s स्थापित और सक्रिय "
 "करें!"
 
-#: ast-pro.php:87
+#: ast-pro.php:105
 msgid ""
 "Please note, you can't activate the Advanced Shipment Tracking for "
 "WooCommerce version when the AST PRO is active."
@@ -944,51 +1111,72 @@ msgstr ""
 "कृपया ध्यान दें, जब AST PRO सक्रिय होता है, तो आप WooCommerce संस्करण के लिए "
 "उन्नत शिपमेंट ट्रैकिंग को सक्रिय नहीं कर सकते।"
 
-#: includes/class-ast-pro-admin.php:216
+#: includes/class-ast-pro-admin.php:183
 msgid "Please upload a valid CSV file."
 msgstr "कृपया एक मान्य CSV फ़ाइल अपलोड करें."
 
-#: includes/class-ast-pro-settings.php:569
-#: includes/class-ast-pro-vendor-compatibility.php:375
+#: includes/class-ast-pro-settings.php:732
+#: includes/class-ast-pro-vendor-compatibility.php:471
 msgid "Preview:"
 msgstr "पूर्वावलोकन:"
 
-#: includes/class-ast-pro-fulfillment-dashboard.php:413
-msgid "Product"
-msgstr "उत्पाद"
+#: includes/class-ast-pro-integration-options.php:539
+msgid "Print Label and Tracking Code for GLS"
+msgstr "GLS के लिए प्रिंट लेबल और ट्रैकिंग कोड"
 
-#: includes/class-ast-pro-actions.php:395
-#: includes/class-ast-pro-settings.php:552
-#: includes/class-ast-pro-vendor-compatibility.php:357
+#: includes/class-ast-pro-integration-options.php:558
+msgid "Printful"
+msgstr "प्रिंटफुल"
+
+#: includes/class-ast-pro-actions.php:406
+#: includes/class-ast-pro-settings.php:715
+#: includes/class-ast-pro-vendor-compatibility.php:455
 msgid "Product Code:"
 msgstr "उत्पाद कोड:"
 
-#: includes/views/admin_options_shipping_provider.php:55
-#: includes/views/admin_options_shipping_provider.php:114
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:48
+msgid "Provider"
+msgstr "प्रदाता"
+
+#: includes/views/admin_options_shipping_provider.php:61
+#: includes/views/admin_options_shipping_provider.php:123
 msgid "Provider Name"
 msgstr "प्रदाता का नाम"
 
-#: includes/views/admin_options_shipping_provider.php:181
+#: includes/views/admin_options_shipping_provider.php:190
 msgid "Providers Added"
 msgstr "प्रदाता जोड़े गए"
 
-#: includes/views/admin_options_shipping_provider.php:183
+#: includes/views/admin_options_shipping_provider.php:192
 msgid "Providers Deleted"
 msgstr "प्रदाता हटाए गए"
 
-#: includes/views/admin_options_shipping_provider.php:182
+#: includes/views/admin_options_shipping_provider.php:191
 msgid "Providers Updated"
 msgstr "प्रदाता अद्यतन"
 
-#: includes/class-ast-pro-fulfillment-dashboard.php:414
+#: includes/class-ast-pro-fulfillment-dashboard.php:750
+#: includes/class-ast-pro-fulfillment-dashboard.php:779
 msgid "Qty"
 msgstr "मात्रा"
 
-#: includes/class-ast-pro-admin.php:213
+#: includes/class-ast-pro-integration-options.php:178
+msgid "QuickBooks Commerce (formerly TradeGecko)"
+msgstr "QuickBooks वाणिज्य (पूर्व में TradeGecko)"
+
+#: includes/class-ast-pro-integration-options.php:197
+msgid "ReadyToShip"
+msgstr "बेचने के लिए तैयार"
+
+#: includes/class-ast-pro-admin.php:180
 msgid "Really delete this entry? This will not be undo."
 msgstr "वाकई इस प्रविष्टि को हटाएं? यह पूर्ववत नहीं होगा।"
 
-#: includes/views/fulfillment_dashboard.php:18
+#: includes/class-ast-pro-fulfillment-dashboard.php:182
+msgid "Recently Fulfilled"
+msgstr "हाल ही में पूरा हुआ"
+
+#: includes/class-ast-pro-fulfillment-dashboard.php:186
 msgid "Recently fulfilled"
 msgstr "हाल ही में पूरा हुआ"
 
@@ -996,111 +1184,162 @@ msgstr "हाल ही में पूरा हुआ"
 msgid "Rename the “Completed” Order status label to “Shipped”"
 msgstr "\"पूर्ण\" ऑर्डर स्थिति लेबल का नाम बदलकर \"भेज दिया गया\" कर दें"
 
-#: includes/views/admin_options_bulk_upload.php:56
+#: includes/views/admin_options_bulk_upload.php:57
 msgid "Replace tracking information?"
 msgstr "ट्रैकिंग जानकारी बदलें?"
 
-#: includes/views/admin_options_shipping_provider.php:165
+#: includes/views/admin_options_shipping_provider.php:174
 msgid "Reset"
 msgstr "रीसेट"
 
-#: includes/views/admin_options_shipping_provider.php:187
+#: includes/views/admin_options_shipping_provider.php:196
 msgid ""
 "Reset providers database, it will reset all your shipping provider database"
 msgstr ""
 "प्रदाता डेटाबेस रीसेट करें, यह आपके सभी शिपिंग प्रदाता डेटाबेस को रीसेट कर "
 "देगा"
 
-#: includes/views/admin_options_settings.php:20
-#: includes/views/admin_options_settings.php:36
-#: includes/views/admin_options_settings.php:52
-#: includes/views/admin_options_settings.php:68
-#: includes/views/admin_options_settings.php:84
-#: includes/views/admin_options_settings.php:100
+#: includes/class-ast-pro-admin.php:838
+msgid "Restrict adding the same tracking number"
+msgstr "समान ट्रैकिंग नंबर जोड़ना प्रतिबंधित करें"
+
+#: includes/class-ast-pro-integration-options.php:216
+msgid "Royal Mail Click & Drop"
+msgstr "रॉयल मेल क्लिक एंड ड्रॉप"
+
+#: includes/views/admin_options_settings.php:18
+#: includes/views/admin_options_settings.php:34
+#: includes/views/admin_options_settings.php:50
+#: includes/views/admin_options_settings.php:66
+#: includes/views/admin_options_settings.php:82
+#: includes/views/admin_options_settings.php:98
 msgid "Save & Close"
 msgstr "सहेजे बंद करें"
 
+#: includes/views/integrations_admin_options.php:75
 #: includes/views/paypal_tracking_admin_options.php:7
 msgid "Save Changes"
 msgstr "परिवर्तनों को सुरक्षित करें"
 
-#: includes/views/admin_options_shipping_provider.php:25
+#: includes/customizer/ast-customizer.php:163
+msgid "Saved"
+msgstr "बचाया"
+
+#: includes/views/fulfillment_dashboard.php:12
+#: includes/views/fulfillment_dashboard.php:53
+msgid "Search"
+msgstr "खोज"
+
+#: includes/views/admin_options_shipping_provider.php:27
 msgid "Search by provider / country"
 msgstr "प्रदाता / देश द्वारा खोजें"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:283
-msgid "Select Layout"
-msgstr "लेआउट का चयन करें"
+#: includes/class-ast-pro-actions.php:368
+#: includes/class-ast-pro-dokan-compatibility.php:104
+msgid "Select Provider"
+msgstr "प्रदाता चुनें"
 
-#: includes/views/admin_options_osm.php:64
+#: includes/views/admin_options_osm.php:73
 msgid "Send Email"
 msgstr "ईमेल भेजें"
 
-#: includes/class-ast-pro-admin.php:998
+#: includes/class-ast-pro-admin.php:976
 msgid "Send tracking email to the the customer from PayPal"
 msgstr "पेपैल से ग्राहक को ट्रैकिंग ईमेल भेजें"
 
-#: includes/class-ast-pro-admin.php:728
-msgid ""
-"Set the \"mark as shipped\" option checked  when adding tracking info to "
-"orders"
-msgstr ""
-"ऑर्डर में ट्रैकिंग जानकारी जोड़ते समय चेक किए गए \"शिप किए गए के रूप में "
-"चिह्नित करें\" विकल्प सेट करें"
+#: includes/views/admin_options_shipping_provider.php:120
+msgid "Set default"
+msgstr "डिफॉल्ट सेट करें"
 
-#: includes/class-ast-pro-admin.php:575 includes/class-ast-pro-admin.php:579
-#: includes/views/admin_options_settings.php:10
+#: includes/class-ast-pro-admin.php:223 includes/class-ast-pro-admin.php:536
+#: includes/class-ast-pro-admin.php:540
 msgid "Settings"
 msgstr "समायोजन"
 
-#: includes/views/admin_options_bulk_upload.php:67
+#: includes/views/admin_options_bulk_upload.php:68
 msgid "Settings Saved."
 msgstr "सेटिंग्स को सहेजा गया।"
 
-#: includes/class-ast-pro-admin.php:236 includes/class-ast-pro-actions.php:168
-#: includes/class-ast-pro-actions.php:249
-#: includes/views/vendor_fulfillment_dashboard.php:25
+#. %1$s: search number, %2$s: search total trackings
+#: templates/emails/ast-pro-tpi-email-order-details.php:100
+#, php-format
+msgid "Shipment %1$s (out of %2$s):"
+msgstr "शिपमेंट %1$s (%2$s में से):"
+
+#. %s: replace with status
+#: templates/emails/plain/tracking-info.php:36
+#, php-format
+msgid "Shipment status changed to %s"
+msgstr "शिपमेंट स्थिति %s . में बदली गई"
+
+#: includes/class-ast-pro-actions.php:167
+#: includes/class-ast-pro-actions.php:259 includes/class-ast-pro-admin.php:113
+#: includes/class-ast-pro-dokan-compatibility.php:78
+#: includes/views/fulfillment_dashboard.php:81
+#: includes/views/vendor_fulfillment_dashboard.php:22
 msgid "Shipment Tracking"
 msgstr "नौवहन पर नज़र रखना"
 
-#: includes/views/admin_options_settings.php:49
+#: includes/views/admin_options_settings.php:63
 msgid "Shipment Tracking API"
 msgstr "शिपमेंट ट्रैकिंग एपीआई"
 
-#: includes/class-ast-pro-admin.php:634 includes/class-ast-pro-admin.php:758
-#: includes/class-ast-pro-admin.php:891 includes/class-ast-pro-admin.php:1622
-#: includes/class-ast-pro-admin.php:1785
-#: includes/class-ast-pro-settings.php:358
-#: includes/class-ast-pro-settings.php:376
-#: includes/class-ast-pro-settings.php:431
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:53
+#: includes/class-ast-pro-admin.php:607 includes/class-ast-pro-admin.php:712
+#: includes/class-ast-pro-admin.php:864 includes/class-ast-pro-admin.php:1416
+#: includes/class-ast-pro-settings.php:522
+#: includes/class-ast-pro-settings.php:540
+#: includes/class-ast-pro-settings.php:606
+#: includes/class-ast-pro-settings.php:1151
+#: includes/customizer/ast-customizer.php:128
+#: includes/customizer/ast-customizer.php:138
+#: includes/customizer/ast-customizer.php:368
+#: includes/customizer/ast-customizer.php:384
+#: includes/customizer/ast-customizer.php:640
+#: templates/emails/fluid-tpi-tracking-info.php:91
+#: templates/emails/fluid-tpi-tracking-info.php:114
+#: templates/emails/fluid-tracking-info.php:93
+#: templates/emails/fluid-tracking-info.php:116
 msgid "Shipped"
 msgstr "SHIPPED"
 
 #. %s: replace with order count
-#: includes/class-ast-pro-settings.php:364
-#: includes/class-ast-pro-settings.php:451
+#: includes/class-ast-pro-settings.php:528
+#: includes/class-ast-pro-settings.php:626
 #, php-format
 msgid "Shipped <span class=\"count\">(%s)</span>"
 msgid_plural "Shipped <span class=\"count\">(%s)</span>"
 msgstr[0] "भेज दिया <span class=\"count\">(%s)</span>"
 msgstr[1] "भेज दिया <span class=\"count\">(%s)</span>"
 
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:50
+msgid "Shipped Date"
+msgstr "भेजने की तिथि"
+
+#: templates/emails/fluid-tpi-tracking-info.php:98
+#: templates/emails/fluid-tpi-tracking-info.php:121
+#: templates/emails/fluid-tracking-info.php:100
+#: templates/emails/fluid-tracking-info.php:123
+msgid "Shipped on"
+msgstr "पर भेज दिया गया"
+
 #. 1: shipping date
-#: includes/class-ast-pro-actions.php:288
-#: includes/class-ast-pro-vendor-compatibility.php:549
+#: includes/class-ast-pro-actions.php:299
+#: includes/class-ast-pro-dokan-compatibility.php:184
+#, php-format
+msgid "Shipped on %1s"
+msgstr "% 1s . पर भेज दिया गया"
+
+#. 1: shipping date
+#: includes/class-ast-pro-vendor-compatibility.php:675
 #, php-format
 msgid "Shipped on %s"
 msgstr "%s . पर भेज दिया गया"
 
-#: templates/emails/fluid-tracking-info.php:91
-#: templates/emails/fluid-tracking-info.php:138
-#: templates/emails/fluid-tpi-tracking-info.php:59
-#: templates/myaccount/fluid-tracking-info.php:84
+#: templates/myaccount/fluid-tracking-info.php:68
 msgid "Shipped on:"
 msgstr "पर भेज दिया गया:"
 
-#: includes/class-ast-pro-settings.php:747
+#: includes/class-ast-pro-settings.php:864
 msgid "Shipped Order"
 msgstr "भेज दिया आदेश"
 
@@ -1109,90 +1348,91 @@ msgstr "भेज दिया आदेश"
 msgid "Shipped order"
 msgstr "भेज दिया आदेश"
 
-#: includes/customizer/class-ast-pro-customizer.php:81
-msgid "Shipped Order Email"
-msgstr "भेज दिया आदेश ईमेल"
-
-#: includes/customizer/class-ast-pro-customizer.php:49
-msgid "Shipped Order Email(Completed)"
-msgstr "भेज दिया आदेश ईमेल (पूर्ण)"
-
-#: includes/class-ast-pro-tpi.php:580 includes/class-ast-pro-tpi.php:599
+#: includes/class-ast-pro-tpi.php:582 includes/class-ast-pro-tpi.php:600
 msgid "Shipped with:"
 msgstr "के साथ भेज दिया:"
 
-#: includes/views/admin_options_shipping_provider.php:65
-#: includes/views/admin_options_shipping_provider.php:131
+#: includes/views/admin_options_shipping_provider.php:71
+#: includes/views/admin_options_shipping_provider.php:140
 msgid "Shipping Country"
 msgstr "शिपिंग देश"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:271
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:265
-#: includes/customizer/class-ast-pro-completed-email-customizer.php:226
-msgid "Shipping items Heading"
-msgstr "शिपिंग आइटम शीर्षक"
-
-#: includes/views/fulfillment_dashboard.php:42
-#: includes/views/vendor_fulfillment_dashboard.php:23
+#: includes/views/fulfillment_dashboard.php:37
+#: includes/views/fulfillment_dashboard.php:79
+#: includes/views/vendor_fulfillment_dashboard.php:20
 msgid "Shipping Method"
 msgstr "शिपिंग का तरीका"
 
-#: includes/views/admin_options_shipping_provider.php:115
+#: includes/views/admin_options_shipping_provider.php:124
 msgid "Shipping Provider"
 msgstr "शिपिंग प्रदाता"
 
-#: includes/class-ast-pro-settings.php:523
-#: includes/class-ast-pro-settings.php:525
-#: includes/class-ast-pro-vendor-compatibility.php:328
-#: includes/class-ast-pro-vendor-compatibility.php:330
+#: includes/class-ast-pro-actions.php:366
+#: includes/class-ast-pro-settings.php:686
+#: includes/class-ast-pro-settings.php:688
+#: includes/class-ast-pro-vendor-compatibility.php:426
+#: includes/class-ast-pro-vendor-compatibility.php:428
+#: includes/class-ast-pro-dokan-compatibility.php:102
 msgid "Shipping Provider:"
 msgstr "शिपिंग प्रदाता:"
 
-#: includes/class-ast-pro-admin.php:595 includes/class-ast-pro-admin.php:599
-#: includes/class-ast-pro-admin.php:1838
+#: includes/class-ast-pro-admin.php:545 includes/class-ast-pro-admin.php:549
 msgid "Shipping Providers"
 msgstr "शिपिंग प्रदाता"
 
-#: includes/views/admin_options_shipping_provider.php:21
-msgid "Shipping Providers & Carriers"
-msgstr "शिपिंग प्रदाता और वाहक"
-
-#: includes/views/admin_options_shipping_provider.php:185
+#: includes/views/admin_options_shipping_provider.php:194
 msgid "Shipping providers database reset successfully."
 msgstr "शिपिंग प्रदाता डेटाबेस सफलतापूर्वक रीसेट किया गया।"
 
-#: includes/views/fulfillment_dashboard.php:43
-#: includes/views/vendor_fulfillment_dashboard.php:24
+#: includes/views/fulfillment_dashboard.php:38
+#: includes/views/fulfillment_dashboard.php:80
+#: includes/views/vendor_fulfillment_dashboard.php:21
 msgid "Shipping To"
 msgstr "तक जलयात्रा"
 
-#: includes/class-ast-pro-admin.php:716
-msgid "Show item SKU when adding tracking to orders"
-msgstr "ऑर्डर में ट्रैकिंग जोड़ते समय आइटम SKU दिखाएं"
+#: includes/class-ast-pro-integration-options.php:482
+msgid "Shippo"
+msgstr "शिपो"
 
-#: includes/class-ast-pro-admin.php:722
-msgid "Show product image when adding tracking to orders"
-msgstr "ऑर्डर में ट्रैकिंग जोड़ते समय उत्पाद की छवि दिखाएं"
+#: includes/class-ast-pro-integration-options.php:368
+msgid "Shippypro"
+msgstr "शिप्पीप्रो"
 
-#: includes/class-ast-pro-tpi.php:189 includes/class-ast-pro-tpi.php:348
+#: includes/class-ast-pro-integration-options.php:83
+msgid "ShipStation"
+msgstr "शिपस्टेशन"
+
+#: includes/class-ast-pro-integration-options.php:444
+msgid "Shiptheory"
+msgstr "शिपथ्योरी"
+
+#: includes/class-ast-pro-tpi.php:180 includes/class-ast-pro-tpi.php:349
 msgid "SKU:"
 msgstr "एसकेयू:"
 
-#: includes/api/class-wc-ast-pro-rest-api-controller.php:235
-msgid "Special character not allowd in tracking number"
-msgstr "ट्रैकिंग नंबर में विशेष वर्ण की अनुमति नहीं है"
+#: includes/class-ast-pro-integration-options.php:463
+msgid "Stamps.com"
+msgstr "Stamps.com"
 
-#: includes/views/fulfillment_dashboard.php:38
-#: includes/views/vendor_fulfillment_dashboard.php:20
+#: includes/views/fulfillment_dashboard.php:33
+#: includes/views/fulfillment_dashboard.php:75
 msgid "Status"
 msgstr "स्थिति"
 
-#: includes/views/admin_options_shipping_provider.php:175
-#: includes/views/admin_options_shipping_provider.php:189
+#: includes/views/ast_pro_license_form.php:9
+msgid "Status:"
+msgstr "स्थिति:"
+
+#: includes/views/admin_options_shipping_provider.php:38
+msgid "Sync Providers"
+msgstr "सिंक प्रदाता"
+
+#: includes/views/admin_options_shipping_provider.php:184
+#: includes/views/admin_options_shipping_provider.php:198
 msgid "Sync Shipping Providers"
 msgstr "सिंक शिपिंग प्रदाता"
 
-#: includes/views/admin_options_shipping_provider.php:179
+#: includes/views/admin_options_shipping_provider.php:188
 msgid ""
 "Syncing the shipping providers list add or updates the pre-set shipping "
 "providers and will not effect custom shipping providers."
@@ -1200,8 +1440,8 @@ msgstr ""
 "शिपिंग प्रदाताओं की सूची को सिंक करने से प्री-सेट शिपिंग प्रदाताओं को जोड़ा "
 "या अपडेट किया जाता है और कस्टम शिपिंग प्रदाताओं को प्रभावित नहीं करेगा।"
 
-#: includes/views/admin_options_shipping_provider.php:59
-#: includes/views/admin_options_shipping_provider.php:118
+#: includes/views/admin_options_shipping_provider.php:65
+#: includes/views/admin_options_shipping_provider.php:127
 msgid ""
 "The custom display name will show in the tracking info section on the "
 "customer order emails, my-account, and TrackShip's tracking page and email "
@@ -1210,16 +1450,107 @@ msgstr ""
 "कस्टम प्रदर्शन नाम ग्राहक आदेश ईमेल, मेरा खाता, और ट्रैकशिप के ट्रैकिंग "
 "पृष्ठ और ईमेल सूचनाओं पर ट्रैकिंग जानकारी अनुभाग में दिखाई देगा।"
 
-#: includes/class-ast-pro-admin.php:2582
+#: includes/class-ast-pro-admin.php:2312
 msgid "There are some issue with sync, Please Retry."
 msgstr "समन्‍वयन में कुछ समस्‍याएं हैं, कृपया पुन: प्रयास करें।"
 
-#: includes/class-ast-pro-admin.php:215
+#: includes/class-ast-pro-admin.php:182
 msgid "This browser does not support HTML5."
 msgstr "यह ब्राउज़र HTML5 का समर्थन नहीं करता है।"
 
+#: includes/views/integrations_admin_options.php:37
+msgid ""
+"This integration does not require any settings. For more information check "
+"AST PRO documentation"
+msgstr ""
+"इस एकीकरण के लिए किसी सेटिंग की आवश्यकता नहीं है। अधिक जानकारी के लिए एएसटी "
+"प्रो दस्तावेज देखें"
+
+#: includes/class-ast-pro-admin.php:832
+msgid ""
+"This option allows you to automatically change the order status to Shipped "
+"when updating shipment tracking from the API or importing from CSV files"
+msgstr ""
+"एपीआई से शिपमेंट ट्रैकिंग अपडेट करते समय या सीएसवी फाइलों से आयात करते समय "
+"यह विकल्प आपको ऑर्डर की स्थिति को स्वचालित रूप से शिप किया गया में बदलने की "
+"अनुमति देता है"
+
+#: includes/class-ast-pro-admin.php:804
+msgid ""
+"This option allows you to choose on which order status email you would like "
+"to display the tracking information"
+msgstr ""
+"यह विकल्प आपको यह चुनने की अनुमति देता है कि आप किस ऑर्डर स्थिति ईमेल पर "
+"ट्रैकिंग जानकारी प्रदर्शित करना चाहते हैं"
+
+#: includes/class-ast-pro-admin.php:699
+msgid ""
+"This option allows you to choose on which order status in your store you "
+"would like to display the add tracking icon in the order actions menu"
+msgstr ""
+"यह विकल्प आपको यह चुनने की अनुमति देता है कि आप अपने स्टोर में किस ऑर्डर "
+"स्थिति पर ऑर्डर एक्शन मेनू में ऐड ट्रैकिंग आइकन प्रदर्शित करना चाहते हैं"
+
+#: includes/class-ast-pro-admin.php:909
+msgid ""
+"This option allows you to choose which order status order you would like to "
+"display in the fulfillment dashboard"
+msgstr ""
+"यह विकल्प आपको यह चुनने की अनुमति देता है कि आप पूर्ति डैशबोर्ड में किस "
+"ऑर्डर स्थिति क्रम को प्रदर्शित करना चाहते हैं"
+
+#: includes/class-ast-pro-admin.php:812
+msgid ""
+"This option allows you to display the “Track” action button on the "
+"WooCommerce account area in the orders history list endpoint"
+msgstr ""
+"यह विकल्प आपको आदेश इतिहास सूची समापन बिंदु में WooCommerce खाता क्षेत्र पर "
+"\"ट्रैक\" क्रिया बटन प्रदर्शित करने की अनुमति देता है"
+
+#: includes/class-ast-pro-admin.php:685
+msgid ""
+"This option allows you to enable the auto-detection of shipping providers "
+"when adding tracking information to orders. The plugin will automatically "
+"detect the shipping provider based on the tracking number that you enter"
+msgstr ""
+"ऑर्डर में ट्रैकिंग जानकारी जोड़ते समय यह विकल्प आपको शिपिंग प्रदाताओं के ऑटो-"
+"डिटेक्शन को सक्षम करने की अनुमति देता है। आपके द्वारा दर्ज ट्रैकिंग नंबर के "
+"आधार पर प्लगइन स्वचालित रूप से शिपिंग प्रदाता का पता लगाएगा"
+
+#: includes/class-ast-pro-admin.php:692
+msgid ""
+"This option allows you to enable the standard add tracking panel in the edit "
+"order admin, disabling the Lightbox add tracking model"
+msgstr ""
+"यह विकल्प आपको लाइटबॉक्स ऐड ट्रैकिंग मॉडल को अक्षम करते हुए एडिट ऑर्डर एडमिन "
+"में स्टैंडर्ड एड ट्रैकिंग पैनल को सक्षम करने की अनुमति देता है"
+
+#: includes/class-ast-pro-admin.php:839
+msgid ""
+"This option allows you to restricts adding the same tracking number again "
+"with the shipment tracking API"
+msgstr ""
+"यह विकल्प आपको शिपमेंट ट्रैकिंग एपीआई के साथ उसी ट्रैकिंग नंबर को फिर से "
+"जोड़ने पर रोक लगाने की अनुमति देता है"
+
+#: includes/class-ast-pro-admin.php:678
+msgid ""
+"This option allows you to select whether to show the products section open "
+"or closed in the add tracking lightbox by default"
+msgstr ""
+"यह विकल्प आपको यह चुनने की अनुमति देता है कि डिफ़ॉल्ट रूप से ऐड ट्रैकिंग "
+"लाइटबॉक्स में उत्पाद अनुभाग को खुला या बंद दिखाना है या नहीं"
+
+#: includes/class-ast-pro-admin.php:819
+msgid ""
+"This option allows you to set the button link to track the shipments on the "
+"shipping provider’s website to open in a new tab"
+msgstr ""
+"यह विकल्प आपको एक नए टैब में खुलने के लिए शिपिंग प्रदाता की वेबसाइट पर "
+"शिपमेंट को ट्रैक करने के लिए बटन लिंक सेट करने की अनुमति देता है"
+
 #. %1$s: replace with license link, %2$s: replace with </a>
-#: includes/class-ast-pro-update-manager.php:161
+#: includes/class-ast-pro-update-manager.php:163
 #, php-format
 #| msgid ""
 #| "To receive automatic updates license activation is required. Please visit "
@@ -1231,136 +1562,160 @@ msgstr ""
 "स्वचालित अपडेट प्राप्त करने के लिए लाइसेंस सक्रियण आवश्यक है। अपने उन्नत "
 "शिपमेंट ट्रैकिंग प्रो को सक्रिय करने के लिए कृपया %ssettings%s पर जाएँ।"
 
-#: includes/class-ast-pro-actions.php:832
-#: includes/class-ast-pro-actions.php:865
-#: includes/class-ast-pro-actions.php:883
+#: includes/class-ast-pro-actions.php:862
+#: includes/class-ast-pro-actions.php:893
+#: includes/class-ast-pro-actions.php:911
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:51
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:66
 msgid "Track"
 msgstr "धावन पथ"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:427
-msgid "Track button"
-msgstr "ट्रैक बटन"
-
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:441
-msgid "Track button Text"
-msgstr "ट्रैक बटन टेक्स्ट"
-
-#: includes/class-ast-pro-tpi.php:585 includes/class-ast-pro-tpi.php:604
-#: includes/class-ast-pro-tpi.php:667 includes/class-ast-pro-actions.php:275
-#: includes/class-ast-pro-settings.php:569
-#: includes/class-ast-pro-vendor-compatibility.php:375
-#: includes/class-ast-pro-vendor-compatibility.php:536
+#: includes/class-ast-pro-actions.php:286
+#: includes/class-ast-pro-settings.php:732 includes/class-ast-pro-tpi.php:587
+#: includes/class-ast-pro-tpi.php:605 includes/class-ast-pro-tpi.php:668
+#: includes/class-ast-pro-vendor-compatibility.php:471
+#: includes/class-ast-pro-vendor-compatibility.php:662
+#: includes/class-ast-pro-dokan-compatibility.php:171
 msgid "Track Shipment"
 msgstr "शिपमेंट ट्रैक करना"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:130
+#: includes/customizer/ast-customizer.php:324
 msgid "Track Your Order"
 msgstr "अपने आदेश को देखो"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:169
-msgid "Tracking Display Position"
-msgstr "ट्रैकिंग प्रदर्शन स्थिति"
+#: includes/integration/class-ast-pro-pdf-invoice-by-bas.php:24
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:44
+msgid "Track your order"
+msgstr "अपने आदेश को देखो"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:223
-msgid "Tracking Header text"
+#: includes/customizer/ast-customizer.php:531
+msgid "Tracker type"
+msgstr "ट्रैकर प्रकार"
+
+#: includes/customizer/ast-customizer.php:458
+#: includes/customizer/ast-customizer.php:581
+#| msgid "Track button"
+msgid "Tracking Button"
+msgstr "ट्रैक बटन"
+
+#: includes/customizer/ast-customizer.php:494
+#| msgid "Tracking Header text"
+msgid "Tracking header text"
 msgstr "ट्रैकिंग हैडर टेक्स्ट"
 
 #. %1$s: replace with tracking provider name, %2$s: replace with tracking number, %3$s: replace with status
-#: includes/class-ast-pro-paypal-tracking.php:413
+#: includes/class-ast-pro-paypal-tracking.php:481
 #, php-format
-#| msgid "Tracking info exported to PayPal: %s - %s(%s)"
+#| msgid "Tracking info exported to PayPal: %1s - %2s(%3s)"
 msgid "Tracking info exported to PayPal: %1$s - %2$s(%3$s)"
-msgstr "पेपैल को निर्यात की गई ट्रैकिंग जानकारी: %s - %s(%s)"
+msgstr "ट्रैकिंग जानकारी PayPal को निर्यात की गई: %1$s - %2$s(%3$s)"
 
 #. %1$s: replace with tracking provider name, %2$s: replace with tracking number, %3$s: replace with status
-#: includes/class-ast-pro-paypal-tracking.php:520
-#: includes/class-ast-pro-paypal-tracking.php:612
+#: includes/class-ast-pro-paypal-tracking.php:588
+#: includes/class-ast-pro-paypal-tracking.php:680
 #, php-format
-#| msgid "Tracking info updated to PayPal: %s - %s(%s)"
+#| msgid "Tracking info updated to PayPal: %1s - %2s(%3s)"
 msgid "Tracking info updated to PayPal: %1$s - %2$s(%3$s)"
-msgstr "ट्रैकिंग जानकारी PayPal में अपडेट की गई: %s - %s(%s)"
+msgstr "ट्रैकिंग जानकारी PayPal में अपडेट की गई: %1$s - %2$s(%3$s)"
 
 #. %1$s: replace with Shipping Provider %2$s: replace with tracking number
-#: includes/class-ast-pro-actions.php:781
+#: includes/class-ast-pro-actions.php:797
+#: includes/class-ast-pro-dokan-compatibility.php:271
 #, php-format
 #| msgid ""
-#| "Tracking info was deleted for tracking provider %s with tracking number %s"
+#| "Tracking info was deleted for tracking provider %1s with tracking number "
+#| "%2s"
 msgid ""
 "Tracking info was deleted for tracking provider %1$s with tracking number "
 "%2$s"
 msgstr ""
-"ट्रैकिंग नंबर %s . के साथ ट्रैकिंग प्रदाता %s के लिए ट्रैकिंग जानकारी हटाई गई"
+"ट्रैकिंग नंबर %2$s वाले ट्रैकिंग प्रदाता %1$s के लिए ट्रैकिंग जानकारी हटा दी "
+"गई थी"
 
-#: includes/customizer/class-ast-pro-customizer.php:38
-msgid "Tracking Info Widget"
-msgstr "ट्रैकिंग जानकारी विजेट"
+#: includes/api/class-wc-ast-pro-rest-api-controller.php:262
+msgid "Tracking information already exist in order"
+msgstr "ट्रैकिंग जानकारी पहले से ही क्रम में मौजूद है"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:230
-msgid "Tracking Information"
-msgstr "ट्रैकिंग जानकारी"
+#: includes/integration/class-ast-pro-pdf-invoice-by-ewout.php:49
+msgid "Tracking Number"
+msgstr "खोज संख्या"
 
-#: includes/class-ast-pro-actions.php:350
-#: includes/class-ast-pro-settings.php:519
-#: includes/class-ast-pro-vendor-compatibility.php:324
+#: includes/class-ast-pro-actions.php:362
+#: includes/class-ast-pro-settings.php:682
+#: includes/class-ast-pro-vendor-compatibility.php:422
+#: includes/class-ast-pro-dokan-compatibility.php:97
 msgid "Tracking number:"
 msgstr "खोज संख्या:"
 
-#: includes/class-ast-pro-tpi.php:118 includes/class-ast-pro-tpi.php:286
+#: includes/class-ast-pro-tpi.php:116 includes/class-ast-pro-tpi.php:282
 msgid "Tracking Per Item"
 msgstr "प्रति आइटम ट्रैकिंग"
 
-#: includes/class-ast-pro-admin.php:1841
-msgid "TrackShip"
-msgstr "ट्रैकशिप"
+#: includes/views/admin_options_shipping_provider.php:154
+#: includes/views/admin_options_shipping_provider.php:155
+msgid "Tracking URL"
+msgstr "ट्रैकिंग यूआरएल"
 
-#: includes/class-ast-pro-admin.php:1388
-#: includes/class-ast-pro-fulfillment-dashboard.php:80
-#: includes/class-ast-pro-vendor-compatibility.php:90
-#: includes/views/vendor_fulfillment_dashboard.php:11
+#: includes/customizer/ast-customizer.php:404
+#: includes/customizer/ast-customizer.php:405
+#: includes/customizer/ast-customizer.php:431
+#: includes/customizer/ast-customizer.php:441
+#: includes/customizer/ast-customizer.php:450
+#: includes/customizer/ast-customizer.php:459
+#| msgid "Tracking Info Widget"
+msgid "Tracking Widget"
+msgstr "ट्रैकिंग जानकारी विजेट"
+
+#: includes/class-ast-pro-vendor-compatibility.php:86
+#: includes/views/vendor_fulfillment_dashboard.php:5
 msgid "Unfulfilled"
 msgstr "अधूरी"
 
-#: includes/class-ast-pro-fulfillment-dashboard.php:80
-#: includes/class-ast-pro-vendor-compatibility.php:90
-#: includes/views/fulfillment_dashboard.php:3
-#: includes/views/fulfillment_dashboard.php:17
-#: includes/views/vendor_fulfillment_dashboard.php:3
+#: includes/class-ast-pro-admin.php:572 includes/class-ast-pro-admin.php:578
+#: includes/class-ast-pro-fulfillment-dashboard.php:149
+#: includes/class-ast-pro-fulfillment-dashboard.php:174
+#: includes/class-ast-pro-fulfillment-dashboard.php:178
+#: includes/class-ast-pro-vendor-compatibility.php:86
 msgid "Unfulfilled Orders"
 msgstr "अधूरे आदेश"
 
-#: includes/views/admin_options_shipping_provider.php:164
+#: includes/class-ast-pro-fulfillment-dashboard.php:778
+msgid "Unfulfilled Product"
+msgstr "अधूरा उत्पाद"
+
+#: includes/views/admin_options_shipping_provider.php:173
 msgid "Update"
 msgstr "अपडेट करें"
 
-#: includes/class-ast-pro-admin.php:1639
-#: includes/class-ast-pro-settings.php:166
-#: includes/class-ast-pro-settings.php:214
-#: includes/class-ast-pro-settings.php:347
+#: includes/class-ast-pro-admin.php:1446
+#: includes/class-ast-pro-settings.php:359
+#: includes/class-ast-pro-settings.php:392
+#: includes/class-ast-pro-settings.php:511
 msgid "Updated Tracking"
 msgstr "अद्यतन ट्रैकिंग"
 
 #. %s: replace with order count
-#: includes/class-ast-pro-settings.php:172
+#: includes/class-ast-pro-settings.php:365
 #, php-format
 msgid "Updated Tracking <span class=\"count\">(%s)</span>"
 msgid_plural "Updated Tracking <span class=\"count\">(%s)</span>"
 msgstr[0] "अद्यतन ट्रैकिंग <span class=\"count\">(%s)</span>"
 msgstr[1] "अद्यतन ट्रैकिंग <span class=\"count\">(%s)</span>"
 
-#: includes/views/admin_options_shipping_provider.php:78
-#: includes/views/admin_options_shipping_provider.php:142
+#: includes/views/admin_options_shipping_provider.php:84
+#: includes/views/admin_options_shipping_provider.php:151
 msgid "Upload"
 msgstr "डालना"
 
-#: includes/views/admin_options_bulk_upload.php:28
+#: includes/views/admin_options_bulk_upload.php:29
 msgid "Upload a CSV file from your computer:"
 msgstr "अपने कंप्यूटर से CSV फ़ाइल अपलोड करें:"
 
-#: includes/views/admin_options_bulk_upload.php:117
+#: includes/views/admin_options_bulk_upload.php:118
 msgid "Upload again"
 msgstr "फिर से अपलोड करें"
 
-#: includes/views/admin_options_bulk_upload.php:12
+#: includes/views/admin_options_bulk_upload.php:13
 msgid ""
 "Use our CSV Import Tool  to bulk Import tracking info to orders from a CSV "
 "file"
@@ -1368,18 +1723,36 @@ msgstr ""
 "एक CSV फ़ाइल से ऑर्डर करने के लिए ट्रैकिंग जानकारी को बल्क में आयात करने के "
 "लिए हमारे CSV आयात टूल का उपयोग करें"
 
-#: includes/class-ast-pro-admin.php:2599 includes/class-ast-pro-admin.php:2616
-#: includes/class-ast-pro-admin.php:2633
-#: includes/views/admin_options_bulk_upload.php:95
+#: includes/class-ast-pro-admin.php:2329 includes/class-ast-pro-admin.php:2346
+#: includes/class-ast-pro-admin.php:2363
+#: includes/views/admin_options_bulk_upload.php:96
 msgid "view details"
 msgstr "विवरण देखें"
 
-#: includes/views/admin_options_bulk_upload.php:116
+#: includes/views/admin_options_bulk_upload.php:117
 msgid "View Orders"
 msgstr "आदेश देखें"
 
+#: includes/views/ast_pro_license_form.php:10
+msgid "Want to deactivate the license for any reason?"
+msgstr "किसी भी कारण से लाइसेंस निष्क्रिय करना चाहते हैं?"
+
+#: includes/class-ast-pro-integration-options.php:102
+msgid "WC Shipping"
+msgstr "डब्ल्यूसी शिपिंग"
+
 #. %s: replace with Partially Shipped order count
-#: ast-pro.php:639
+#: ast-pro.php:742
+#, php-format
+msgid ""
+"We detected %s orders that use the Delivered order status, You can reassign "
+"these orders to a different status"
+msgstr ""
+"हमने उन %s आदेशों का पता लगाया है जो वितरित आदेश स्थिति का उपयोग करते हैं, "
+"आप इन आदेशों को किसी भिन्न स्थिति में पुन: असाइन कर सकते हैं"
+
+#. %s: replace with Partially Shipped order count
+#: ast-pro.php:724
 #, php-format
 msgid ""
 "We detected %s orders that use the Partially Shipped order status, You can "
@@ -1389,7 +1762,7 @@ msgstr ""
 "उपयोग करते हैं, आप इन ऑर्डर को एक अलग स्थिति में पुन: असाइन कर सकते हैं"
 
 #. %s: replace with Partially Shipped order count
-#: ast-pro.php:620
+#: ast-pro.php:705
 #, php-format
 #| msgid ""
 #| "We detected %s orders that use the Updated Tracking order status, You can "
@@ -1401,39 +1774,57 @@ msgstr ""
 "हमें ऐसे %s ऑर्डर मिले हैं जो शिप किए गए ऑर्डर की स्थिति का उपयोग करते हैं, "
 "आप इन ऑर्डर को एक अलग स्थिति में फिर से असाइन कर सकते हैं"
 
-#: includes/views/admin_options_shipping_provider.php:60
-#: includes/views/admin_options_shipping_provider.php:119
+#: includes/views/admin_options_shipping_provider.php:66
+#: includes/views/admin_options_shipping_provider.php:128
 msgid "White Label Provider Name"
 msgstr "व्हाइट लेबल प्रदाता का नाम"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:338
-msgid "Widget Design"
-msgstr "विजेट डिजाइन"
-
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:189
+#: includes/customizer/ast-customizer.php:440
+#: includes/customizer/ast-customizer.php:478
 msgid "Widget Header"
 msgstr "विजेट हैडर"
 
-#: includes/customizer/class-ast-pro-tracking-info-customizer.php:268
-msgid "Widget Layout"
-msgstr "विजेट लेआउट"
+#: includes/customizer/ast-customizer.php:449
+#: includes/customizer/ast-customizer.php:516
+msgid "Widget Style"
+msgstr "विजेट शैली"
 
-#: includes/class-ast-pro-actions.php:404
-#: includes/class-ast-pro-actions.php:407
-#: includes/class-ast-pro-settings.php:557
-#: includes/class-ast-pro-settings.php:557
-#: includes/class-ast-pro-vendor-compatibility.php:362
-#: includes/class-ast-pro-vendor-compatibility.php:362
+#: includes/class-ast-pro-integration-options.php:140
+msgid "WooCommerce Canada Post Shipping"
+msgstr "WooCommerce कनाडा पोस्ट शिपिंग"
+
+#: includes/class-ast-pro-integration-options.php:121
+msgid "WooCommerce UPS Shipping"
+msgstr "WooCommerce यूपीएस शिपिंग"
+
+#: includes/class-ast-pro-actions.php:415
+#: includes/class-ast-pro-actions.php:418
+#: includes/class-ast-pro-settings.php:720
+#: includes/class-ast-pro-settings.php:720
+#: includes/class-ast-pro-vendor-compatibility.php:460
+#: includes/class-ast-pro-vendor-compatibility.php:460
 msgid "Y-m-d"
 msgstr "वाई-एम-डी"
 
-#: includes/class-ast-pro-admin.php:214
+#: includes/customizer/ast-customizer.php:789
+msgid "You are customizing"
+msgstr "आप अनुकूलित कर रहे हैं"
+
+#: includes/class-ast-pro-admin.php:847
+msgid ""
+"You can choose the date format that you use when updating the shipment "
+"tracking API endpoint from external sources"
+msgstr ""
+"आप वह दिनांक स्वरूप चुन सकते हैं जिसका उपयोग आप बाहरी स्रोतों से शिपमेंट "
+"ट्रैकिंग API समापन बिंदु को अपडेट करते समय करते हैं"
+
+#: includes/class-ast-pro-admin.php:181
 msgid "You can upload only csv file."
 msgstr "आप केवल csv फ़ाइल अपलोड कर सकते हैं।"
 
 #. %: replace with tracking number, postal_code and country_code
-#: includes/views/admin_options_shipping_provider.php:88
-#: includes/views/admin_options_shipping_provider.php:152
+#: includes/views/admin_options_shipping_provider.php:94
+#: includes/views/admin_options_shipping_provider.php:161
 msgid ""
 "You can use the variables %number%, %postal_code% and %country_code% in the "
 "URL, for more info, check our "
@@ -1442,32 +1833,26 @@ msgstr ""
 " अधिक जानकारी के लिए, हमारी जाँच करें"
 
 #. %s: replace with status
-#: includes/class-ast-pro-admin.php:1965
-#, php-format
-msgid "You did not create any %s shipping providers yet."
-msgstr "आपने अभी तक कोई %s शिपिंग प्रदाता नहीं बनाया है।"
-
-#. %s: replace with status
-#: includes/class-ast-pro-admin.php:1978
+#: includes/class-ast-pro-admin.php:1671
 #, php-format
 msgid "You don't have any %s shipping providers."
 msgstr "आपके पास कोई %s शिपिंग प्रदाता नहीं है।"
 
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:116
+#: includes/customizer/ast-customizer.php:336
 msgid "Your Order is Partially Shipped"
 msgstr "आपका आदेश आंशिक रूप से भेज दिया गया है"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:116
-#: includes/emails/class-shipment-shipped-email.php:90
+#: includes/customizer/ast-customizer.php:340
+#: includes/emails/class-shipment-shipped-email.php:108
 msgid "Your Order is Shipped"
 msgstr "आपका ऑर्डर भेज दिया गया है"
 
-#: includes/customizer/class-ast-pro-partial-shipped-email-customizer.php:115
+#: includes/customizer/ast-customizer.php:335
 msgid "Your {site_title} order is now partially shipped"
 msgstr "आपका {site_title} आदेश अब आंशिक रूप से शिप कर दिया गया है"
 
-#: includes/customizer/class-ast-pro-shipped-email-customizer.php:115
-#: includes/emails/class-shipment-shipped-email.php:80
+#: includes/customizer/ast-customizer.php:339
+#: includes/emails/class-shipment-shipped-email.php:98
 #| msgid "Your {site_title} order is now delivered"
 msgid "Your {site_title} order is now Shipped"
 msgstr "आपका {site_title} ऑर्डर अब भेज दिया गया है"

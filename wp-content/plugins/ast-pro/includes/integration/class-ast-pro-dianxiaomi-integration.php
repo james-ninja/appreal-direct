@@ -50,7 +50,15 @@ class AST_Pro_Dianxiaomi {
 			
 			foreach ( $trackings as $item ) {
 				if ( function_exists( 'ast_insert_tracking_number' ) ) {				
-					$status_shipped = 1;
+					$status_shipped = get_option( 'autocomplete_dianxiaomi', 1 );
+					
+					$tracking_info_exist = tracking_info_exist( $order_id, $item['tracking_number'] );
+					$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+					if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+						continue;
+					}
+					
 					ast_insert_tracking_number( $order_id, $item['tracking_number'], $item['tracking_provider'], $date_shipped = null, $status_shipped );
 				}
 			}

@@ -185,7 +185,6 @@ if (!class_exists('CWG_Instock_Post_Type')) {
 		protected function _manage_columns( $columns, $post_id) {
 			$email = get_post_meta($post_id, 'cwginstock_subscriber_email', true);
 			$obj = new CWG_Instock_API(0, 0, $email);
-
 			switch ($columns) {
 				case 'email':
 					esc_html_e($obj->get_subscriber_name($post_id) . ' ' . $email . ' ' . $obj->get_subscriber_phone($post_id));
@@ -293,10 +292,14 @@ if (!class_exists('CWG_Instock_Post_Type')) {
 				 */
 
 				$newactions['sendmail'] = $sendmail;
-				$newactions['trash'] = $actions['trash'];
+				if (isset($actions['trash'])) {
+					$newactions['trash'] = $actions['trash'];
+				}
 				return apply_filters('cwginstocknotifier_row_actions', $newactions, $actions, $post);
 			} elseif ('cwginstocknotifier' == $post->post_type && 'trash' != $post_status) {
-				$newactions['trash'] = $actions['trash'];
+				if (isset($actions['trash'])) {
+					$newactions['trash'] = $actions['trash'];
+				}
 				$actions = $newactions;
 			} elseif ('product' == $post->post_type) {
 				$options = get_option('cwginstocksettings');
@@ -468,12 +471,12 @@ if (!class_exists('CWG_Instock_Post_Type')) {
 						'relation' => 'OR',
 						array(
 							'key' => 'cwginstock_pid',
-							'value' => wc_clean($_GET['cwg_filter_by_products']),
+							'value' => array_map('intval', $_GET['cwg_filter_by_products']),
 							'compare' => 'IN',
 						),
 						array(
 							'key' => 'cwginstock_product_id',
-							'value' => wc_clean($_GET['cwg_filter_by_products']),
+							'value' => array_map('intval', $_GET['cwg_filter_by_products']),
 							'compare' => 'IN',
 					));
 					$query->query_vars['meta_query'] = $meta_query;
@@ -651,27 +654,29 @@ if (!class_exists('CWG_Instock_Post_Type')) {
 			if (!is_admin()) {
 				return;
 			}
-			if ($query->query['post_type'] != $post_type) {
-				return;
-			}
-			$custom_fields = array(
-				'cwginstock_subscriber_name',
-				'cwginstock_subscriber_email',
-				'cwginstock_subscriber_phone'
-			);
-			$searchterm = $query->query_vars['s'];
-			$query->query_vars['s'] = '';
-			if ('' != $searchterm) {
-				$meta_query = array('relation' => 'OR');
-				foreach ($custom_fields as $cf) {
-					array_push($meta_query, array(
-						'key' => $cf,
-						'value' => $searchterm,
-						'compare' => 'LIKE'
-					));
+			if (isset($query->query['post_type'])) {
+				if ($query->query['post_type'] != $post_type) {
+					return;
 				}
-				$query->set('meta_query', $meta_query);
-			};
+				$custom_fields = array(
+					'cwginstock_subscriber_name',
+					'cwginstock_subscriber_email',
+					'cwginstock_subscriber_phone'
+				);
+				$searchterm = $query->query_vars['s'];
+				$query->query_vars['s'] = '';
+				if ('' != $searchterm) {
+					$meta_query = array('relation' => 'OR');
+					foreach ($custom_fields as $cf) {
+						array_push($meta_query, array(
+							'key' => $cf,
+							'value' => $searchterm,
+							'compare' => 'LIKE'
+						));
+					}
+					$query->set('meta_query', $meta_query);
+				};
+			}
 		}
 
 		public function wp_untrash_post_status( $new_status, $post_id, $previous_status) {

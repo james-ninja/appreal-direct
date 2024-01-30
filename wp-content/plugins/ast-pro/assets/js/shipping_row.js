@@ -171,10 +171,12 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 							var invalid_date_shipped_error_class = 0;
 							var invalid_order_id_error_class = 0;
 							var invalid_tracking_data_error_class = 0;
+							var invalid_product_sku_error_class = 0;
 							
 							if(progress == 100){
+								
 								jQuery( ".csv_upload_status li" ).each(function( index ) {
-									if( this.className == 'shipping_provider_error' || this.className == 'tracking_number_error' || this.className == 'empty_date_shipped_error' || this.className == 'invalid_date_shipped_error' || this.className == 'invalid_order_id_error' || this.className == 'invalid_tracking_data_error' ){
+									if( this.className == 'shipping_provider_error' || this.className == 'tracking_number_error' || this.className == 'empty_date_shipped_error' || this.className == 'invalid_date_shipped_error' || this.className == 'invalid_order_id_error' || this.className == 'invalid_tracking_data_error' || this.className == 'invalid_product_sku_error') {
 										error_class++;
 									}
 									if(this.className == 'success'){										
@@ -186,6 +188,7 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 									if( this.className == 'invalid_date_shipped_error' )invalid_date_shipped_error_class++;
 									if( this.className == 'invalid_order_id_error' )invalid_order_id_error_class++;
 									if( this.className == 'invalid_tracking_data_error' )invalid_tracking_data_error_class++;
+									if( this.className == 'invalid_product_sku_error' )invalid_product_sku_error_class++;
 								});									
 								
 								jQuery('.progress_title').hide();
@@ -195,47 +198,12 @@ jQuery(document).on("submit", "#wc_ast_upload_csv_form", function(){
 								jQuery(".bulk_upload_status_div").addClass("csv_import_done");
 								jQuery(".bulk_upload_status_action ").show();
 								
-								if(error_class > 0){
-									error_message = error_class+' tracking numbers import failed';
-									jQuery(".bulk_upload_status_overview_td.csv_fail_msg").show();									
-									jQuery(".bulk_upload_status_overview_td.csv_fail_msg span").html(error_message);
-								} else{
-									jQuery(".bulk_upload_status_overview_td.csv_fail_msg").hide();	
-								}
-								
-								if(success_class > 0){
-									jQuery(".bulk_upload_status_overview_td.csv_success_msg").show();								
-									success_message = success_class+' tracking numbers imported successfully';
-									jQuery(".bulk_upload_status_overview_td.csv_success_msg span").html(success_message);
-								} else{
-									jQuery(".bulk_upload_status_overview_td.csv_success_msg").hide();	
-								}
-	
-								if(invalid_order_id_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+invalid_order_id_error_class+' tracking numbers import failed due to invalid order id</li>');	
-								}
-								if(shipping_provider_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+shipping_provider_error_class+' tracking numbers import failed due to invalid shipping provider</li>');	
-								}
-								if(tracking_number_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+tracking_number_error_class+' tracking numbers import failed due to empty tracking number</li>');	
-								}
-								if(empty_date_shipped_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+empty_date_shipped_error_class+' tracking numbers import failed due to empty date shipped</li>');	
-								}
-								if(invalid_date_shipped_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+invalid_date_shipped_error_class+' tracking numbers import failed due to invalid date shipped</li>');	
-								}
-								if(invalid_tracking_data_error_class > 0){
-									jQuery(".csv_error_details_ul").append('<li>'+invalid_tracking_data_error_class+' tracking numbers import failed due to invalid tracking data</li>');	
-								}	
-																
 								jQuery(".bulk_upload_status_heading_tr h2").html("Import Completed!");								
 																
 								jQuery(".bulk_upload_status_heading_tr p").hide();								
-								jQuery(".csv_upload_status").hide();	
-								jQuery('.bulk_upload_status_tr').hide();
-							}												
+								jQuery(".mdl-progress").hide();
+								jQuery(".progress2").hide();
+							}										
 						},
 				
 					};
@@ -269,7 +237,9 @@ jQuery(document).on("click", ".view_csv_error_details", function(){
 	
 jQuery(document).on("click", ".csv_upload_again", function(){
 	jQuery('.csv_upload_status li').remove();	
-	jQuery('.csv_upload_status').show();	
+	jQuery('.csv_upload_status').show();
+	jQuery(".mdl-progress").show();
+	jQuery(".progress2").show();	
 	jQuery('.bulk_upload_status_tr').hide();
 	jQuery('.bulk_upload_status_overview_td').hide();	
 	jQuery('.progress_title').hide();
@@ -287,6 +257,17 @@ jQuery(document).on("click", ".csv_upload_again", function(){
 	jQuery('.upload_csv_div').show();
 	jQuery('.bulk_upload_status_detail_error_tr').hide();
 	jQuery('.csv_error_details_ul li').remove();
+});
+
+jQuery(document).click(function(event){
+	var $trigger = jQuery(".provider_settings");
+    if($trigger !== event.target && !$trigger.has(event.target).length){
+		jQuery(".provider-settings-ul").hide();
+    }   
+});
+
+jQuery(document).on("click", "#provider-settings", function(){	
+	jQuery('.provider-settings-ul').show();
 });
 
 jQuery(document).on("click", ".status_slide", function(){
@@ -317,7 +298,8 @@ jQuery(document).on("click", ".status_slide", function(){
 		url: ajaxurl,		
 		data: ajax_data,		
 		type: 'POST',
-		success: function(response) {						
+		success: function(response) {	
+			jQuery(document).ast_snackbar( shipment_tracking_table_rows.i18n.data_saved );					
 		},
 		error: function(response) {
 			console.log(response);			
@@ -325,63 +307,76 @@ jQuery(document).on("click", ".status_slide", function(){
 	});
 });
 
-provider_grid_row();
-function provider_grid_row() {
-	jQuery(".provider-grid-row").hip({
-		itemsPerPage:50,
-		itemsPerRow:5,
-		itemGaps:10,
-		filter:false,		
-		paginationPos:'right'
-	});	
-}
-
-jQuery(document).on( "input", "#search_provider", function(){	
-	
+jQuery(document).on("click", ".pagination_link", function(){
+	var page = jQuery(this).attr('id');
 	var nonce = jQuery( '#nonce_shipping_provider' ).val();
-	
 	var ajax_data = {
-		action: 'filter_shipiing_provider_by_status',
-		status: 'all',	
+		action: 'paginate_shipping_provider_list',
+		page: page,
 		security: nonce,	
 	};
+
+	jQuery(".provider_list ").block({
+		message: null,
+		overlayCSS: {
+			background: "#fff",
+			opacity: .6
+		}	
+    });
+
 	jQuery.ajax({
 		url: ajaxurl,		
 		data: ajax_data,
 		type: 'POST',
 		success: function(response) {	
-			jQuery(".provider_list").replaceWith(response);								
-			var provider_found = false;	
-			var searchvalue = jQuery("#search_provider").val().toLowerCase().replace(/\s+/g, '');
-			
-			jQuery('.provider_list .provider-grid-row .grid-item').each(function() {
-				var provider = jQuery(this).find('.provider_name').text().toLowerCase().replace(/\s+/g, '');		
-				var country = jQuery(this).find('.provider_country').text().toLowerCase().replace(/\s+/g, '');
-				
-				var hasprovider = provider.indexOf(searchvalue)!==-1;
-				var hascountry= country.indexOf(searchvalue)!==-1;
-				
-				if (hasprovider || hascountry) {						
-					jQuery(this).show();					
-					provider_found = true;	
-				} else {					
-					jQuery(this).remove();									
-				}
-			});	
-			
-			if(provider_found == false){
-				jQuery(".provider_list").append('<h3 class="not_found_label">No Shipping Providers Found.</h3>');
-			} else{
-				jQuery(".not_found_label").remove();
-			}
-			provider_grid_row();					
+			jQuery(".provider_list").replaceWith(response);
+			jQuery(".provider_list").unblock();							
 		},
-		error: function(response) {					
+		error: function(response) {	
+			console.log(response);				
 		}
 	});	
 });
 
-jQuery(document).on("click", ".add_custom_provider", function(){	
+jQuery("#search_provider").keyup(function(event) {
+	if (event.which === 13) {
+		jQuery(".search-icon").click();
+	}
+});
+
+jQuery(document).on( "click", ".search-icon", function(){	
+	var search_term = jQuery('#search_provider').val();
+	var nonce = jQuery( '#nonce_shipping_provider' ).val();
+	var ajax_data = {
+		action: 'filter_shipping_provider_list',
+		search_term: search_term,
+		security: nonce,	
+	};
+
+	jQuery(".provider_list ").block({
+		message: null,
+		overlayCSS: {
+			background: "#fff",
+			opacity: .6
+		}	
+    });
+
+	jQuery.ajax({
+		url: ajaxurl,		
+		data: ajax_data,
+		type: 'POST',
+		success: function(response) {	
+			jQuery(".provider_list").replaceWith(response);
+			jQuery(".provider_list").unblock();							
+		},
+		error: function(response) {	
+			console.log(response);				
+		}
+	});	
+});
+
+jQuery(document).on("click", ".add_custom_provider", function(){
+	jQuery(".provider-settings-ul").hide();
 	jQuery('.add_provider_popup').show();
 	jQuery('.custom_provider_instruction').show();
 });
@@ -465,8 +460,7 @@ jQuery(document).on("click", ".close_synch_popup", function(){
 			jQuery(".provider_list").replaceWith(response);	
 			form[0].reset();												
 			jQuery('.add_provider_popup').hide();			
-			jQuery(".add_provider_popup").unblock();	
-			provider_grid_row();
+			jQuery(".add_provider_popup").unblock();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -507,13 +501,30 @@ jQuery(document).on("click", ".remove", function(){
 		type: 'POST',
 		success: function(response) {
 			jQuery(".provider_list").replaceWith(response);						
-			jQuery("#content1").unblock();				
-			provider_grid_row();			
+			jQuery("#content1").unblock();					
 		},
 		error: function(response) {
 			console.log(response);			
 		}
 	});
+});
+
+jQuery(document).on("click", ".integration_settings", function(){
+	var title = jQuery(this).data('title');
+	var option = jQuery(this).data('option');
+	var option_value = jQuery(this).data('option-value');
+	
+	jQuery('.integration_settings_popup .integration_title').html(title);
+	jQuery('.integration_settings_popup .integration_settings_checkbox').attr( 'name', option );
+	jQuery('.integration_settings_popup .integration_settings_hidden').attr( 'name', option );
+
+	if(option_value == 1) {
+		jQuery('.integration_settings_checkbox').attr('checked', true);
+	} else {
+		jQuery('.integration_settings_checkbox').attr('checked', false);
+	}
+
+	jQuery('.integration_settings_popup').show();
 });
 
 jQuery(document).on("click", ".edit_provider", function(){		
@@ -538,6 +549,7 @@ jQuery(document).on("click", ".edit_provider", function(){
 			var provider_name = response.provider_name;
 			var custom_provider_name = response.custom_provider_name;
 			var provider_url = response.provider_url;
+			var custom_tracking_url = response.custom_tracking_url;
 			var shipping_country = response.shipping_country;
 			var custom_thumb_id = response.custom_thumb_id;									
 			var image = response.image;
@@ -596,18 +608,23 @@ jQuery(document).on("click", ".edit_provider", function(){
 					jQuery('.edit_provider_popup .api_provider_name').val(response.api_provider_name);	
 					
 				}
+					
+				if ( '' == custom_tracking_url || null == custom_tracking_url ) {
+					custom_tracking_url = provider_url;
+				}
 				jQuery('.api_provider_name_container').show();
 				jQuery('.edit_provider_popup .thumb_url').val(image);
 				jQuery('.edit_provider_popup .thumb_id').val(custom_thumb_id);
+				jQuery('.edit_provider_popup .tracking_url').val(custom_tracking_url);
 				jQuery('.edit_provider_popup #provider_id').val(id);
 				jQuery('.edit_provider_popup #provider_type').val(provider);
-				jQuery('.edit_provider_popup .tracking_url').parent('div').hide();
+				jQuery('.edit_provider_popup .tracking_url').parent('div').show();
 				jQuery(".edit_provider_popup .shipping_country").parent('div').hide();
 				jQuery(".edit_provider_popup .shipping_provider").parent('div').hide();					
 				jQuery('.edit_provider_popup').show();					
 				jQuery('.reset_default_provider').show();	
 				jQuery('.set_default_container').show();				
-				jQuery('.custom_provider_instruction').hide();
+				jQuery('.custom_provider_instruction').show();
 			}						
 		},
 		error: function(response) {
@@ -654,8 +671,7 @@ jQuery(document).on("click", ".reset_default_provider", function(){
 			jQuery(".provider_list").replaceWith(response);	
 			form[0].reset();												
 			jQuery('.edit_provider_popup').hide();			
-			jQuery(".edit_provider_popup").unblock();	
-			provider_grid_row();		
+			jQuery(".edit_provider_popup").unblock();					
 		},
 		error: function(response) {
 			console.log(response);			
@@ -723,8 +739,7 @@ jQuery(document).on("submit", "#edit_provider_form", function(){
 			jQuery(".provider_list").replaceWith(response);	
 			form[0].reset();												
 			jQuery('.edit_provider_popup').hide();			
-			jQuery(".edit_provider_popup").unblock();	
-			provider_grid_row();
+			jQuery(".edit_provider_popup").unblock();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -733,14 +748,14 @@ jQuery(document).on("submit", "#edit_provider_form", function(){
 	return false;
 });
 
-jQuery( ".thumb_url" ).keyup(function() {
+jQuery( ".thumb_url" ).blur(function() {
   var url = jQuery(this).val();
   if(url == ''){
 	  jQuery('.thumb_id').val('');
   }
 });
 
-jQuery(document).on("click", "#reset_providers", function(){	
+jQuery(document).on("click", ".reset_providers", function(){	
 	jQuery("#content1 ").block({
 		message: null,
 		overlayCSS: {
@@ -756,14 +771,10 @@ jQuery(document).on("click", "#reset_providers", function(){
 	}
 	
 	jQuery('#search_provider').removeAttr('value');	
-	
-	var reset_checked = 0;
-	if(jQuery(this).prop("checked") == true){
-		reset_checked = 1;
-	}
-	
-	var error;	
-	var nonce = jQuery( '#nonce_shipping_provider' ).val();		
+	jQuery(".provider-settings-ul").hide();
+	var reset_checked = jQuery(this).data('reset');
+	var nonce = jQuery( '#nonce_shipping_provider' ).val();	
+	var error;		
 	
 	var ajax_data = {
 		action: 'update_provider_status',
@@ -776,9 +787,8 @@ jQuery(document).on("click", "#reset_providers", function(){
 		data: ajax_data,		
 		type: 'POST',
 		success: function(response) {
-			jQuery(".provider_list").replaceWith(response);					
-			jQuery("#content1").unblock();
-			provider_grid_row();
+			jQuery(".provider_list").replaceWith(response);				
+			jQuery("#content1").unblock();			
 		},
 		error: function(response) {
 			console.log(response);			
@@ -786,7 +796,8 @@ jQuery(document).on("click", "#reset_providers", function(){
 	});
 });
 
-jQuery(document).on("click", ".sync_providers", function(){		
+jQuery(document).on("click", ".sync_providers", function(){	
+	jQuery(".provider-settings-ul").hide();	
 	jQuery('.sync_provider_popup').show();
 	jQuery("#reset_tracking_providers").prop("checked", false);	
 });
@@ -851,8 +862,7 @@ jQuery(document).on("click", ".sync_providers_btn", function(){
 			jQuery(".close_synch_popup").show();										
 			jQuery( '.tipTip' ).tipTip( {
 				'attribute': 'data-tip'		
-			} );	
-			provider_grid_row();
+			} );				
 		},
 		error: function(response) {
 			console.log(response);			
@@ -968,11 +978,34 @@ jQuery(document).on("click", "#integrations_settings_form input[type=checkbox]",
 		success: function(response) {
 			form.find(".spinner").removeClass("active");
 			jQuery(document).ast_snackbar( shipment_tracking_table_rows.i18n.data_saved );
+			return false;
 		},
 		error: function(jqXHR, exception) {
 			console.log(jqXHR.status);			
 		}
-	});	
+	});		
+});
+
+/*ajax call for settings tab form save*/
+jQuery(document).on("submit", "#integration_settings_popup_form", function(){
+	'use strict';
+	var spinner = jQuery(this).find(".spinner").addClass("active");
+	var form = jQuery(this);
+	jQuery.ajax({
+		url: ajaxurl,
+		data: form.serialize(),
+		type: 'POST',
+		dataType:"json",	
+		success: function(response) {
+			spinner.removeClass("active");
+			jQuery(document).ast_snackbar( shipment_tracking_table_rows.i18n.data_saved );
+		},
+		error: function(response) {
+			console.log(response);
+			spinner.removeClass("active");
+		}
+	});
+	return false;
 });
 
 jQuery(document).on("click", ".accordion", function(){
@@ -996,11 +1029,26 @@ jQuery(document).on("click", ".accordion", function(){
 			var visible = jQuery(this).isInViewport();
 			if ( !visible ) {
 				jQuery('html, body').animate({
-					scrollTop: $(this).prev().offset().top - 35
+					scrollTop: jQuery(this).prev().offset().top - 35
 				}, 1000);	
-			}			
+			}
 		} );	  
 		
+		/**/
+	}
+});
+
+jQuery(document).on("click", ".integration_settings,.integration-label", function(){
+	if ( jQuery(this).closest('.integration_accordion').hasClass( 'active' ) ) {	
+		jQuery(this).closest('.integration_accordion').removeClass( 'active' );
+		jQuery(this).closest('.integration_accordion').siblings( '.panel' ).removeClass( 'active' );
+		jQuery(this).closest('.integration_accordion').siblings( '.panel' ).slideUp( 'slow' );		
+	} else {		
+		jQuery( '.integration_accordion' ).removeClass( 'active' );				
+		jQuery( '.panel' ).slideUp('slow');
+		jQuery(this).closest('.integration_accordion').addClass( 'active' );
+		jQuery(this).closest('.integration_accordion').siblings( '.panel' ).addClass( 'active' );		
+		jQuery(this).closest('.integration_accordion').siblings( '.panel' ).slideDown( 'slow' );		
 		/**/
 	}
 });
@@ -1082,14 +1130,76 @@ jQuery('.order-status-table button.button.wp-color-result').click( function(){
 	if ( jQuery(this).hasClass( 'wp-picker-open' ) ) {}else{jQuery('span.ast-accordion-btn button').prop("disabled", false);}
 });
 
+jQuery( ".ud-checkbox li" ).on("click", function (e) { 
+	var ast_pro_optin_email_notification = jQuery("#ast_pro_optin_email_notification").prop("checked");
+	var ast_pro_enable_usage_data = jQuery("#ast_pro_enable_usage_data").prop("checked");
+	if ( false == ast_pro_optin_email_notification && false == ast_pro_enable_usage_data ) {
+		jQuery('.submit_usage_data').prop("disabled", true);
+	} else {
+		jQuery('.submit_usage_data').prop("disabled", false);
+	}
+});
+
+jQuery(document).on("click", ".submit_usage_data", function(e){	
+	
+	var form = jQuery('#ast_pro_usage_data_form');
+	jQuery(".ud-box-container").block({
+		message: null,
+		overlayCSS: {
+			background: "#fff",
+			opacity: .6
+		}	
+    });
+
+	jQuery.ajax({
+		url: ajaxurl,		
+		data: form.serialize(),		
+		type: 'POST',		
+		success: function(response) {	
+			jQuery(".ud-box-container").unblock();	
+			location.reload(true);
+		},
+		error: function(response) {
+			console.log(response);			
+		}
+	});
+	return false;
+});
+
+jQuery(document).on("click", ".skip_usage_data", function(e){	
+	
+	var form = jQuery('#ast_pro_skip_usage_data_form');
+	jQuery(".ud-box-container").block({
+		message: null,
+		overlayCSS: {
+			background: "#fff",
+			opacity: .6
+		}	
+    });
+	
+	jQuery.ajax({
+		url: ajaxurl,		
+		data: form.serialize(),		
+		type: 'POST',		
+		success: function(response) {	
+			jQuery(".ud-box-container").unblock();
+			location.reload(true);
+		},
+		error: function(response) {
+			console.log(response);			
+		}
+	});
+	return false;
+});
+
 /* zorem_snackbar jquery */
 (function( $ ){
 	$.fn.ast_snackbar = function(msg) {
-		if ( jQuery('.snackbar-logs').length === 0 ){
-			$("body").append("<section class=snackbar-logs></section>");
+		if ( jQuery('.ast-snackbar-logs').length === 0 ){
+			$("body").append("<section class=ast-snackbar-logs></section>");
 		}
 		var ast_snackbar = $("<article></article>").addClass('snackbar-log snackbar-log-success snackbar-log-show').text( msg );
-		$(".snackbar-logs").append(ast_snackbar);
+		$(".ast-snackbar-logs").append(ast_snackbar);
 		setTimeout(function(){ ast_snackbar.remove(); }, 3000);
 		return this;
 	}; 
@@ -1098,11 +1208,11 @@ jQuery('.order-status-table button.button.wp-color-result').click( function(){
 /* zorem_snackbar_warning jquery */
 (function( $ ){
 	$.fn.ast_snackbar_warning = function(msg) {
-		if ( jQuery('.snackbar-logs').length === 0 ){
-			$("body").append("<section class=snackbar-logs></section>");
+		if ( jQuery('.ast-snackbar-logs').length === 0 ){
+			$("body").append("<section class=ast-snackbar-logs></section>");
 		}
 		var ast_snackbar_warning = $("<article></article>").addClass( 'snackbar-log snackbar-log-error snackbar-log-show' ).html( msg );
-		$(".snackbar-logs").append(ast_snackbar_warning);
+		$(".ast-snackbar-logs").append(ast_snackbar_warning);
 		setTimeout(function(){ ast_snackbar_warning.remove(); }, 3000);
 		return this;
 	}; 

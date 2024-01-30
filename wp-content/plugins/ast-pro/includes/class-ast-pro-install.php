@@ -58,6 +58,7 @@ class AST_PRO_Install {
 	*/
 	public function init() {						
 		add_action( 'init', array( $this, 'update_database_check' ) );
+		add_action( 'ast_insert_shipping_provider', array( $this, 'ast_insert_shipping_provider' ), 10, 1 );		
 	}	
 
 	/**
@@ -77,13 +78,7 @@ class AST_PRO_Install {
 		// Add transient to trigger redirect.
 		set_transient( '_ast_activation_redirect', 1, 30 );		
 		
-		$this->create_shippment_tracking_table();
-		$this->update_shipping_providers();					
-		
-		$wc_ast_default_mark_shipped = get_option( 'wc_ast_default_mark_shipped' );
-		if ( '' == $wc_ast_default_mark_shipped ) {
-			update_option( 'wc_ast_default_mark_shipped', 1 );
-		}
+		$this->ast_insert_shipping_providers();
 		
 		$wc_ast_unclude_tracking_info = get_option( 'wc_ast_unclude_tracking_info' );
 		if ( empty( $wc_ast_unclude_tracking_info ) ) {	
@@ -103,106 +98,134 @@ class AST_PRO_Install {
 	* function for create shipping provider table
 	*/
 	public function create_shippment_tracking_table() {
-		
 		global $wpdb;
-		
-		if ( !$wpdb->query( $wpdb->prepare( 'show tables like %s', $this->table ) ) ) {
-			$charset_collate = $wpdb->get_charset_collate();			
-			$sql = "CREATE TABLE $this->table (
-				id mediumint(9) NOT NULL AUTO_INCREMENT,
-				provider_name varchar(500) DEFAULT '' NOT NULL,
-				api_provider_name text NULL DEFAULT NULL,
-				custom_provider_name text NULL DEFAULT NULL,
-				paypal_slug text NULL DEFAULT NULL,
-				ts_slug text NULL DEFAULT NULL,
-				provider_url varchar(500) DEFAULT '' NULL,
-				shipping_country varchar(45) DEFAULT '' NULL,
-				shipping_default tinyint(4) NULL DEFAULT '0',
-				custom_thumb_id int(11) NOT NULL DEFAULT '0',
-				display_in_order tinyint(4) NOT NULL DEFAULT '1',
-				trackship_supported int(11) NOT NULL DEFAULT '0',
-				sort_order int(11) NOT NULL DEFAULT '0',				
-				PRIMARY KEY  (id)
-			) $charset_collate;";			
-			require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
-			dbDelta( $sql );
+		$charset_collate = $wpdb->get_charset_collate();			
+		$sql = "CREATE TABLE $this->table (
+			id mediumint(9) NOT NULL AUTO_INCREMENT,
+			provider_name varchar(500) DEFAULT '' NOT NULL,
+			api_provider_name text NULL DEFAULT NULL,
+			custom_provider_name text NULL DEFAULT NULL,
+			custom_tracking_url text NULL DEFAULT NULL,
+			paypal_slug text NULL DEFAULT NULL,
+			ts_slug text NULL DEFAULT NULL,
+			provider_url varchar(500) DEFAULT '' NULL,
+			shipping_country varchar(45) DEFAULT '' NULL,
+			shipping_country_name varchar(45) DEFAULT '' NULL,
+			shipping_default tinyint(4) NULL DEFAULT '0',
+			custom_thumb_id int(11) NOT NULL DEFAULT '0',
+			display_in_order tinyint(4) NOT NULL DEFAULT '1',
+			trackship_supported int(11) NOT NULL DEFAULT '0',
+			sort_order int(11) NOT NULL DEFAULT '0',				
+			PRIMARY KEY  (id)
+		) $charset_collate;";			
+		require_once( ABSPATH . 'wp-admin/includes/upgrade.php' );
+		dbDelta( $sql );
+	}	
+
+	public function ast_insert_shipping_providers() {
+		global $wpdb;		
+		if ( !$wpdb->query( $wpdb->prepare( 'show tables like %s', $this->table ) ) ) {			
+			$this->create_shippment_tracking_table();	
+			$this->update_shipping_providers();	
 		} else {
 			$this->check_all_column_exist();
 		}
-	}	
+	}
 	
 	/*
 	* check if all column exist in shipping provider database
 	*/
 	public function check_all_column_exist() {
 		
-		global $wpdb;
-		$results = $wpdb->get_row( "SELECT * FROM $this->table LIMIT 1", ARRAY_A );				
 		$db_update_need = false;
-		
-		if ( !array_key_exists( 'provider_name', $results ) ) {			
-			$wpdb->query( "ALTER TABLE $this->table ADD provider_name varchar(500) DEFAULT '' NOT NULL AFTER id" );
+		global $wpdb;
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'provider_name' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD provider_name varchar(500) DEFAULT '' NOT NULL AFTER id", $this->table ) );
 			$db_update_need = true;
 		}
-		
-		if ( !array_key_exists( 'api_provider_name', $results ) ) {		
-			$wpdb->query( "ALTER TABLE $this->table ADD api_provider_name text NULL DEFAULT NULL AFTER provider_name" );
-			$db_update_need = true;	
-		}
-		
-		if ( !array_key_exists( 'custom_provider_name', $results ) ) {		
-			$wpdb->query( "ALTER TABLE $this->table ADD custom_provider_name text NULL DEFAULT NULL AFTER api_provider_name" );
-			$db_update_need = true;	
-		}
-		
-		if ( !array_key_exists( 'paypal_slug', $results ) ) {		
-			$wpdb->query( "ALTER TABLE $this->table ADD paypal_slug text NULL DEFAULT NULL AFTER custom_provider_name" );
-			$db_update_need = true;	
-		}
-		
-		if ( !array_key_exists( 'ts_slug', $results ) ) {	
-			$wpdb->query( "ALTER TABLE $this->table ADD ts_slug text NULL DEFAULT NULL AFTER custom_provider_name" );
-			$db_update_need = true;	
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'api_provider_name' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD api_provider_name text NULL DEFAULT NULL AFTER provider_name', $this->table ) );
+			$db_update_need = true;
 		}
 
-		if ( !array_key_exists( 'provider_url', $results ) ) {	
-			$wpdb->query( "ALTER TABLE $this->table ADD provider_url varchar(500) DEFAULT '' NULL AFTER ts_slug" );
-			$db_update_need = true;	
-		}
-		
-		if ( !array_key_exists( 'shipping_country', $results ) ) {			
-			$wpdb->query( "ALTER TABLE $this->table ADD shipping_country varchar(45) DEFAULT '' NULL AFTER provider_url" );
-			$db_update_need = true;	
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'custom_provider_name' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD custom_provider_name text NULL DEFAULT NULL AFTER api_provider_name', $this->table ) );
+			$db_update_need = true;
 		}
 
-		if ( !array_key_exists( 'shipping_default', $results ) ) {		
-			$wpdb->query( "ALTER TABLE $this->table ADD shipping_default tinyint(4) NULL DEFAULT '0' AFTER shipping_country" );
-			$db_update_need = true;	
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'custom_tracking_url' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD custom_tracking_url text NULL DEFAULT NULL AFTER custom_provider_name', $this->table ) );
+			$db_update_need = true;
 		}
 
-		if ( !array_key_exists( 'custom_thumb_id', $results ) ) {		
-			$wpdb->query( "ALTER TABLE $this->table ADD custom_thumb_id int(11) NOT NULL DEFAULT '0' AFTER shipping_default" );
-			$db_update_need = true;	
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'paypal_slug' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD paypal_slug text NULL DEFAULT NULL AFTER custom_tracking_url', $this->table ) );
+			$db_update_need = true;
 		}
 
-		if ( !array_key_exists( 'display_in_order', $results ) ) {
-			$wpdb->query( "ALTER TABLE $this->table ADD display_in_order tinyint(4) NOT NULL DEFAULT '1' AFTER custom_thumb_id" );
-			$db_update_need = true;	
-		}	
-
-		if ( !array_key_exists( 'trackship_supported', $results ) ) {	
-			$wpdb->query( "ALTER TABLE $this->table ADD trackship_supported int(11) NOT NULL DEFAULT '0' AFTER display_in_order" );
-			$db_update_need = true;	
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'ts_slug' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD ts_slug text NULL DEFAULT NULL AFTER paypal_slug', $this->table ) );
+			$db_update_need = true;
 		}
 
-		if ( !array_key_exists( 'sort_order', $results ) ) {	
-			$wpdb->query( "ALTER TABLE $this->table ADD sort_order int(11) NOT NULL DEFAULT '0' AFTER trackship_supported" );
-			$db_update_need = true;	
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'provider_url' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD provider_url varchar(500) DEFAULT '' NULL AFTER ts_slug", $this->table ) );
+			$db_update_need = true;
 		}
-		
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'shipping_country' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {			
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD shipping_country varchar(45) DEFAULT '' NULL AFTER provider_url", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'shipping_country_name' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {			
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD shipping_country_name varchar(45) DEFAULT '' NULL AFTER shipping_country", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'shipping_default' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD shipping_default tinyint(4) NOT NULL DEFAULT '0' AFTER shipping_country_name", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'custom_thumb_id' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {			
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD custom_thumb_id int(11) NOT NULL DEFAULT '0' AFTER shipping_default", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'display_in_order' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD display_in_order tinyint(4) NOT NULL DEFAULT '1' AFTER custom_thumb_id", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'trackship_supported' ", $this->table ), ARRAY_A );
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD trackship_supported int(11) NOT NULL DEFAULT '0' AFTER display_in_order", $this->table ) );
+			$db_update_need = true;
+		}
+
+		$row = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '%1s' AND COLUMN_NAME = 'sort_order' ", $this->table ), ARRAY_A );		
+		if ( ! $row ) {
+			$wpdb->query( $wpdb->prepare( "ALTER TABLE %1s ADD sort_order int(11) NOT NULL DEFAULT '0' AFTER trackship_supported", $this->table ) );
+			$db_update_need = true;
+		}
+
 		if ( $db_update_need ) {
 			$this->update_shipping_providers();
-		}	
+		}		
 	}
 	
 	/*
@@ -218,33 +241,40 @@ class AST_PRO_Install {
 				$this->update_shipping_providers();					
 				update_option( 'ast_pro_update_version', '1.1');		
 			}	
-			if ( version_compare( get_option( 'ast_pro_update_version', '1.0' ), '1.2', '<' ) ) {
-				
-				$upload_dir   = wp_upload_dir();	
-				$ast_directory = $upload_dir['baseurl'] . '/ast-shipping-providers/';
-			
-				$tracking_items[]  = array(
-					'tracking_provider'       		=> 'usps',
-					'custom_tracking_provider'		=> '',				
-					'formatted_tracking_provider'	=> 'USPS',
-					'tracking_provider_image' 		=> $ast_directory . 'usps.png',
-					'formatted_tracking_link'		=> 'https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=112123113',
-					'ast_tracking_link'				=> 'https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1=112123113',
-					'tracking_number'          		=> '112123113',				
-					'date_shipped'             		=> strtotime( gmdate( 'Y-m-d' ) ),
-				);
-				
-				update_post_meta( 1, '_wc_shipment_tracking_items', $tracking_items );
-				update_option( 'ast_pro_update_version', '1.2');		
-			}
+						
 			if ( version_compare( get_option( 'ast_pro_update_version', '1.0' ), '1.3', '<' ) ) {
 				$multi_checkbox_data = get_option( 'wc_ast_unclude_tracking_info' );
 				$data_array = array( 'partial-shipped' => 1, 'shipped' => 1, 'completed' => 1 );
 				if ( $multi_checkbox_data ) {	
-					$data_array = array_merge( $multi_checkbox_data,$data_array );
+					$data_array = array_merge( $multi_checkbox_data, $data_array );
 				}		
 				update_option( 'wc_ast_unclude_tracking_info', $data_array );
 				update_option( 'ast_pro_update_version', '1.3' );
+			}
+			if ( version_compare( get_option( 'ast_pro_update_version', '1.0' ), '1.4', '<' ) ) {
+				global $wpdb;				
+				$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s LIMIT 1', $this->table ) );
+				if ( !isset( $results->custom_tracking_url ) ) {					
+					$res = $wpdb->query( $wpdb->prepare( 'ALTER TABLE %1s ADD custom_tracking_url text NULL DEFAULT NULL AFTER custom_provider_name', $this->table ) );
+				}			
+				update_option( 'ast_pro_update_version', '1.4' );
+			}
+
+			if ( version_compare( get_option( 'ast_pro_update_version', '1.0' ), '1.5', '<' ) ) {
+				$tracking_info_settings = get_option( 'tracking_info_settings', array() );
+				$fluid_tracker_type = !empty($tracking_info_settings['fluid_tracker_type']) ? $tracking_info_settings['fluid_tracker_type'] : 'progress_bar';
+				
+				if ( 'hide' == $fluid_tracker_type ) {
+					$tracking_info_settings['fluid_display_shipped_header'] = 0;
+					$tracking_info_settings['fluid_tracker_type'] = 'progress_bar';					
+					update_option( 'tracking_info_settings', $tracking_info_settings );					
+				}				
+				update_option( 'ast_pro_update_version', '1.5' );
+			}
+
+			if ( version_compare( get_option( 'ast_pro_update_version', '1.0' ), '3.0', '<' ) ) {
+				$this->ast_insert_shipping_providers();				
+				update_option( 'ast_pro_update_version', '3.0' );
 			}
 		}
 	}	
@@ -253,108 +283,137 @@ class AST_PRO_Install {
 	 * Get providers list from trackship and update providers in database
 	*/
 	public function update_shipping_providers() {
+		as_schedule_single_action( time(), 'ast_insert_shipping_provider', array() );		
+	}	
+
+	/**
+	 * Get providers list from trackship and update providers in database
+	*/
+	public function ast_insert_shipping_provider() {
 		global $wpdb;		
 		$url = 'http://trackship.info/wp-json/WCAST/v1/Provider?paypal_slug';		
 		$resp = wp_remote_get( $url );
-		
-		$upload_dir   = wp_upload_dir();	
+		$WC_Countries = new WC_Countries();
+		$countries = $WC_Countries->get_countries();
+		// shipping provider image path
+		$upload_dir   = wp_upload_dir();
 		$ast_directory = $upload_dir['basedir'] . '/ast-shipping-providers';
-		
 		if ( !is_dir( $ast_directory ) ) {
-			wp_mkdir_p( $ast_directory );	
+			wp_mkdir_p( $ast_directory );
 		}
-				
+
 		if ( is_array( $resp ) && ! is_wp_error( $resp ) ) {
-		
+			
 			$providers = json_decode( $resp['body'], true );
-			
-			$providers_name = array();
-			
-			$default_shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table WHERE shipping_default = 1" );			
+
+			$default_shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE shipping_default = 1', $this->table ) );
 			foreach ( $default_shippment_providers as $key => $val ) {
-				$shippment_providers[ $val->provider_name ] = $val;						
+				$shippment_providers[ $val->ts_slug ] = $val;
 			}
-	
+
+			$providers_name = array();
 			foreach ( $providers as $key => $val ) {
-				$providers_name[ $val['provider_name'] ] = $val;						
-			}					
-			
+				$providers_name[ $val['shipping_provider_slug'] ] = $val;
+			}
+
 			$n = 0;
 			foreach ( $providers as $provider ) {
-				
+
 				$provider_name = $provider['shipping_provider'];
 				$provider_url = $provider['provider_url'];
 				$shipping_country = $provider['shipping_country'];
+				
+				if ( 'Global' == $provider['shipping_country'] ) {
+					$shipping_country_name = $provider['shipping_country'];
+				} else {
+					$shipping_country_name = $countries[ $provider['shipping_country'] ];
+				}
+				
 				$ts_slug = $provider['shipping_provider_slug'];
 				$trackship_supported = $provider['trackship_supported'];
 				$paypal_slug = $provider['paypal_slug'];
 				
-				if ( isset( $shippment_providers[ $provider_name ] ) ) {				
-					$db_provider_url = $shippment_providers[$provider_name]->provider_url;
-					$db_shipping_country = $shippment_providers[$provider_name]->shipping_country;
-					$db_ts_slug = $shippment_providers[$provider_name]->ts_slug;
-					$db_trackship_supported = $shippment_providers[$provider_name]->trackship_supported;
-					$db_paypal_slug = $shippment_providers[$provider_name]->paypal_slug;						
+
+				if ( isset( $shippment_providers[ $ts_slug ] ) ) {
+
+					$db_provider_name = $shippment_providers[ $ts_slug ]->provider_name;
+					$db_provider_url = $shippment_providers[$ts_slug]->provider_url;
+					$db_shipping_country = $shippment_providers[$ts_slug]->shipping_country;
+					$db_shipping_country_name = $shippment_providers[$ts_slug]->shipping_country_name;
+					$db_ts_slug = $shippment_providers[$ts_slug]->ts_slug;
+					$db_trackship_supported = $shippment_providers[$ts_slug]->trackship_supported;
+					$db_paypal_slug = $shippment_providers[$ts_slug]->paypal_slug;
 					
-					if ( ( $db_provider_url != $provider_url ) || ( $db_shipping_country != $shipping_country ) || ( $db_ts_slug != $ts_slug ) || ( $db_trackship_supported != $trackship_supported ) || ( $db_paypal_slug != $paypal_slug ) ) {
+					if ( ( $db_provider_name != $provider_name ) || ( $db_provider_url != $provider_url ) || ( $db_shipping_country != $shipping_country ) || ( $db_shipping_country_name != $shipping_country_name ) || ( $db_ts_slug != $ts_slug ) || ( $db_trackship_supported != 	$trackship_supported ) || ( $db_paypal_slug != 	$paypal_slug ) ) {
+						
+						if ( 'Global' == $shipping_country ) {
+							$shipping_country_name = $shipping_country;
+						} else {
+							$shipping_country_name = $countries[ $shipping_country ];
+						}
+						
 						$data_array = array(
+							'provider_name' => $provider_name,
 							'ts_slug' => $ts_slug,
 							'provider_url' => $provider_url,
 							'shipping_country' => $shipping_country,
+							'shipping_country_name' => $shipping_country_name,
 							'trackship_supported' => $trackship_supported,
-							'paypal_slug' => sanitize_text_field( $paypal_slug )	
+							'paypal_slug' => $paypal_slug,
 						);
 						$where_array = array(
-							'provider_name' => $provider_name,			
-						);					
-						$wpdb->update( $this->table, $data_array, $where_array);					
+							'ts_slug' => $ts_slug,
+						);
+						$wpdb->update( $this->table, $data_array, $where_array);
 					}
 				} else {
+					
 					$img_url = $provider['img_url'];
 					$img_slug = sanitize_title($provider_name);
 					$img = $ast_directory . '/' . $img_slug . '.png';
 					
-					$ch = curl_init(); 
-	
-					curl_setopt($ch, CURLOPT_HEADER, 0); 
-					curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-					curl_setopt($ch, CURLOPT_URL, $img_url); 
-				
-					$data = curl_exec($ch); 
-					curl_close($ch); 
+					$response = wp_remote_get( $img_url );
+					$data = wp_remote_retrieve_body( $response );
 					
-					file_put_contents($img, $data); 			
-					
+					file_put_contents($img, $data); 
+
 					$display_in_order = 1; 	
 					if ( $n > 14 ) {
 						$display_in_order = 0; 	
 					}	
-					
+
+					if ( 'Global' == $shipping_country ) {
+						$shipping_country_name = $shipping_country;
+					} else {
+						$shipping_country_name = $countries[ $shipping_country ];
+					}
+
 					$data_array = array(
 						'shipping_country' => sanitize_text_field($shipping_country),
+						'shipping_country_name' => $shipping_country_name,
 						'provider_name' => sanitize_text_field($provider_name),
 						'ts_slug' => $ts_slug,
 						'provider_url' => sanitize_text_field($provider_url),			
 						'display_in_order' => $display_in_order,
 						'shipping_default' => 1,
-						'trackship_supported' => $provider['trackship_supported'],
-						'paypal_slug' => sanitize_text_field( $provider['paypal_slug'] )
+						'trackship_supported' => sanitize_text_field( $provider['trackship_supported'] ),
+						'paypal_slug' => sanitize_text_field( $provider['paypal_slug'] ),
 					);
-					$result = $wpdb->insert( $this->table, $data_array );
-					$n++;	
-				}		
-			}
-			
-			foreach ( $default_shippment_providers as $db_provider ) {
-	
-				if ( !isset( $providers_name[ $db_provider->provider_name ] ) ) {				
-					$where = array(
-						'provider_name' => $db_provider->provider_name,
-						'shipping_default' => 1
-					);
-					$wpdb->delete( $this->table, $where );					
+					$wpdb->insert( $this->table, $data_array );
+					$n++;
 				}
 			}
-		}	
-	}			
+
+			foreach ( $default_shippment_providers as $db_provider ) {
+
+				if ( !isset( $providers_name[ $db_provider->ts_slug ] ) ) {
+					$where = array(
+						'ts_slug' => $db_provider->ts_slug,
+						'shipping_default' => 1
+					);
+					$wpdb->delete( $this->table, $where );
+				}
+			}
+		}
+	}
 }

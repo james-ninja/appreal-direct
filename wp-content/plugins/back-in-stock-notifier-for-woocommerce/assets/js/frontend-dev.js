@@ -1,6 +1,5 @@
 "use strict";
-
-var ajaxurl = cwginstock.ajax_url;
+var ajax_url = cwginstock.ajax_url;
 var security_error = cwginstock.security_error;
 var userid = cwginstock.user_id;
 var emptyname = cwginstock.empty_name;
@@ -22,6 +21,9 @@ var subscriber_phone = '';
 var phone_meta_data = '';
 var phone_error = cwginstock.phone_field_error;
 var is_phone_field_optional = cwginstock.is_phone_field_optional;
+var hide_country_placeholder = cwginstock.hide_country_placeholder;
+var default_country_code = cwginstock.default_country_code;
+
 function cwginstock_recaptcha_callback(response) {
     document.getElementsByClassName("cwgstock_button")[0].disabled = false;
     if (recaptcha_verify_enabled == '1' && recaptcha_secret_present == 'yes') {
@@ -50,10 +52,22 @@ var instock_notifier = {
                 autoHideDialCode: false,
                 separateDialCode: true,
                 utilsScript: cwginstock.phone_utils_js,
+                initialCountry: default_country_code,
+                customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
+                    default_country_code = default_country_code.toLowerCase();
+                    if (default_country_code == selectedCountryData.iso2 && cwginstock.hide_country_placeholder == '2') {
+                        if (cwginstock.custom_country_placeholder != '') {
+                            return cwginstock.custom_country_placeholder;
+                        }
+                        return selectedCountryPlaceholder;
+                    } else {
+                        return '';
+                    }
+                }
             });
+
         }
     },
-
     perform_upon_show_variation: function (event, variation) {
         var vid = variation.variation_id;
         jQuery('.cwginstock-subscribe-form').hide(); //remove existing form
@@ -201,9 +215,10 @@ var instock_notifier = {
         }
     },
     perform_ajax: function (data, submit_button_obj) {
+
         jQuery.ajax({
             type: "post",
-            url: ajaxurl,
+            url: ajax_url,
             data: data,
             beforeSend: function (xhr) {
                 xhr.setRequestHeader('X-WP-Nonce', cwginstock.security);

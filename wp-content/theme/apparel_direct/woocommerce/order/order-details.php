@@ -209,6 +209,8 @@ if ($show_customer_details) {
 											$product_id_p = wp_get_post_parent_id($product_id);
 											$var_image_url =  wp_get_attachment_url($var_image_id);
 
+											$aws_var_image = get_post_meta($variation_id,'aws_url_field', true);
+
 											//custom product title
 											$product_title = get_the_title($product_id_p);
 											$product_style = get_post_meta($product_id_p, 'product_style', true);
@@ -220,26 +222,30 @@ if ($show_customer_details) {
 
 											$product_name_full = $product_title . ' - ' . $product_style . ' - ' . $variation_size . ' - ' . $variation_color;
 
-
-											if (strpos($var_image_url, '_sw') == true) {
-												$var_image_url = str_replace("_sw", "-100x100", $var_image_url);
-											}
-
-											if (strpos($var_image_url, 'EBY_') == true) {
-												$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
-											}
-
-											if (@getimagesize($var_image_url)) {
-												$thumbnail = '<img src="' . $var_image_url . '">';
+											if($aws_var_image){
+												$thumbnail = '<img class="c_im" src="' . $aws_var_image . '">';
 											} else {
-												$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_id_p), array(100, 100));
-												$thumbnail = '<img src="' . $image_array[0] . '">';
-											}
+												if (strpos($var_image_url, '_sw') == true) {
+												$var_image_url = str_replace("_sw", "-100x100", $var_image_url);
+												}
 
-											if ($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327) {
-												$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_id_p), array(100, 100));
-												$thumbnail = '<img class="c_im" src="' . $image_coming_soon[0] . '">';
+												if (strpos($var_image_url, 'EBY_') == true) {
+													$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
+												}
+
+												if (@getimagesize($var_image_url)) {
+													$thumbnail = '<img src="' . $var_image_url . '">';
+												} else {
+													$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_id_p), array(100, 100));
+													$thumbnail = '<img src="' . $image_array[0] . '">';
+												}
+
+												if ($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327) {
+													$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_id_p), array(100, 100));
+													$thumbnail = '<img class="c_im" src="' . $image_coming_soon[0] . '">';
+												}
 											}
+											
 											echo $thumbnail;
 										} else {
 											if (wc_placeholder_img_src(array(100, 100))) {

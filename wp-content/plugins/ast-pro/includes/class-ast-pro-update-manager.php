@@ -43,11 +43,13 @@ class AST_Pro_Update_Manager {
 	* init from parent mail class
 	*/
 	public function init() {		
+		
 		//Insert our update info into the update array maintained by WP
 		add_filter(	'site_transient_update_plugins', array( $this, 'check_update' ) ); //WP 3.0+
 		add_filter(	'transient_update_plugins', array( $this, 'check_update' ) ); //WP 2.8+		
 		add_action( 'in_plugin_update_message-' . $this->plugin, array( $this, 'addUpgradeMessageLink' ) );						
 		add_action( 'upgrader_process_complete', array( $this,'after_update' ), 10, 2 );
+		add_filter( 'plugins_api', array( $this,'ast_plugin_info' ), 20, 3);
 	}
 		
 	/**
@@ -172,5 +174,68 @@ class AST_Pro_Update_Manager {
 			// just clean the cache when new plugin version is installed
 			delete_transient( 'zorem_upgrade_' . $this->slug );
 		}
+	}
+
+	/*
+	 * $res empty at this step
+	 * $action 'plugin_information'
+	 * $args stdClass Object ( [slug] => woocommerce [is_ssl] => [fields] => Array ( [banners] => 1 [reviews] => 1 [downloaded] => [active_installs] => 1 ) [per_page] => 24 [locale] => en_US )
+	 */
+	public function ast_plugin_info( $res, $action, $args ) {
+		
+		// do nothing if this is not about getting plugin information
+		if ( 'plugin_information' !== $action ) {
+			return $res;
+		}
+		
+		// do nothing if it is not our plugin
+		if ( plugin_basename( __DIR__ ) !== $args->slug . '/includes' ) {
+			return $res;
+		}
+
+		$instance_id = ast_pro()->license->get_instance_id();
+		$domain = home_url();
+
+		$api_params = array(
+			'wc-api' => 'wc-am-api',
+			'wc_am_action' => 'plugininformation',
+			'instance' => $instance_id,
+			'object' => $domain,
+			'product_id' => ast_pro()->license->get_product_id(),
+			'api_key' => ast_pro()->license->get_license_key(),
+			'plugin_name' => $this->plugin,
+			'version' => $this->current_version,
+		);
+		
+		$request = add_query_arg( $api_params, $this->store_url );
+
+		$response = wp_remote_get( $request, array( 'timeout' => 15, 'sslverify' => false ) );			
+
+		// do nothing if we don't get the correct response from the server
+		if ( is_wp_error( $response ) || 200 !== wp_remote_retrieve_response_code( $response ) || empty( wp_remote_retrieve_body( $response ) ) ) {
+			return false;	
+		}
+		
+		$plugin_information = unserialize( wp_remote_retrieve_body( $response ) );
+
+		$res = new stdClass();
+		$res->name = $plugin_information->name;
+		$res->slug = $plugin_information->slug;
+		$res->author = $plugin_information->author;		
+		$res->version = $plugin_information->version;
+		$res->tested = $plugin_information->tested;
+		$res->requires = $plugin_information->requires;
+		$res->requires_php = $plugin_information->requires_php;		
+		$res->last_updated = $plugin_information->last_updated;
+		$res->sections = array(			
+			'changelog' => $plugin_information->sections['changelog'],			
+		);				
+
+		$res->banners = array(
+			'low' => ast_pro()->plugin_dir_url() . 'assets/images/zorem-changelog-banner.jpg',
+			'high' => ast_pro()->plugin_dir_url() . 'assets/images/zorem-changelog-banner.jpg'
+		);
+
+		return $res;
 	}
 }

@@ -25,11 +25,11 @@
 		<?php 
 		$product_style = get_post_meta(get_the_ID(), 'product_style', true);
 		$image = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'shop_thumbnail' );
-
+		$variation_image = get_field('cdn_featured_image');
 		?>
 		<div class="searchwp-live-search-result" role="option" id="" aria-selected="false">
 			<p><a href="<?php echo esc_url( get_permalink() ); ?>">
-			<img width="50px" src="<?php echo $image[0]; ?>">
+			<img width="50px" src="<?php if($variation_image) { echo $variation_image; } else { echo $image[0]; } ?>">
 				<?php the_title(); ?><?php if($product_style){ echo ' - '.$product_style;} ?>
 			</a></p>
 		</div>

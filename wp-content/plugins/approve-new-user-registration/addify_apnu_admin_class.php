@@ -1082,11 +1082,40 @@ public function subscribe_user_to_mailchimp($user_email) {
 
 					$user_status = 'approved';
 					$user_email = stripslashes($user->user_email);
+
+					/*31-5-23 mailchimp manually approved user add */
+
+					$new_user_data = get_user_meta($user_id);
+					$email =   $new_user_data['personal_email'][0];						
+
+					$list_id = '55c794b002';
+					$api = '538f38112d52ad80a19b112ca5646618-us6';
+
+					$response = wp_remote_request( 
+						'https://' . substr($api,strpos($api,'-')+1) . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/' . md5(strtolower($email)),
+						array(
+							'method' => 'PUT',
+					 		'headers' => array(
+								'Authorization' => 'Basic ' . base64_encode( 'user:'. $api )
+							),
+							'body' => json_encode(
+								array(
+									'email_address' => $email,
+									'merge_fields' => array('FNAME' => $new_user_data['first_name'][0],
+																'LNAME' => $new_user_data['last_name'][0],								
+																'ADDRESS' => $new_user_data['home_address_1'][0].' '.$new_user_data['billing_city'][0].' '.$new_user_data['billing_state'][0],
+																'PHONE' => $new_user_data['personal_phone'][0],
+																'MMERGE5' => $new_user_data['business_name'][0],
+															),					
+									'full_name' => $new_user_data['first_name'][0].' '.$new_user_data['last_name'][0],
+									'status' => 'subscribed',
+								)
+							)
+						)
+					); 
 					
-					/* start custom mailchimp fun */		
-					echo $this->subscribe_user_to_mailchimp($user_email);
-
-
+					/*31-5-23 mailchimp manually user add end*/
+					
 				} elseif (isset($_GET['action']) && 'user_disapprove' == $_GET['action']) {
 
 					$user_status = 'disapproved';
@@ -1151,6 +1180,8 @@ public function subscribe_user_to_mailchimp($user_email) {
 				}
 			}
 		}
+
+
 
 
 		public function addify_apnu_status_filter($s_filter)

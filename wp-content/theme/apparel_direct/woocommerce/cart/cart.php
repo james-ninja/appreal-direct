@@ -102,7 +102,7 @@ echo '</div>';
 							$variation_id = $cart_item['variation_id'];	
 							 
 							$variation_image = get_post_meta($variation_id,'aws_url_field', true);
-							
+						
 							/*$product = new WC_product($product_id);
 							$attachment_ids = $product->get_gallery_image_ids();
 							    $attachment_ids = $product->get_gallery_image_ids();
@@ -359,17 +359,16 @@ echo '</div>';
 			success: function(response) {
 				jQuery('.woocommerce-cart-form .shop_table').removeClass('blockUI blockOverlay');
 				if (response['success'] == true) {
-					var carttotal = jQuery('.carttotal').val();
+					var carttotal = $('.carttotal').val();
 					$(document.body).trigger('wc_fragment_refresh');
 					jQuery("[name='update_cart']").prop("disabled", false);
 					jQuery("[name='update_cart']").trigger("click");
 					jQuery('.empty_cart_link').hide();
 					jQuery('.woocommerce-message').remove();
-					jQuery('.cart_total_custom .woocommerce-Price-amount').text(carttotal);
+					$('.cart_total_custom .woocommerce-Price-amount').text(carttotal);
 					 setTimeout(function(){// wait for 5 secs(2)
 					   location.reload(); // then reload the page.(3)
 				  }, 3000); 
-
 				} else {
 					responsehtml = '<div class="woocommerce-error" role="alert">Looks like there was an error. Please try again.</div>';
 					jQuery(".woocommerce-notices-wrapper").html(responsehtml);
@@ -398,14 +397,15 @@ echo '</div>';
 			success: function(response) {
 				jQuery('.woocommerce-cart-form .shop_table').removeClass('blockUI blockOverlay');
 				if (response['success'] == true) {
-					var carttotal = jQuery('.carttotal').val();
+					var carttotal = $('.carttotal').val();
 					$(document.body).trigger('wc_fragment_refresh');
 					jQuery("[name='update_cart']").prop("disabled", false);
 					jQuery("[name='update_cart']").trigger("click");
 					jQuery('.empty_cart_link').hide();
 					jQuery('.woocommerce-message').remove();
-					jQuery('.cart_total_custom .woocommerce-Price-amount').text(carttotal);
-					 setTimeout(function(){// wait for 5 secs(2)
+					
+					$('.cart_total_custom .woocommerce-Price-amount').text(carttotal);
+					setTimeout(function(){// wait for 5 secs(2)
 					   location.reload(); // then reload the page.(3)
 				  }, 3000); 
 				} else {

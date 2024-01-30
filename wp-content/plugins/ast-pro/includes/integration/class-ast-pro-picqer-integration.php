@@ -12,37 +12,41 @@ if ( !function_exists( 'ast_pro_picqer_woocommerce_rest_insert_order_note' ) ) {
 			return;
 		}	
 		
-		//check if order note is for Royal Mail
+		$status_shipped = get_option( 'autocomplete_picqer', 1 );
+		$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+		//check if order note is for PostNL
 		if ( false != strpos( $note->comment_content, 'https://postnl.nl' ) ) {
 			
-			$order_id = $request['order_id'];
-			$status_shipped = 1;
+			$order_id = $request['order_id'];			
 			$tracking_number = ast_get_string_after( $note->comment_content, 'Tracking code: ' );
 			$tracking_number = str_replace( '.', '', $tracking_number );
 			$tracking_number = str_replace( ' ', '', $tracking_number );
 			$tracking_provider = 'PostNL';
 			
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+
 			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, 0, $status_shipped );
-		}		
-	}
-}
-
-/*
-* AST: get specific string between two string
-*/
-if ( !function_exists( 'ast_get_string_between' ) ) {
-	function ast_get_string_between( $input, $start, $end ) {
-		$substr = substr( $input, strlen( $start ) + strpos( $input, $start ), ( strlen( $input ) - strpos( $input, $end ) ) * ( -1 ) );
-		return $substr;
-	}
-}
-
-/*
-* AST: get specific string after string
-*/
-if ( !function_exists( 'ast_get_string_after' ) ) {
-	function ast_get_string_after( $input, $after ) {
-		$substr = substr($input, strpos($input, $after) + strlen($after));
-		return $substr;
+		}
+		
+		//check if order note is for DHLParcel NL
+		if ( false != strpos( $note->comment_content, 'https://www.dhlparcel.nl' ) ) {
+			
+			$order_id = $request['order_id'];			
+			$tracking_number = ast_get_string_after( $note->comment_content, 'Tracking code: ' );
+			$tracking_number = str_replace( '.', '', $tracking_number );
+			$tracking_number = str_replace( ' ', '', $tracking_number );
+			$tracking_provider = 'DHLParcel NL';
+			
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+			
+			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, 0, $status_shipped );
+		}
 	}
 }

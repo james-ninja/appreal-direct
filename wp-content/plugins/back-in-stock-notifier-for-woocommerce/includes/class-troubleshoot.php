@@ -20,6 +20,7 @@ if (!class_exists('CWG_Instock_Troubleshoot')) {
 			add_settings_field('cwg_instock_stock_updade_from_thirdparty', __('Enable this option if you have updated the stock from a third-party inventory plugin', 'back-in-stock-notifier-for-woocommerce'), array($this, 'update_stock_third_party'), 'cwginstocknotifier_settings', 'cwginstock_section_troubleshoot');
 			add_settings_field('cwg_instock_remove_view_subscriber_count', __('Remove View Subscribers Link in Product List Table(Admin Dashboard -> Products)', 'back-in-stock-notifier-for-woocommerce'), array($this, 'remove_view_subscriber_count_producttable'), 'cwginstocknotifier_settings', 'cwginstock_section_troubleshoot');
 			add_settings_field('cwg_instock_trigger_mail_any_variation', __('Trigger mail to variable product subscribers when any other variation of that product is back in stock', 'back-in-stock-notifier-for-woocommerce'), array($this, 'trigger_any_variation_variable_backinstock'), 'cwginstocknotifier_settings', 'cwginstock_section_troubleshoot');
+			add_settings_field('cwg_instock_override_form_from_theme', __('Force load Template from Plugin - This option ignores the template override from theme', 'back-in-stock-notifier-for-woocommerce'), array($this, 'load_template_from_plugin'), 'cwginstocknotifier_settings', 'cwginstock_section_troubleshoot');
 		}
 
 		public function troubleshoot_settings_heading() {
@@ -78,6 +79,14 @@ if (!class_exists('CWG_Instock_Troubleshoot')) {
 			$options = get_option('cwginstocksettings');
 			?>
 			<input type='checkbox' name='cwginstocksettings[variable_any_variation_backinstock]' <?php isset($options['variable_any_variation_backinstock']) ? checked($options['variable_any_variation_backinstock'], 1) : ''; ?> value="1"/>
+			<?php
+		}
+
+		public function load_template_from_plugin() {
+			$options = get_option('cwginstocksettings');
+			?>
+						<input type='checkbox' name='cwginstocksettings[template_from_plugin]' <?php isset($options['template_from_plugin']) ? checked($options['template_from_plugin'], 1) : ''; ?> value="1"/>
+			<p><i><?php esc_html_e('Select this option to ignore the loading of subscribe form template from theme', 'back-in-stock-notifier-for-woocommerce'); ?></i></p>
 			<?php
 		}
 

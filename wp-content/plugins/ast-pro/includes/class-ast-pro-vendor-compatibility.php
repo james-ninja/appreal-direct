@@ -58,10 +58,6 @@ class AST_PRO_Vendor_Compatibility {
 	*/
 	public function init() {
 		
-		if ( !class_exists( 'WC_Product_Vendors' ) ) {
-			//return;
-		}
-		
 		add_action( 'admin_menu', array( $this, 'register_fulfillment_menu' ), 99 );				
 		
 		add_action( 'wp_ajax_get_vendor_unfulfilled_orders', array($this, 'get_vendor_unfulfilled_orders') );						
@@ -122,77 +118,15 @@ class AST_PRO_Vendor_Compatibility {
 		$fulfillment_filter = isset( $_POST['fulfillment_filter'] ) ? wc_clean( $_POST['fulfillment_filter'] ) : '';
 		
 		if ( 'unfulfilled' == $fulfillment_filter ) {
-			//$fulfilled_query = "order_itemmeta.meta_value='unfulfilled'";
-			$order_status = get_option( 'ast_order_display_in_fulfillment_dashboard', $default_order_status );
+			$orders_data = $this->get_unfulfilled_orders_data();
+			$orders = $orders_data['orders'];
+			$total_orders = $orders_data['total_orders'];	
 		} else {		
-			//$fulfilled_query = "order_itemmeta.meta_value='fulfilled'";
-			$order_status[] = 'wc-completed';
-			$order_status[] = 'wc-shipped';
-			$order_status[] = 'wc-delivered';
+			$orders_data = $this->get_fulfilled_orders_data();
+			$orders = $orders_data['orders'];
+			$total_orders = $orders_data['total_orders'];
 		}
 		
-		$order_status_string = '';
-		$i = 0;
-		foreach ( $order_status as $status ) {
-			if ( 0 == $i ) {
-				$order_status_string .= "'" . $status . "'";	
-			} else {
-				$order_status_string .= ",'" . $status . "'";	
-			}	 		
-			 $i++;
-		}	
-		
-		$row = ( isset( $_POST['start'] ) ) ? wc_clean( $_POST['start'] ) : '' ;
-		$rowperpage = ( isset( $_POST['length'] ) ) ? wc_clean( $_POST['length'] ) : '' ;
-		$shipping_method = ( isset( $_POST['shipping_method_filter'] ) ) ? wc_clean( $_POST['shipping_method_filter'] ) : '' ;
-		$search_input = ( isset( $_POST['fulfillment_search_input'] ) ) ? wc_clean( $_POST['fulfillment_search_input'] ) : null ;
-		
-		if ( null != $search_input ) {
-			$order_query = "AND commission.order_id LIKE '" . $search_input . "%'";
-		} else {
-			$order_query = '';
-		}
-		
-		global $wpdb;
-		global $sitepress;
-		$vendor_table = $wpdb->prefix . 'wcpv_commissions';
-		
-		// remove WPML term filters
-		remove_filter('get_terms_args', array($sitepress, 'get_terms_args_filter'));
-		remove_filter('get_term', array($sitepress,'get_term_adjust_id'),1);
-		remove_filter('terms_clauses', array($sitepress,'terms_clauses'));
-		
-		$terms_objects = ( class_exists( 'WC_Product_Vendors_Utils' ) ) ? WC_Product_Vendors_Utils::get_all_vendor_data() : get_current_user_id();
-		
-		// restore WPML term filters
-		add_filter('terms_clauses', array($sitepress,'terms_clauses'),10, 3);
-		add_filter('get_term', array($sitepress,'get_term_adjust_id'),1, 1);
-		add_filter('get_terms_args', array($sitepress, 'get_terms_args_filter'), 10, 2);
-		
-		$vendor_ids = implode(',', array_keys($terms_objects));
-		$limit = 'LIMIT ' . $row . ',' . $rowperpage . '';		
-		$shipping_method = "AND order_item_name REGEXP '" . $shipping_method . "' )";
-		
-		$query = "
-			SELECT commission.id,commission.order_id,commission.product_quantity 
-			FROM {$vendor_table} AS commission 
-			LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_itemmeta
-			ON order_itemmeta.order_item_id = commission.order_item_id
-			LEFT JOIN {$wpdb->posts} AS posts
-			ON posts.ID = commission.order_id
-			WHERE 
-				commission.vendor_id IN ({$vendor_ids}) 
-				$order_query
-				AND posts.post_status IN (" . $order_status_string . ")
-				GROUP BY commission.order_id
-				ORDER BY commission.order_id DESC				
-				";			
-		
-		$paginated_query = $query . $limit;			
-			
-		$orders = $wpdb->get_results( $paginated_query );
-
-		$total_orders = $wpdb->get_results( $query );				
 		
 		$i = 0;
 		$result = array();
@@ -211,7 +145,7 @@ class AST_PRO_Vendor_Compatibility {
 			$result[$i]->order_number = $order->get_order_number();
 			$result[$i]->order_items = $order_data->product_quantity;						
 		
-			$result[$i]->order_date = $datetime->format('M d'). ' at '.$datetime->format('h:i a');
+			$result[$i]->order_date = $datetime->format('M d') . ' at ' . $datetime->format('h:i a');
 			$result[$i]->order_status = sprintf( '<mark class="order-status %s"><span>%s</span></mark>', esc_attr( sanitize_html_class( 'status-' . $order->get_status() ) ), esc_html( wc_get_order_status_name( $order->get_status() ) ) );
 			$result[$i]->ship_to = $order->get_shipping_first_name() . ' ' . $order->get_shipping_last_name();
 			if ( null != $order->get_shipping_country() ) {
@@ -249,11 +183,158 @@ class AST_PRO_Vendor_Compatibility {
 		exit;
 	}
 
+	public function get_unfulfilled_orders_data() {
+		
+		if ( ! current_user_can( 'manage_product' ) ) {
+			exit( 'You are not allowed' );
+		}
+		
+		check_ajax_referer( 'nonce_fullfillment_dashbaord', 'ajax_nonce' );					
+		
+		$row = ( isset( $_POST['start'] ) ) ? wc_clean( $_POST['start'] ) : '' ;
+		$rowperpage = ( isset( $_POST['length'] ) ) ? wc_clean( $_POST['length'] ) : '' ;
+		$shipping_method = ( isset( $_POST['shipping_method_filter'] ) ) ? wc_clean( $_POST['shipping_method_filter'] ) : '' ;
+		$search_input = ( isset( $_POST['fulfillment_search_input'] ) ) ? wc_clean( $_POST['fulfillment_search_input'] ) : null ;
+		
+		if ( null != $search_input ) {
+			$order_query = "AND commission.order_id LIKE '" . $search_input . "%'";
+		} else {
+			$order_query = '';
+		}
+		
+		global $wpdb;
+		global $sitepress;
+		$vendor_table = $wpdb->prefix . 'wcpv_commissions';
+		
+		// remove WPML term filters
+		remove_filter( 'get_terms_args', array( $sitepress, 'get_terms_args_filter' ) );
+		remove_filter( 'get_term', array( $sitepress, 'get_term_adjust_id' ), 1 );
+		remove_filter( 'terms_clauses', array( $sitepress, 'terms_clauses' ) );
+		
+		$terms_objects = ( class_exists( 'WC_Product_Vendors_Utils' ) ) ? WC_Product_Vendors_Utils::get_all_vendor_data() : get_current_user_id();
+		
+		// restore WPML term filters
+		add_filter( 'terms_clauses', array( $sitepress, 'terms_clauses' ), 10, 3 );
+		add_filter( 'get_term', array( $sitepress, 'get_term_adjust_id' ), 1, 1 );
+		add_filter( 'get_terms_args', array( $sitepress, 'get_terms_args_filter'), 10, 2 );
+		
+		$vendor_ids = implode(',', array_keys($terms_objects));
+		$shipping_method = "AND order_item_name REGEXP '" . $shipping_method . "' )";
+		
+		$orders = $wpdb->get_results( $wpdb->prepare( "
+		SELECT commission.id,commission.order_id,commission.product_quantity 
+		FROM %1s AS commission 
+		LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_itemmeta
+		ON order_itemmeta.order_item_id = commission.order_item_id
+		LEFT JOIN {$wpdb->posts} AS posts
+		ON posts.ID = commission.order_id
+		WHERE 
+			commission.vendor_id IN (%2s) 
+			%3s 
+			AND posts.post_status IN ('wc-processing','wc-partial-shipped')
+			GROUP BY commission.order_id
+			ORDER BY commission.order_id DESC
+			LIMIT %4d, %5d				
+			", $vendor_table, $vendor_ids, $order_query, $row, $rowperpage ) );
+
+		$total_orders = $wpdb->get_results( $wpdb->prepare( "
+		SELECT commission.id,commission.order_id,commission.product_quantity 
+		FROM %1s AS commission 
+		LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_itemmeta
+		ON order_itemmeta.order_item_id = commission.order_item_id
+		LEFT JOIN {$wpdb->posts} AS posts
+		ON posts.ID = commission.order_id
+		WHERE 
+			commission.vendor_id IN (%2s) 
+			%3s 
+			AND posts.post_status IN ('wc-processing','wc-partial-shipped')
+			GROUP BY commission.order_id
+			ORDER BY commission.order_id DESC				
+			", $vendor_table, $vendor_ids, $order_query ) );
+
+		$orders_data = array();
+		$orders_data['total_orders'] = $total_orders;
+		$orders_data['orders'] = $orders;
+		return $orders_data;	
+	}
+
+	public function get_fulfilled_orders_data() {
+		if ( ! current_user_can( 'manage_product' ) ) {
+			exit( 'You are not allowed' );
+		}
+		
+		check_ajax_referer( 'nonce_fullfillment_dashbaord', 'ajax_nonce' );					
+		
+		$row = ( isset( $_POST['start'] ) ) ? wc_clean( $_POST['start'] ) : '' ;
+		$rowperpage = ( isset( $_POST['length'] ) ) ? wc_clean( $_POST['length'] ) : '' ;
+		$shipping_method = ( isset( $_POST['shipping_method_filter'] ) ) ? wc_clean( $_POST['shipping_method_filter'] ) : '' ;
+		$search_input = ( isset( $_POST['fulfillment_search_input'] ) ) ? wc_clean( $_POST['fulfillment_search_input'] ) : null ;
+		
+		if ( null != $search_input ) {
+			$order_query = "AND commission.order_id LIKE '" . $search_input . "%'";
+		} else {
+			$order_query = '';
+		}
+		
+		global $wpdb;
+		global $sitepress;
+		$vendor_table = $wpdb->prefix . 'wcpv_commissions';
+		
+		// remove WPML term filters
+		remove_filter( 'get_terms_args', array( $sitepress, 'get_terms_args_filter' ) );
+		remove_filter( 'get_term', array( $sitepress, 'get_term_adjust_id' ), 1 );
+		remove_filter( 'terms_clauses', array( $sitepress, 'terms_clauses' ) );
+		
+		$terms_objects = ( class_exists( 'WC_Product_Vendors_Utils' ) ) ? WC_Product_Vendors_Utils::get_all_vendor_data() : get_current_user_id();
+		
+		// restore WPML term filters
+		add_filter( 'terms_clauses', array( $sitepress, 'terms_clauses' ), 10, 3 );
+		add_filter( 'get_term', array( $sitepress, 'get_term_adjust_id' ), 1, 1 );
+		add_filter( 'get_terms_args', array( $sitepress, 'get_terms_args_filter'), 10, 2 );
+		
+		$vendor_ids = implode(',', array_keys($terms_objects));
+		$shipping_method = "AND order_item_name REGEXP '" . $shipping_method . "' )";
+
+		$orders = $wpdb->get_results( $wpdb->prepare( "
+		SELECT commission.id,commission.order_id,commission.product_quantity 
+		FROM %1s AS commission 
+		LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_itemmeta
+		ON order_itemmeta.order_item_id = commission.order_item_id
+		LEFT JOIN {$wpdb->posts} AS posts
+		ON posts.ID = commission.order_id
+		WHERE 
+			commission.vendor_id IN (%2s) 
+			%3s 
+			AND posts.post_status IN ('wc-completed','wc-shipped','wc-delivered')
+			GROUP BY commission.order_id
+			ORDER BY commission.order_id DESC
+			LIMIT %4d, %5d				
+			", $vendor_table, $vendor_ids, $order_query, $row, $rowperpage ) );
+
+		$total_orders = $wpdb->get_results( $wpdb->prepare( "
+		SELECT commission.id,commission.order_id,commission.product_quantity 
+		FROM %1s AS commission 
+		LEFT JOIN {$wpdb->prefix}woocommerce_order_itemmeta as order_itemmeta
+		ON order_itemmeta.order_item_id = commission.order_item_id
+		LEFT JOIN {$wpdb->posts} AS posts
+		ON posts.ID = commission.order_id
+		WHERE 
+			commission.vendor_id IN (%2s) 
+			%3s 
+			AND posts.post_status IN ('wc-completed','wc-shipped','wc-delivered')
+			GROUP BY commission.order_id
+			ORDER BY commission.order_id DESC				
+			", $vendor_table, $vendor_ids, $order_query ) );
+
+		$orders_data = array();
+		$orders_data['total_orders'] = $total_orders;
+		$orders_data['orders'] = $orders;
+		return $orders_data;
+	}
+
 	public function vendor_shipment_tracking_cl( $order_id, $vendor_id ) {
 		ob_start();
-
 		$tracking_items = ast_get_tracking_items( $order_id );
-		//echo '<pre>';print_r($tracking_items);echo '</pre>';
 		if ( count( $tracking_items ) > 0 ) {
 			echo '<ul class="wcast-tracking-number-list">';
 
@@ -264,7 +345,7 @@ class AST_PRO_Vendor_Compatibility {
 					$tracking_provider = isset( $tracking_item['tracking_provider'] ) ? $tracking_item['tracking_provider'] : $tracking_item['custom_tracking_provider'];
 					$tracking_provider = apply_filters( 'convert_provider_name_to_slug', $tracking_provider );
 	
-					$results = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $this->table WHERE ts_slug = %s", $tracking_provider ) );
+					$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );
 					
 					$provider_name = apply_filters('get_ast_provider_name', $tracking_provider, $results);								
 					
@@ -318,9 +399,8 @@ class AST_PRO_Vendor_Compatibility {
 				
 		$WC_Countries = new WC_Countries();
 		$countries = $WC_Countries->get_countries();
-		$shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table" );
-		$shippment_countries = $wpdb->get_results( "SELECT shipping_country FROM $this->table WHERE display_in_order = 1 GROUP BY shipping_country" );				
-		
+		$shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s', $this->table ) );
+		$shippment_countries = $wpdb->get_results( $wpdb->prepare( 'SELECT shipping_country FROM %1s WHERE display_in_order = 1 GROUP BY shipping_country', $this->table ) );		
 		$default_provider = get_option( 'wc_ast_default_provider' );
 
 		foreach ( $shippment_providers as $provider ) {
@@ -359,7 +439,7 @@ class AST_PRO_Vendor_Compatibility {
 									echo '<optgroup label="' . esc_html( $country_name ) . '">';
 									
 									$country = $s_c->shipping_country;				
-									$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $this->table WHERE shipping_country = %s AND display_in_order = 1", $country ) );
+									$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE shipping_country = %s AND display_in_order = 1', $this->table, $country ) );
 									
 									foreach ( $shippment_providers_by_country as $providers ) {
 										$selected = ( esc_attr( $providers->id ) == $default_provider ) ? 'selected' : '';
@@ -428,8 +508,8 @@ class AST_PRO_Vendor_Compatibility {
 		</script>
 		<?php			
 		$html = ob_get_clean();
-		echo $html;
-		exit;	
+		$json['html'] = $html;
+		wp_send_json_success( $json );
 	}
 	
 	public function save_vendor_in_tracking_info_args( $args, $postdata, $order_id ) {
@@ -451,7 +531,7 @@ class AST_PRO_Vendor_Compatibility {
 			}	
 		}				
 		
-		if ( isset( $postdata['vendor_id'] ) && '' != $postdata['vendor_id'] ){
+		if ( isset( $postdata['vendor_id'] ) && '' != $postdata['vendor_id'] ) {
 			$args[ 'vendor_id' ] = $postdata['vendor_id'];
 			
 			$wc_ast_status_partial_shipped	= get_option( 'wc_ast_status_partial_shipped', 1 );
@@ -459,14 +539,14 @@ class AST_PRO_Vendor_Compatibility {
 			
 			$tpi = AST_Tpi::get_instance();
 			$args = $tpi->autocomplete_order_after_adding_all_products( $order_id, $args, $products_list );
- 		}
+		}
 		return $args;		
 	}
 	
 	public function save_vendor_in_tracking_item_args( $tracking_item, $args, $order_id ) {
-		if ( isset( $args['vendor_id'] ) && '' != $args['vendor_id'] ){
-			$tracking_item[ 'vendor_id' ] = $args['vendor_id'];			
- 		}
+		if ( isset( $args['vendor_id'] ) && '' != $args['vendor_id'] ) {
+			$tracking_item[ 'vendor_id' ] = $args['vendor_id'];
+		}
 		return $tracking_item;		
 	}
 	
@@ -531,7 +611,7 @@ class AST_PRO_Vendor_Compatibility {
 		echo '<div class="order_data_column">';
 		echo '<h4>' . esc_html( 'Shipment Tracking', 'ast-pro' ) . '</h4>';
 		
-		echo '<p><a href="#' . $order->get_id() . '" class="button button-primary btn_ast2 add_inline_tracking_vendor" type="button">' . esc_html( 'Add Tracking Info', 'ast-pro' ) . '</a></p>';
+		echo '<p><a href="#' . esc_html( $order->get_id() ) . '" class="button button-primary btn_ast2 add_inline_tracking_vendor" type="button">' . esc_html( 'Add Tracking Info', 'ast-pro' ) . '</a></p>';
 		
 		if ( count( $tracking_items ) > 0 ) {
 			echo '<div class="vendor-tracking-item" id="woocommerce-advanced-shipment-tracking">';
@@ -567,7 +647,7 @@ class AST_PRO_Vendor_Compatibility {
 		$formatted = $ast->get_formatted_tracking_item( $order_id, $item );			
 		$tracking_provider = isset( $item['tracking_provider'] ) ? $item['tracking_provider'] : $item['custom_tracking_provider'];
 		$tracking_provider = apply_filters( 'convert_provider_name_to_slug', $tracking_provider );
-		$results = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $this->table WHERE ts_slug = %s", $tracking_provider ) );		
+		$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );		
 		$provider_name = apply_filters( 'get_ast_provider_name', $tracking_provider, $results );
 		?>
 		<div class="tracking-item" id="tracking-item-<?php echo esc_attr( $item['tracking_id'] ); ?>">

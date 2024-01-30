@@ -131,6 +131,7 @@ class Main {
 		}
 
 		$attach_to_document_types = $this->get_documents_for_email( $email_id, $order );
+		
 		foreach ( $attach_to_document_types as $output_format => $document_types ) {
 			foreach ( $document_types as $document_type ) {
 				$email_order    = apply_filters( 'wpo_wcpdf_email_attachment_order', $order, $email, $document_type );
@@ -290,28 +291,36 @@ class Main {
 	public function get_documents_for_email( $email_id, $order ) {
 		$documents        = WPO_WCPDF()->documents->get_documents( 'enabled', 'any' );
 		$attach_documents = array();
+		
 		foreach ( $documents as $document ) {
+			// Pro not activated, only attach Invoice
+			if ( ! function_exists( 'WPO_WCPDF_Pro' ) && 'invoice' !== $document->get_type() ) {
+				continue;
+			};
+			
 			foreach ( $document->output_formats as $output_format ) {
 				if ( $document->is_enabled( $output_format ) ) {
-					$attach_documents[$output_format][$document->get_type()] = $document->get_attach_to_email_ids( $output_format );
+					$attach_documents[ $output_format ][ $document->get_type() ] = $document->get_attach_to_email_ids( $output_format );
 				}
 			}
 		}
 		
 		$attach_documents = apply_filters( 'wpo_wcpdf_attach_documents', $attach_documents );
 		$document_types   = array();
-		foreach ( $attach_documents as $output_format => $documents ) {
-			foreach ( $documents as $document_type => $attach_to_email_ids ) {
+		
+		foreach ( $attach_documents as $output_format => $_documents ) {
+			foreach ( $_documents as $document_type => $attach_to_email_ids ) {
 				// legacy settings: convert abbreviated email_ids
 				foreach ( $attach_to_email_ids as $key => $attach_to_email_id ) {
-					if ( $attach_to_email_id == 'completed' || $attach_to_email_id == 'processing' ) {
-						$attach_to_email_ids[$key] = "customer_" . $attach_to_email_id . "_order";
+					if ( in_array( $attach_to_email_id, array( 'completed', 'processing' ) ) ) {
+						$attach_to_email_ids[ $key ] = "customer_{$attach_to_email_id}_order";
 					}
 				}
 
 				$extra_condition = apply_filters( 'wpo_wcpdf_custom_attachment_condition', true, $order, $email_id, $document_type, $output_format );
-				if ( in_array( $email_id, $attach_to_email_ids ) && $extra_condition === true ) {
-					$document_types[$output_format][] = $document_type;
+				
+				if ( in_array( $email_id, $attach_to_email_ids ) && $extra_condition ) {
+					$document_types[ $output_format ][] = $document_type;
 				}
 			}
 		}
@@ -326,7 +335,7 @@ class Main {
 		$access_type  = WPO_WCPDF()->endpoint->get_document_link_access_type();
 		$redirect_url = WPO_WCPDF()->endpoint->get_document_denied_frontend_redirect_url();
 
-		// handle legacy access keys
+		// handle bulk actions access key (_wpnonce) and legacy access key (order_key)
 		if ( empty( $_REQUEST['access_key'] ) ) {
 			foreach ( array( '_wpnonce', 'order_key' ) as $legacy_key ) {
 				if ( ! empty( $_REQUEST[ $legacy_key ] ) ) {
@@ -406,58 +415,48 @@ class Main {
 
 		// set default is allowed
 		$allowed = true;
-		
+
+		// no order when it is a single order
+		if ( ! $order && 1 === count( $order_ids ) ) {
+			$allowed = false;
+		}
+
+		// check the user privileges
+		$full_permission = WPO_WCPDF()->admin->user_can_manage_document( $document_type );
+
+		// multi-order only allowed with permissions
+		if ( ! $full_permission && 1 < count( $order_ids ) ) {
+			$allowed = false;
+		}
+
 		// 'guest' is hybrid, it can behave as 'logged_in' if the user is logged in, but if not, behaves as 'full'
 		if ( 'guest' === $access_type ) {
 			$access_type = is_user_logged_in() ? 'logged_in' : 'full';
 		}
-		
+
 		switch ( $access_type ) {
 			case 'logged_in':
 				if ( ! is_user_logged_in() || ! $valid_nonce ) {
 					$allowed = false;
 					break;
 				}
-				
-				// check the user privileges
-				$full_permission = WPO_WCPDF()->admin->user_can_manage_document( $document_type );
-				
+
 				if ( ! $full_permission ) {
 					if ( ! isset( $_REQUEST['my-account'] ) && ! isset( $_REQUEST['shortcode'] ) ) {
 						$allowed = false;
 						break;
-					
-					// user call from 'my-account' page or via 'shortcode'
-					} else {
-						// single order only
-						if ( count( $order_ids ) > 1 ) {
-							$allowed = false;
-							break;
-						}
-			
-						// check if current user is owner of order IMPORTANT!!!
-						if ( ! current_user_can( 'view_order', $order_ids[0] ) ) {
-							$allowed = false;
-							break;
-						}
+					}
+
+					// check if current user is owner of order IMPORTANT!!!
+					if ( ! current_user_can( 'view_order', $order_ids[0] ) ) {
+						$allowed = false;
+						break;
 					}
 				}
 				break;
 			case 'full':
-				// no order
-				if ( ! $order ) {
-					$allowed = false;
-					break;
-				}
-				
 				// check if we have a valid access key
-				if ( ! hash_equals( $order->get_order_key(), $_REQUEST['access_key'] ) ) {
-					$allowed = false;
-					break;
-				}
-				
-				// single order only
-				if ( count( $order_ids ) > 1 ) {
+				if ( $order && ! hash_equals( $order->get_order_key(), $_REQUEST['access_key'] ) ) {
 					$allowed = false;
 					break;
 				}
@@ -1576,13 +1575,13 @@ class Main {
 	}
 
 	/**
-	 * @param string $document_type
-	 * @param \WC_Order|\WC_Order_Refund $order
+	 * @param null|string $document_type
+	 * @param null|\WC_Order|\WC_Order_Refund $order
 	 *
 	 * @return void
 	 */
-	public function display_due_date( string $document_type, $order ): void {
-		if ( empty( $order ) ) {
+	public function display_due_date( string $document_type = null, $order = null ): void {
+		if ( empty( $order ) || empty( $document_type ) ) {
 			return;
 		}
 
@@ -1598,7 +1597,7 @@ class Main {
 			return;
 		}
 
-		$due_date       = apply_filters( 'wpo_wcpdf_due_date_display', date( wcpdf_date_format( $this, 'due_date' ), $due_date_timestamp ), $due_date_timestamp, $document_type, $order );
+		$due_date       = apply_filters( 'wpo_wcpdf_due_date_display', date( wcpdf_date_format( $this, 'due_date' ), $due_date_timestamp ), $due_date_timestamp, $document_type, $document );
 		$due_date_title = is_callable( array( $document, 'get_due_date_title' ) ) ? $document->get_due_date_title() : __( 'Due Date:', 'woocommerce-pdf-invoices-packing-slips' );
 
 		if ( ! empty( $due_date ) ) {

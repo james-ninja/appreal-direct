@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 	'use strict';
 	var url;
 	var $vendor_fullfilments_table = jQuery("#vendor_fullfilments_table").DataTable({		
-		dom: "it<'datatable_footer'pl>",
+		dom: "rti<'datatable_footer'pl>",
 		searching: false,
 		fixedHeader: true,
 		"processing": true,
@@ -113,14 +113,17 @@ jQuery(document).on("click", ".add_inline_tracking_vendor", function(){
 	jQuery.ajax({
 		url: ajaxurl,		
 		data: ajax_data,
+		dataType: "json",
 		type: 'POST',						
 		success: function(response) {
 			jQuery( ".add_tracking_popup" ).remove();
 			jQuery( ".tracking_details_popup" ).remove();	
-			jQuery("body").append(response);				
+			jQuery("body").append(response.data.html);				
 			jQuery('.add_tracking_popup').show();
-			jQuery( "#add_tracking_number_form #tracking_number" ).focus();		
-			jQuery('.tracking_provider_dropdown').select2();					
+			jQuery( "#add_tracking_number_form #tracking_number" ).focus();			
+			jQuery('.tracking_provider_dropdown').select2({
+				matcher: modelMatcher
+			});
 			
 			var selected_provider = jQuery("#tracking_provider").val();	
 			

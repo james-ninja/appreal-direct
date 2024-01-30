@@ -100,12 +100,53 @@ jQuery(function ($) {
         show_hide: function (element) {
             if (jQuery(element).is(':checked')) {
                 jQuery('.phone_field_optional').parent().parent().show();
+                jQuery('.cwg_default_country').parent().parent().show();
+                jQuery('.hide_country_placeholder').parent().parent().show();
             } else {
                 jQuery('.phone_field_optional').parent().parent().hide();
+                jQuery('.cwg_default_country').parent().parent().hide();
+                jQuery('.hide_country_placeholder').parent().parent().hide();
             }
         }
     }
     show_hide_phone_field.init();
+    //show or hide placeholder
+    var phone_number_placeholder = {
+        init: function () {
+            var get_country = jQuery('.cwg_default_country').val();
+            phone_number_placeholder.check_placeholder_type(get_country);
+
+            jQuery('.cwg_default_country').on('change', function () {
+                phone_number_placeholder.check_placeholder_type(jQuery(this).val());
+            });
+            jQuery('.cwg_default_country_placeholder').on('change', function () {
+                var get_country = jQuery('.cwg_default_country').val();
+                phone_number_placeholder.check_custom_placeholder(get_country, jQuery(this).val());
+            });
+        },
+        check_placeholder_type: function (country_code) {
+            if (country_code != '') {
+                jQuery('.cwg_default_country_placeholder').parent().parent().show();
+            } else {
+                jQuery('.cwg_default_country_placeholder').parent().parent().hide();
+            }
+            var type = jQuery('.cwg_default_country_placeholder').val();
+            phone_number_placeholder.check_custom_placeholder(country_code, type);
+        },
+        check_custom_placeholder: function (country_code, type) {
+            if (country_code != '') {
+                if (type == 'custom') {
+                    jQuery('.cwg_custom_placeholder').parent().parent().show();
+                } else {
+                    jQuery('.cwg_custom_placeholder').parent().parent().hide();
+                }
+            } else {
+                jQuery('.cwg_custom_placeholder').parent().parent().hide();
+            }
+        }
+
+    }
+    phone_number_placeholder.init();
 
     //show/hide recaptcha settings fields as per the version
     var instock_notifier_recaptcha = {

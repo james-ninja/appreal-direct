@@ -4,15 +4,6 @@
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/emails/ast-pro-tpi-email-order-details.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see https://docs.woocommerce.com/document/template-structure/
- * @package WooCommerce/Templates/Emails
- * @version 3.3.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,6 +16,8 @@ $margin_side = is_rtl() ? 'left' : 'right';
 do_action( 'wcast_email_before_order_table', $order, $sent_to_admin, $plain_text, $email );
 do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email );
 
+$ast_preview = ( isset( $_REQUEST['action'] ) && 'ast_email_preview' === $_REQUEST['action'] ) ? true : false;
+
 $table_font_size = '';
 $kt_woomail = get_option( 'kt_woomail' );
 
@@ -32,13 +25,13 @@ if ( !empty($kt_woomail) && isset( $kt_woomail['font_size'] ) ) {
 	$table_font_size = 'font-size:' . $kt_woomail['font_size'] . 'px';
 }	
 
-$wcast_customizer_settings = new ast_pro_customizer_settings();
+$ast_customizer = Ast_Customizer::get_instance();
 $ast = new AST_Pro_Actions();
 
-$button_background_color = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_background_color', $wcast_customizer_settings->defaults['fluid_button_background_color'] );
-$button_font_color = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_font_color', $wcast_customizer_settings->defaults['fluid_button_font_color'] );
-$button_radius = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_radius', $wcast_customizer_settings->defaults['fluid_button_radius'] );
-$fluid_button_text = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_text', $wcast_customizer_settings->defaults['fluid_button_text'] );
+$button_background_color = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_background_color', $ast_customizer->defaults['fluid_button_background_color'] );
+$button_font_color = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_font_color', $ast_customizer->defaults['fluid_button_font_color'] );
+$button_radius = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_radius', $ast_customizer->defaults['fluid_button_radius'] );
+$fluid_button_text = $ast->get_option_value_from_array( 'tracking_info_settings', 'fluid_button_text', $ast_customizer->defaults['fluid_button_text'] );
 ?>
 <style>
 a.button.track-button {
@@ -58,7 +51,7 @@ a.button.track-button {
 	font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; 
 	word-wrap:break-word;
 	border-left:0;
-	border:0;
+	border:0 !important;
 	border-bottom:1px solid #e0e0e0;
 	padding: 12px 6px 12px 6px !important;	
 	position: relative;
@@ -70,7 +63,7 @@ a.button.track-button {
 	padding-left: 0 !important;
 }
 .shipment_heading{	
-	margin: 0 !important;	
+	margin: 0 0 5px !important;	
 }
 .shipment_heading.heading_border{
 	border-bottom:1px solid #e0e0e0;	
@@ -79,6 +72,11 @@ a.button.track-button {
 	margin: 10px 0 0 !important;
 	border-bottom: 1px solid #e0e0e0;
 	padding-bottom: 3px;
+}
+.section_divider{
+	margin: 10px 0px 15px;
+	border: 0;
+	border-top: 1px solid #e0e0e0;
 }
 </style>
 	<?php 
@@ -99,7 +97,7 @@ a.button.track-button {
 		
 			if ( $total_trackings > 1 ) {
 					/* translators: %1$s: search number, %2$s: search total trackings */
-					echo '<p class="shipment_heading"><strong><i>' . sprintf( esc_html( 'Shipment %1$s (out of %2$s):', 'ast-pro' ), esc_html( $num ) , esc_html( $total_trackings ) ) . '</i></strong></p>';
+					echo '<p class="shipment_heading"><strong><i>' . sprintf( esc_html__( 'Shipment %1$s (out of %2$s):', 'ast-pro' ), esc_html( $num ) , esc_html( $total_trackings ) ) . '</i></strong></p>';
 			}
 			
 			$tpi_item = array();
@@ -119,95 +117,77 @@ a.button.track-button {
 			}
 			$numItems = 0;
 			if ( is_array( $tracking_item['products_list'] ) ) {
-			?>
+				?>
 			<div style="margin:0;">
-				<p class="shipping_items_heading"><?php echo esc_html( $shipping_items_heading ); ?></p>
+				<h2 class="shipping_items_heading" style="border-bottom:1px solid #e0e0e0;display: block;padding-bottom: 5px;margin-bottom: 0;"><?php esc_html_e( $shipping_items_heading ); ?></h2>
 				<table class="td tpi_order_details_table" cellspacing="0" cellpadding="6" style="background-color: transparent;width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;border:0;<?php echo esc_html( $table_font_size ); ?>" border="0">
 					<tbody>
 						<?php
 						$numItems = count($tracking_item['products_list']);
 						
-						$i = 0;		
-						$product_style = '';				
+						$i = 0;						
 						foreach ( (array) $tracking_item['products_list'] as $products_list ) {
-							$product_id = '';
 							$product = wc_get_product( $products_list->product ); 
-							$product_id = $product->get_id();
-							$sku           = '';
-							$purchase_note = '';
-							$image         = '';
-							$image_size = array( 64, 64 );
-						
-							if ( is_object( $product ) ) {
-								$sku           = $product->get_sku();
-								$purchase_note = $product->get_purchase_note();
-								$image         = $product->get_image( $image_size );
-
-								//custom
-								$product_id = wp_get_post_parent_id($product->get_id());
-								$var_image_id = $product->get_image_id();
-
-								$var_image_url =  wp_get_attachment_url( $var_image_id );
-
-								if (strpos($var_image_url, '_sw') == true) {
-									$var_image_url = str_replace("_sw","-300x300", $var_image_url);
-								}
-								
-								if (strpos($var_image_url, 'EBY_') == true) {
-									$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
-								}
-								
-								if(file_is_valid_image($var_image_url)){
-									$thumbnail = '<img width="64" src="'.$var_image_url.'">';
-								}else{
-									$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-									$thumbnail = '<img width="64" src="'.$image_array[0].'">';
-								}
-								
-								if($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327){
-									$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-									$thumbnail = '<img width="64" src="'.$image_coming_soon[0].'">';
-								}
-								$image = $thumbnail;
-								//custom
+							
+							if ( !is_object( $product ) ) {
+								continue;
 							}
 							
+							$image_size = array( 64, 64 );
+							$product_id = $product->get_id();
+							$sku           = $product->get_sku();
+							$purchase_note = $product->get_purchase_note();
+							$image         = $product->get_image( $image_size );
+							
+						
 							foreach ( $order->get_items() as $item_id => $item ) {
 								$item_product = $item->get_product();
+								
+								if ( !is_object( $item_product ) ) {
+									continue;
+								}
+								
 								$item_product_id = $item_product->get_id();
 								if ( $item_product_id == $product_id ) {
 									$order_item = $item;
 								}
 							}
+							
 							$last_child_class = '';
 							if ( ++$i === $numItems ) {
 								$last_child_class = 'last_td';								
 							}
 							?>
 							<tr>
-								<?php if ( $display_product_images ) { ?>
+								<?php 
+								if ( $ast_preview ) {
+									$display_image_class = ( !$display_product_images ) ? 'hide' : '' ;
+									?>
+									<td class="td image_id <?php echo esc_attr( $last_child_class ); ?> <?php echo esc_attr( $display_image_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;border-left:0;border:0;border-bottom:1px solid #e0e0e0;padding: 12px 5px;width: 70px;">
+										<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
+									</td>
+									<?php
+								} elseif ( $display_product_images ) { 
+									?>
 									<td class="td image_id <?php echo esc_attr( $last_child_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>;width: 70px;">
-										<?php echo wp_kses_post( $image ); ?>
+									<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
 									</td>
 								<?php } ?>
 								<td class="td <?php echo esc_attr( $last_child_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>;">
 									<?php
-									
 									// Product name.
 									echo '<div>'; 
 									echo wp_kses_post( $product->get_name() ); 
 									echo ' x '; 
 									echo esc_html( $products_list->qty );
-
-									//custom
 									
-									$product_style = get_post_meta($product_id, 'product_style', true);
-									if($product_style){
-										echo wp_kses_post( ' (' . $product_style . ')' );
-									}
-									//custom
-
-									if ( $display_shippment_item_price ) {
+									if ( $ast_preview ) {
+										$shippment_item_price_class = ( !$display_shippment_item_price ) ? 'hide' : '' ;
+										echo '<span class="shippment_item_price ' . esc_html( $shippment_item_price_class ) . '">';
+										echo ' - ';
+										echo wp_kses_post( $order->get_formatted_line_subtotal( $order_item ) );
+										echo '</span>';
+									} elseif ( $display_shippment_item_price ) {
 										echo ' - ';
 										echo wp_kses_post( $order->get_formatted_line_subtotal( $order_item ) );
 									}
@@ -221,13 +201,14 @@ a.button.track-button {
 					</tbody>
 				</table>
 			</div>
+			<hr class="section_divider">
 			<?php
 			}
 			$num++;
 		}		
 	} else {
 		?>
-		<p class="shipping_items_heading"><strong><?php echo esc_html( $shipping_items_heading ); ?></strong></p>
+		<h2 class="class="shipping_items_heading"" style="border-bottom:1px solid #e0e0e0;display: block;padding-bottom: 5px;margin-bottom: 0;"><?php esc_html_e( $shipping_items_heading ); ?></h2>
 		<?php
 		$numItems = count($tracking_items);
 		$i = 0;	
@@ -241,9 +222,8 @@ a.button.track-button {
 			<table class="td tpi_order_details_table" cellspacing="0" cellpadding="6" style="background-color: transparent;width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;border:0;<?php echo esc_html( $table_font_size ); ?>" border="0">
 				<tbody>
 					<?php 
-					$product_style = '';
+					
 					foreach ( $tracking_item['products_list'] as $products_list ) {
-						$product_id = '';
 						$product = wc_get_product( $products_list->product ); 
 						$product_id = $product->get_id();
 						$sku           = '';
@@ -255,34 +235,6 @@ a.button.track-button {
 							$sku           = $product->get_sku();
 							$purchase_note = $product->get_purchase_note();
 							$image         = $product->get_image( $image_size );
-
-							//custom
-							$product_id = wp_get_post_parent_id($product->get_id());
-							$var_image_id = $product->get_image_id();
-
-							$var_image_url =  wp_get_attachment_url( $var_image_id );
-
-							if (strpos($var_image_url, '_sw') == true) {
-								$var_image_url = str_replace("_sw","-300x300", $var_image_url);
-							}
-							
-							if (strpos($var_image_url, 'EBY_') == true) {
-								$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
-							}
-							
-							if(file_is_valid_image($var_image_url)){
-								$thumbnail = '<img width="64" src="'.$var_image_url.'">';
-							}else{
-								$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-								$thumbnail = '<img width="64" src="'.$image_array[0].'">';
-							}
-							
-							if($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327){
-								$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-								$thumbnail = '<img width="64" src="'.$image_coming_soon[0].'">';
-							}
-							$image = $thumbnail;
-							//custom
 						}
 						
 						foreach ( $order->get_items() as $item_id => $item ) {
@@ -295,9 +247,18 @@ a.button.track-button {
 						
 						?>
 						<tr>
-							<?php if ( $display_product_images ) { ?>
+						<?php 
+						if ( $ast_preview ) {
+							$display_image_class = ( !$display_product_images ) ? 'hide' : '' ;
+							?>
+							<td class="td image_id <?php echo esc_attr( $last_child_class ); ?> <?php echo esc_attr( $display_image_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;border-left:0;border:0;border-bottom:1px solid #e0e0e0;padding: 12px 5px;width: 70px;">
+								<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
+							</td>
+								<?php
+						} elseif ( $display_product_images ) { 
+							?>
 								<td class="td image_id <?php echo esc_attr( $last_child_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>;width: 70px;">
-									<?php echo wp_kses_post( $image ); ?>
+								<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
 								</td>
 							<?php } ?>
 							<td class="td <?php echo esc_attr( $last_child_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>;">
@@ -307,16 +268,17 @@ a.button.track-button {
 								echo ' x '; 
 								echo esc_html( $products_list->qty );
 								
-								//custom
-								$product_style = get_post_meta($product_id, 'product_style', true);
-								if($product_style){
-									echo wp_kses_post( ' (' . $product_style . ')' );
-								}
-								//custom
-								if ( $display_shippment_item_price ) {
+								if ( $ast_preview ) {
+									$shippment_item_price_class = ( !$display_shippment_item_price ) ? 'hide' : '' ;
+									echo '<span class="shippment_item_price ' . esc_html( $shippment_item_price_class ) . '">';
+									echo ' - ';
+									echo wp_kses_post( $order->get_formatted_line_subtotal( $order_item ) );
+									echo '</span>';
+								} elseif ( $display_shippment_item_price ) {
 									echo ' - ';
 									echo wp_kses_post( $order->get_formatted_line_subtotal( $order_item ) );
 								}
+								
 								echo '<div style="margin-top:10px;"><span style="font-size: 90%;">' . esc_html( $tracking_item['formatted_tracking_provider'] ) . '<a style="font-size: 90%;margin: 0 10px 0 5px;text-decoration: none;" href=' . esc_url( $tracking_item['ast_tracking_link'] ) . '><span>' . esc_html( $tracking_item['tracking_number'] ) . '</span></a></span> </div>';
 								?>
 							</td>
@@ -329,7 +291,8 @@ a.button.track-button {
 					?>
 				</tbody>
 			</table>
-		</div>		
+		</div>
+		<hr class="section_divider">		
 		<?php	
 		}
 	}

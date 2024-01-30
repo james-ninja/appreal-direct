@@ -38,8 +38,9 @@ if (!class_exists('CWG_Template')) {
 			if (!$template) {
 				$template = $default_path . $this->template_name;
 			}
-
+						
 			return apply_filters('cwginstock_locate_template', $template, $this->template_name, $template_path, $default_path, $this->args);
+			
 		}
 
 		public function get_template() {

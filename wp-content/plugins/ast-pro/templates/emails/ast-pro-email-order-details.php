@@ -25,6 +25,8 @@ $margin_side = is_rtl() ? 'left' : 'right';
 do_action( 'wcast_email_before_order_table', $order, $sent_to_admin, $plain_text, $email );
 do_action( 'woocommerce_email_before_order_table', $order, $sent_to_admin, $plain_text, $email );
 
+$ast_preview = ( isset( $_REQUEST['action'] ) && 'ast_email_preview' === $_REQUEST['action'] ) ? true : false;
+
 $table_font_size = '';
 $kt_woomail = get_option( 'kt_woomail' );
 if ( !empty($kt_woomail) && isset( $kt_woomail['font_size'] ) ) {
@@ -40,7 +42,7 @@ if ( !empty($kt_woomail) && isset( $kt_woomail['font_size'] ) ) {
 	padding-left: 0 !important;
 }
 </style>
-<h2 style="border-bottom:1px solid #e0e0e0;display: block;padding-bottom: 5px;margin-bottom: 0;"><?php esc_html_e( $shipping_items_heading ); ?></h2>
+<h2 class="shipping_items_heading" style="border-bottom:1px solid #e0e0e0;display: block;padding-bottom: 5px;margin-bottom: 0;"><?php esc_html_e( $shipping_items_heading ); ?></h2>
 <div>
 		<table class="td order_details_table" cellspacing="0" cellpadding="6" style="background-color: transparent;width: 100%; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;border:0;<?php esc_html_e( $table_font_size ); ?>" border="0">
 			<tbody>
@@ -68,7 +70,14 @@ if ( !empty($kt_woomail) && isset( $kt_woomail['font_size'] ) ) {
 					?>
 					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_order_item_class', 'order_item', $item, $order ) ); ?>">
 						<?php 
-						if ( $display_product_images && $image ) { 
+						if ( $ast_preview ) {
+							$display_image_class = ( !$display_product_images ) ? 'hide' : '' ;
+							?>
+							<td class="td image_id <?php echo esc_attr( $last_child_class ); ?> <?php echo esc_attr( $display_image_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;border-left:0;border:0;border-bottom:1px solid #e0e0e0;padding: 12px 5px;width: 70px;">
+								<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
+							</td>
+							<?php
+						} elseif ( $display_product_images && $image ) { 
 							?>
 							<td class="td image_id <?php echo esc_attr( $last_child_class ); ?>" style="text-align:<?php echo esc_attr( $text_align ); ?>; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap:break-word;border-left:0;border:0;border-bottom:1px solid #e0e0e0;padding: 12px 5px;width: 70px;">
 								<?php echo wp_kses_post( apply_filters( 'woocommerce_order_item_thumbnail', $image, $item ) ); ?>
@@ -79,11 +88,29 @@ if ( !empty($kt_woomail) && isset( $kt_woomail['font_size'] ) ) {
 							// Product name.
 							echo wp_kses_post( apply_filters( 'woocommerce_order_item_name', $item->get_name(), $item, false ) );
 							echo ' x '; 
-							esc_html_e( $item->get_quantity() );
-							if ( $display_shippment_item_price ) {
+							//esc_html_e( $item->get_quantity() );
+
+							$qty          = $item->get_quantity();
+							$refunded_qty = $order->get_qty_refunded_for_item( $item_id );
+
+							if ( $refunded_qty ) {
+								$qty_display = '<del>' . esc_html( $qty ) . '</del> <ins>' . esc_html( $qty - ( $refunded_qty * -1 ) ) . '</ins>';
+							} else {
+								$qty_display = esc_html( $qty );
+							}
+							echo wp_kses_post( apply_filters( 'woocommerce_email_order_item_quantity', $qty_display, $item ) );
+							
+							if ( $ast_preview ) {
+								$shippment_item_price_class = ( !$display_shippment_item_price ) ? 'hide' : '' ;
+								echo '<span class="shippment_item_price ' . esc_html( $shippment_item_price_class ) . '">';
+								echo ' - ';
+								echo wp_kses_post( $order->get_formatted_line_subtotal( $item ) );
+								echo '</span>';
+							} elseif ( $display_shippment_item_price ) {
 								echo ' - ';
 								echo wp_kses_post( $order->get_formatted_line_subtotal( $item ) );
 							}
+							
 							// allow other plugins to add additional product information here.
 							do_action( 'woocommerce_order_item_meta_start', $item_id, $item, $order, $plain_text );
 					

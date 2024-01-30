@@ -289,14 +289,18 @@ jQuery(document).on("click", ".add_inline_tracking", function(){
 	jQuery.ajax({
 		url: ajaxurl,		
 		data: ajax_data,
+		dataType: "json",
 		type: 'POST',						
 		success: function(response) {
 			jQuery( ".add_tracking_popup" ).remove();
 			jQuery( ".tracking_details_popup" ).remove();	
-			jQuery("body").append(response);				
+			jQuery("body").append(response.data.html);				
 			jQuery('.add_tracking_popup').show();
-			jQuery( "#add_tracking_number_form #tracking_number" ).focus();		
-			jQuery('.tracking_provider_dropdown').select2();					
+			jQuery( "#add_tracking_number_form #tracking_number" ).focus();			
+			jQuery('.tracking_provider_dropdown').select2({
+				matcher: modelMatcher
+			});
+							
 			
 			var selected_provider = jQuery("#tracking_provider").val();	
 			
@@ -318,6 +322,23 @@ jQuery(document).on("click", ".add_inline_tracking", function(){
 	});		
 });
 
+jQuery('.tracking_provider_dropdown').on('select2:select', function (e) {
+	var selectedCountry = e.params.data.parent.label;
+	console.log(selectedCountry);
+	filterOptions(selectedCountry);
+});	
+
+function filterOptions(country) {
+	jQuery('.tracking_provider_dropdown > optgroup').each(function() {
+	  var groupName = jQuery(this).attr('label');
+	  if (groupName.toLowerCase() === country.toLowerCase()) {
+		jQuery(this).show();
+	  } else {
+		jQuery(this).hide();
+	  }
+	});
+}
+  
 jQuery(document).on("click", ".mark_shipped_checkbox", function(){
 	if(jQuery(this).prop("checked") == true){
 		jQuery('.mark_shipped_checkbox').prop('checked', false);
@@ -325,7 +346,7 @@ jQuery(document).on("click", ".mark_shipped_checkbox", function(){
 	}
 });
 	
-jQuery(document).on("click", ".popupclose,.popup_close_icon", function(){
+jQuery(document).on("click", ".popup_close_icon", function(){
 	jQuery('.add_tracking_popup').hide();	
 });
 
@@ -337,9 +358,8 @@ jQuery(document).on("submit", "#add_tracking_number_form", function(){
 	var tracking_number = jQuery("#add_tracking_number_form #tracking_number");
 	var date_shipped = jQuery("#add_tracking_number_form #date_shipped");
 	var tracking_product_code = jQuery( 'input#tracking_product_code' );
-		
-	
-	if( tracking_provider.val() === '' ){				
+			
+	if( tracking_provider.val() === '' ){					
 		jQuery("#tracking_provider").siblings('.select2-container').find('.select2-selection').css('border-color','red');
 		error = true;
 	} else{

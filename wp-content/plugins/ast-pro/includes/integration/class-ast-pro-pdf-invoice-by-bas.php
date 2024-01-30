@@ -21,7 +21,7 @@ if ( !function_exists( 'ast_pro_wpi_custom_information_filter' ) ) {
 		if ( $tracking_items ) {
 			ob_start();
 			?>
-			<h2 class="header_text"><?php esc_html_e( 'Track your order', 'woo-advanced-shipment-tracking' ); ?></h2><br/>
+			<h2 class="header_text"><?php esc_html_e( 'Track your order', 'ast-pro' ); ?></h2><br/>
 			<ul style="list-style: none;">
 			<?php
 			foreach ( $tracking_items as $tracking_item ) {

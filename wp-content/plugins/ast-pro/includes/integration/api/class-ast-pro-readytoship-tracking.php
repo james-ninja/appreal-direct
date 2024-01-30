@@ -94,7 +94,7 @@ class WC_AST_Pro_Readytoship_Tracking extends WC_API_Resource {
 		try {
 			if ( !isset( $data[ 'tracking' ] ) ) {
 				throw new WC_API_Exception('woocommerce_api_missing_tracking_data', 
-				/* translator - replace %s with required */
+				/* translators: replace %s with required */
 				sprintf( __( 'No %1$s data specified to edit %1$s', 'woocommerce' ), 'tracking' ), 400 );
 			}
 
@@ -111,7 +111,7 @@ class WC_AST_Pro_Readytoship_Tracking extends WC_API_Resource {
 							
 				if ( !isset( $data[ $required ] ) ) {
 					throw new WC_API_Exception('woocommerce_api_invalid_' . $required, 
-					/* translator - replace %s with required */
+					/* translators: replace %s with required */
 					sprintf(__('%s is required.', 'woocommerce'), ucfirst($required)), 400);
 				}
 			}
@@ -121,25 +121,31 @@ class WC_AST_Pro_Readytoship_Tracking extends WC_API_Resource {
 			
 			$tracking_provider_name = isset($data['provider']) ? $data['provider'] : '';		
 			
-			$tracking_provider = $wpdb->get_var( $wpdb->prepare( "SELECT ts_slug FROM $ast_admin->table WHERE provider_name = %s", 
-			
-			$tracking_provider_name ) );
+			$tracking_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT ts_slug FROM %1s WHERE provider_name = %s', $ast_admin->table, $tracking_provider_name ) );
 
 			if ( !$tracking_provider ) {
-				$tracking_provider = $wpdb->get_var( $wpdb->prepare( "SELECT ts_slug FROM $ast_admin->table WHERE api_provider_name = %s", $tracking_provider_name ) );
+				$tracking_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT ts_slug FROM %1s WHERE api_provider_name = %s', $ast_admin->table, $tracking_provider_name ) );
 			}			
 
 			if ( !$tracking_provider ) {
 				$tracking_provider = sanitize_title( $tracking_provider_name );
 			}
 			
+			$status_shipped = get_option( 'autocomplete_readytoship', 0 );
+
 			$tracking_data = array(
 				'tracking_provider' => $tracking_provider,		
 				'tracking_number'   => $data['tracking_number'],
 				'date_shipped'      => gmdate('Y-m-d'),
-				'status_shipped'    => '0',
+				'status_shipped'    => $status_shipped,
 				'source'			=> 'REST_API',
-			);					         		
+			);				
+			
+			$tracking_info_exist = tracking_info_exist( $order_id, $data['tracking_number'] );
+			if ( $tracking_info_exist ) {
+				return;
+			}
+			
 			$tracking_item = $ast->add_tracking_item( $order_id, $tracking_data );		
 			
 			$this->server->send_status( 201 );

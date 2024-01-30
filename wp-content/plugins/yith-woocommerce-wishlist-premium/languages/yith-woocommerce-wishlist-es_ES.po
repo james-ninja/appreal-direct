@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: YITH WooCommerce Wishlist\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "wishlist.premium\n"
-"POT-Creation-Date: 2023-10-05 12:54:37+00:00\n"
-"PO-Revision-Date: 2023-09-06 14:06:18+0000\n"
+"POT-Creation-Date: 2023-11-14 13:32:11+00:00\n"
+"PO-Revision-Date: 2023-10-31 12:56:15+0000\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -708,11 +708,11 @@ msgstr "«Solicita una estimación» en la lista de deseos"
 msgid "Wishlist Promotion"
 msgstr "Promoción de Lista de deseos"
 
-#: includes/class-yith-wcwl-admin.php:115
+#: includes/class-yith-wcwl-admin.php:107
 msgid "Wishlist Page"
 msgstr "Página de lista de deseos"
 
-#: includes/class-yith-wcwl-admin.php:252
+#: includes/class-yith-wcwl-admin.php:244
 msgid ""
 "Allows your customers to create and share lists of products that they want "
 "to purchase on your e-commerce."
@@ -720,91 +720,95 @@ msgstr ""
 "Permitir a tus clientes crear y compartir productos que quieran comprar en "
 "tu comercio electrónico."
 
-#: includes/class-yith-wcwl-admin.php:292
+#: includes/class-yith-wcwl-admin.php:284
+msgid "Allow users to create multiple wishlists"
+msgstr "Permite a los usuarios crear múltiples listas de deseos"
+
+#: includes/class-yith-wcwl-admin.php:285
 msgid ""
-"Enable the wishlist feature for all users or <b>only for registered users</b>"
+"In the premium version, your customers can create a wishlist for their "
+"birthday, Christmas, a graduation party, etc."
 msgstr ""
-"Activa la característica de lista de deseos para todos los usuarios o "
-"<b>solo para los usuarios registrados</b>"
+"En la versión premium, tus clientes podrán crear una lista de deseos para "
+"cumpleaños, Navidad, fiesta de graduación, etc. "
+
+#: includes/class-yith-wcwl-admin.php:288
+msgid "Advanced wishlist management"
+msgstr "Gestión avanzada de listas de deseos"
+
+#: includes/class-yith-wcwl-admin.php:289
+msgid ""
+"Allow users to rename wishlists, choose whether to make them public or "
+"private, move products from one list to another, and more."
+msgstr ""
+"Permite a los usuarios cambiar el nombre de las listas, elegir si hacerlas "
+"públicas o privadas, mover productos de una lista a otra, y mucho más."
+
+#: includes/class-yith-wcwl-admin.php:292
+msgid "Different wishlist layouts"
+msgstr "Diferentes diseños de lista de deseos"
 
 #: includes/class-yith-wcwl-admin.php:293
 msgid ""
-"Allow users to create <b>multiple wishlists</b> (Ex: Christmas, Birthday, "
-"etc.) <br>Users can choose the wishlist from a dropdown menu when they click "
-"on \"Add to wishlist\""
+"Choose which layout you prefer to display products in the wishlist for a "
+"more modern and 100% mobile-friendly user experience."
 msgstr ""
-"Permite a los usuarios crear <b>varias listas de deseos</b> (p.ej: Navidad, "
-"cumpleaños, etc.) <br>Los usuarios pueden elegir la lista de deseos desde un "
-"menú desplegable cuando hagan clic en «añade a la lista de deseos»"
-
-#: includes/class-yith-wcwl-admin.php:294
-msgid ""
-"Allow users to set <b>visibility options for each wishlist</b>, by making "
-"them either public (visible to everyone), private or shared (visible only to "
-"people it has been shared with)"
-msgstr ""
-"Permite a los usuarios establecer <b>opciones de visibilidad para cada lista "
-"de deseos</b>, haciéndolas públicas (visibles para todo el mundo), privadas "
-"o compartidas (visibles sólo para las personas con las que se ha compartido)."
-
-#: includes/class-yith-wcwl-admin.php:295
-msgid ""
-"Choose between <b>different layouts</b> for the wishlist page and for the "
-"wishlist content"
-msgstr ""
-"Elige entre <b>distintos diseños</b> para la página y el contenido de la "
-"lista de deseos"
+"Elige el diseño que prefieras para mostrar los productos de tu lista y "
+"disfrutar de una experiencia de usuario más moderna y 100% compatible con "
+"dispositivos móviles."
 
 #: includes/class-yith-wcwl-admin.php:296
-msgid ""
-"<b>Allow users to manage their wishlists:</b> rename and delete wishlists, "
-"move a product from one wishlist to another, change order of items, "
-"quantity, etc."
-msgstr ""
-"<b>Permite a los usuarios gestionar sus listas de deseos:</b> renombrar y "
-"borrar listas de deseos, mover un producto de una lista de deseos a otra, "
-"cambiar el orden de los artículos, la cantidad, etc."
+msgid "Insert a wishlist widget in the header of your shop"
+msgstr "Inserta un widget de lista de deseos en la cabecera de tu tienda "
 
 #: includes/class-yith-wcwl-admin.php:297
 msgid ""
-"Enable an <b>\"Ask for an estimate\" button</b> to let customers send the "
-"content of their wishlist to the admin and get a custom quote"
+"Give instant access to the wishlist and show a preview of the products added "
+"to it by inserting the widget in the site header."
 msgstr ""
-"Activa un botón <b>«Pedir un presupuesto»</b> para que los clientes puedan "
-"enviar el contenido de su lista de deseos al administrador y obtener un "
-"presupuesto personalizado"
-
-#: includes/class-yith-wcwl-admin.php:298
-msgid ""
-"<b>Show a wishlist widget</b> that lists all the products in the wishlists "
-"(available also with \"mini-cart\" style for the header)"
-msgstr ""
-"<b>Muestra un widget de lista de deseos</b> que liste todos los productos de "
-"las listas de deseos (disponible también con el estilo «mini-carrito» para "
-"la cabecera)"
-
-#: includes/class-yith-wcwl-admin.php:299
-msgid ""
-"View the most popular products added to the wishlist by your customers and "
-"<b>send promotional emails to users</b> who have added specific products to "
-"their wishlist"
-msgstr ""
-"Revisa los productos más populares añadidos a la lista de deseos por tus "
-"clientes y <b>envía correos electrónicos promocionales a los usuarios</b> "
-"que hayan añadido productos específicos a su lista de deseos"
+"Ofrece acceso instantáneo a tu lista de deseos y muestra una vista previa de "
+"los productos que has añadido a ella mediante el widget de lista de deseos "
+"en la cabecera de tu sitio."
 
 #: includes/class-yith-wcwl-admin.php:300
 msgid ""
-"<b>Send an automatic email to the wishlist owner</b> whenever a product in "
-"the list is back in stock or on sale"
+"Analyze your customers' wishlists and the most popular products in your shop"
 msgstr ""
-"<b>Envía un correo electrónico automático al propietario de la lista de "
-"deseos</b> cada vez que un producto de la lista vuelva a estar en stock o "
-"rebajado"
+"Analiza las listas de deseos de tus clientes y los productos más populares "
+"de tu tienda"
 
 #: includes/class-yith-wcwl-admin.php:301
-msgid "Regular updates, Translations and Premium Support"
-msgstr "Actualizaciones periódicas, traducciones y soporte Premium"
+msgid ""
+"In the premium version, you can analyze the wishlists of each user in your "
+"shop and get a clear overview of the most popular products in your shop."
+msgstr ""
+"En la versión premium del plugin puedes analizar las listas de deseos de "
+"cada usuario de tu tienda y obtener una visión clara de los productos más "
+"populares en tu tienda."
+
+#: includes/class-yith-wcwl-admin.php:304
+msgid ""
+"Create targeted promotions and take advantage of the wishlists to increase "
+"conversions"
+msgstr ""
+"Crea promociones específicas y utiliza las listas de deseos para aumentar "
+"las conversiones"
+
+#: includes/class-yith-wcwl-admin.php:305
+msgid ""
+"The premium version of the plugin allows you to structure effective "
+"marketing strategies and increase conversions. Some examples? You can send "
+"promotional emails and offer a discount to all users who have a specific "
+"product on their wishlist, notify customers when a product on their wishlist "
+"is on sale, or notify them when an out-of-stock product is available again "
+"in your shop."
+msgstr ""
+"La versión premium del plugin te permite estructurar estrategias de "
+"marketing eficaces y aumentar las conversiones. Algunos ejemplos: puedes "
+"enviar correos electrónicos promocionales y ofrecer un descuento a todos los "
+"usuarios que tengan un producto específico en tu lista, avisar a los "
+"clientes cuando un producto de tu lista esté de oferta o avisarles cuando un "
+"producto agotado vuelva a estar disponible en tu tienda."
 
 #. translators: 1. Destination wishlist name.
 #: includes/class-yith-wcwl-ajax-handler-premium.php:180
@@ -3620,14 +3624,13 @@ msgstr ""
 "tu comercio electrónico en <strong>YITH</strong></a>"
 
 #: includes/class-yith-wcwl-admin-extended.php:76
-#, fuzzy
 msgctxt "Settings tab name"
 msgid "Popular"
 msgstr "Popular"
 
 #: includes/class-yith-wcwl-admin-extended.php:81
 #: includes/class-yith-wcwl-admin-premium.php:105
-#: includes/class-yith-wcwl-admin.php:223
+#: includes/class-yith-wcwl-admin.php:215
 msgctxt "Settings tab name"
 msgid "Settings"
 msgstr "Ajustes"
@@ -3668,7 +3671,7 @@ msgctxt "Tab description in plugin settings panel"
 msgid "Configure the Ask an estimate settings."
 msgstr "Configura los ajustes de «solicita una estimación»."
 
-#: includes/class-yith-wcwl-admin.php:271
+#: includes/class-yith-wcwl-admin.php:263
 msgctxt "[HELP TAB] Video title"
 msgid ""
 "Check this video to learn how to <b>configure wishlist and customize options:"
@@ -3677,7 +3680,7 @@ msgstr ""
 "Consulta este vídeo para aprender a <b>configurar la lista de deseos y "
 "personalizar las opciones:</b>"
 
-#: includes/class-yith-wcwl-admin.php:316
+#: includes/class-yith-wcwl-admin.php:319
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Gift Cards"
 msgid ""
@@ -3687,7 +3690,7 @@ msgstr ""
 "Vende tarjetas de regalo para aumentar las ganancias de tu tienda y atraer "
 "nuevos clientes."
 
-#: includes/class-yith-wcwl-admin.php:328
+#: includes/class-yith-wcwl-admin.php:331
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Ajax Product "
 "Filter"
@@ -3698,7 +3701,7 @@ msgstr ""
 "Ayuda a tus clientes a encontrar fácilmente los productos que buscan y "
 "mejora la experiencia de usuario de tu tienda."
 
-#: includes/class-yith-wcwl-admin.php:340
+#: includes/class-yith-wcwl-admin.php:343
 msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH Bookings"
 msgid ""
 "Enable a booking/appointment system to manage renting or booking of "
@@ -3707,7 +3710,7 @@ msgstr ""
 "Activa un sistema de reservas/citas para gestionar el alquiler o la reserva "
 "de servicios, habitaciones, casas, coches, alojamientos, etc."
 
-#: includes/class-yith-wcwl-admin.php:353
+#: includes/class-yith-wcwl-admin.php:356
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Request a "
 "Quote"
@@ -3718,7 +3721,7 @@ msgstr ""
 "Oculta el precio y/o el botón de añadir al carrito y permite que tus "
 "clientes soliciten un presupuesto personalizado para cada producto."
 
-#: includes/class-yith-wcwl-admin.php:365
+#: includes/class-yith-wcwl-admin.php:368
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Product Add-"
 "Ons"
@@ -3730,7 +3733,7 @@ msgstr ""
 "tipos de campo incluyendo botones de radio, casillas de verificación, "
 "desplegables, entradas de texto personalizadas y mucho más."
 
-#: includes/class-yith-wcwl-admin.php:377
+#: includes/class-yith-wcwl-admin.php:380
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Dynamic "
 "Pricing and Discounts"
@@ -3741,7 +3744,7 @@ msgstr ""
 "Aumenta las operaciones mediante descuentos dinámicos y reglas de precios y "
 "crea ofertas potentes y específicas."
 
-#: includes/class-yith-wcwl-admin.php:389
+#: includes/class-yith-wcwl-admin.php:392
 msgctxt ""
 "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Customize My "
 "Account"
@@ -3753,7 +3756,7 @@ msgstr ""
 "secciones personalizadas con promociones y contenido en base a tus "
 "necesidades."
 
-#: includes/class-yith-wcwl-admin.php:397
+#: includes/class-yith-wcwl-admin.php:400
 msgctxt "[YOUR STORE TOOLS TAB] Description for plugin Recover Abandoned Cart"
 msgid ""
 "Contact users who have added products to the cart without completing the "

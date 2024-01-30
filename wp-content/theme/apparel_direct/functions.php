@@ -1,8 +1,9 @@
 <?php
-
 /**
  * Apparel Direct functions and definitions
  */
+
+
 function my_theme_setup()
 {
 
@@ -146,6 +147,7 @@ function start_session() {
 require get_template_directory() . '/include/local-enqueue.php';
 require get_template_directory() . '/include/woo2-quick-v2.php';
 require get_template_directory() . '/inc/PHPExcel.php';
+require get_template_directory() . '/inc/vt_resize.php';
 //Quick order
 
 /**
@@ -158,9 +160,9 @@ require get_parent_theme_file_path('/inc/theme-extra-functions.php');
  */
 require get_template_directory() . '/inc/custom-woo-functions.php';
 
+// call image resizer file
 
 require get_template_directory() . '/inc/aq_resizer.php';
-
 
 //Admin logo update
 function my_login_logo_one()
@@ -172,7 +174,7 @@ function my_login_logo_one()
 			background-size: 120px;
 		}
 	</style>
-	<?php }
+<?php }
 add_action('login_enqueue_scripts', 'my_login_logo_one');
 
 //Admin logo URL update
@@ -447,17 +449,17 @@ if (defined('YITH_WCWL') && !function_exists('yith_wcwl_enqueue_custom_script'))
 		wp_add_inline_script(
 			'jquery-yith-wcwl',
 			"
-		   jQuery( function( $ ) {
-			 $( document ).on( 'added_to_wishlist removed_from_wishlist', function() {
-			   $.get( yith_wcwl_l10n.ajax_url, {
-				 action: 'yith_wcwl_update_wishlist_count'
-			   }, function( data ) {
-				 $('.yith-wcwl-items-count').html( data.count );
-			   } );
-			 } );
-		   } );
-		 "
-		);
+			jQuery( function( $ ) {
+				$( document ).on( 'added_to_wishlist removed_from_wishlist', function() {
+					$.get( yith_wcwl_l10n.ajax_url, {
+						action: 'yith_wcwl_update_wishlist_count'
+						}, function( data ) {
+							$('.yith-wcwl-items-count').html( data.count );
+							} );
+							} );
+							} );
+							"
+						);
 	}
 	add_action('wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20);
 }
@@ -472,7 +474,6 @@ function apparel_separate_login_form()
 	include 'login_form_code.php';
 	return ob_get_clean();
 }
-
 
 // Start AJAX function for login
 add_action('wp_ajax_custom_login', 'custom_login_ajax_fun');
@@ -519,11 +520,11 @@ function custom_login_ajax_fun()
 				$message = false;
 				switch ($status) {
 					case 'pending':
-						$message = get_option('addify_apnu_account_pending_message');
-						break;
+					$message = get_option('addify_apnu_account_pending_message');
+					break;
 					case 'disapproved':
-						$message = get_option('addify_apnu_account_disapproved_message');
-						break;
+					$message = get_option('addify_apnu_account_disapproved_message');
+					break;
 				}
 
 				$response = array('status' => 'error', 'msg' => $message);
@@ -638,7 +639,7 @@ function add_slug_body_class($classes)
 	$userid = get_current_user_id();
 	$ad_user_site_access  = get_user_meta($userid, 'ad_user_site_access', true );
 	if($ad_user_site_access == 'limited_access'){
-	  $classes[] = 'ad_user_limited_access';
+		$classes[] = 'ad_user_limited_access';
 	}
 	//user_level
 
@@ -733,7 +734,7 @@ function cart_add_script_to_footer()
 {
 	if (!is_admin()) {
 		if (!is_cart()) return;
-	?>
+		?>
 		<script>
 			jQuery(document).ready(function($) {
 				$(document).on('click', '.plus', function(e) {
@@ -769,7 +770,7 @@ function cart_add_script_to_footer()
 				});*/
 			});
 		</script>
-	<?php
+		<?php
 	}
 }
 
@@ -781,7 +782,7 @@ function cpp_header_add_to_cart_fragment($fragments)
 	<span class="cart_total_custom">
 		<?php echo '<label>Subtotal</label>';?> <?php wc_cart_totals_subtotal_html(); ?>
 	</span>
-<?php
+	<?php
 	$fragments['.cart_total_custom'] = ob_get_clean();
 	return $fragments;
 }
@@ -937,7 +938,7 @@ function woo_order_dashboard_page($atts)
 			'has_orders'      => 0 < $customer_orders->total
 		)
 	);
-?>
+	?>
 	<div id="modal_order_form" style="display: none;" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
@@ -949,7 +950,7 @@ function woo_order_dashboard_page($atts)
 			</div>
 		</div>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('woo_order_dashboard_page', 'woo_order_dashboard_page');
@@ -984,7 +985,7 @@ function woo_order_page($atts)
 	if ($allorder > 3) {
 		echo '<div class="load_more_div text-center"><button type="button" data-allorder= "' . $allorder . '" class="btn primary-btn view-more-order">View More Orders</button></div>';
 	}
-?>
+	?>
 
 	<div id="modal_order_form" style="display: none;" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -997,7 +998,7 @@ function woo_order_page($atts)
 			</div>
 		</div>
 	</div>
-<?php
+	<?php
 	return ob_get_clean();
 }
 add_shortcode('woo_order_page', 'woo_order_page');
@@ -1030,7 +1031,7 @@ add_action('wp_footer', 'mycustom_wp_footer');
 
 function mycustom_wp_footer()
 {
-?>
+	?>
 	<script type="text/javascript">
 		document.addEventListener('wpcf7mailsent', function(event) {
 			if ('1123' == event.detail.contactFormId) {
@@ -1358,7 +1359,7 @@ function ad_woocommerce_image_dimensions()
 	// Image sizes
 	update_option('shop_catalog_image_size', $catalog);       // Product category thumbs
 	/* update_option( 'shop_single_image_size', $single );      // Single product image
-    update_option( 'shop_thumbnail_image_size', $thumbnail );   // Image gallery thumbs */
+	update_option( 'shop_thumbnail_image_size', $thumbnail );   // Image gallery thumbs */
 }
 add_action('after_switch_theme', 'ad_woocommerce_image_dimensions', 1);
 
@@ -1413,7 +1414,7 @@ function cldws_set_min_total()
 			wc_add_notice(
 				sprintf(
 					'<strong>A Maximum of %s %s is required before checking out.</strong>'
-						. '<br />Current cart\'s total: %s %s',
+					. '<br />Current cart\'s total: %s %s',
 					$order_max_transaction_limit,
 					get_option('woocommerce_currency'),
 					$total,
@@ -1480,8 +1481,8 @@ add_action('admin_head', 'ad_admin_custom_css');
 function ad_admin_custom_css()
 {
 	echo '<style>
-  	.acf-field.acf-field-taxonomy.acf-field-60d9e7f9a633c {
-    display: none;
+	.acf-field.acf-field-taxonomy.acf-field-60d9e7f9a633c {
+		display: none;
 	} 
 
 	li#toplevel_page_user_view {
@@ -1490,15 +1491,15 @@ function ad_admin_custom_css()
 
 	.view_user_admin td, .view_user_admin th  {
 		border: 1px solid #f1f1f1;
-	 }
-	 .view_user_admin td.column-columnname.label-user {
+	}
+	.view_user_admin td.column-columnname.label-user {
 		font-weight: bold;
 	}
 	.view_user_admin .user-title{
 		font-weight: bold;
 		font-size: 16px;
 		background: #f1f1f1;
-	
+
 	}
 	.view_user_admin .approve_status{
 		margin-top:20px
@@ -1521,9 +1522,9 @@ function ad_admin_custom_css()
 		margin-top : 10px;
 		margin-bottom: 0px;
 	}
-   .status_user_access_message{
-	   display:none;
-   }
+	.status_user_access_message{
+		display:none;
+	}
 	div.user_access_level .update_success{
 		display:block;
 		font-weight: 600;
@@ -1538,11 +1539,11 @@ function ad_admin_custom_css()
 		color: #f31201;
 		margin-top: 0px;
 	}
-  </style>';
+	</style>';
 }
 
 function ad_custom_admin_js() {
-    ?>
+	?>
 	<script>
 		jQuery(document).ready(function(){
 			jQuery('input[type=radio][name=ad_user_site_access]').change(function() {
@@ -1577,7 +1578,7 @@ function password_change_email_admin($email, $user, $blogname)
 	ob_start();
 
 	$header_part = get_template_part('templates-parts/email-header-custom');
-?>
+	?>
 	<table id="template_body" width="600" cellspacing="0" cellpadding="0" border="0">
 		<tbody>
 			<tr>
@@ -1632,22 +1633,22 @@ function menu_brand_list_func()
 	ob_start();
 	if (!empty($terms) && is_array($terms)) {
 		ob_start();
-	?>
+		?>
 		<ul class="ubermenu-submenu ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
 			<?php
 			foreach ($terms as $term) {
-			?>
+				?>
 				<li class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-product_brand ubermenu-item-auto ubermenu-item-normal">
 					<a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="<?php echo wc_get_page_permalink('shop') . '?_brands=' . $term->slug; ?>">
 						<?php echo $term->name; ?>
 					</a>
 				</li>
-			<?php
+				<?php
 
 			}
 			?>
 		</ul>
-	<?php
+		<?php
 	}
 	return ob_get_clean();
 }
@@ -1789,7 +1790,7 @@ function userview_render()
 		}
 		$business_type = implode(",", $business_type);
 
-	?>
+		?>
 		<div class="wrap view_user_admin">
 			<table class="widefat fixed" cellspacing="0">
 				<thead>
@@ -1901,16 +1902,16 @@ function userview_render()
 			</table>
 			<?php //user_level ?>
 			<div class="user_access_level">
-			<form id="user_access_level_title" method="post"> 			
-			<h3 class="user_access_level_title">Please select user site access level.</h3>
-			  <input type="radio" id="full_access" name="ad_user_site_access" <?php echo ($ad_user_site_access =='full_access')? 'checked':'' ?> value="full_access">
-			  <label for="html">Full Access</label><br>
-			  <input type="radio" id="limited_access" name="ad_user_site_access" <?php echo ($ad_user_site_access =='limited_access')? 'checked':'' ?> value="limited_access">
-			  <label for="css">Limited Access ( Not able to access Price, Add to cart, Checkout, Quick order page)</label><br>
-			<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-			<p class="submit"><input type="submit" name="submit" id="submit_user_site_access" class="button button-primary" value="Save"></p>
-			<p class="status_user_access_message <?php echo $update_class; ?>"><?php echo $status_user_access_message; ?></p>
-			</form>
+				<form id="user_access_level_title" method="post"> 			
+					<h3 class="user_access_level_title">Please select user site access level.</h3>
+					  <input type="radio" id="full_access" name="ad_user_site_access" <?php echo ($ad_user_site_access =='full_access')? 'checked':'' ?> value="full_access">
+					  <label for="html">Full Access</label><br>
+					  <input type="radio" id="limited_access" name="ad_user_site_access" <?php echo ($ad_user_site_access =='limited_access')? 'checked':'' ?> value="limited_access">
+					  <label for="css">Limited Access ( Not able to access Price, Add to cart, Checkout, Quick order page)</label><br>
+					<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+					<p class="submit"><input type="submit" name="submit" id="submit_user_site_access" class="button button-primary" value="Save"></p>
+					<p class="status_user_access_message <?php echo $update_class; ?>"><?php echo $status_user_access_message; ?></p>
+				</form>
 			</div>
 			<?php //user_level ?>
 			<div class="approve_status">
@@ -1922,7 +1923,7 @@ function userview_render()
 
 					$ready_for_approval_link = admin_url('users.php?action=user_ready_for_approval&user=' . $user->ID);
 
-				?>
+					?>
 
 					<a class="button button-primary" href="<?php echo $ready_for_approval_link; ?>">Ready For Approval</a>
 				<?php	}
@@ -1946,7 +1947,7 @@ function userview_render()
 
 			</div>
 		</div>
-	<?php
+		<?php
 	}
 }
 
@@ -2083,10 +2084,7 @@ function ad_bulk_variations_sw()
 	$all_color_list_stock = array();
 	foreach ($available_variations as $available_variation) {
 		$all_color_list[$available_variation['variation_id']] = $available_variation['attributes']['attribute_pa_color'];
-		if (is_int($available_variation['max_qty'])) {
-			$all_color_list_stock[$available_variation['attributes']['attribute_pa_color']] += intval($available_variation['max_qty']);
-		}
-		
+		$all_color_list_stock[$available_variation['attributes']['attribute_pa_color']] += $available_variation['max_qty'];
 	}
 
 	$all_color_list = array_unique($all_color_list);
@@ -2094,7 +2092,7 @@ function ad_bulk_variations_sw()
 	$count_more = 0;
 	echo '<div class="product_list_section show_viewmore">';
 	echo '<div class="color_box">';
-?>
+	?>
 	<?php if(is_user_logged_in()) { ?>
 		<div class="product_details_msg" data-variations-count="<?php echo count($available_variations); ?>">
 			<span class="div_close"><i class="fa fa-times" aria-hidden="true"></i></span>
@@ -2131,31 +2129,41 @@ function ad_bulk_variations_sw()
 
 		$image_id = $variationobj->get_image_id();
 		if ($image_id == 11668 || $image_id == 67550 || $image_id == 82327) {
+
 			if(get_post_meta($key, 'aws_url_field', true)){
 				$image_array = array(get_post_meta($key, 'aws_url_field', true));
 			} else {
 				$image_array = wp_get_attachment_image_src($parent_product_img_id, 'shop_thumbnail');
 			}
+			
 		} else {
+
 			if(get_post_meta($key, 'aws_url_field', true)){
 				$image_array = array(get_post_meta($key, 'aws_url_field', true));
 			} else {
 				$image_array = wp_get_attachment_image_src($image_id, 'shop_thumbnail');
 			}
+			
 		}
 
 		if ($image_id == 11668 || $image_id == 67550 || $image_id == 82327) {
+
 			if(get_post_meta($key, 'aws_url_field', true)){
 				$image_full = get_post_meta($key, 'aws_url_field', true);
 			} else {
 				$image_full = wp_get_attachment_image_src($parent_product_img_id, 'full');
 			}
+
+			
 		} else {
+
 			if(get_post_meta($key, 'aws_url_field', true)){
 				$image_full = get_post_meta($key, 'aws_url_field', true);
 			} else {
 				$image_full = wp_get_attachment_image_src($image_id, 'full');
 			}
+
+			
 		}
 
 
@@ -2172,26 +2180,19 @@ function ad_bulk_variations_sw()
 		}
 		if (strpos($gallery_image, 'EBY_') == true) {
 			$gallery_image = str_replace("EBY_", "HBI_", $gallery_image);
-		}
-
-		$lastElement = end(explode('/', $gallery_image));
-		$parts = explode('-', $lastElement);
-		if(count($parts) > 1) {
-			$last = array_pop($parts);
-			$final_parts = array(implode('-', $parts), $last);
-			$final_image = $final_parts[0];
-		} else {
-			$last = $lastElement;
-			$final_parts = explode('.', $last);
-			$final_image = $final_parts[0];
-		}
-
+		} 
+		
+		$lastElement = end(explode('/', $gallery_image)); 
+		$parts = explode('-', $lastElement); 
+		$last = array_pop($parts); 
+		$final_parts = array(implode('-', $parts), $last); 
+		$final_image = $final_parts[0];
+		
 		$taxonomy = 'pa_color';
 		$meta = get_post_meta($key, 'attribute_' . $taxonomy, true);
 		$term = get_term_by('slug', $meta, $taxonomy);
 		$image_tag = $variationobj->get_image('shop_thumbnail');
 		$aws_image = get_post_meta($key, 'aws_url_field', true);
-		
 
 		if (!empty($aws_image)) {
 			$image_tag ="<img src='".$aws_image."' class='attachment-shop_thumbnail size-shop_thumbnail' />";
@@ -2215,8 +2216,8 @@ function ad_bulk_variations_sw()
 	if ($total_items > 12) { ?>
 		<div class="more-color text-center">
 			<button type="button" class="btn btn-link view-more-color">View <?php //echo $total_items_more; 
-																			?> More</button>
-		</div>
+		?> More</button>
+	</div>
 <?php }
 }
 
@@ -2358,21 +2359,21 @@ function ad_woocommerce_remove_cart_items_all_func()
 }
 
 add_filter( 'https_ssl_verify', '__return_true', PHP_INT_MAX );
- 
+
 add_filter( 'http_request_args', 'http_request_force_ssl_verify', PHP_INT_MAX );
- 
+
 function http_request_force_ssl_verify( $args ) {
- 
-        $args[ 'sslverify' ] = true;
- 
-        return $args;
+
+	$args[ 'sslverify' ] = true;
+
+	return $args;
 }
 
 function remove_shipping_calc_on_cart( $show_shipping ) {
-    if( is_cart() ) {
-        return false;
-    }
-    return $show_shipping;
+	if( is_cart() ) {
+		return false;
+	}
+	return $show_shipping;
 }
 add_filter( 'woocommerce_cart_ready_to_calc_shipping', 'remove_shipping_calc_on_cart', 99 );
 
@@ -2399,7 +2400,7 @@ function orb_check_for_out_of_stock_products() {
 	
 	foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 		$product_obj = $cart_item['data'];
-	
+
 		if ( ! $product_obj->is_in_stock() ) {
 			WC()->cart->remove_cart_item( $cart_item_key );
 			$removed_products[] = $product_obj;
@@ -2408,7 +2409,7 @@ function orb_check_for_out_of_stock_products() {
 	
 	if (!empty($removed_products)) {
 		wc_clear_notices(); 
-	
+
 		foreach ( $removed_products as $idx => $product_obj ) {
 			$product_name = $product_obj->get_title();
 			$msg = sprintf( __( "The product '%s' was removed from your cart because it is now out of stock. Sorry for any inconvenience caused.", 'woocommerce' ), $product_name);
@@ -2417,7 +2418,7 @@ function orb_check_for_out_of_stock_products() {
 		}
 	}
 	
-	}
+}
 add_action('woocommerce_before_cart', 'orb_check_for_out_of_stock_products');
 
 if (!wp_next_scheduled('relevanssi_build_index')) {
@@ -2432,61 +2433,61 @@ function ad_keep_me_logged_in( $expirein ) {
 
 // Filter the excel data 
 function ad_filterData(&$str){ 
-    $str = preg_replace("/\t/", "\\t", $str); 
-    $str = preg_replace("/\r?\n/", "\\n", $str); 
-    if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"'; 
+	$str = preg_replace("/\t/", "\\t", $str); 
+	$str = preg_replace("/\r?\n/", "\\n", $str); 
+	if(strstr($str, '"')) $str = '"' . str_replace('"', '""', $str) . '"'; 
 }
 
 add_filter( 'big_image_size_threshold', '__return_false' );
 
 function ad_formatted_shipping_address($order)
 {
-    return
-        $order->shipping_first_name . '  ' . 
-        $order->shipping_last_name . ', ' .
-		$order->shipping_company . ', ' .
-		$order->shipping_address_1 . ', ' . 
+	return
+	$order->shipping_first_name . '  ' . 
+	$order->shipping_last_name . ', ' .
+	$order->shipping_company . ', ' .
+	$order->shipping_address_1 . ', ' . 
        // $order->shipping_address_2 . ' ' .
-        $order->shipping_city      . ', ' .
-        $order->shipping_state     . ' ' .
-        $order->shipping_postcode;
+	$order->shipping_city      . ', ' .
+	$order->shipping_state     . ' ' .
+	$order->shipping_postcode;
 }
 
 function ad_formatted_billing_address($order)
 {
-    return
-		$order->billing_first_name . '  ' . 
-		$order->billing_last_name . ', ' . 
-		$order->shipping_company . ', ' .
-        $order->billing_address_1 . ', ' . 
+	return
+	$order->billing_first_name . '  ' . 
+	$order->billing_last_name . ', ' . 
+	$order->shipping_company . ', ' .
+	$order->billing_address_1 . ', ' . 
        // $order->billing_address_2 . ' ' .
-        $order->billing_city      . ', ' .
-        $order->billing_state     . ' ' .
-        $order->billing_postcode;
+	$order->billing_city      . ', ' .
+	$order->billing_state     . ' ' .
+	$order->billing_postcode;
 }
 
 function ad_stock_info_error($error){
-    global $woocommerce;
-    foreach ($woocommerce->cart->cart_contents as $cart_item_key => $item) {
-        $product_id = isset($item['variation_id']) ? $item['variation_id'] : $item['product_id'];
-        $product = new \WC_Product_Factory();
-        $product = $product->get_product($product_id);
+	global $woocommerce;
+	foreach ($woocommerce->cart->cart_contents as $cart_item_key => $item) {
+		$product_id = isset($item['variation_id']) ? $item['variation_id'] : $item['product_id'];
+		$product = new \WC_Product_Factory();
+		$product = $product->get_product($product_id);
 
-        if ($item['quantity'] > $product->get_stock_quantity()){
+		if ($item['quantity'] > $product->get_stock_quantity()){
 			WC()->cart->set_quantity( $cart_item_key, $product->get_stock_quantity(), true );
-            $name = $product->get_name();
+			$name = $product->get_name();
             //$error = 'Sorry, we do not have enough "'.$name.'" in stock to fulfill your order. Please edit your cart and try again. We apologize for any inconvenience caused.';
 			$error = 'Sorry, we do not have enough "'.$name.'" in stock to fulfill your order ('.$product->get_stock_quantity().' available). Quantity has been changed in cart '.$item['quantity'].' to '. $product->get_stock_quantity();
-            return $error;
-        }
-    }
+			return $error;
+		}
+	}
 }
 
 add_action( 'template_redirect', 'ad_callback' ); 
 
 function ad_callback() {
-  	if ( is_cart()) {
-    	add_filter( 'woocommerce_add_error', 'ad_stock_info_error' );
+	if ( is_cart()) {
+		add_filter( 'woocommerce_add_error', 'ad_stock_info_error' );
 	}
 }
 
@@ -2520,40 +2521,54 @@ function ad_get_cat_count($cat_id)
 add_filter( 'wp_get_nav_menu_items', 'nav_remove_empty_category_menu_item',10, 3 );
 
 function nav_remove_empty_category_menu_item ( $items, $menu, $args ) {
-    if ( ! is_admin() ) {
+	if ( ! is_admin() ) {
       //global $wpdb;
       //$nopost = $wpdb->get_col( "SELECT term_taxonomy_id FROM $wpdb->term_taxonomy WHERE count = 0" );
-	  
-      foreach ( $items as $key => $item ) {
+
+		foreach ( $items as $key => $item ) {
        // if ( ( 'taxonomy' == $item->type ) && ( in_array( $item->object_id, $nopost ) ) ) {
-		if ( ( 'taxonomy' == $item->type ) ) {
-			$post_count = ad_get_cat_count($item->object_id);
+			if ( ( 'taxonomy' == $item->type ) ) {
+				$post_count = ad_get_cat_count($item->object_id);
 				if ($post_count == 0) {
 					unset( $items[$key] );
 				}
 			//print_r($item->object_id);
-        }
-      }
-    }
-    return $items;
+			}
+		}
+	}
+	return $items;
 }
 
 add_filter( 'woocommerce_product_add_to_cart_text', 'ad_change_select_options_button_text', 9999, 2 );
 
 function ad_change_select_options_button_text( $label, $product ) {
-   if ( $product->is_type( 'variable' )  &&  !$product->is_in_stock() ) {
-      return 'Out Of Stock';
-   }
-   return $label;
+	if ( $product->is_type( 'variable' )  &&  !$product->is_in_stock() ) {
+		return 'Out Of Stock';
+	}
+	return $label;
+}
+
+add_action( 'profile_update', 'add_info_to_post' );
+function add_info_to_post( $user_id ) {
+	
+	$info=get_user_meta($user_id,'info',true);
+	
+        //get all items of that user
+	$args=array(
+		'author' => $user_id,
+		'post_type' => 'item',
+	);
+
+
 }
 
 add_filter( 'pre_option_woocommerce_hide_out_of_stock_items', 'ad_hide_out_of_stock_exception_page' );
 
 function ad_hide_out_of_stock_exception_page( $hide ) {
-   if ( is_single() ) {
-      $hide = 'no';
-   }   
-   return $hide;
+	if ( is_single() ) {
+		$hide = 'no';
+	}   
+	return $hide;
 }
 
 
@@ -2602,7 +2617,7 @@ function ad_send_subscription_copy_to_recipients( $to, $subject, $message) {
 	$subject = 'Product Notify Me - Admin Notification';
 
 	ob_start();
- 	wc_get_template( 'emails/email-header.php' );
+	wc_get_template( 'emails/email-header.php' );
 	echo $message = 'Hello,  
 	<br>
 	<br>
@@ -2643,11 +2658,11 @@ function ad_hide_price_addcart( $price, $product ) {
 	$userid = get_current_user_id();
 	$ad_user_site_access  = get_user_meta($userid, 'ad_user_site_access', true );
 	if($ad_user_site_access == 'limited_access'){
-      $price = '';
-      remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+		$price = '';
+		remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
       //remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-   }
-   return $price;
+	}
+	return $price;
 }
 
 add_action('template_redirect', 'add_limited_access_user_redirect');
@@ -2660,19 +2675,19 @@ function add_limited_access_user_redirect() {
 			exit;
 		}
 		
-   }
+	}
 }
 //user_level
 
 add_action( 'pre_get_posts',  'set_posts_per_page'  );
 function set_posts_per_page( $query ) {
 
-  global $wp_the_query;
+	global $wp_the_query;
 
-  if ( ( ! is_admin() ) && ( $query === $wp_the_query ) && ( $query->is_search() ) ) {
-    $query->set( 'posts_per_page', 12 );
-    $query->set( 'meta_key', '_stock_status' );
-    $query->set( 'meta_value', 'instock' );
+	if ( ( ! is_admin() ) && ( $query === $wp_the_query ) && ( $query->is_search() ) ) {
+		$query->set( 'posts_per_page', 12 );
+		$query->set( 'meta_key', '_stock_status' );
+		$query->set( 'meta_value', 'instock' );
 
     /*$query->set( 'tax_query', array(
     	'relation' => 'OR',
@@ -2684,14 +2699,14 @@ function set_posts_per_page( $query ) {
         ),
     ) );*/
     //$query->set( 'paged', $page );
-  }
+}
   // else if(! is_admin() && !is_front_page() && !is_product()) {
   // 	$query->set( 'posts_per_page', 48);
   // }
-  
+
   // Etc..
 
-  return $query;
+return $query;
 }
 
 add_filter( 'loop_shop_per_page', 'new_loop_shop_per_page', 20 );
@@ -2727,18 +2742,18 @@ function check_cart_items_conditionally() {
 	
     // if ( ( WC()->cart->get_subtotal() == 0 && WC()->cart->get_cart_contents_count() > 0 )) {
 	if($prevent_checkout == true) {
-    	if (!is_cart()) {
+		if (!is_cart()) {
 
 			wc_clear_notices(); 
 			//wc_add_notice( printf( __(' ', 'woocommerce') ), 'error' );
 
-    		wc_add_notice( printf( __('Sorry! There\'s an iss ue with items in your order. <br> One or more items in your cart has a price of $0.00. Please contact us for assistance.', 'woocommerce') ), 'error' );
+			wc_add_notice( printf( __('Sorry! There\'s an iss ue with items in your order. <br> One or more items in your cart has a price of $0.00. Please contact us for assistance.', 'woocommerce') ), 'error' );
 
-    		if (is_checkout()) {
-	    		global $current_user;
-	      		get_currentuserinfo();
+			if (is_checkout()) {
+				global $current_user;
+				get_currentuserinfo();
 
-	    		ob_start();
+				ob_start();
 				do_action( 'woocommerce_email_header', $email_heading );
 				
 				echo '<table width="100%" border="1" cellpadding="10" style="border-collapse: collapse;"><tbody>';
@@ -2762,22 +2777,22 @@ function check_cart_items_conditionally() {
 				add_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 
 				$to = get_option('admin_email');
-			    $subject = "Apparel Direct - Email notification for 0 price order";
-			     
-			    $retval = wp_mail($to, $subject, $message);
+				$subject = "Apparel Direct - Email notification for 0 price order";
+
+				$retval = wp_mail($to, $subject, $message);
 
 				remove_filter( 'wp_mail_content_type', 'wpdocs_set_html_mail_content_type' );
 			}
-    	}
-       
-    }
+		}
+
+	}
 }
 
 add_filter( 'gettext', function( $translation, $text, $domain ){
-if( $domain == 'woocommerce' ){    
-       $translation =  str_replace('There are some issues with the items in your cart. Please go back to the cart page and resolve these issues before checking out.', '', $text);    
-}   
-return $translation;}, 10, 3 );
+	if( $domain == 'woocommerce' ){    
+		$translation =  str_replace('There are some issues with the items in your cart. Please go back to the cart page and resolve these issues before checking out.', '', $text);    
+	}   
+	return $translation;}, 10, 3 );
 
 add_action('wp_head', 'my_custom_styles', 100);
 function my_custom_styles() {
@@ -2786,83 +2801,44 @@ function my_custom_styles() {
 	}
 }
 function action_woocommerce_shortcode_products_loop_no_results( $attributes ) {
-    echo __( ' <div class="error">There are currently no products in this collection
-                <p class="return-to-home">
-                    <a class="button wc-backward" href="https://appareldirectdistributor.com">
-                         Return to home     </a>
-                </p> </div>', 'woocommerce' );
+	echo __( ' <div class="error">There are currently no products in this collection
+		<p class="return-to-home">
+		<a class="button wc-backward" href="https://appareldirectdistributor.com">
+		Return to home     </a>
+		</p> </div>', 'woocommerce' );
 }
 add_action( 'woocommerce_shortcode_products_loop_no_results', 'action_woocommerce_shortcode_products_loop_no_results', 10, 1 );
 
-add_action( 'user_register', 'rudr_sync_wp_users_to_mailchimp', 10, 2 );
-
-function rudr_sync_wp_users_to_mailchimp( $user_id, $userdata ) {
-	
-	$all_meta_for_user = get_user_by('id', $user_id);
-
-	$list_id = '55c794b002';
-	$api = '538f38112d52ad80a19b112ca5646618-us6';
-	$email =   $all_meta_for_user->user_email;
-	
-	$response = wp_remote_request( 
-		'https://' . substr($api,strpos($api,'-')+1) . '.api.mailchimp.com/3.0/lists/' . $list_id . '/members/' . md5(strtolower($email)),
-		array(
-			'method' => 'PUT',
-	 		'headers' => array(
-				'Authorization' => 'Basic ' . base64_encode( 'user:'. $api )
-			),
-			'body' => json_encode(
-				array(
-					'email_address' => $email,
-					'merge_fields' => array('FNAME' => $_POST['billing_first_name'],
-												'LNAME' => $_POST['billing_last_name'],
-												'ADDRESS' => $_POST['billing_address_1'],
-												'PHONE' => $_POST['business_phone'] 
-											),					
-					'full_name' => $_POST['billing_first_name'].' '.$_POST['billing_last_name'],
-					'status' => 'subscribed',
-				)
-			)
-		)
-	);
-
-
-}
-
-
-
-/*11-08-2023*/
-
 add_action( 'woocommerce_variation_options_pricing', 'bbloomer_add_custom_field_to_variations', 10, 3 );
- 
+
 function bbloomer_add_custom_field_to_variations( $loop, $variation_data, $variation ) {
-   woocommerce_wp_text_input( array(
-'id' => 'aws_url_field[' . $loop . ']',
-'name' => 'aws_url_field[' . $loop . ']',
-'class' => 'short',
-'description'   => __('Enter AWS Variation Image.', 'woocommerce'),
-'label' => __( 'AWS Variation Image', 'woocommerce' ),
-'value' => get_post_meta( $variation->ID, 'aws_url_field', true )
-   ) );
+	woocommerce_wp_text_input( array(
+		'id' => 'aws_url_field[' . $loop . ']',
+		'name' => 'aws_url_field[' . $loop . ']',
+		'class' => 'short',
+		'description'   => __('Enter AWS Variation Image.', 'woocommerce'),
+		'label' => __( 'AWS Variation Image', 'woocommerce' ),
+		'value' => get_post_meta( $variation->ID, 'aws_url_field', true )
+	) );
 }
 
 // 2. Save custom field on product variation save
- 
+
 add_action( 'woocommerce_save_product_variation', 'bbloomer_save_custom_field_variations', 10, 2 );
- 
+
 function bbloomer_save_custom_field_variations( $variation_id, $i ) {
-   $custom_field = $_POST['aws_url_field'][$i];
-   if ( isset( $custom_field ) ) update_post_meta( $variation_id, 'aws_url_field', esc_attr( $custom_field ) );
+	$custom_field = $_POST['aws_url_field'][$i];
+	if ( isset( $custom_field ) ) update_post_meta( $variation_id, 'aws_url_field', esc_attr( $custom_field ) );
 }
- 
+
 // -----------------------------------------
 // 3. Store custom field value into variation data
- 
+
 add_filter( 'woocommerce_available_variation', 'bbloomer_add_custom_field_variation_data' );
- 
+
 function bbloomer_add_custom_field_variation_data( $variations ) {
-   $variations['aws_url_field'] = '<div class="woocommerce_custom_field">Custom Field: <span>' . get_post_meta( $variations[ 'variation_id' ], 'aws_url_field', true ) . '</span></div>';
-   return $variations;
+	$variations['aws_url_field'] = '<div class="woocommerce_custom_field">Custom Field: <span>' . get_post_meta( $variations[ 'variation_id' ], 'aws_url_field', true ) . '</span></div>';
+	return $variations;
 }
 
 
@@ -2871,36 +2847,76 @@ remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_
 add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10);
 
 if ( ! function_exists( 'woocommerce_template_loop_product_thumbnail' ) ) {
-    function woocommerce_template_loop_product_thumbnail() {
-        echo woocommerce_get_product_thumbnail();
-    } 
+	function woocommerce_template_loop_product_thumbnail() {
+		echo woocommerce_get_product_thumbnail();
+	} 
 }
 if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {   
-    function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
-        global $post, $woocommerce;
-        $output = '';
+	function woocommerce_get_product_thumbnail( $size = 'shop_catalog', $placeholder_width = 0, $placeholder_height = 0  ) {
+		global $post, $woocommerce;
+		$output = '';
 
         // Get the custom field value for the external image URL
-    	$custom_image_url = get_post_meta($post->ID, 'cdn_featured_image', true);
+		$custom_image_url = get_post_meta($post->ID, 'cdn_featured_image', true);
 
-    	if($custom_image_url) {
+		if($custom_image_url) {
     		//$final_image_url = aq_resize($custom_image_url, '300', '300', false);
-    		$output .= '<img width="300" height="300" src="'.$custom_image_url.'" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" decoding="async" sizes="(max-width: 300px) 100vw, 300px">';
-    	} else if ( has_post_thumbnail() ) {               
-            $output .= get_the_post_thumbnail( $post->ID, $size );
-        } else {
-             $output .= wc_placeholder_img( $size );
-        }                   
-        return $output;
-    }
+			$output .= '<img width="300" height="300" src="'.$custom_image_url.'" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" decoding="async" sizes="(max-width: 300px) 100vw, 300px">';
+		} else if ( has_post_thumbnail() ) {               
+			$output .= get_the_post_thumbnail( $post->ID, $size );
+		} else {
+			$output .= wc_placeholder_img( $size );
+		}                   
+		return $output;
+	}
 }
 
 add_filter( 'wpgs_show_featured_image_in_gallery', '__return_false', 20 );
 
 
+function add_variation_to_order( $order_id, $variation_id, $quantity ) {
+	$variation = wc_get_product( $variation_id );
+
+    // Ensure the product is a variation and the quantity is greater than zero
+	if ( $variation && $variation->is_type( 'variation' ) && $quantity > 0 ) {
+        // Create a new order item
+		$order_item_id = wc_add_order_item( $order_id, array(
+			'order_item_type' => 'line_item',
+			'order_item_name' => $variation->get_name(),
+			'order_item_quantity' => $quantity,
+			'order_item_subtotal' => $variation->get_price() * $quantity,
+			'order_item_total' => $variation->get_price() * $quantity,
+		) );
+
+        // Add variation data as order item meta
+		if ( $order_item_id ) {
+			wc_add_order_item_meta( $order_item_id, '_variation_id', $variation_id );
+			wc_add_order_item_meta( $order_item_id, '_product_id', $variation->get_parent_id() );
+		}
+
+        // Calculate totals and save the order
+		$order = wc_get_order( $order_id );
+		$order->calculate_totals();
+		$order->save();
+	}
+}
 
 
+function my_custom_function_on_product_update( $post_id ) {
 
+	if ( 'product' === get_post_type( $post_id ) ) {
+        // Replace PRODUCT_ID with the ID of the product you want to target
+		$target_product_id = 279420;
+
+
+		if ( $post_id === $target_product_id ) {
+			add_variation_to_order( 279559, 279421, 2 );
+		}
+	}
+}
+add_action( 'save_post', 'my_custom_function_on_product_update' );
+
+/*Order Total:		$322.20*/
 
 // Define your custom function to handle the variation updated notification
 /*function my_variation_updated_notification($variation_id, $product_id) {
@@ -2953,7 +2969,7 @@ add_filter( 'wpgs_show_featured_image_in_gallery', '__return_false', 20 );
                 </tr>
             </tbody>
         </table>";
-
+		
         // Send the email notification to the admin
         wp_mail($admin_email, $subject, $message_html);
     }
@@ -2964,15 +2980,12 @@ add_action('woocommerce_update_product_variation', 'my_variation_updated_notific
 */
 
 
-
-
-
 /*Product Variation 0 Price With Database*/
 /*add_filter( 'cron_schedules', 'wpshout_add_cron_interval' );
 function wpshout_add_cron_interval( $schedules ) {
-    $schedules['daily'] = array(
-            'interval'  => 43200 , // time in seconds
-            'display'   => 'Once Daily'
+    $schedules['twicedaily'] = array(
+            'interval'  => 43200, // time in seconds
+            'display'   => 'Twice Daily'
     );
     return $schedules; 
 }*/
@@ -2990,4 +3003,8 @@ function price_check_function() {
 
 }
 
+
+
+
 ?>
+

@@ -21,17 +21,14 @@ if ( !function_exists( 'ast_pro_dropified_woocommerce_rest_insert_order_note' ) 
 			$tracking_number = str_replace( ' ', '', $tracking_number );
 			$tracking_provider = ast_get_string_between( $note->comment_content, 'Carrier: ', 'Shipping method: ' );			
 			
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+			
 			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, 0, $status_shipped );
 		}		
-	}
-}
-
-/*
-* AST: get specific string after string
-*/
-if ( !function_exists( 'ast_get_string_after' ) ) {
-	function ast_get_string_after( $input, $after ) {
-		$substr = substr($input, strpos($input, $after) + strlen($after));
-		return $substr;
 	}
 }

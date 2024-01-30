@@ -47,7 +47,7 @@ jQuery(document).ready(function () {
     $(".brands-offer").owlCarousel({
         items: 5,
         nav: true,
-        navText: ["<img alt=prev src=/wp-content/themes/apparel_direct/assets/images/prev.svg>", "<img alt=next src=/wp-content/themes/apparel_direct/assets/images/next.svg>"],
+        navText: ["<img src=/wp-content/themes/apparel_direct/assets/images/prev.svg>", "<img src=/wp-content/themes/apparel_direct/assets/images/next.svg>"],
         pagination: false,
         touchDrag: false,
         paginationSpeed: 500,

@@ -143,12 +143,9 @@ $ids_product_collection = array();
 $ids_product_line = array();
 $cats_array = array();
 
-if(is_array($term_obj_product_collections)){
-    foreach ($term_obj_product_collections as $term_obj_product_collection) {
-        array_push($ids_product_collection, $term_obj_product_collection->term_id);
-    }
+foreach ($term_obj_product_collections as $term_obj_product_collection) {
+    array_push($ids_product_collection, $term_obj_product_collection->term_id);
 }
-
 
 foreach ($term_obj_product_lines as $term_obj_product_line) {
     array_push($ids_product_line, $term_obj_product_line->term_id);
@@ -258,20 +255,24 @@ if ($related_pro_2) {
                         <?php
                         if (!empty($related_pro_2) && is_array($related_pro)) {
                             foreach ($related_pro_2 as $related_product) {
-								 $cust_featuredimg = get_field( "cdn_featured_image", $post->ID );
+
+                                 $cust_featuredimg = get_field( "cdn_featured_image", $post->ID );
+                                
                                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($related_product), 'full');
                                 $product = wc_get_product($related_product);
                                 if (empty($featured_image)) {
                                     $featured_image['0'] = $woocommerce_thumbnail_place;
                                 }
 
-								if($cust_featuredimg){
+                                if($cust_featuredimg){
                                     $imgurl = $cust_featuredimg;
                                 } else if($featured_image) {
                                      $imgurl = $featured_image[0];
                                  } else {
                                     $imgurl = $woocommerce_thumbnail_place;
                                  }
+
+                                
                         ?>
                                 <div class="col-lg-3 col-md-3">
                                     <div class="product-box">
@@ -306,16 +307,27 @@ if ($related_pro_2) {
                         <?php
                         if (!empty($related_pro) && is_array($related_pro)) {
                             foreach ($related_pro as $related_product) {
+
+                                 $cust_featuredimg = get_field( "cdn_featured_image", $post->ID );
+
                                 $featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($related_product), 'product-thumb');
                                 $product = wc_get_product($related_product);
                                 if (empty($featured_image)) {
                                     $featured_image['0'] = $woocommerce_thumbnail_place;
                                 }
+
+                                if($cust_featuredimg){
+                                    $imgurl = $cust_featuredimg;
+                                } else if($featured_image) {
+                                     $imgurl = $featured_image[0];
+                                 } else {
+                                    $imgurl = $woocommerce_thumbnail_place;
+                                 }
                         ?>
                                 <div class="col-lg-6 col-md-6">
                                     <div class="product-box">
                                         <a href="<?php echo $product->get_permalink(); ?>" title="" class="product-img">
-                                            <img src="<?php echo $featured_image['0'] ?>" alt="">
+                                            <img src="<?php echo $$imgurl; ?>" alt="">
                                         </a>
                                         <div class="product-info">
                                             <div class="prdct-desc">

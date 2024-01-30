@@ -2,14 +2,20 @@
 
 Contributors: yithemes
 Tags: wishlist, woocommerce, products, themes, yit, e-commerce, shop
-Requires at least: 6.1
-Tested up to: 6.3
-Stable tag: 3.26.0
+Requires at least: 6.2
+Tested up to: 6.4
+Stable tag: 3.27.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Documentation: https://yithemes.com/docs-plugins/yith-woocommerce-wishlist
 
 == Changelog ==
+
+= 3.27.0 - Released on 14 November 2023 =
+
+* New: support for WordPress 6.4
+* New: support for WooCommerce 8.3
+* Update: YITH plugin framework
 
 = 3.26.0 - Released on 5 October 2023 =
 

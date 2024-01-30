@@ -43,12 +43,17 @@ class AST_Pro_PayPal_Tracking {
 		
 			// add 'Export Status' orders and customers page column header
 			add_filter( 'manage_edit-shop_order_columns', array( $this, 'manage_order_columns' ), 20 );
+			add_filter( 'manage_woocommerce_page_wc-orders_columns', array( $this, 'manage_order_columns' ), 10 );
 			
 			//add bulk action - Send Tracking to PayPal
 			add_filter( 'bulk_actions-edit-shop_order', array( $this, 'add_bulk_actions_send_tracking_to_paypal'), 10, 1 );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'add_bulk_actions_send_tracking_to_paypal' ), 10, 1 );
 			
 			// Make the action from selected orders to send tracking to paypal
 			add_filter( 'handle_bulk_actions-edit-shop_order', array( $this, 'send_tracking_to_paypal_handle_bulk_action_edit_shop_order'), 10, 3 );
+			add_filter( 'handle_bulk_actions-woocommerce_page_wc-orders', array( $this, 'send_tracking_to_paypal_handle_bulk_action_edit_shop_order' ), 10, 3 );
+			add_filter( 'woocommerce_bulk_action_ids', array( $this, 'send_tracking_to_paypal_handle_bulk_action_order' ), 10, 3 );
+			
 			
 			// The results notice from send tracking on orders
 			add_action( 'admin_notices', array( $this, 'send_tracking_to_paypa_bulk_action_admin_notice' ) );
@@ -59,10 +64,12 @@ class AST_Pro_PayPal_Tracking {
 			
 			// add 'Export Status' orders and users page column content
 			add_action( 'manage_shop_order_posts_custom_column', array( $this, 'add_order_status_column_content' ) );
+			add_action( 'manage_woocommerce_page_wc-orders_custom_column', array( $this, 'add_wc_order_status_column_content' ), 10, 2 );
 
 			// trigger when order status changed to shipped or completed
 			add_action( 'woocommerce_order_status_completed', array( $this, 'send_tracking_info_to_paypal'), 10, 1 );
 			add_action( 'woocommerce_order_status_shipped', array( $this, 'send_tracking_info_to_paypal'), 10, 1 );
+			add_action( 'export_order_to_paypal', array( $this, 'send_tracking_info_to_paypal'), 10, 1 );
 			
 			add_action( 'bulk_send_tracking_to_paypal', array( $this, 'send_tracking_info_to_paypal'), 10, 1 );
 			
@@ -72,7 +79,13 @@ class AST_Pro_PayPal_Tracking {
 			add_action( 'woocommerce_order_status_updated-tracking', array( $this, 'send_tracking_info_to_paypal' ), 10, 2 );
 			
 			// trigger when tracking info delete from order 
-			add_action( 'delete_tracking_number_from_trackship', array( $this, 'delete_tracking_number_from_paypal'), 10, 3 );	
+			add_action( 'delete_tracking_number_from_trackship', array( $this, 'delete_tracking_number_from_paypal'), 10, 3 );
+
+			// add bulk order filter for paypal export
+			add_action( 'restrict_manage_posts', array( $this, 'filter_orders_by_paypal_tracking'), 20 );
+			add_action( 'woocommerce_order_list_table_restrict_manage_orders', array( $this, 'filter_listtable_orders_by_paypal_tracking'), 10, 2 );	
+			add_filter( 'request', array( $this, 'filter_orders_by_paypal_tracking_query' ) );
+			add_filter( 'woocommerce_shop_order_list_table_prepare_items_query_args', array( $this, 'filter_listtable_orders_by_paypal_tracking_query' ) );
 		}
 	}
 
@@ -105,15 +118,57 @@ class AST_Pro_PayPal_Tracking {
 	* Send Tracking to PayPal
 	*/
 	public function add_bulk_actions_send_tracking_to_paypal( $bulk_actions ) {
-		$bulk_actions['send_tracking_to_paypal'] = __( 'Export Tracking to PayPal', 'ast-pro' );
+		$bulk_actions['send_tracking_to_paypal'] = __( 'Export Tracking to PayPal', 'ast-pro' );		
 		return $bulk_actions;
+	}
+
+	public function send_tracking_to_paypal_handle_bulk_action_order( $order_array, $action, $post_type ) {
+		
+		if ( 'send_tracking_to_paypal' !== $action ) {
+			return $order_array;
+		}
+
+		$processed_ids = array();							
+		
+		foreach ( $order_array as $order_id ) {
+			$order = wc_get_order( $order_id );
+			$transaction_id = $order->get_transaction_id();
+			$wc_ppp_brasil_sale_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );
+			$payment_method = $order->get_payment_method();
+			
+			$ptaa_payment_methods = get_option('ptaa_payment_methods');
+			
+			if ( !isset ( $ptaa_payment_methods[$payment_method] ) ) { 
+				continue;
+			}	
+			
+			if ( 1 != $ptaa_payment_methods[$payment_method] ) {
+				continue;
+			}	
+			
+			if ( null == $transaction_id && null == $wc_ppp_brasil_sale_id ) {
+				continue;				
+			}	
+			
+			$tracking_items = ast_get_tracking_items( $order_id );
+			
+			if ( empty ( $tracking_items ) ) {
+				continue; 
+			}	
+			
+			wp_schedule_single_event( time() + 1, 'bulk_send_tracking_to_paypal', array( $order_id ) );		
+			$processed_ids[] = $order_id;
+			
+		}
+
+		return $order_array;
 	}
 
 	/*
 	* order bulk action for Send Tracking to PayPal
 	*/
-	public function send_tracking_to_paypal_handle_bulk_action_edit_shop_order( $redirect_to, $action, $post_ids ) {
-		
+	public function send_tracking_to_paypal_handle_bulk_action_edit_shop_order( $redirect_to, $action, $post_ids ) {			
+
 		if ( 'send_tracking_to_paypal' !== $action ) {
 			return $redirect_to;
 		}
@@ -124,7 +179,7 @@ class AST_Pro_PayPal_Tracking {
 			
 			$order = wc_get_order( $order_id );
 			$transaction_id = $order->get_transaction_id();
-			$wc_ppp_brasil_sale_id = get_post_meta( $order_id, 'wc_ppp_brasil_sale_id', true );
+			$wc_ppp_brasil_sale_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );
 			$payment_method = $order->get_payment_method();
 			
 			$ptaa_payment_methods = get_option('ptaa_payment_methods');
@@ -217,6 +272,17 @@ class AST_Pro_PayPal_Tracking {
 		}
 	}
 
+	public function add_wc_order_status_column_content( $column_name, $order ) {
+		global $post;
+
+		if ( 'ptaa' === $column_name ) {
+
+			$is_tracking_updated = $order->get_meta('_wc_ast_tracking_added_to_paypal');
+
+			printf( '<span class="dashicons zorem_export_icon %1$s"></span>', $is_tracking_updated ? 'dashicons-yes' : 'dashicons-minus' );
+		}
+	}
+
 	/*
 	 * function for send tracking information to paypal
 	*/
@@ -225,7 +291,7 @@ class AST_Pro_PayPal_Tracking {
 		$order = wc_get_order( $order_id );
 		
 		$transaction_id = $order->get_transaction_id();
-		$wc_ppp_brasil_sale_id = get_post_meta( $order_id, 'wc_ppp_brasil_sale_id', true );
+		$wc_ppp_brasil_sale_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );
 		$payment_method = $order->get_payment_method();
 		$ptaa_payment_methods = get_option('ptaa_payment_methods');		
 					
@@ -318,14 +384,14 @@ class AST_Pro_PayPal_Tracking {
 		$transaction_id = $order->get_transaction_id();
 		
 		if ( null == $transaction_id ) {
-			$transaction_id = get_post_meta( $order_id, 'wc_ppp_brasil_sale_id', true );
+			$transaction_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );
 		}
 		
 		$endpoint = $this->get_paypal_endpoint() . 'v1/shipping/trackers-batch';				
 		
 		$tracking_items = ast_get_tracking_items( $order_id );			
 		
-		$shipment_status = get_post_meta( $order_id, 'shipment_status', true);	
+		$shipment_status = $order->get_meta( 'shipment_status', true );
 				
 		if ( empty( $tracking_items ) ) {
 			return;
@@ -350,7 +416,7 @@ class AST_Pro_PayPal_Tracking {
 						
 			global $wpdb;
 			
-			$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM ' . ast_pro()->shippment_provider_table() . ' WHERE provider_name = %s', $item['formatted_tracking_provider'] ) );
+			$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM %1s WHERE provider_name = %s', ast_pro()->shippment_provider_table(), $item['formatted_tracking_provider'] ) );
 			
 			if ( isset($provider->paypal_slug) && '' != $provider->paypal_slug ) {
 				$trackers[] = array (
@@ -403,7 +469,9 @@ class AST_Pro_PayPal_Tracking {
 		
 		if ( is_array( $response ) && ! is_wp_error( $response ) && wp_remote_retrieve_response_code( $response ) === 200 ) {	
 			
-			update_post_meta( $order_id, '_wc_ast_tracking_added_to_paypal', 1 );
+			$order->update_meta_data( '_wc_ast_tracking_added_to_paypal', 1 );
+			$order->save();
+			
 			// The text for the note
 			foreach ( (array) $tracking_items as $item ) {
 				
@@ -438,7 +506,7 @@ class AST_Pro_PayPal_Tracking {
 		$transaction_id = $order->get_transaction_id();
 		
 		if ( null == $transaction_id ) {
-			$transaction_id = get_post_meta( $order_id, 'wc_ppp_brasil_sale_id', true );
+			$transaction_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );
 		}
 		
 		$payment_method = $order->get_payment_method();
@@ -477,7 +545,7 @@ class AST_Pro_PayPal_Tracking {
 			
 			global $wpdb;
 			
-			$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM ' . ast_pro()->shippment_provider_table() . ' WHERE provider_name = %s', $tracking_item['formatted_tracking_provider'] ) );
+			$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM %1s WHERE provider_name = %s', ast_pro()->shippment_provider_table(), $tracking_item['formatted_tracking_provider'] ) );
 			
 			if ( isset($provider->paypal_slug) && '' != $provider->paypal_slug ) {
 				$tracker_data = array (
@@ -541,7 +609,7 @@ class AST_Pro_PayPal_Tracking {
 		$order = wc_get_order( $order_id );
 		$transaction_id = $order->get_transaction_id();
 		if ( null == $transaction_id ) {
-			$transaction_id = get_post_meta( $order_id, 'wc_ppp_brasil_sale_id', true );	
+			$transaction_id = $order->get_meta( 'wc_ppp_brasil_sale_id', true );	
 		}
 		$payment_method = $order->get_payment_method();
 		
@@ -571,8 +639,8 @@ class AST_Pro_PayPal_Tracking {
 				
 				global $wpdb;
 				
-				$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM ' . ast_pro()->shippment_provider_table() . ' WHERE provider_name = %s', $tracking_item['formatted_tracking_provider'] ) );
-				
+				$provider = $wpdb->get_row( $wpdb->prepare( 'SELECT paypal_slug FROM %1s WHERE provider_name = %s', ast_pro()->shippment_provider_table(), $tracking_item['formatted_tracking_provider'] ) );				
+
 				if ( isset( $provider->paypal_slug ) ) {
 					$tracker_data = array (
 						'transaction_id' => $transaction_id,
@@ -609,7 +677,7 @@ class AST_Pro_PayPal_Tracking {
 					$provider = isset( $tracking_item['formatted_tracking_provider'] ) ? $tracking_item['formatted_tracking_provider'] : $tracking_item['tracking_provider'];
 					
 					/* translators: %1$s: replace with tracking provider name, %2$s: replace with tracking number, %3$s: replace with status */
-					$note = sprintf( esc_html__( 'Tracking info updated to PayPal: %1$s - %2$s(%3$s)', 'ast-pro' ), $provider, $tracking_item['tracking_number'], $tracking_status  );
+					$note = sprintf( __( 'Tracking info updated to PayPal: %1$s - %2$s(%3$s)', 'ast-pro' ), $provider, $tracking_item['tracking_number'], $tracking_status  );
 					$order->add_order_note( $note );							
 					
 				} else {
@@ -626,6 +694,161 @@ class AST_Pro_PayPal_Tracking {
 		}	
 	}
 	
+	/**
+	 * Add bulk filter for Paypal Export in orders list
+	 *
+	 * @since 2.4
+	 */
+	public function filter_orders_by_paypal_tracking() {
+		global $typenow;		
+		if ( 'shop_order' === $typenow ) {
+			?>
+			<select name="_shop_order_paypal_tracking" id="dropdown_shop_order_paypal_tracking">
+				<option value=""><?php esc_html_e( 'Filter orders with PayPal Tracking', 'ast-pro' ); ?></option>
+				<option value="paypal_not_exported" <?php echo esc_attr( isset( $_GET['_shop_order_paypal_tracking'] ) ? selected( 'paypal_not_exported', wc_clean( $_GET['_shop_order_paypal_tracking'] ), false ) : '' ); ?>><?php esc_html_e( 'Orders with tracking info that were paid with PayPal and not exported', 'ast-pro' ); ?></option>
+				<option value="paypal_exported" <?php echo esc_attr( isset( $_GET['_shop_order_paypal_tracking'] ) ? selected( 'paypal_exported', wc_clean( $_GET['_shop_order_paypal_tracking'] ), false ) : '' ); ?>><?php esc_html_e( 'Orders with tracking info that were paid with PayPal and exported', 'ast-pro' ); ?></option>				
+			</select>
+		<?php
+		}
+	}
+
+	public function filter_listtable_orders_by_paypal_tracking( $order_type, $which ) {
+		if ( 'shop_order' === $order_type ) {
+			?>
+			<select name="_shop_order_paypal_tracking" id="dropdown_shop_order_paypal_tracking">
+				<option value=""><?php esc_html_e( 'Filter orders with PayPal Tracking', 'ast-pro' ); ?></option>
+				<option value="paypal_not_exported" <?php echo esc_attr( isset( $_GET['_shop_order_paypal_tracking'] ) ? selected( 'paypal_not_exported', wc_clean( $_GET['_shop_order_paypal_tracking'] ), false ) : '' ); ?>><?php esc_html_e( 'Orders with tracking info that were paid with PayPal and not exported', 'ast-pro' ); ?></option>
+				<option value="paypal_exported" <?php echo esc_attr( isset( $_GET['_shop_order_paypal_tracking'] ) ? selected( 'paypal_exported', wc_clean( $_GET['_shop_order_paypal_tracking'] ), false ) : '' ); ?>><?php esc_html_e( 'Orders with tracking info that were paid with PayPal and exported', 'ast-pro' ); ?></option>				
+			</select>
+		<?php
+		}
+	}
+
+	/**
+	 * Process bulk filter action for Paypal Export orders
+	 *
+	 * @since 3.0.0
+	 * @param array $vars query vars without filtering
+	 * @return array $vars query vars with (maybe) filtering
+	 */
+	public function filter_orders_by_paypal_tracking_query( $vars ) {
+		global $typenow;		
+		if ( 'shop_order' === $typenow && isset( $_GET['_shop_order_paypal_tracking'] ) && 'paypal_not_exported' == $_GET['_shop_order_paypal_tracking'] ) {
+			
+			$payment_method = array();
+			$ptaa_payment_methods = get_option( 'ptaa_payment_methods', array() );
+			foreach ( $ptaa_payment_methods as $method => $value ) {
+				if ( 1 == $value ) {
+					$payment_method[] = $method;
+				}
+			}
+			
+			$vars['meta_query'][] = array(
+				'key'       => '_payment_method',
+				'value'     => $payment_method,
+				'compare'   => 'IN'
+			);
+
+			$vars['meta_query'][] = array(
+				'key'       => '_wc_ast_tracking_added_to_paypal',				
+				'compare'   => 'NOT EXISTS'
+			);
+
+			$vars['meta_query'][] = array(
+				'key'       => '_wc_shipment_tracking_items',				
+				'compare'   => 'EXISTS'
+			);			
+		}
+
+		if ( 'shop_order' === $typenow && isset( $_GET['_shop_order_paypal_tracking'] ) && 'paypal_exported' == $_GET['_shop_order_paypal_tracking'] ) {
+			
+			$payment_method = array();
+			$ptaa_payment_methods = get_option( 'ptaa_payment_methods', array() );
+			foreach ( $ptaa_payment_methods as $method => $value ) {
+				if ( 1 == $value ) {
+					$payment_method[] = $method;
+				}
+			}
+			
+			$vars['meta_query'][] = array(
+				'key'       => '_payment_method',
+				'value'     => $payment_method,
+				'compare'   => 'IN'
+			);
+
+			$vars['meta_query'][] = array(
+				'key'       => '_wc_ast_tracking_added_to_paypal',
+				'value'     => 1,				
+				'compare'   => 'LIKE'
+			);
+
+			$vars['meta_query'][] = array(
+				'key'       => '_wc_shipment_tracking_items',				
+				'compare'   => 'EXISTS'
+			);			
+		}
+		return $vars;
+	}
+
+	public function filter_listtable_orders_by_paypal_tracking_query( $args ) {
+			
+		if ( isset( $_GET['_shop_order_paypal_tracking'] ) && 'paypal_not_exported' == $_GET['_shop_order_paypal_tracking'] ) {
+			
+			$payment_method = array();
+			$ptaa_payment_methods = get_option( 'ptaa_payment_methods', array() );
+			foreach ( $ptaa_payment_methods as $method => $value ) {
+				if ( 1 == $value ) {
+					$payment_method[] = $method;
+				}
+			}
+			
+			$args['meta_query'][] = array(
+				'key'       => '_payment_method',
+				'value'     => $payment_method,
+				'compare'   => 'IN'
+			);
+
+			$args['meta_query'][] = array(
+				'key'       => '_wc_ast_tracking_added_to_paypal',				
+				'compare'   => 'NOT EXISTS'
+			);
+
+			$args['meta_query'][] = array(
+				'key'       => '_wc_shipment_tracking_items',				
+				'compare'   => 'EXISTS'
+			);			
+		}
+
+		if ( isset( $_GET['_shop_order_paypal_tracking'] ) && 'paypal_exported' == $_GET['_shop_order_paypal_tracking'] ) {
+			
+			$payment_method = array();
+			$ptaa_payment_methods = get_option( 'ptaa_payment_methods', array() );
+			foreach ( $ptaa_payment_methods as $method => $value ) {
+				if ( 1 == $value ) {
+					$payment_method[] = $method;
+				}
+			}
+			
+			$args['meta_query'][] = array(
+				'key'       => '_payment_method',
+				'value'     => $payment_method,
+				'compare'   => 'IN'
+			);
+
+			$args['meta_query'][] = array(
+				'key'       => '_wc_ast_tracking_added_to_paypal',
+				'value'     => 1,				
+				'compare'   => 'LIKE'
+			);
+
+			$args['meta_query'][] = array(
+				'key'       => '_wc_shipment_tracking_items',				
+				'compare'   => 'EXISTS'
+			);			
+		}
+		return $args;
+	}
+
 	/*
 	 * Return Paypal API URL
 	*/

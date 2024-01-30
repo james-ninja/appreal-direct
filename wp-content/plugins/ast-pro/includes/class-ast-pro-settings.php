@@ -61,8 +61,10 @@ class AST_PRO_Settings {
 		//rename order status +  rename bulk action + rename filter
 		add_filter( 'wc_order_statuses', array( $this, 'wc_renaming_order_status' ) );		
 		add_filter( 'woocommerce_register_shop_order_post_statuses', array( $this, 'filter_woocommerce_register_shop_order_post_statuses' ), 10, 1 );
+		
 		add_filter( 'bulk_actions-edit-shop_order', array( $this, 'modify_bulk_actions' ), 50, 1 );
-				
+		add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'modify_bulk_actions' ), 50, 1 );
+
 		add_action( 'woocommerce_update_options_email_customer_partial_shipped_order', array( $this, 'save_partial_shipped_email' ), 100, 1 ); 		
 		
 		$wc_ast_status_delivered = get_option( 'wc_ast_status_delivered', 0);
@@ -77,6 +79,7 @@ class AST_PRO_Settings {
 			add_filter( 'woocommerce_order_is_paid_statuses', array( $this, 'delivered_woocommerce_order_is_paid_statuses' ) );
 			//add bulk action
 			add_filter( 'bulk_actions-edit-shop_order', array( $this, 'add_bulk_actions'), 50, 1 );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'add_bulk_actions'), 50, 1 );
 			//add reorder button
 			add_filter( 'woocommerce_valid_order_statuses_for_order_again', array( $this, 'add_reorder_button_delivered'), 50, 1 );
 			//add button in preview
@@ -99,6 +102,7 @@ class AST_PRO_Settings {
 			add_filter('woocommerce_order_is_download_permitted', array( $this, 'add_updated_tracking_to_download_permission' ), 10, 2);
 			//add bulk action
 			add_filter( 'bulk_actions-edit-shop_order', array( $this, 'add_bulk_actions_updated_tracking' ), 50, 1 );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'add_bulk_actions_updated_tracking'), 50, 1 );
 			//add reorder button
 			add_filter( 'woocommerce_valid_order_statuses_for_order_again', array( $this, 'add_reorder_button_updated_tracking' ), 50, 1 );
 			add_filter( 'wcast_order_status_email_type', array( $this, 'wcast_order_status_email_type' ), 50, 1 );
@@ -118,6 +122,7 @@ class AST_PRO_Settings {
 			add_filter('woocommerce_order_is_download_permitted', array( $this, 'add_partial_shipped_to_download_permission' ), 10, 2);
 			//add bulk action
 			add_filter( 'bulk_actions-edit-shop_order', array( $this, 'add_bulk_actions_partial_shipped' ), 50, 1 );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'add_bulk_actions_partial_shipped'), 50, 1 );
 			//add reorder button
 			add_filter( 'woocommerce_valid_order_statuses_for_order_again', array( $this, 'add_reorder_button_partial_shipped' ), 50, 1 );
 		}
@@ -138,12 +143,12 @@ class AST_PRO_Settings {
 			add_filter( 'woocommerce_order_is_download_permitted', array( $this, 'add_shipped_to_download_permission' ), 10, 2 );
 			//add bulk action
 			add_filter( 'bulk_actions-edit-shop_order', array( $this, 'add_bulk_actions_shipped'), 50, 1 );
+			add_filter( 'bulk_actions-woocommerce_page_wc-orders', array( $this, 'add_bulk_actions_shipped'), 50, 1 );
 			//add reorder button
 			add_filter( 'woocommerce_valid_order_statuses_for_order_again', array( $this, 'add_reorder_button_shipped'), 50, 1 );
-		}		
-		
-		// Hook for add admin body class in settings page
-		add_filter( 'admin_body_class', array( $this, 'shipment_tracking_admin_body_class' ) );
+			//add actions in column
+			add_filter( 'woocommerce_admin_order_actions', array( $this, 'add_shipped_order_status_actions_button'), 100, 2 );
+		}						
 		
 		// Ajax hook for open inline tracking form
 		add_action( 'wp_ajax_ast_open_inline_tracking_form', array( $this, 'ast_open_inline_tracking_form_fun' ) );		
@@ -155,15 +160,46 @@ class AST_PRO_Settings {
 
 		// add bulk order filter for exported / non-exported orders
 		add_action( 'restrict_manage_posts', array( $this, 'filter_orders_by_shipping_provider'), 20 );	
+		add_action( 'woocommerce_order_list_table_restrict_manage_orders', array( $this, 'filter_listtable_orders_by_shipping_provider'), 10, 2 );	
+		
 		add_filter( 'request', array( $this, 'filter_orders_by_shipping_provider_query' ) );
+		add_filter( 'woocommerce_shop_order_list_table_prepare_items_query_args', array( $this, 'filter_listtable_orders_by_shipping_provider_query' ) );
+		
 		
 		// add bulk order tracking number filter for exported / non-exported orders			
 		add_filter( 'woocommerce_shop_order_search_fields', array( $this, 'filter_orders_by_tracking_number_query' ) );
 		
 		add_filter( 'cron_schedules', array( $this, 'add_cron_interval') );
 
-		add_action( 'update_order_status_after_adding_tracking', array( $this, 'update_order_status_after_adding_tracking'), 10, 2 );			
-	}			
+		add_action( 'update_order_status_after_adding_tracking', array( $this, 'update_order_status_after_adding_tracking'), 10, 2 );
+		
+		$wc_ast_enable_auto_detection = get_option( 'wc_ast_enable_auto_detection', 0 );
+		if ( 1 == $wc_ast_enable_auto_detection ) {
+			add_action( 'ast_tracking_form_end_meta_box', array( $this, 'autodetector_include_js_meta_box' ), 1, 1 );
+			add_filter( 'woocommerce_admin_order_actions', array( $this, 'autodetector_include_js_orders_page'), 100, 2 );		
+		}
+
+		$wc_ast_status_partial_shipped = get_option( 'wc_ast_status_partial_shipped', 1 );		
+		if ( $wc_ast_status_partial_shipped ) {
+			add_action( 'woocommerce_order_status_partial-shipped', array( $this, 'email_trigger_partial_shipped' ), 10, 2 );			
+		}
+	
+		$wc_ast_status_updated_tracking = get_option( 'wc_ast_status_updated_tracking' );		
+		if ( $wc_ast_status_updated_tracking ) {
+			add_action( 'woocommerce_order_status_updated-tracking', array( $this, 'email_trigger_updated_tracking' ), 10, 2 );	
+		}	
+		
+		$wc_ast_status_shipped = get_option( 'wc_ast_status_new_shipped' );
+		if ( 1 == $wc_ast_status_shipped ) {
+			add_action( 'woocommerce_order_status_shipped', array( $this, 'email_trigger_shipped' ), 10, 2 );
+		}
+
+		add_filter( 'mark_order_as_fields_data', array( $this, 'mark_order_as_fields_data' ) );
+
+		add_filter( 'ast_formated_order_id', array( $this, 'ast_get_formated_order_id' ) );
+		
+		add_action( 'admin_footer', array( $this, 'footer_function'), 1 );
+	}		
 	
 	/** 
 	* Register new status : Delivered
@@ -219,7 +255,8 @@ class AST_PRO_Settings {
 	*/
 	public function add_bulk_actions( $bulk_actions ) {
 		$lable = wc_get_order_status_name( 'delivered' );
-		$bulk_actions['mark_delivered'] = __( 'Change status to ' . $lable . '', 'ast-pro' );	
+		/* translators: %s: search order status label */
+		$bulk_actions['mark_delivered'] = sprintf( __( 'Change status to %s', 'ast-pro' ), $lable );
 		return $bulk_actions;		
 	}
 	
@@ -287,6 +324,32 @@ class AST_PRO_Settings {
 		
 		return $actions;
 	}
+
+	/*
+	* Add action button in order list to change order status from completed to delivered
+	*/
+	public function add_shipped_order_status_actions_button( $actions, $order ) {
+		
+		$wc_ast_status_new_shipped = get_option( 'wc_ast_status_new_shipped' );
+		
+		if ( $wc_ast_status_new_shipped ) {
+			if ( $order->has_status( array( 'processing' ) ) ) {
+				
+				// Get Order ID (compatibility all WC versions)
+				$order_id = method_exists( $order, 'get_id' ) ? $order->get_id() : $order->id;
+				
+				// Set the action button
+				$actions['delivered'] = array(
+					'url'       => wp_nonce_url( admin_url( 'admin-ajax.php?action=woocommerce_mark_order_status&status=shipped&order_id=' . $order_id ), 'woocommerce-mark-order-status' ),
+					'name'      => __( 'Mark as Shipped', 'ast-pro' ),
+					'icon' => '<i class="fa fa-truck">&nbsp;</i>',
+					'action'    => 'shipped_icon', // keep "view" class for a clean button CSS
+				);
+			}	
+		}
+		
+		return $actions;
+	}	
 	
 	/** 
 	 * Register new status : Updated Tracking
@@ -393,7 +456,7 @@ class AST_PRO_Settings {
 	}
 
 	/*
-	* Give download permission to partial shipped order status
+	* Give download permission to Partially Shipped order status
 	*/
 	public function add_partial_shipped_to_download_permission( $data, $order ) {
 		if ( $order->has_status( 'partial-shipped' ) ) { 
@@ -408,7 +471,8 @@ class AST_PRO_Settings {
 	*/
 	public function add_bulk_actions_updated_tracking( $bulk_actions ) {
 		$lable = wc_get_order_status_name( 'updated-tracking' );
-		$bulk_actions['mark_updated-tracking'] = __( 'Change status to ' . $lable . '', 'ast-pro' );
+		/* translators: %s: search order status label */
+		$bulk_actions['mark_updated-tracking'] = sprintf( __( 'Change status to %s', 'ast-pro' ), $lable );
 		return $bulk_actions;		
 	}
 
@@ -418,12 +482,13 @@ class AST_PRO_Settings {
 	*/
 	public function add_bulk_actions_partial_shipped( $bulk_actions ) {
 		$lable = wc_get_order_status_name( 'partial-shipped' );
-		$bulk_actions['mark_partial-shipped'] = __( 'Change status to ' . $lable . '', 'ast-pro' );
+		/* translators: %s: search order status label */
+		$bulk_actions['mark_partial-shipped'] = sprintf( __( 'Change status to %s', 'ast-pro' ), $lable );
 		return $bulk_actions;		
 	}
 
 	/*
-	* add order again button for partial shipped order status	
+	* add order again button for Partially Shipped order status	
 	*/
 	public function add_reorder_button_partial_shipped( $statuses ) {
 		$statuses[] = 'partial-shipped';
@@ -512,7 +577,8 @@ class AST_PRO_Settings {
 	*/
 	public function add_bulk_actions_shipped( $bulk_actions ) {
 		$lable = wc_get_order_status_name( 'shipped' );
-		$bulk_actions['mark_shipped'] = __( 'Change status to ' . $lable . '', 'ast-pro' );
+		/* translators: %s: search order status label */
+		$bulk_actions['mark_shipped'] = sprintf( __( 'Change status to %s', 'ast-pro' ), $lable );
 		return $bulk_actions;		
 	}	
 	
@@ -565,8 +631,7 @@ class AST_PRO_Settings {
 	/*
 	* rename bulk action
 	*/
-	public function modify_bulk_actions( $bulk_actions ) {
-		
+	public function modify_bulk_actions( $bulk_actions ) {		
 		$enable = get_option( 'wc_ast_status_shipped', 1 );
 		if ( false == $enable ) {
 			return $bulk_actions;
@@ -577,17 +642,6 @@ class AST_PRO_Settings {
 		}
 		return $bulk_actions;
 	}		
-	
-	/*
-	* Add class in admin settings page
-	*/
-	public function shipment_tracking_admin_body_class( $classes ) {
-		$page = ( isset( $_REQUEST['page'] ) ? wc_clean( $_REQUEST['page'] ) : '' );
-		if ( 'woocommerce-advanced-shipment-tracking' == $page || 'ast-csv-import' == $page || 'ast-license' == $page || 'fulfillment-dashboard' == $page || 'vendor-fulfillment-dashboard' == $page || 'ast-trackship' == $page ) {
-			$classes .= ' shipment_tracking_admin_settings';
-		}
-		return $classes;
-	}
 	
 	public function ast_open_inline_tracking_form_fun() {
 		
@@ -604,13 +658,13 @@ class AST_PRO_Settings {
 		global $wpdb;
 		$WC_Countries = new WC_Countries();
 		$countries = $WC_Countries->get_countries();
-		$shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table" );
-		$shippment_countries = $wpdb->get_results( "SELECT shipping_country FROM $this->table WHERE display_in_order = 1 GROUP BY shipping_country" );				
+		$shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s', $this->table ) );
+		$shippment_countries = $wpdb->get_results( $wpdb->prepare( 'SELECT shipping_country FROM %1s WHERE display_in_order = 1 GROUP BY shipping_country', $this->table ) );
 		
 		$default_provider = get_option( 'wc_ast_default_provider' );
 
 		foreach ( $shippment_providers as $provider ) {
-			$provider_array[ sanitize_title( $provider->provider_name ) ] = urlencode( $provider->provider_url );
+			$provider_array[ $provider->ts_slug ] = urlencode( $provider->provider_url );
 		}
 				
 		ob_start();
@@ -618,7 +672,7 @@ class AST_PRO_Settings {
 		<div id="" class="trackingpopup_wrapper add_tracking_popup" style="display:none;">
 			<div class="trackingpopup_row">
 				<div class="popup_header">
-					<h3 class="popup_title"><?php esc_html_e( 'Add Tracking - order	', 'ast-pro'); ?> - #<?php esc_html_e( $order_number ); ?></h2>					
+					<h3 class="popup_title"><?php esc_html_e( 'Add Tracking - order	', 'ast-pro'); ?> - #<?php esc_html_e( $order_number ); ?></h3>					
 					<span class="dashicons dashicons-no-alt popup_close_icon"></span>
 				</div>
 				<div class="popup_body">
@@ -645,7 +699,7 @@ class AST_PRO_Settings {
 									echo '<optgroup label="' . esc_html( $country_name ) . '">';
 									
 									$country = $s_c->shipping_country;				
-									$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM $this->table WHERE shipping_country = %s AND display_in_order = 1", $country ) );
+									$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE shipping_country = %s AND display_in_order = 1', $this->table, $country ) );
 									
 									foreach ( $shippment_providers_by_country as $providers ) {
 										$selected = ( esc_attr( $providers->id ) == $default_provider ) ? 'selected' : '';
@@ -684,12 +738,13 @@ class AST_PRO_Settings {
 		<script>
 			jQuery( 'p.custom_tracking_link_field, p.custom_tracking_provider_field ').hide();
 
-			jQuery( 'input#tracking_number, #tracking_provider' ).change( function() {
+			jQuery( '#add_tracking_number_form input#tracking_number, #add_tracking_number_form #tracking_provider' ).change( function() {
 
-				var tracking  = jQuery( 'input#tracking_number' ).val();
-				var provider  = jQuery( '#tracking_provider' ).val();
+				var tracking  = jQuery( '#add_tracking_number_form input#tracking_number' ).val();
+				var provider  = jQuery( '#add_tracking_number_form #tracking_provider' ).val();
 				var providers = jQuery.parseJSON( '<?php echo json_encode( $provider_array ); ?>' );				
-
+				//console.log(providers);
+				//console.log(provider);	
 				var link = '';
 
 				if ( providers[ provider ] ) {
@@ -715,8 +770,8 @@ class AST_PRO_Settings {
 		</script>
 		<?php			
 		$html = ob_get_clean();
-		echo $html;
-		exit;	
+		$json['html'] = $html;
+		wp_send_json_success( $json );
 	}	
 	
 	/**
@@ -787,6 +842,8 @@ class AST_PRO_Settings {
 		$wc_ast_status_shipped = get_option( 'wc_ast_status_shipped', 1 );
 		if ( $wc_ast_status_shipped ) {
 			$actions['complete']['name'] = __( 'Mark as Shipped', 'ast-pro' );
+			$actions['complete']['url'] = wp_nonce_url( admin_url( 'admin-ajax.php?action=woocommerce_mark_order_status&status=completed&order_id=' . $order->get_id() ), 'woocommerce-mark-order-status' );
+			$actions['complete']['action'] = 'complete';				
 		}
 		
 		return $actions;
@@ -818,9 +875,8 @@ class AST_PRO_Settings {
 	 * @since 2.4
 	 */
 	public function filter_orders_by_shipping_provider() {
-		global $typenow, $wpdb;
-		$default_shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table ORDER BY shipping_default ASC, display_in_order DESC, trackship_supported DESC, id ASC" );
-		
+		global $typenow, $wpdb;		
+		$default_shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s ORDER BY shipping_default ASC, display_in_order DESC, trackship_supported DESC, id ASC', $this->table ) );		
 		if ( 'shop_order' === $typenow ) {
 			?>
 			<select name="_shop_order_shipping_provider" id="dropdown_shop_order_shipping_provider">
@@ -833,7 +889,24 @@ class AST_PRO_Settings {
 			</select>
 		<?php
 		}
-	}	
+	}
+	
+	public function filter_listtable_orders_by_shipping_provider( $order_type, $which ) {
+		global $wpdb;		
+		$default_shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s ORDER BY shipping_default ASC, display_in_order DESC, trackship_supported DESC, id ASC', $this->table ) );		
+		if ( 'shop_order' === $order_type ) {
+			?>
+		<select name="_shop_order_shipping_provider" id="dropdown_shop_order_shipping_provider">
+			<option value=""><?php esc_html_e( 'Filter by shipping provider', 'ast-pro' ); ?></option>
+			<?php foreach ( $default_shippment_providers as $provider ) : ?>
+				<option value="<?php echo esc_attr( $provider->ts_slug ); ?>" <?php echo esc_attr( isset( $_GET['_shop_order_shipping_provider'] ) ? selected( $provider->ts_slug, wc_clean( $_GET['_shop_order_shipping_provider'] ), false ) : '' ); ?>>
+					<?php printf( '%1$s', esc_html( $provider->provider_name ) ); ?>
+				</option>
+			<?php endforeach; ?>
+		</select>
+		<?php
+		}
+	}
 	
 	/**
 	 * Process bulk filter action for shipment status orders
@@ -854,6 +927,18 @@ class AST_PRO_Settings {
 
 		return $vars;
 	}
+
+	public function filter_listtable_orders_by_shipping_provider_query( $args ) {
+		if ( isset( $_GET['_shop_order_shipping_provider'] ) && '' != $_GET['_shop_order_shipping_provider'] ) {
+			$args['meta_query'][] = array(
+				'key'       => '_wc_shipment_tracking_items',
+				'value'     => wc_clean( $_GET['_shop_order_shipping_provider'] ),
+				'compare'   => 'LIKE'
+			);						
+		}
+		return $args;
+	}
+	
 
 	/**
 	 * Process bulk filter action for shipment status orders
@@ -917,10 +1002,12 @@ class AST_PRO_Settings {
 	public function update_order_status_after_adding_tracking( $status_shipped, $order ) {
 		
 		$order_id = $order->get_id();				
-		
+		$order_statuses = wc_get_order_statuses();
+
 		if ( '' == $status_shipped ) {
 			if ( 'completed' == $order->get_status() || 'shipped' == $order->get_status() ) {								
-				do_action( 'send_order_to_trackship', $order_id );	
+				do_action( 'send_order_to_trackship', $order_id );
+				do_action( 'export_order_to_paypal', $order_id );	
 			}
 		}
 		
@@ -928,18 +1015,21 @@ class AST_PRO_Settings {
 		
 			$wc_ast_status_new_shipped = get_option( 'wc_ast_status_new_shipped' );			
 			
-			if ( $wc_ast_status_new_shipped ) {
+			if ( $wc_ast_status_new_shipped && array_key_exists( 'wc-shipped', $order_statuses ) ) {			
 				
 				if ( 'shipped' == $order->get_status() ) {
 					WC()->mailer()->emails['WC_Email_Customer_Shipped_Order']->trigger( $order_id, $order );	
-					do_action( 'send_order_to_trackship', $order_id );	
+					do_action( 'send_order_to_trackship', $order_id );
+					do_action( 'export_order_to_paypal', $order_id );	
 				} else {
 					$order->update_status( 'shipped' );	
 				}				
 							
 			} else {
-				if ( 'completed' == $order->get_status() ) {								
+				if ( 'completed' == $order->get_status() ) {
+					WC()->mailer()->emails['WC_Email_Customer_Completed_Order']->trigger( $order_id, $order );								
 					do_action( 'send_order_to_trackship', $order_id );	
+					do_action( 'export_order_to_paypal', $order_id );
 				} else {
 					$order->update_status( 'completed' );
 				}
@@ -957,6 +1047,7 @@ class AST_PRO_Settings {
 				if ( 'partial-shipped' == $previous_order_status ) {								
 					WC()->mailer()->emails['WC_Email_Customer_Partial_Shipped_Order']->trigger( $order_id, $order );	
 					do_action( 'send_order_to_trackship', $order_id );	
+					do_action( 'export_order_to_paypal', $order_id );
 				} else {
 					$order->update_status('partial-shipped');
 				}												
@@ -979,4 +1070,174 @@ class AST_PRO_Settings {
 			}
 		}	
 	}	
+
+	/**	 
+	 * Function for include css and js
+	 */
+	public function autodetector_include_js_meta_box() {
+		global $wpdb;
+		$shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE display_in_order = 1', $this->table ) );
+		foreach ( $shippment_providers as $provider ) {
+			$provider_array[ $provider->ts_slug ] = urlencode( $provider->provider_url );
+		}
+		
+		wp_enqueue_script( 'ast_pro_autodetector', ast_pro()->plugin_dir_url() . 'assets/js/autodetector.js' , array( 'jquery', ), ast_pro()->version, true );
+		wp_localize_script(
+			'ast_pro_autodetector',
+			'autodetector_orders_params',
+			array(
+				'provider_array' => $provider_array,
+			)
+		);
+	}
+	
+	/**	 
+	 * Function for include js on orders page
+	 */
+	public function autodetector_include_js_orders_page( $actions, $order ) {
+		global $wpdb;
+		$shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE display_in_order = 1', $this->table ) );
+		foreach ( $shippment_providers as $provider ) {
+			$provider_array[ $provider->ts_slug ] = urlencode( $provider->provider_url );
+		}
+		wp_enqueue_script( 'ast_pro_autodetector_orders', ast_pro()->plugin_dir_url() . 'assets/js/autodetector.js' , array( 'jquery'), ast_pro()->version, true );	
+		wp_localize_script(
+			'ast_pro_autodetector_orders',
+			'autodetector_orders_params',
+			array(
+				'provider_array' => $provider_array,
+			)
+		);		
+		return $actions;
+	}
+
+	/**
+	 * Send email when order status change to 'Partially Shipped'	 
+	*/
+	public function email_trigger_partial_shipped( $order_id, $order = false ) {		
+		WC()->mailer()->emails['WC_Email_Customer_Partial_Shipped_Order']->trigger( $order_id, $order );
+	}	
+	
+	/**
+	 * Send email when order status change to 'Updated Tracking'	 
+	*/
+	public function email_trigger_updated_tracking( $order_id, $order = false ) {		
+		WC()->mailer()->emails['WC_Email_Customer_Updated_Tracking_Order']->trigger( $order_id, $order );
+	}
+	
+	/**
+	 * Send email when order status change to "Shipped"
+	 *
+	*/
+	public function email_trigger_shipped( $order_id, $order = false ) {
+		WC()->mailer()->emails[ 'WC_Email_Customer_Shipped_Order' ]->trigger( $order_id, $order );
+	}
+
+	/*
+	* Return order status array for mark order as fields
+	*/
+	public function mark_order_as_fields_data( $order_status_array ) {
+		
+		$wc_ast_status_new_shipped = get_option( 'wc_ast_status_new_shipped' );
+		
+		if ( !$wc_ast_status_new_shipped ) {
+			return $order_status_array;
+		}	
+		
+		$shipped_order_status = array(
+			'change_order_to_custom_shipped' => array(					
+				'name'		=> 'change_order_to_shipped',
+				'class'		=> 'mark_shipped_checkbox',
+				'label'		=> __( 'Shipped', 'ast-pro'),
+				'checked'	=> true,
+				'show'		=> ( 1 == $wc_ast_status_new_shipped ) ? true : false,
+			),			
+		);
+		unset( $order_status_array['change_order_to_shipped'] );
+		$status_array = array_merge( $shipped_order_status, $order_status_array );
+		return $status_array;
+	}
+
+	/*
+	* Return formatted order id from custom order number
+	*/
+	public function ast_get_formated_order_id( $order_id ) {
+		
+		// Compatibilty code with Custom Order Numbers for WooCommerce Pro by Tyche Softwares
+		if ( class_exists( 'Alg_WC_Custom_Order_Numbers_Core' ) ) {
+			$offset     = 0;
+			$block_size = 512;
+			while ( true ) {
+				$args = array(
+					'post_type'      => 'shop_order',
+					'post_status'    => 'any',
+					'posts_per_page' => $block_size,
+					'orderby'        => 'date',
+					'order'          => 'DESC',
+					'offset'         => $offset,
+					'fields'         => 'ids',
+				);
+				
+				$loop = new WP_Query( $args );
+				
+				if ( ! $loop->have_posts() ) {
+					break;
+				}
+				
+				foreach ( $loop->posts as $new_order_id ) {
+					$_order = wc_get_order( $new_order_id );
+					$Alg_WC = new Alg_WC_Custom_Order_Numbers_Core();
+					$_order_number = $Alg_WC->display_order_number( $new_order_id, $_order );
+					if ( $_order_number === $order_id ) {
+						$order_id = $new_order_id;
+						//echo $order_id;exit;
+						break;
+					}
+				}
+				$offset += $block_size;					
+			}
+		}
+		
+		return $order_id;
+	}
+
+	/*
+	* change style of order label
+	*/	
+	public function footer_function() {
+		if ( !is_plugin_active( 'woocommerce-order-status-manager/woocommerce-order-status-manager.php' ) ) {
+			
+			$bg_color = get_option( 'wc_ast_status_shipped_label_color', '#03a9f4' );
+			$color = get_option( 'wc_ast_status_shipped_label_font_color', '#fff' );
+			
+			$delivered_bg_color = get_option( 'wc_ast_status_label_color', '#59c889' );
+			$delivered_color = get_option( 'wc_ast_status_label_font_color', '#fff' );						
+			
+			$ps_bg_color = get_option( 'wc_ast_status_partial_shipped_label_color', '#1e73be' );
+			$ps_color = get_option( 'wc_ast_status_partial_shipped_label_font_color', '#fff' );
+			
+			$ut_bg_color = get_option( 'wc_ast_status_updated_tracking_label_color', '#23a2dd' );
+			$ut_color = get_option( 'wc_ast_status_updated_tracking_label_font_color', '#fff' );
+			?>
+			<style>
+			.order-status.status-shipped,.order-status-table .order-label.wc-shipped{
+				background: <?php echo esc_html( $bg_color ); ?>;
+				color: <?php echo esc_html( $color ); ?>;
+			}	
+			.order-status.status-delivered,.order-status-table .order-label.wc-delivered{
+				background: <?php echo esc_html( $delivered_bg_color ); ?>;
+				color: <?php echo esc_html( $delivered_color ); ?>;
+			}					
+			.order-status.status-partial-shipped,.order-status-table .order-label.wc-partially-shipped{
+				background: <?php echo esc_html( $ps_bg_color ); ?>;
+				color: <?php echo esc_html( $ps_color ); ?>;
+			}
+			.order-status.status-updated-tracking,.order-status-table .order-label.wc-updated-tracking{
+				background: <?php echo esc_html( $ut_bg_color ); ?>;
+				color: <?php echo esc_html( $ut_color ); ?>;
+			}	
+			</style>
+			<?php
+		}		
+	}
 }

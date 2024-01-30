@@ -1,7 +1,10 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}		
+}	
+
+use Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController;
+
 class AST_Pro_Actions {
 
 	/**
@@ -63,7 +66,10 @@ class AST_Pro_Actions {
 		
 		// Custom tracking column in admin orders list.
 		add_filter( 'manage_shop_order_posts_columns', array( $this, 'shop_order_columns' ), 99 );
+		add_filter( 'manage_woocommerce_page_wc-orders_columns', array( $this, 'shop_order_columns' ), 10 );
 		add_action( 'manage_shop_order_posts_custom_column', array( $this, 'render_shop_order_columns' ) );
+		add_action( 'manage_woocommerce_page_wc-orders_custom_column', array( $this, 'render_woocommerce_page_orders_columns' ), 10, 2 );		
+		
 		
 		add_action( 'admin_footer', array( $this, 'custom_validation_js') );
 				
@@ -72,7 +78,7 @@ class AST_Pro_Actions {
 		add_filter( 'get_ast_provider_name', array( $this, 'get_ast_provider_name_callback' ), 10, 2 );
 		add_filter( 'get_shipping_provdider_src', array( $this, 'get_shipping_provdider_src_callback' ), 10, 2 );
 		
-		add_action( 'ast_add_tracking_btn', array( $this, 'ast_add_tracking_btn' ) );	
+		add_action( 'ast_add_tracking_btn', array( $this, 'ast_add_tracking_btn' ) );		
 	}
 
 	/**
@@ -85,7 +91,7 @@ class AST_Pro_Actions {
 
 			global $wpdb;
 			$wpdb->hide_errors();
-			$results = $wpdb->get_results( "SELECT * FROM {$this->table}" );
+			$results = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s', $this->table ) );
 			
 			if ( ! empty( $results ) ) {
 				
@@ -94,6 +100,7 @@ class AST_Pro_Actions {
 					$shippment_providers[ $row->ts_slug ] = array(
 						'provider_name'=> $provider_name,
 						'provider_url' => $row->provider_url,
+						'custom_tracking_url' => $row->custom_tracking_url,
 						'trackship_supported' => $row->trackship_supported,						
 					);
 				}
@@ -117,16 +124,16 @@ class AST_Pro_Actions {
 			$WC_Countries = new WC_Countries();
 			$wpdb->hide_errors();
 			
-			$shippment_countries = $wpdb->get_results( "SELECT shipping_country FROM {$this->table} WHERE display_in_order = 1 GROUP BY shipping_country" );
+			$shippment_countries = $wpdb->get_results( $wpdb->prepare( 'SELECT shipping_country FROM %1s WHERE display_in_order = 1 GROUP BY shipping_country', $this->table ) );
 			
-			$results = $wpdb->get_results( "SELECT * FROM {$this->table} GROUP BY shipping_country" );
+			$results = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s GROUP BY shipping_country', $this->table ) );
 			
 			
 			foreach ( $shippment_countries as $s_c ) {
 				
 				$country_name = ( 'Global' != $s_c->shipping_country ) ? esc_attr( $WC_Countries->countries[ $s_c->shipping_country ] ) : 'Global';
 				$country = $s_c->shipping_country;
-				$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$this->table} WHERE shipping_country = %s AND display_in_order = 1", $country ) );
+				$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE shipping_country = %s AND display_in_order = 1', $this->table, $country ) );
 								
 				$providers_array = array();
 				$new_provider = array();
@@ -148,14 +155,6 @@ class AST_Pro_Actions {
 	}
 
 	/**
-	 * Load admin styles.
-	 */
-	public function admin_styles() {
-		$plugin_url  = wc_shipment_tracking()->plugin_url;
-		wp_enqueue_style( 'ast_styles', $plugin_url . '/assets/css/admin.css', array(), ast_pro()->version );		
-	}
-
-	/**
 	 * Define shipment tracking column in admin orders list.
 	 *
 	 * @since 1.6.1
@@ -164,7 +163,7 @@ class AST_Pro_Actions {
 	 *
 	 * @return array Altered columns
 	 */
-	public function shop_order_columns( $columns ) {
+	public function shop_order_columns( $columns ) {		
 		$columns['woocommerce-advanced-shipment-tracking'] = __( 'Shipment Tracking', 'ast-pro' );
 		return $columns;
 	}
@@ -181,6 +180,12 @@ class AST_Pro_Actions {
 		if ( 'woocommerce-advanced-shipment-tracking' === $column ) {
 			echo wp_kses_post( $this->get_shipment_tracking_column( $post->ID ) );
 		}		
+	}
+
+	public function render_woocommerce_page_orders_columns( $column_name, $order ) {
+		if ( 'woocommerce-advanced-shipment-tracking' === $column_name ) {
+			echo wp_kses_post( $this->get_shipment_tracking_column( $order->get_id() ) );
+		}
 	}
 
 	/**
@@ -206,7 +211,7 @@ class AST_Pro_Actions {
 				$tracking_provider = isset( $tracking_item['tracking_provider'] ) ? $tracking_item['tracking_provider'] : $tracking_item['custom_tracking_provider'];
 				$tracking_provider = apply_filters( 'convert_provider_name_to_slug', $tracking_provider );
 
-				$results = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $this->table WHERE ts_slug = %s", $tracking_provider ) );
+				$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );
 				
 				$provider_name = apply_filters('get_ast_provider_name', $tracking_provider, $results);
 				
@@ -245,8 +250,13 @@ class AST_Pro_Actions {
 	/**
 	 * Add the meta box for shipment info on the order page
 	 */
-	public function add_meta_box() {			
-		add_meta_box( 'woocommerce-advanced-shipment-tracking', __( 'Shipment Tracking', 'ast-pro' ), array( $this, 'meta_box' ), 'shop_order', 'side', 'high' );
+	public function add_meta_box() {		
+		if ( class_exists( 'Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController' ) ) {
+			$screen = wc_get_container()->get( CustomOrdersTableController::class )->custom_orders_table_usage_is_enabled() ? wc_get_page_screen_id( 'shop-order' ) : 'shop_order';	
+		} else {
+			$screen = 'shop_order';
+		}
+		add_meta_box( 'woocommerce-advanced-shipment-tracking', __( 'Shipment Tracking', 'ast-pro' ), array( $this, 'meta_box' ), $screen, 'side', 'high' );
 	}
 
 	/**
@@ -257,10 +267,11 @@ class AST_Pro_Actions {
 			$order = wc_get_order( $order_id );					
 			global $wpdb;
 			
-			$formatted = $this->get_formatted_tracking_item( $order_id, $item );			
+			$formatted = $this->get_formatted_tracking_item( $order_id, $item );
+					
 			$tracking_provider = isset( $item['tracking_provider'] ) ? $item['tracking_provider'] : $item['custom_tracking_provider'];
 			$tracking_provider = apply_filters( 'convert_provider_name_to_slug', $tracking_provider );
-			$results = $wpdb->get_row( $wpdb->prepare( "SELECT * FROM $this->table WHERE ts_slug = %s", $tracking_provider ) );		
+			$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );		
 			$provider_name = apply_filters( 'get_ast_provider_name', $tracking_provider, $results );
 		?>
 			<div class="tracking-item" id="tracking-item-<?php echo esc_attr( $item['tracking_id'] ); ?>">
@@ -285,7 +296,7 @@ class AST_Pro_Actions {
 				</div>
 				<p class="meta">
 					<?php /* translators: 1: shipping date */ ?>
-					<?php echo esc_html( sprintf( __( 'Shipped on %s', 'ast-pro' ), date_i18n( get_option( 'date_format' ), $item['date_shipped'] ) ) ); ?>
+					<?php echo esc_html( sprintf( __( 'Shipped on %1s', 'ast-pro' ), date_i18n( get_option( 'date_format' ), $item['date_shipped'] ) ) ); ?>
 					<a href="#" class="delete-tracking" rel="<?php echo esc_attr( $item['tracking_id'] ); ?>"><?php esc_html_e( 'Delete', 'woocommerce' ); ?></a>                    
 				</p>
 			</div>
@@ -295,34 +306,35 @@ class AST_Pro_Actions {
 	/**
 	 * Show the meta box for shipment info on the order page
 	 */
-	public function meta_box() {
-		global $post,$wpdb;			
+	public function meta_box( $post_or_order_object ) {
+		global $wpdb;		
 		
-		$order = wc_get_order( $post->ID );
+		$order = ( $post_or_order_object instanceof WP_Post ) ? wc_get_order( $post_or_order_object->ID ) : $post_or_order_object;
+		$order_id = $order->get_id();
+		
+		//$order = wc_get_order( $post->ID );
+		
 		$order_status = $order->get_status();
 		
 		$WC_Countries = new WC_Countries();
 		$countries = $WC_Countries->get_countries();
 		
-		$tracking_items = $this->get_tracking_items( $post->ID );
+		$tracking_items = $this->get_tracking_items( $order_id );
+
+		$shippment_countries = $wpdb->get_results( $wpdb->prepare( 'SELECT shipping_country FROM %1s WHERE display_in_order = 1 GROUP BY shipping_country', $this->table ) );
 		
-		$shippment_countries = $wpdb->get_results( "SELECT shipping_country FROM $this->table WHERE display_in_order = 1 GROUP BY shipping_country" );
-		
-		$shippment_providers = $wpdb->get_results( "SELECT * FROM $this->table" );
+		$shippment_providers = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s', $this->table ) );
 		
 		$default_provider = get_option( 'wc_ast_default_provider' );
-		$wc_ast_default_mark_shipped = 	get_option( 'wc_ast_default_mark_shipped' );
 		$wc_ast_status_partial_shipped = get_option( 'wc_ast_status_partial_shipped', 1 );
 		$value = 1;
 		$cbvalue = '';
 		
-		if ( 1 == $wc_ast_default_mark_shipped ) {
-			if ( $wc_ast_status_partial_shipped ) {
-				$cbvalue = 'change_order_to_shipped';
-			} else {
-				$cbvalue = 1;	
-			}			
-		}		
+		if ( $wc_ast_status_partial_shipped ) {
+			$cbvalue = 'change_order_to_shipped';
+		} else {
+			$cbvalue = 1;	
+		}				
 		
 		$wc_ast_status_shipped = get_option( 'wc_ast_status_shipped', 1 );
 		
@@ -337,12 +349,12 @@ class AST_Pro_Actions {
 		echo '<div id="tracking-items">';
 		if ( count( $tracking_items ) > 0 ) {
 			foreach ( $tracking_items as $tracking_item ) {				
-				$this->display_html_tracking_item_for_meta_box( $post->ID, $tracking_item );
+				$this->display_html_tracking_item_for_meta_box( $order_id, $tracking_item );
 			}
 		}
 		echo '</div>';
 		
-		do_action( 'ast_add_tracking_btn' );
+		do_action( 'ast_add_tracking_btn', $order_id );
 		
 		echo '<div id="advanced-shipment-tracking-form">'; 
 		?>
@@ -351,9 +363,9 @@ class AST_Pro_Actions {
 				<input type="text" class="short" style="" name="tracking_number" id="tracking_number" value="" autocomplete="off"> 
 			</p>
 			<?php
-			echo '<p class="form-field tracking_provider_field"><label for="tracking_provider">' . esc_html( 'Shipping Provider:', 'ast-pro' ) . '</label><br/><select id="tracking_provider" name="tracking_provider" class="chosen_select tracking_provider_dropdown" style="width:100%;">';	
+			echo '<p class="form-field tracking_provider_field"><label for="tracking_provider">' . esc_html__( 'Shipping Provider:', 'ast-pro' ) . '</label><br/><select id="tracking_provider" name="tracking_provider" class="chosen_select tracking_provider_dropdown" style="width:100%;">';	
 			
-			echo '<option value="">' . esc_html( 'Select Provider', 'ast-pro' ) . '</option>';
+			echo '<option value="">' . esc_html__( 'Select Provider', 'ast-pro' ) . '</option>';
 			
 			foreach ( $shippment_countries as $s_c ) {
 				if ( 'Global' != $s_c->shipping_country ) {
@@ -364,7 +376,7 @@ class AST_Pro_Actions {
 				
 				echo '<optgroup label="' . esc_html( $country_name ) . '">';
 				$country = $s_c->shipping_country;				
-				$shippment_providers_by_country = $wpdb->get_results( "SELECT * FROM $this->table WHERE shipping_country = '$country' AND display_in_order = 1" );
+				$shippment_providers_by_country = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM %1s WHERE shipping_country = %s AND display_in_order = 1', $this->table, $country ) );
 				foreach ( $shippment_providers_by_country as $providers ) {
 					$selected = ( esc_attr( $providers->id ) == $default_provider ) ? 'selected' : '';
 					echo '<option value="' . esc_attr( $providers->ts_slug ) . '" ' . esc_html( $selected ) . '>' . esc_html( $providers->provider_name ) . '</option>';
@@ -406,8 +418,8 @@ class AST_Pro_Actions {
 			'value'       => date_i18n( __( 'Y-m-d', 'ast-pro' ), current_time( 'timestamp' ) ),
 		) );	
 		
-		do_action( 'ast_after_tracking_field', $post->ID);	
-		do_action( 'ast_tracking_form_between_form', $post->ID, 'single_order' );
+		do_action( 'ast_after_tracking_field', $order_id );	
+		do_action( 'ast_tracking_form_between_form', $order_id, 'single_order' );
 		
 			if ( 'auto-draft' != $order_status ) {
 				ast_pro()->ast_pro_actions->mark_order_as_fields_html(); 
@@ -424,7 +436,7 @@ class AST_Pro_Actions {
 		$provider_array = array();
 
 			foreach ( $shippment_providers as $provider ) {
-				$provider_array[ sanitize_title( $provider->provider_name ) ] = urlencode( $provider->provider_url );
+				$provider_array[ $provider->ts_slug ] = urlencode( $provider->provider_url );
 			}
 		
 		$js = "
@@ -505,8 +517,6 @@ class AST_Pro_Actions {
 		
 		$wc_ast_status_shipped = get_option( 'wc_ast_status_shipped', 1 );
 		$shipped_label = ( 1 == $wc_ast_status_shipped ) ? __( 'Shipped', 'woo-advanced-shipment-tracking' ) : __( 'Completed', 'woo-advanced-shipment-tracking' );
-		
-		$wc_ast_default_mark_shipped	= get_option( 'wc_ast_default_mark_shipped' );
 		$wc_ast_status_partial_shipped	= get_option( 'wc_ast_status_partial_shipped', 1 );
 		
 		$order_status_array = apply_filters( 'mark_order_as_fields_data' , array(
@@ -514,13 +524,13 @@ class AST_Pro_Actions {
 					'name'		=> 'change_order_to_shipped',
 					'class'		=> 'mark_shipped_checkbox',
 					'label'		=> $shipped_label,
-					'checked'	=> ( 1 == $wc_ast_default_mark_shipped ) ? true : false,
+					'checked'	=> true,
 					'show'		=> true,
 				),
 				'change_order_to_partial_shipped' => array(					
 					'name'		=> 'change_order_to_shipped',
 					'class'		=> 'mark_shipped_checkbox',
-					'label'		=> __( 'Partial Shipped', 'woo-advanced-shipment-tracking'),
+					'label'		=> __( 'Partially Shipped', 'woo-advanced-shipment-tracking'),
 					'checked'	=> false,
 					'show'		=> ( 1 == $wc_ast_status_partial_shipped ) ? true : false		
 				),
@@ -553,9 +563,16 @@ class AST_Pro_Actions {
 	/*
 	* Function for add tracking button in order details page
 	*/
-	public function ast_add_tracking_btn() {
+	public function ast_add_tracking_btn( $order_id ) {
 		echo '<button class="button button-primary btn_ast2 btn_full button-show-tracking-form" type="button">' . esc_html__( 'Add Tracking Info', 'ast-pro' ) . '</button>';
 	}	
+
+	/*
+	* Function for add tracking button in order details page
+	*/
+	public function ast_add_tracking_btn_popup( $order_id ) {
+		echo '<a class="button button-primary btn_ast2 btn_full add_inline_tracking" style="margin-top: 10px;text-align: center;" href="#' . esc_html( $order_id ) . '">' . esc_html__( 'Add Tracking Info', 'ast-pro' ) . '</a>';
+	}
 
 	/**
 	 * Order Tracking Get All Order Items AJAX
@@ -674,7 +691,7 @@ class AST_Pro_Actions {
 		
 		$tracking_provider = isset( $_POST['tracking_provider'] ) ? wc_clean( $_POST['tracking_provider'] ) : '';
 		$tracking_number = isset( $_POST['tracking_number'] ) ? wc_clean( $_POST['tracking_number'] ) : '';
-		$tracking_number = str_replace( ' ', '', $tracking_number );				
+		//$tracking_number = str_replace( ' ', '', $tracking_number );				
 		
 		if ( strlen( $tracking_number ) > 0 && '' != $tracking_provider ) {	
 	
@@ -807,11 +824,25 @@ class AST_Pro_Actions {
 		}
 				
 		if ( file_exists( $local_template ) && is_writable( $local_template ) ) {	
-			wc_get_template( 'myaccount/tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id' => $order_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+			wc_get_template(
+				'myaccount/tracking-info.php', 
+				array(
+					'tracking_items' => $this->get_tracking_items( $order_id, true ),
+					'order_id' => $order_id,
+				)		
+			);
 		} else {
-			wc_get_template( 'myaccount/fluid-tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );	
+			wc_get_template(
+				'myaccount/fluid-tracking-info.php',
+				array(
+					'tracking_items' => $this->get_tracking_items( $order_id, true ),
+					'order_id'=> $order_id,
+				),
+				'woocommerce-advanced-shipment-tracking/',
+				ast_pro()->get_plugin_path() . '/templates/'
+			);
 		}
-	}	
+	}
 	
 	/**
 	* Adds a new column Track to the "My Orders" table in the account.
@@ -843,9 +874,7 @@ class AST_Pro_Actions {
 	public function add_column_my_account_orders_ast_track_column( $actions, $order ) {
 	
 		$order_id = $order->get_id();
-		$tracking_items = $this->get_tracking_items( $order_id, true );	
-		$wc_ast_api_key = get_option( 'wc_ast_api_key' );
-		$use_tracking_page = get_option( 'wc_ast_use_tracking_page' );
+		$tracking_items = $this->get_tracking_items( $order_id, true );			
 		$display_track_in_my_account = get_option( 'display_track_in_my_account', 0 );
 		$open_track_in_new_tab = get_option( 'open_track_in_new_tab', 0 );
 		
@@ -857,7 +886,7 @@ class AST_Pro_Actions {
 			return $actions;
 		}
 		
-		if ( count( $tracking_items ) > 1 && ( !$wc_ast_api_key || !$use_tracking_page ) ) {
+		if ( count( $tracking_items ) > 1 ) {
 			$actions['ast_multi_track'] = array(
 				// adjust URL as needed
 				'url'  => $order->get_view_order_url(),
@@ -902,7 +931,7 @@ class AST_Pro_Actions {
 		
 		$preview = ( isset( $_REQUEST['wcast-tracking-preview'] ) && '1' === $_REQUEST['wcast-tracking-preview'] ) ? true : false;
 		
-		$local_template	= get_stylesheet_directory() . '/woocommerce/emails/tracking-info.php';
+		$local_template	= get_stylesheet_directory() . '/woocommerce/emails/fluid-tracking-info.php';
 		
 		$order = wc_get_order( $order_id );
 		
@@ -923,14 +952,29 @@ class AST_Pro_Actions {
 			);
 						
 			if ( file_exists( $local_template ) && is_writable( $local_template ) ) {	
-				wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $tracking_items, 'order_id'=> 1 ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+				wc_get_template( 'emails/fluid-tracking-info.php', array( 'tracking_items' => $tracking_items, 'order_id'=> 1 ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+				wc_get_template( 
+					'emails/plain/fluid-tracking-info.php', 
+					array( 
+						'tracking_items' => $tracking_items, 
+						'order_id'=> 1,
+					)				
+				);
 			} else {
-				wc_get_template( 'emails/fluid-tracking-info.php', array( 'tracking_items' => $tracking_items, 'order_id'=> 1 ), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );	
+				wc_get_template( 
+					'emails/fluid-tracking-info.php', 
+					array( 
+						'tracking_items' => $tracking_items, 
+						'order_id'=> 1,
+					), 
+					'woocommerce-advanced-shipment-tracking/', 
+					ast_pro()->get_plugin_path() . '/templates/'
+				);	
 			}	
 			
 		} else if ( $order ) {
 			$order_status = $order->get_status();			
-						
+			
 			if ( is_a( $email, 'WC_Email_Customer_Invoice' ) && isset( $wc_ast_unclude_tracking_info['show_in_customer_invoice'] ) && 0 == $wc_ast_unclude_tracking_info['show_in_customer_invoice'] ) {
 				return;
 			}	
@@ -939,7 +983,7 @@ class AST_Pro_Actions {
 				return;
 			}	
 				
-			if ( isset( $wc_ast_unclude_tracking_info[ $order_status ] ) && 0 == $wc_ast_unclude_tracking_info[ $order_status ] && !is_a( $email, 'WC_Email_Customer_Invoice' ) && !is_a( $email, 'WC_Email_Customer_Note' ) ) {
+			if ( isset( $wc_ast_unclude_tracking_info[ $order_status ] ) && 0 == $wc_ast_unclude_tracking_info[ $order_status ] && !is_a( $email, 'WC_Email_Customer_Invoice' ) && !is_a( $email, 'WC_Email_Customer_Note' ) ) {				
 				return;
 			}	
 			
@@ -947,28 +991,56 @@ class AST_Pro_Actions {
 				return;
 			}
 					
-			if ( ( is_a( $email, 'WC_Email_Customer_Partial_Shipped_Order' ) || is_a( $email, 'WC_Email_Customer_Shipped_Order' ) ) && !class_exists( 'Woo_Email_Template_Customizer' ) && ! class_exists( 'WooCommerce_Email_Template_Customizer' ) ) {
+			if ( ( is_a( $email, 'WC_Email_Customer_Partial_Shipped_Order' ) || is_a( $email, 'WC_Email_Customer_Shipped_Order' ) ) && !class_exists( 'Woo_Email_Template_Customizer' ) && !class_exists( 'WooCommerce_Email_Template_Customizer' ) ) {
 				return;
 			}
-			
-			if ( ( is_a( $email, 'WC_Email_Customer_Completed_Order' ) ) && !class_exists( 'Woo_Email_Template_Customizer' ) && ! class_exists( 'WooCommerce_Email_Template_Customizer' ) ) {
+
+			if ( is_a( $email, 'WC_Email_Customer_Completed_Order' ) && 'customer_completed_renewal_order' != $email->id && !class_exists( 'Woo_Email_Template_Customizer' ) && !class_exists( 'WooCommerce_Email_Template_Customizer' ) ) {					
 				return;
 			}
 			
 			$tracking_items = $this->get_tracking_items( $order_id, true );
-			//echo '<pre>';print_r( $tracking_items );echo '</pre>';exit;
+			
 			if ( true === $plain_text ) {
 				
 				if ( file_exists( $local_template ) && is_writable( $local_template ) ) {
-					wc_get_template( 'emails/plain/tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+					wc_get_template( 
+						'emails/plain/fluid-tracking-info.php', 
+						array( 
+							'tracking_items' => $this->get_tracking_items( $order_id, true ), 
+							'order_id'=> $order_id,
+						)					
+					);
 				} else {
-					wc_get_template( 'emails/plain/tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );
+					wc_get_template(
+						'emails/plain/fluid-tracking-info.php',
+						array(
+							'tracking_items' => $this->get_tracking_items( $order_id, true ),
+							'order_id'=> $order_id,
+						),
+						'woocommerce-advanced-shipment-tracking/',
+						ast_pro()->get_plugin_path() . '/templates/'
+					);
 				}					
 			} else {
 				if ( file_exists( $local_template ) && is_writable( $local_template ) ) {
-					wc_get_template( 'emails/tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
+					wc_get_template(
+						'emails/fluid-tracking-info.php',
+						array(
+							'tracking_items' => $this->get_tracking_items( $order_id, true ),
+							'order_id'=> $order_id,
+						)
+					);
 				} else {
-					wc_get_template( 'emails/fluid-tracking-info.php', array( 'tracking_items' => $this->get_tracking_items( $order_id, true ), 'order_id'=> $order_id ), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );
+					wc_get_template(
+						'emails/fluid-tracking-info.php',
+						array(
+							'tracking_items' => $this->get_tracking_items( $order_id, true ),
+							'order_id'=> $order_id,
+						),
+						'woocommerce-advanced-shipment-tracking/',
+						ast_pro()->get_plugin_path() . '/templates/'
+					);
 				}				
 			}
 		}	
@@ -997,33 +1069,27 @@ class AST_Pro_Actions {
 			}		
 		}
 		
-		$shipment_status = get_post_meta( $order_id, 'shipment_status', true );
+		$order = wc_get_order( $order_id );
+
+		$shipment_status = $order->get_meta( 'shipment_status' );
 		
 		$status = isset( $shipment_status[ $shipmet_key ][ 'status' ] ) ? $shipment_status[ $shipmet_key ][ 'status' ] : '';
 		
-		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
-			$postcode = get_post_meta( $order_id, '_shipping_postcode', true );
-		} else {
-			$order    = new WC_Order( $order_id );
-			$postcode = $order->get_shipping_postcode();
-		}
+		$postcode = $order->get_shipping_postcode();
 
 		$formatted['formatted_tracking_provider'] = '';
-		$formatted['formatted_tracking_link']     = '';
-
-		if ( empty( $postcode ) ) {
-			$postcode = get_post_meta( $order_id, '_shipping_postcode', true );
-		}		
+		$formatted['formatted_tracking_link']     = '';				
 		
 		$tracking_provider = isset( $tracking_item['tracking_provider'] ) ? $tracking_item['tracking_provider'] : $tracking_item['custom_tracking_provider'];
 		$tracking_provider = apply_filters( 'convert_provider_name_to_slug', $tracking_provider );
 		$tracking_item['tracking_provider'] = $tracking_provider;
+		$tracking_number = $tracking_item['tracking_number'];
 		
 		$link_format = '';
 					
 		foreach ( $this->get_providers() as $provider => $format ) {
 			if ( $provider  === $tracking_item['tracking_provider'] || $format['provider_name']  === $tracking_item['tracking_provider'] ) {
-				$link_format = $format['provider_url'];
+				$link_format = ( null != $format['custom_tracking_url'] ) ? $format['custom_tracking_url'] : $format['provider_url'] ;
 				$trackship_supported = $format['trackship_supported'];				
 				$formatted['formatted_tracking_provider'] = $format['provider_name'];
 				break;
@@ -1036,7 +1102,7 @@ class AST_Pro_Actions {
 			
 		if ( $link_format ) {
 			$searchVal = array( '%number%', str_replace( ' ', '', '%2 $ s' ) );
-			$tracking_number = str_replace( ' ', '', $tracking_item['tracking_number'] );
+			
 			$replaceVal = array( $tracking_number, urlencode( $postcode ) );
 			$link_format = str_replace( $searchVal, $replaceVal, $link_format );
 			
@@ -1092,61 +1158,21 @@ class AST_Pro_Actions {
 			$formatted['formatted_tracking_link'] = $formatted_tracking_link;
 		}
 		
-		$ts_tracking_page = $this->check_ts_tracking_page_for_tracking_item( $order_id, $tracking_item, $status );			
-		
-		if ( $ts_tracking_page ) {
-			
-			$tracking_page = get_option( 'wc_ast_trackship_page_id' );			
-			$order_key = $order->get_order_key();	
-			
-			if ( 'other' == $tracking_page ) {
-				$trackship_other_page = get_option( 'wc_ast_trackship_other_page' );
-				$ts_tracking_link = add_query_arg( array(
-					'order_id' => $order_id,
-					'order_key' => $order_key,
-				), $trackship_other_page );				
-			} else {
-				$ts_tracking_link = add_query_arg( array(
-					'order_id' => $order_id,
-					'order_key' => $order_key,
-				), get_permalink( $tracking_page ) );					
-			}
-			
-			$formatted['ast_tracking_link'] = $ts_tracking_link;
-		} else {
-			$formatted['ast_tracking_link'] = $formatted_tracking_link;
-		}
+		$trackship_supported = $this->check_provider_trackship_supported( $tracking_provider );
+		$formatted['ast_tracking_link'] = apply_filters( 'ast_tracking_link', $formatted_tracking_link, $tracking_number, $order_id, $trackship_supported );
 		
 		global $wpdb;
-		$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM ' . $this->table . ' WHERE ts_slug = %s', $tracking_item['tracking_provider'] ) );
+		$results = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM %1s WHERE ts_slug = %s', $this->table, $tracking_item['tracking_provider'] ) );
 		$src = ast_pro()->plugin_dir_url() . 'assets/images/icon-default.png';
 		$formatted[ 'tracking_provider_image' ] = apply_filters( 'get_shipping_provdider_src', $src, $results );		
 		return $formatted;
 	}
 	
-	public function check_ts_tracking_page_for_tracking_item( $order_id, $tracking_item, $status ) {
-		$wc_ast_api_key = get_option( 'wc_ast_api_key' );
-		$use_tracking_page = get_option( 'wc_ast_use_tracking_page' );
-		
-		$shipment_status = get_post_meta( $order_id, 'shipment_status', true );
-		if ( empty( $shipment_status ) ) {
-			return false;
-		}		
-		
-		$trackship_supported = 0;
-		
-		foreach ( $this->get_providers() as $provider => $format ) {									
-			if (  $provider  === $tracking_item['tracking_provider'] || $format['provider_name']  == $tracking_item['tracking_provider'] ) {	
-				$trackship_supported = isset( $format['trackship_supported'] ) ? $format['trackship_supported'] : 0; 		
-				break;
-			}
-		}
-		
-		if ( $wc_ast_api_key && $use_tracking_page && 1 == $trackship_supported && 'carrier_unsupported' != $status && function_exists( 'trackship_for_woocommerce' ) ) { 
-			return true;
-		}
-		return false;
-	}
+	public function check_provider_trackship_supported( $tracking_provider ) {
+		global $wpdb;		
+		$trackship_supported = $wpdb->get_var( $wpdb->prepare( 'SELECT trackship_supported FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );
+		return $trackship_supported;
+	}	
 
 	/**
 	 * Deletes a tracking item from post_meta array
@@ -1158,7 +1184,7 @@ class AST_Pro_Actions {
 	 */
 	public function delete_tracking_item( $order_id, $tracking_id ) {
 		$tracking_items = $this->get_tracking_items( $order_id );
-
+		$order = wc_get_order( $order_id );
 		$is_deleted = false;
 
 		if ( count( $tracking_items ) > 0 ) {
@@ -1176,12 +1202,14 @@ class AST_Pro_Actions {
 		$tracking_items = $this->get_tracking_items( $order_id );
 		
 		if ( !$tracking_items ) {
-			delete_post_meta( $order_id, '_wc_shipment_tracking_items' );
+			$order->delete_meta_data( '_wc_shipment_tracking_items' );
+			$order->save();
 		}	
 		
 		return $is_deleted;
 	}
 
+	
 	/*
 	 * Adds a tracking item to the post_meta array
 	 *
@@ -1194,29 +1222,34 @@ class AST_Pro_Actions {
 				
 		$tracking_item = array();
 		
-		$tracking_item['tracking_provider']			= isset( $args['tracking_provider'] ) ? wc_clean( $args['tracking_provider'] ) : '';
-		$tracking_item['custom_tracking_provider']	= isset( $args['custom_tracking_provider'] ) ? wc_clean( $args['custom_tracking_provider'] ) : '';
+		$ast_admin = AST_pro_admin::get_instance();	
+		$tracking_provider_name = ( isset( $args['custom_tracking_provider'] ) && !empty( $args['custom_tracking_provider'] ) ) ? $args['custom_tracking_provider'] : $args['tracking_provider'];
+		$tracking_provider = $ast_admin->get_provider_slug_from_name( $tracking_provider_name );
+
+		$tracking_item['tracking_provider']			= $tracking_provider;
+		//$tracking_item['custom_tracking_provider']	= isset( $args['custom_tracking_provider'] ) ? wc_clean( $args['custom_tracking_provider'] ) : '';
 		$tracking_item['custom_tracking_link']		= isset( $args['custom_tracking_link'] ) ? wc_clean( $args['custom_tracking_link'] ) : '';
 		$tracking_item['tracking_number']			= isset( $args['tracking_number'] ) ? wc_clean( $args['tracking_number'] ) : '';
 		$tracking_item['tracking_product_code']		= isset( $args['tracking_product_code'] ) ? wc_clean( $args['tracking_product_code'] ) : '';				
 		
-		if ( isset( $args['date_shipped'] ) ) {
-			$date = str_replace( '/', '-', $args['date_shipped'] );			
-			$date = date_create( $date );
+		if ( isset( $args['date_shipped'] ) && null != $args['date_shipped'] ) {	
+			if ( strtotime( $args['date_shipped'] ) ) {										
+				if ( isset($args['source']) && 'REST_API' == $args['source'] ) {
+					$wc_ast_api_date_format = get_option( 'wc_ast_api_date_format', 'd-m-Y' );					
+					$date = date_i18n( $wc_ast_api_date_format, strtotime( $args['date_shipped'] ) );				
+				} else {
+					$date = date_i18n( 'd-m-Y', strtotime( $args['date_shipped'] ) );
+				}					
 			
-			if ( isset($args['source']) && 'REST_API' == $args['source'] ) {
-				$wc_ast_api_date_format = get_option( 'wc_ast_api_date_format', 'd-m-Y' );
-				$date = date_format( $date, $wc_ast_api_date_format );					
-			} else {				
-				$date = date_format( $date, 'd-m-Y' );
-			} 						
-		
-			$tracking_item['date_shipped'] = wc_clean( strtotime( $date ) );
+				$tracking_item['date_shipped'] = wc_clean( strtotime( $date ) );
+			}
+		} else {
+			$tracking_item['date_shipped']   = time();
 		}
 		
 		$tracking_item['products_list']	 = isset( $args['products_list'] ) ? wc_clean( $args['products_list'] ) : '';
 		$tracking_item['status_shipped'] = isset( $args['status_shipped'] ) ? wc_clean( $args['status_shipped'] ) : '';
-		$tracking_item['date_shipped']   = !isset( $args['date_shipped'] ) ? time() : $tracking_item['date_shipped'];
+		
 		
 		if ( 0 == (int) $tracking_item['date_shipped'] ) {
 			 $tracking_item['date_shipped'] = time();
@@ -1228,8 +1261,9 @@ class AST_Pro_Actions {
 			$tracking_item['tracking_id'] = md5( "{$tracking_item['tracking_provider']}-{$tracking_item['tracking_number']}" . microtime() );
 		}
 		
-		$tracking_item = apply_filters( 'tracking_item_args', $tracking_item, $args, $order_id );
 		
+		$tracking_item = apply_filters( 'tracking_item_args', $tracking_item, $args, $order_id );
+
 		$tracking_items = $this->get_tracking_items( $order_id );					
 
 		$tracking_items[] = $tracking_item;													
@@ -1344,13 +1378,11 @@ class AST_Pro_Actions {
 	 * @param array $tracking_items List of tracking item
 	 */
 	public function save_tracking_items( $order_id, $tracking_items ) {
-		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
-			update_post_meta( $order_id, '_wc_shipment_tracking_items', $tracking_items );
-		} else {			
-			$order = new WC_Order( $order_id );			
-			$order->update_meta_data( '_wc_shipment_tracking_items', $tracking_items );
-			$order->save_meta_data();
-		}
+		$order = wc_get_order( $order_id );
+		// Always re-index the array
+		$tracking_items = array_values( $tracking_items );			
+		$order->update_meta_data( '_wc_shipment_tracking_items', $tracking_items );
+		$order->save();
 	}
 
 	/**
@@ -1389,15 +1421,11 @@ class AST_Pro_Actions {
 	 */
 	public function get_tracking_items( $order_id, $formatted = false ) {
 		
-		global $wpdb;
-		$order = wc_get_order( $order_id );			
+		$order = wc_get_order( $order_id );
+		
 		if ( $order ) {	
-			if ( version_compare( WC_VERSION, '3.0', '<' ) ) {			
-				$tracking_items = get_post_meta( $order_id, '_wc_shipment_tracking_items', true );
-			} else {
-				$order          = new WC_Order( $order_id );		
-				$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );			
-			}
+			
+			$tracking_items = $order->get_meta( '_wc_shipment_tracking_items', true );	
 			
 			if ( is_array( $tracking_items ) ) {
 				if ( $formatted ) {
@@ -1468,6 +1496,8 @@ class AST_Pro_Actions {
 	* Get formated order id
 	*/
 	public function get_formated_order_id( $order_id ) {
+
+		$original_order_id = $order_id;
 		
 		if ( is_plugin_active( 'custom-order-numbers-for-woocommerce/custom-order-numbers-for-woocommerce.php' ) ) {
 			$alg_wc_custom_order_numbers_enabled = get_option( 'alg_wc_custom_order_numbers_enabled' );
@@ -1642,8 +1672,24 @@ class AST_Pro_Actions {
 				list( $order_id ) = $posts;			
 			}			
 		}
+
+		if ( class_exists( 'S2W_IMPORT_SHOPIFY_TO_WOOCOMMERCE' ) ) {
+			$query_args = array(
+				'numberposts' => 1,
+				'meta_key'    => '_s2w_shopify_order_number',
+				'meta_value'  => $order_id,
+				'post_type'   => 'shop_order',
+				'post_status' => 'any',
+				'fields'      => 'ids',
+			);
+			
+			$posts = get_posts( $query_args );			
+			if ( !empty( $posts ) ) {
+				list( $order_id ) = $posts;			
+			}
+		}
 		
-		return apply_filters( 'ast_formated_order_id', $order_id );
+		return apply_filters( 'ast_formated_order_id', $order_id , $original_order_id );
 	}
 	
 	/*
@@ -1686,65 +1732,5 @@ class AST_Pro_Actions {
 		}	
 				
 		return $value;
-	}
-
-	/*
-	* Return Tracking information template
-	*/
-	public function tracking_info_template( $order_id, $tracking_items, $shipment_status = '' ) {
-		
-		$local_template	= get_stylesheet_directory() . '/woocommerce/emails/tracking-info.php';		
-		
-		if ( file_exists( $local_template ) && is_writable( $local_template ) ) {				
-			return wc_get_template_html( 'emails/tracking-info.php', array( 
-				'tracking_items' => $tracking_items,
-				'order_id' => $order_id,
-				'show_shipment_status' => true,
-				'new_status' => $shipment_status,
-			), 'woocommerce-advanced-shipment-tracking/', get_stylesheet_directory() . '/woocommerce/' );
-		} elseif ( class_exists('ast_pro') ) {
-			return wc_get_template_html( 'emails/fluid-tracking-info.php', array( 
-				'tracking_items' => $tracking_items,
-				'order_id'=> $order_id 
-			), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );
-		} else {
-			return wc_get_template_html( 'emails/tracking-info.php', array( 
-				'tracking_items' => $tracking_items,
-				'order_id' => $order_id,
-				'show_shipment_status' => true,
-				'new_status' => $shipment_status,
-			), 'woocommerce-advanced-shipment-tracking/', ast_pro()->get_plugin_path() . '/templates/' );
-		}		
-	}
-	
-	/*
-	* Return order details template
-	*/
-	public function order_details_template( $order, $hide_shipping_item_price = '' ) {
-		return wc_get_template_html(
-				'emails/wcast-email-order-details.php', array(
-				'order'         => $order,
-				'hide_shipping_item_price' => $hide_shipping_item_price,
-				'sent_to_admin' => false,
-				'plain_text'    => false,
-				'email'         => '',
-			),
-			'woocommerce-advanced-shipment-tracking/', 
-			ast_pro()->get_plugin_path() . '/templates/'
-		);	
-	}
-	
-	/*
-	* Return shipping address template
-	*/
-	public function order_shipping_details_template( $order ) {
-		return wc_get_template_html(
-			'emails/wcast-shipping-email-addresses.php', array(
-				'order'         => $order,
-				'sent_to_admin' => false,
-			),
-			'woocommerce-advanced-shipment-tracking/', 
-			ast_pro()->get_plugin_path() . '/templates/'
-		);
-	}	
+	}		
 }

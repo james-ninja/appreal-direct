@@ -77,9 +77,9 @@ if (!class_exists('CWG_Instock_Premium_Extensions')) {
 								<?php if ('' != $url) { ?>
 									<?php
 									if (1 == $i) {
-										$price_tag = '$20.00';
+										$price_tag = '$40.00';
 									} else {
-										$price_tag = '$5.00';
+										$price_tag = '$10.00';
 									}
 									?>
 									<span class="pricetag"><?php echo do_shortcode($price_tag); ?></span>
@@ -87,9 +87,9 @@ if (!class_exists('CWG_Instock_Premium_Extensions')) {
 
 										<?php
 										if (1 == $i) {
-											$text = 'Unlimited Sites for $20.00';
+											$text = 'Unlimited Sites for $40.00';
 										} else {
-											$text = 'Unlimited Sites for $5.00';
+											$text = 'Unlimited Sites for $10.00';
 										}
 										echo do_shortcode(get_submit_button($text));
 										?>

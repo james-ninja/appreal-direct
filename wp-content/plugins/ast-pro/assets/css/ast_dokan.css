@@ -1,0 +1,62 @@
+#ast-dokan-tracking-items{
+    margin: 0;
+}
+#ast-dokan-tracking-items .tracking-item:first-child {
+    margin-top: 10px;
+}
+#ast-dokan-tracking-items .tracking-content {
+    background: #efefef none repeat scroll 0 0;
+    padding: 10px;
+    position: relative;
+    margin: 0;
+}
+#ast-dokan-tracking-items .tracking-content-div {
+    margin-bottom: 5px;
+}
+#ast-dokan-tracking-items .tracking-content-div a {
+    word-wrap: break-word;
+}
+#ast-dokan-tracking-items .meta {
+    font-size: 11px;
+    color: #999;
+    padding: 10px;
+    margin: 0;
+}
+#ast-dokan-tracking-items .meta a.delete-tracking {
+    color: #a00;
+}
+.ast-dokan-panel .ast-btn{
+    background: #005B9A;
+    text-shadow: none;
+    border-color: #005B9A;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 0 10px;
+    color: #fff;
+    text-decoration: none;
+}
+#ast-dokan-tracking-items .tracking-content:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-width: 10px 10px 0 0;
+    border-style: solid;
+    border-color: #efefef transparent;
+}
+#ast-dokan-tracking-items .meta a.ast-dokan-delete-tracking {
+    color: #a00;
+}
+.product-table-header .enable_tracking_per_item{
+    margin: 0 10px 0 0;
+}
+.ast-dokan-panel .ast-product-table .value-button{
+    height: 30px;
+}
+.ast-dokan-panel .ast-product-table input.ast_product_number{
+    height: 30px;
+}

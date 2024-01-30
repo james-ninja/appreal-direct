@@ -1,5 +1,181 @@
 == Advanced Shipment Tracking Pro ==
 
+June 19, 2023 - version 3.1
+* Enhancement - Add Usage Data tracking
+* Enhancement - Improve the search for Shipping Providers
+* Enhancement - Update the Design of the Fulfillment Dashboard
+* Enhancement - Improve the Tracking Widget display on the order details page in My Account area
+* Improved - Integration with PrintFul
+* Dev - Added integration with Byrd Fulfillment
+* Dev - Added compatibility with Smart Manager
+* Dev - Added compatibility with Email Customizer Pro by StoreApps
+* Dev - Added a filter - "ast_ali2woo_shipping_provider" to replace the shipping provider name in the Ali2Woo Integration
+* Dev - Improve the autodetection for FedEx
+* Dev - Improve Shipstation Integration for the Dokan module
+* Fix - search by country name not working in shipping providers list
+* Fix - Warning on license manager - Warning: Attempt to read property "subscription" on null in /plugins/ast-pro/includes/class-ast-pro-license-manager.php on line 520\
+* Fix - The tracking widget does not show in a Shipped email when using the WooCommerce Email Template Customizer Premium by Villatheme
+* Fix - Order Items display when the order is Partially Refunded
+
+May 11, 2023 - version 3.0.1
+* Dev - Tested with WooCommerce 7.7.0
+* Fix - License deactivation issue
+
+March 20, 2023 - version 3.0
+* Enhancement - Added a Shipping provider filter on the WooCommerce orders tables(HPOS) page
+* Enhancement - Added Additional Content in the Completed, Shipped and Partially Shipped email
+* Enhancement - Improve the Shipping providers list page header design
+* Enhancement - Improve the Integration settings design
+* Enhancement - Improve the fulfillment table design
+* Dev - Added a Compatibility with WooCommerce Subscription
+* Dev - Remove the trackship tracking page functionality and add a filter on ast_tracking_link for TrackShip to use
+* Dev - Remove case sesitive from Map Shipping providers
+* Dev - Improve the autodetection for FedEx
+* Dev - Improve the autodetection for Aramex
+* Fix - Compatibility with WooCommerce Email Template Customizer Premium(Villatheme)
+* Fix - Search in Fulfilment Dashboard
+
+February 17, 2023 - version 2.9
+* Dev - Change tracking info email template structure from Div to Table
+* Dev - Remove the TrackSip message for TrackShip connected but TrackShip For WooCommerce is not installed
+* Dev - Delete old tracking from TrackShip while Replace tracking information in CSV Import
+* Dev - Add validation in CSV Import when added short tracking number
+* Fix - Variation product image issue in Add tracking panel
+
+December 22, 2022 - version 2.8
+* Enhancement - Customizer - Add tracking number, shipping provider, and shipping date as a available placeholder
+* Enhancement - Added Printful tracking Integration
+* Enhancement - Added a filter in orders list page to get orders with tracking info but not exported to PayPal
+* Enhancement - Improve CSV Import result display
+* Dev - Change ast_tracking_link for TS4WC
+* Dev - Improved the REST API, use store date format for shipped date
+* Dev - Improve ShippyPro Integration
+* Dev - Improve Autocomplete orders functionality for single item and single qty
+* Fix - Customizer save issue in Firefox
+
+October 31, 2022 - version 2.7
+* Enhancement - Improve TPI display on TrackShip tracking page
+* Enhancement - Added integration for GLS Sell & Send Italy
+* Enhancement - Added Integration with Print Label and Tracking Code for GLS and WooCommerce
+* Dev - Added compatibility with new WooCommerce HPOS(High Performance Order Storage)
+* Dev - Improve auto-detection
+
+August 17, 2022 - version 2.6
+* Enhancement - Added an option in the tracking widget customizer for Display Shipped label/Tracker Type
+* Enhancement - Added an option Enable/Disable Restrict adding the same tracking number
+* Dev - Added compatibility with AutomateWoo
+* Dev - Shop Manager user role can access the Fulfillment Dashboard (unfulfilled orders)
+* Dev - Improve auto-detection for FedEx
+* Fix - Error on delete tracking information
+
+August 8, 2022 - version 2.5
+* Enhancement - Remove functionality for closing Add tracking popup on clicking outside the Add tracking popup
+* Enhancement - Improve the customizer design
+* Enhancement - Remove the padding option from the Tricking widget customizer
+* Dev - On quantity change of product on add tracking popup improved the shipped/partially shipped checkbox selection
+* Dev - When adding tracking information for all products not display TPI in the order details page, order emails, or my account order page
+* Dev - Improved the shipping provider's auto-detection
+* Dev - tested with WooCommerce 6.7.0 and WordPress 6.0.1
+
+July 28, 2022 - version 2.4
+* Enhancement - Updated the design of customizer
+* Enhancement - Shipping Carrier Auto-detection improvements(removed disabled shipping providers from auto-detection)
+* Enhancement - Add integration with DHL For WooCommerce
+* Dev - Dev - Move Integration option data in seperate file
+* Dev - Improved the stamps.com Integration
+* Fix - API Name mapping issue with Shiptheory
+* Fix - Shiping provider slug issue on update custom shipping provider
+* Fix - Translation not work in Tracking WIdget
+* Fix - Compatibility with Email Template Customizer for WooCommerce by Villatheme
+* Fix- Tracking information display twice
+
+June 27, 2022 - version 2.3
+* Enhancement - Add accessibility support for toggles
+* Enhancement - Add integration with WooCommerce Canada Post Shipping Plugin with Print Label by Pluginhive
+* Enhancement - Unfulfilled orders - Products Lightbox improvements
+* Enhancement - Add TrackShip promotion page if TS4WS is not installed
+* Dev - License activation improvements
+* Dev -Improved CSV Import to work with shipping provider slug
+* Dev - Restrict adding the same tracking information by REST API and via Integration services
+* Dev - Remove text domain from all the dynamic variables
+* Dev - Add compatibility with yith woocommerce badge management plugin
+* Dev - Change CURL to wp_remote_get to get the shipping provider image
+* Dev - Improved autodetection functionality for GLS
+* Fix - Placeholder is not working in custom order status email
+* Fix - Double tracking widget showing with Email customizer plugin by Villatheme
+* Fix - Fulfilment dashboard not showing all results
+* Fix - Issue with WPML, Order status email sent in admin language instead of the customer language
+
+May 19, 2022 - version 2.2
+* Enhancement - Implement New Email/Tracking Widget Customizer
+* Enhancement - Improved the design of the Tracking Widget
+* Enhancement - Added Inventory source tracking integration
+* Enhancement - Added Stamps.com tracking integration
+* Enhancement - Redesign the Integrations settings page
+* Dev - Test compatibility with Weglot WooCommerce Translation plugin
+* Dev - Test plugin with WooCommerce Multilingual 5.0.0 Beta
+* Dev - Test plugin WooCommerce 6.5.1
+* Dev - Improve the compatibility with Kadence
+* Dev - TPI - Remove refunded/canceled product from add tracking item
+* Dev - Added SKU validation in CSV Import
+* Fix - CRITICAL Uncaught Error: Call to a member function get_id() on bool in /templates/emails/ast-pro-tpi-email-order-details.php:133
+* Fix - fixed the design of the Firefox browser to add a tracking number popup
+* Fix - Sync providers issue on plugin activation
+* Fix - Automatically send tracking to PayPal when adding tracking from stamps.com
+* Fix - Map shipping provider issue with special characters
+* Fix - Date issue when adding tracking from CSV/API/Manually
+
+March 21, 2022 - version 2.1
+* Fix - Fixed issue with Shipping provider list on plugin activate/deactivate
+* Enhancement - Added a functionality to view plugin release details on plugin update 
+
+March 14, 2022 - version 2.0
+* Enhancement - Added Shippo integration
+* Enhancement - Added Shiptheory integration
+* Enhancement - Improve the deisng of tracking info widget in order status email in mobile
+* Enhancement - Added an option for edit the tracking URL of predefined shipping provider
+* Enhancement - Updated the TPI design in TrackShip tracking page
+* Enhancement - Set track button vertical allign top in tracking widget
+* Enhancement - Added Sync providers message in AST's shipping provider list
+* Dev - Unfulfilled Orders - compatibility with PDF plugins (actions)
+* Dev - Improve the logic for Singapore post Autodetection provider
+* Dev - Updated Autocomplete order functionality from API when there is 1 item with 1 qty in order
+* Dev - Improved the Royal Mail Click & Drop integration
+* Dev - Added a validation if shipping provider not selected when add tracking
+* Dev - Improved the WooCommerce shipping integration
+* Dev - Improve date shipped functionality when add tracking from GUI
+* Dev - Added an option to override the Shipping and Billing address template in Completed,Shipped and Partially Shipped order status email
+* Dev - Improved the Picqer integration
+* Dev - Improve the synch providers functionality based on provider_slug
+* Dev - Tested with WP 5.9.2 and WC 6.3.1
+* Fix - Fixed preview track link issue with autodetect shipping provider
+* Fix - Fixed Fulfillment dashboard issue when all shipping mehod selected
+* Fix - Fixed Shipstation integration
+* Fix - Fixed preview tracking link not working with custom shipping provider
+* Fix - Fixed Synch providers issue for J&T provider
+
+January 13, 2022 - version 1.9
+* Enhancement - Added PirateShip integration
+* Enhancement - Added SendCloud Integration
+* Enhancement - Move Fulfillment menu before WooCommerce
+* Dev - Remove Dianxiomi Integration
+* Fix - Partially Shipped email styling issue
+
+December 27, 2021 - version 1.8
+* Enhancement - Change the license activation system
+* Enhancement - Add Docs, Support and Review link on plugins page
+* Dev - Improve CustomeCat Integration
+* Dev - Updated Deprecated jQuery code for jQuery keyup function
+* Fixed - PHP Warning: include(views/settings_header.php): Failed to open stream: No such file or directory in /wp-content/plugins/ast-pro/includes/class-ast-pro-fulfillment-dashboard.php on line 96
+* Fixed - Fix issue with Dear Inventory Integration
+
+December 07, 2021 - version 1.7
+* Enhancement - Add Delivered order status in Order Emails Display option
+* Dev - Improve CustomeCat Integration (Added support for USPS shipping)
+* Dev - Add another parameter for orginal order id in filter - ast_formated_order_id
+* Fix - Updated Tracking Email issue
+* Fix - Fixed issue with Dear Inventory Integration
+
 November 22, 2021 - version 1.6
 * Enhancement - Added Set default option for custom added provider
 * Enhancement - Added Partially Shipped / Completed (Shipped) email in customer view option

@@ -34,6 +34,9 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 $session_ship_address_id = WC()->session->get('default_shipping_address');
 $session_bill_address_id = WC()->session->get('default_billing_address');
 
+/*echo '<pre>';
+print_r(WC()->session);
+echo '</pre>';*/
 
 $user_id  = get_current_user_id();
 global $wpdb;

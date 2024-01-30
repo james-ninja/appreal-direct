@@ -193,8 +193,9 @@ class Table {
 			}
 		}
 
-		$rows1 = $this->args->attribute_rows; 
-        //custom mt
+		//custom mt
+		$rows1 = $this->args->attribute_rows;
+        
 		$termidArray = array();
 		foreach($rows1 as $colum_value){
 			$term = get_term_by( 'slug', $colum_value, esc_attr( str_replace( 'attribute_', '', 'pa_size' ) ) );
@@ -212,8 +213,6 @@ class Table {
         
         $rowsnew = array_merge($rows1,$rows2);
         $rows = array_unique($rowsnew);
-        
-        
         //custom mt
 		if ( $rows ) {
 			foreach ( $rows as $row ) {

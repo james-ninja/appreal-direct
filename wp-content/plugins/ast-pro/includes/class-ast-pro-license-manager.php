@@ -158,7 +158,7 @@ class AST_Pro_License_Manager {
 	*/
 	public function init() {
 		
-		add_action( 'ast_addon_license_form', array( $this, 'ast_pro_license_form' ), 1);
+		add_action( 'ast_addon_license_form', array( $this, 'ast_pro_license_form' ), 10 );
 		
 		//cron schedule added
 		add_filter( 'cron_schedules', array( $this, 'license_cron_schedule') );
@@ -173,29 +173,9 @@ class AST_Pro_License_Manager {
 		//check license valid
 		add_action( $this->get_license_cron_hook(), array( $this, 'check_license_valid' ) );
 		if ( !$this->get_license_status() ) {
-			add_action( 'admin_notices', array( $this, 'ast_pro_licence_notice' ) );
+			add_action( 'admin_notices', array( $this, 'ast_pro_licence_notice' ) );			
 		}	
-	}
-	
-	/*
-	* callback for Shipment Tracking page
-	*/
-	public function license_page_callback() {		  
-		wp_enqueue_script( 'license_page_callback' ); 
-		?>		
-		
-		<div class="zorem-layout">			
-			<?php
-			include 'views/settings_header.php';
-			do_action( 'ast_settings_admin_notice' );			
-			?>
-			<div class="woocommerce zorem_admin_layout">
-				<div class="ast_admin_content" >
-					<?php require_once( 'views/admin_options_addons.php' ); ?>
-				</div>				
-			</div>					
-		</div>		
-		<?php 
+		add_action( 'ast_addon_license_form', array( $this, 'connect_with_zorem' ), 1 );
 	}
 	
 	public function ast_pro_license_form() { 
@@ -240,7 +220,11 @@ class AST_Pro_License_Manager {
 				$this->set_instance_id( $instance_id );
 				$this->set_license_status( 1 );
 				delete_transient( 'zorem_upgrade_' . $this->get_item_code() );
+				delete_transient( 'zorem_subscription_status_' . $this->get_item_code() );
 			} else if ( $authorize_data->error ) {
+				
+				$this->create_log( $authorize_data, 'license_activation_authorize_data' );
+
 				$this->set_license_key( '' );
 				$this->set_instance_id( '' );
 				$this->set_license_status( 0 );
@@ -271,7 +255,10 @@ class AST_Pro_License_Manager {
 				$this->set_license_key( '' );
 				$this->set_instance_id( '' );
 				$this->set_license_status( 0 );
+				//delete_option('zorem_license_connected');
+				//delete_option('zorem_license_email');
 				delete_transient( 'zorem_upgrade_' . $this->get_item_code() );
+				delete_transient( 'zorem_subscription_status_' . $this->get_item_code() );
 			}
 			header('Content-type: application/json');
 			echo json_encode( $return, JSON_PRETTY_PRINT );
@@ -300,15 +287,18 @@ class AST_Pro_License_Manager {
 		);
 		
 		$request = add_query_arg( $api_params, $this->store_url );
+		
 		$response = wp_remote_get( $request, array( 'timeout' => 15, 'sslverify' => false ) );
 		
 		if ( is_wp_error( $response ) ) {
+			$this->create_log( $response, 'license_activation_response' );
 			return false;
 		}	
 		
 		$authorize_data = json_decode( wp_remote_retrieve_body( $response ) );
 		
 		if ( empty( $authorize_data ) || null == $authorize_data || false == $authorize_data ) {
+			$this->create_log( $authorize_data, 'license_activation_authorize_data' );
 			return false;
 		}	
 		
@@ -342,13 +332,21 @@ class AST_Pro_License_Manager {
 
 		if ( $this->get_license_status() ) {
 			
-			$authorize = $this->license_authorize_action( $this->get_license_key(), 'status' );			
+			$authorize = $this->license_authorize_action( $this->get_license_key(), 'status' );
 			
-			if ( isset( $authorize->status_check ) && 'inactive' == $authorize->status_check ) {
+			if ( 'true' == $authorize->success ) {
+				$license_status = $authorize->status_check;
+				if ( isset( $authorize->status_check ) && 'inactive' == $authorize->status_check ) {
+					$this->set_license_key( '' );
+					$this->set_instance_id( '' );
+					$this->set_license_status( 0 );
+				}
+			} else if ( 'false' == $authorize->success ) {
 				$this->set_license_key( '' );
 				$this->set_instance_id( '' );
 				$this->set_license_status( 0 );
 			}
+			
 		}
 	}
 	
@@ -356,9 +354,180 @@ class AST_Pro_License_Manager {
 	* License notice
 	*/
 	public function ast_pro_licence_notice() { 
-		$class = 'notice notice-error';
-		/* translators: %s: replace with settings page url */
-		$message = sprintf( __( 'Opps! your <strong>Advanced Shipment Tracking Pro</strong> licence key is not activated. To buy license %1$sclick here%2$s to activate it.', 'ast-pro' ), '<a href="' . admin_url( '/admin.php?page=woocommerce-advanced-shipment-tracking&tab=addons' ) . '">', '</a>' );
-		echo '<div class="notice notice-error"><p>' . wp_kses_post( $message ) . '</p></div>';	
+		?>
+		<div class="notice notice-warning notice-alt">
+			<h3 class="notice-title">Activate the Advanced Shipment Tracking Pro</h3>	
+			<p>Opps! your Advanced Shipment Tracking Pro licence key is not activated. To buy license <a href="<?php echo esc_url( admin_url( '/admin.php?page=woocommerce-advanced-shipment-tracking&tab=license' ) ); ?>" rel="noopener noreferrer">click here</a> to activate it.</p>
+			<p>
+				<a href="https://www.zorem.com/my-account/subscriptions/" target="_blank" rel="noopener noreferrer">
+					Manage your subscription					
+					<span class="dashicons dashicons-external" style="vertical-align:middle;font-size:18px;text-decoration: none;"></span>
+				</a>
+			</p>
+		</div>
+		<?php	
+	}
+
+	public function connect_with_zorem() {		
+		
+		$connect = isset( $_GET['connect'] ) ? sanitize_text_field( $_GET['connect'] ) : '';
+		$email = isset( $_GET['email'] ) ? sanitize_text_field( $_GET['email'] ) : '';
+		$license_key = isset( $_GET['key'] ) ? sanitize_text_field( $_GET['key'] ) : '';
+		?>
+		<script>
+			/* zorem_snackbar jquery */
+			(function( $ ){
+				$.fn.ast_snackbar = function(msg) {
+					if ( jQuery('.snackbar-logs').length === 0 ){
+						$("body").append("<section class=snackbar-logs></section>");
+					}
+					var ast_snackbar = $("<article></article>").addClass('snackbar-log snackbar-log-success snackbar-log-show').text( msg );
+					$(".snackbar-logs").append(ast_snackbar);
+					setTimeout(function(){ ast_snackbar.remove(); }, 3000);
+					return this;
+				}; 
+			})( jQuery );
+			
+			/* zorem_snackbar_warning jquery */
+			(function( $ ){
+				$.fn.ast_snackbar_warning = function(msg) {
+					if ( jQuery('.snackbar-logs').length === 0 ){
+						$("body").append("<section class=snackbar-logs></section>");
+					}
+					var ast_snackbar_warning = $("<article></article>").addClass( 'snackbar-log snackbar-log-error snackbar-log-show' ).html( msg );
+					$(".snackbar-logs").append(ast_snackbar_warning);
+					setTimeout(function(){ ast_snackbar_warning.remove(); }, 3000);
+					return this;
+				}; 
+			})( jQuery );
+		</script>
+		<?php
+		if ( 'true' == $connect && '' != $email ) {
+			update_option( 'zorem_license_connected', 1 );
+			update_option( 'zorem_license_email', $email );
+			
+
+			if ( isset( $license_key ) ) {
+				$instance_id = $this->create_instance_id();
+				$authorize_data = $this->license_authorize_action( $license_key, 'activate', $instance_id );
+				
+				if ( 'true' == $authorize_data->success ) {
+					$this->set_license_key( $license_key );
+					$this->set_instance_id( $instance_id );
+					$this->set_license_status( 1 );
+					update_option( 'zorem_license_key', $license_key );
+					delete_transient( 'zorem_upgrade_' . $this->get_item_code() );
+					$message = 'License successfully activated.';
+					?>
+					<script>
+						jQuery(document).ast_snackbar( '<?php esc_html_e( $message ); ?>' );
+					</script>
+					<style>
+					.ast-pro-license-notice {
+						display: none;
+					}
+					</style>
+					<?php
+				} else if ( $authorize_data->error ) {
+					
+					$this->create_log( $authorize_data, 'license_activation_authorize_data' );
+
+					if ( 'No API resources exist. Login to My Account to verify there are activations remaining, and the API Key and Product ID are correct.' == $authorize_data->error ) {
+						$message = 'License not found for user ' . $email;
+						?>
+						<script>
+							jQuery(document).ast_snackbar_warning( '<?php esc_html_e( $message ); ?>' );
+						</script>
+						<?php	
+					} elseif ( 'Cannot activate License Key. This key is already active on another site.' == $authorize_data->error ) {
+						$message = 'Cannot activate License. License is already active on another site.';
+						?>
+						<script>
+							jQuery(document).ast_snackbar_warning( '<?php esc_html_e( $message ); ?>' );
+						</script>
+						<?php
+					} else {
+						$message = 'License not found for user ' . $email;
+						?>
+						<script>
+							jQuery(document).ast_snackbar_warning( '<?php esc_html_e( $message ); ?>' );
+						</script>
+						<?php
+					}
+					
+					$this->set_license_key( '' );
+					$this->set_instance_id( '' );
+					$this->set_license_status( 0 );
+				}
+			}	
+			?>
+			<script>
+				
+				var url = window.location.protocol + "//" + window.location.host + window.location.pathname+"?page=woocommerce-advanced-shipment-tracking&tab=license";
+				window.history.pushState({path:url},'',url);
+				jQuery('input#tab6').trigger('click');
+				location.reload();
+			</script>
+			<?php
+		} elseif ( 'false' == $connect && '' != $email ) {
+			?>
+			<script>
+				var url = window.location.protocol + "//" + window.location.host + window.location.pathname+"?page=woocommerce-advanced-shipment-tracking&tab=license";
+				window.history.pushState({path:url},'',url);
+				jQuery('input#tab6').trigger('click');
+			</script>
+			<?php	
+		}
+	}
+
+	public function check_subscription_status () {
+		
+		$license_connected = get_option( 'zorem_license_connected', 0 );
+		$license_email = get_option( 'zorem_license_email', '' );
+	
+		$subscription = false;
+		
+		if ( $this->get_license_status() ) {
+			return true;
+		}
+		
+		if ( $license_connected && '' != $license_email ) {
+			
+			$zorem_subscription_status = get_transient( 'zorem_subscription_status_' . $this->get_item_code() );			
+			
+			if ( false == $zorem_subscription_status ) {
+				
+				$api_params = array(
+					'license_email' => $license_email,			
+					'product_id' => $this->get_product_id(),				
+				);
+
+				$request = add_query_arg( $api_params, $this->store_url . 'wp-json/wc-zorem-license/v3/status/subscription' );
+				$response = wp_remote_get( $request, array( 'timeout' => 15, 'sslverify' => false ) );
+				
+				if ( is_wp_error( $response ) ) {
+					return false;
+				}	
+
+				$subscription_data = json_decode( wp_remote_retrieve_body( $response ) );
+
+				set_transient( 'zorem_subscription_status_' . $this->get_item_code(), $response, 86400 ); // 24 hours cache
+
+				return $subscription_data->subscription;
+			} else {
+				$subscription_data = json_decode( wp_remote_retrieve_body( $zorem_subscription_status ) );
+				$subscription = isset( $subscription_data->subscription ) ? $subscription_data->subscription : false;
+				return $subscription;
+			}						
+		}
+		
+		return $subscription;
+	}
+
+	public function create_log( $content, $log_key = 'license_activation_authorize_data' ) {
+		$content = print_r($content, true);
+		$logger = wc_get_logger();
+		$context = array( 'source' => 'ast_pro_license_activation_log' );
+		$logger->info( $log_key . " \n" . $content . "\n", $context );
 	}
 }

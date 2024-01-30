@@ -20,6 +20,10 @@ class AST_PRO_Email_Manager {
 		
 		// Use our templates instead of woocommerce.
 		add_filter( 'woocommerce_locate_template', array( $this, 'filter_locate_template' ), 100, 3 );		
+
+		add_filter( 'woocommerce_email_heading_customer_completed_order', array( $this, 'completed_email_heading' ), 10, 2 );
+		add_filter( 'woocommerce_email_subject_customer_completed_order', array( $this, 'completed_email_subject' ), 10, 2 );
+		
 	}	
 	
 	/**
@@ -59,12 +63,33 @@ class AST_PRO_Email_Manager {
 	public function email_content( $email_content, $order_id, $order ) {	
 	
 		$order_number = $order->get_order_number();
+		$order_date = wc_format_datetime( $order->get_date_created() );
 		
 		$customer_email = $order->get_billing_email();
 		$first_name = $order->get_billing_first_name();
 		$last_name = $order->get_billing_last_name();
 		$company_name = $order->get_billing_company();
 		$user = $order->get_user();
+		
+		$tracking_number = '';
+		$shipping_provider = '';
+		$shipping_date = '';
+		$tracking_number_array = array();
+		$shipping_provider_array = array();
+		$shipping_date_array = array();
+		$tracking_items = ast_pro()->ast_pro_actions->get_tracking_items( $order_id, true );		
+		
+		if ( !empty( $tracking_items ) ) {
+			foreach ( $tracking_items as $tracking_item ) {
+				$tracking_number_array[] = $tracking_item['tracking_number'];
+				$shipping_provider_array[] = $tracking_item['formatted_tracking_provider'];			
+				$shipping_date_array[] = date_i18n( get_option( 'date_format', 'Y-m-d' ), $tracking_item['date_shipped'] );
+			}
+		}	
+
+		$tracking_number = join( ',', $tracking_number_array );
+		$shipping_provider = join( ',', $shipping_provider_array );
+		$shipping_date = join( ',', $shipping_date_array );
 		
 		if ( $user ) {
 			$username = $user->user_login;
@@ -87,10 +112,35 @@ class AST_PRO_Email_Manager {
 			$email_content = str_replace( '{customer_username}', '', $email_content );
 		}
 		
-		$email_content = str_replace( '{order_number}', $order_number, $email_content );		
+		$email_content = str_replace( '{order_number}', $order_number, $email_content );
+		$email_content = str_replace( '{order_date}', $order_date, $email_content );
+		
+		$email_content = str_replace( '{tracking_number}', $tracking_number, $email_content );
+		$email_content = str_replace( '{shipping_provider}', $shipping_provider, $email_content );
+		$email_content = str_replace( '{shipping_date}', $shipping_date, $email_content );				
 		
 		return $email_content;
-	}	
+	}
+	
+	public function completed_email_heading( $email_heading, $order ) {
+		$first_name = $order->get_billing_first_name();
+		$last_name = $order->get_billing_last_name();
+
+		$email_heading = str_replace( '{customer_first_name}', $first_name, $email_heading );
+		$email_heading = str_replace( '{customer_last_name}', $last_name, $email_heading );
+
+		return $email_heading;
+	}
+
+	public function completed_email_subject( $email_subject, $order ) {
+		$first_name = $order->get_billing_first_name();
+		$last_name = $order->get_billing_last_name();
+
+		$email_subject = str_replace( '{customer_first_name}', $first_name, $email_subject );
+		$email_subject = str_replace( '{customer_last_name}', $last_name, $email_subject );
+
+		return $email_subject;
+	}
 	
 	/**
 	 * Get blog name formatted for emails.

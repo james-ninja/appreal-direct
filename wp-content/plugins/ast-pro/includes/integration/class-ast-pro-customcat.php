@@ -18,9 +18,17 @@ if ( !function_exists( 'ast_pro_action_customcat_woocommerce_rest_insert_order_n
 		
 		if ( $tracking ) {
 			$order_id = $request['order_id'];
-			$status_shipped = 1;
+			$status_shipped = get_option( 'autocomplete_customcat', 1 );
 			$tracking_number = $tracking['number'];
 			$tracking_provider = $tracking['provider'];
+
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+
 			ast_insert_tracking_number($order_id, $tracking_number, $tracking_provider, '', $status_shipped );
 		}
 	}
@@ -39,6 +47,25 @@ if ( !function_exists( 'is_tracking_note' ) ) {
 				);
 			}
 		}
+
+		if ( preg_match( '/usps\\.com/', $note_content ) ) {
+			if ( preg_match( '/qtc_tLabels1=([\dA-Z]+)/', $note_content, $matches ) ) {
+				return array(
+					'provider' => 'USPS',
+					'number' => $matches[1]
+				);
+			}
+		}
+
+		if ( preg_match( '/usps\\.com/', $note_content ) ) {
+			if ( preg_match( '/tLabels=([\dA-Z]+)/', $note_content, $matches ) ) {
+				return array(
+					'provider' => 'USPS',
+					'number' => $matches[1]
+				);
+			}
+		}
+
 		/* Add more provider matches here, as appropriate */
 		return false;
 	}

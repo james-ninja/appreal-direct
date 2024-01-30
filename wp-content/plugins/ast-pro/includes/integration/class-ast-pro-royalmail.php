@@ -12,27 +12,53 @@ if ( !function_exists( 'ast_pro_action_woocommerce_rest_insert_order_note' ) ) {
 			return;
 		}	
 		
+		$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+		$status_shipped = get_option( 'autocomplete_royalmail', 1 );
+
 		//check if order note is for Royal Mail
 		if ( false != strpos( $note->comment_content, 'https://www.royalmail.com' ) ) {
 			
 			$order_id = $request['order_id'];
-			$status_shipped = 1;
+			
 			$tracking_number = ast_get_string_between( $note->comment_content, 'Your tracking number is ', 'Your order can be tracked here:' );
 			$tracking_number = str_replace( '.', '', $tracking_number );
 			$tracking_number = str_replace( ' ', '', $tracking_number );
 			$tracking_provider = 'Royal Mail';
 			
-			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, '', $status_shipped );
-		}		
-	}
-}
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
 
-/*
-* AST: get specific string between two string
-*/
-if ( !function_exists( 'ast_get_string_between' ) ) {
-	function ast_get_string_between( $input, $start, $end ) {
-		$substr = substr( $input, strlen( $start ) + strpos( $input, $start ), ( strlen( $input ) - strpos( $input, $end ) ) * ( -1 ) );
-		return $substr;
+			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, '', $status_shipped );
+		} else if ( false != strpos( $note->comment_content, 'Your delivery confirmation number is' ) ) {
+			
+			$order_id = $request['order_id'];			
+			$tracking_number = ast_get_string_after( $note->comment_content, 'Your delivery confirmation number is ' );
+			$tracking_number = str_replace( '.', '', $tracking_number );
+			$tracking_number = str_replace( ' ', '', $tracking_number );
+			$tracking_provider = 'Royal Mail';
+			
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+			
+			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, '', $status_shipped );
+		} else if ( false != strpos( $note->comment_content, 'Sent By Courier Service: Royal Mail' ) ) {
+			
+			$order_id = $request['order_id'];			
+			$tracking_number = ast_get_string_between( $note->comment_content, 'Tracking Number: ', 'Track' );
+			$tracking_number = str_replace( '.', '', $tracking_number );
+			$tracking_number = str_replace( ' ', '', $tracking_number );
+			$tracking_provider = 'Royal Mail';
+			
+			$tracking_info_exist = tracking_info_exist( $order_id, $tracking_number );
+			if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+				return;
+			}
+			
+			ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, '', $status_shipped );
+		}
 	}
 }

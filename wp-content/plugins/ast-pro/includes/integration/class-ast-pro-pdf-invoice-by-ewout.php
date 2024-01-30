@@ -13,9 +13,9 @@ add_action( 'wpo_wcpdf_before_order_details', 'tracking_display_in_invoice', 0, 
 if ( !function_exists( 'tracking_display_in_invoice' ) ) { 
 	function tracking_display_in_invoice( $template_type, $order ) {
 			
-		/** Remove this comment if you don't want to display tracking information in invoice PDF
+		/* Remove this comment if you don't want to display tracking information in invoice PDF
 			if($template_type == 'invoice' )return;
-		**/
+		*/
 		
 		if ( 'packing-slip' == $template_type ) {
 			return;
@@ -41,14 +41,14 @@ if ( !function_exists( 'tracking_display_in_invoice' ) ) {
 		
 		if ( $tracking_items ) {
 			?>
-			<h2 class="header_text"><?php echo esc_html( apply_filters( 'woocommerce_shipment_tracking_my_orders_title', __( 'Track your order', 'woo-advanced-shipment-tracking' ) ) ); ?></h2><br/>
+			<h2 class="header_text"><?php echo esc_html( apply_filters( 'woocommerce_shipment_tracking_my_orders_title', __( 'Track your order', 'ast-pro' ) ) ); ?></h2><br/>
 			<table class="order-details">
 				<thead>
 					<tr>
-						<th><?php esc_html_e( 'Provider', 'woo-advanced-shipment-tracking' ); ?></th>
-						<th><?php esc_html_e( 'Tracking Number', 'woo-advanced-shipment-tracking' ); ?></th>
-						<th><?php esc_html_e( 'Shipped Date', 'woo-advanced-shipment-tracking' ); ?></th>							
-						<th><?php esc_html_e( 'Track', 'woo-advanced-shipment-tracking' ); ?></th>
+						<th><?php esc_html_e( 'Provider', 'ast-pro' ); ?></th>
+						<th><?php esc_html_e( 'Tracking Number', 'ast-pro' ); ?></th>
+						<th><?php esc_html_e( 'Shipped Date', 'ast-pro' ); ?></th>							
+						<th><?php esc_html_e( 'Track', 'ast-pro' ); ?></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -63,7 +63,7 @@ if ( !function_exists( 'tracking_display_in_invoice' ) ) {
 							<time datetime="<?php esc_html_e( gmdate( 'Y-m-d', $date_shipped ) ); ?>" title="<?php esc_html_e( gmdate( 'Y-m-d', $date_shipped ) ); ?>"><?php esc_html_e( date_i18n( get_option( 'date_format' ), $date_shipped ) ); ?></time>
 						</td>						
 						<td class="">
-							<a href="<?php echo esc_url( $tracking_item['ast_tracking_link'] ); ?>" target="_blank"><?php esc_html_e( 'Track', 'woo-advanced-shipment-tracking' ); ?></a>
+							<a href="<?php echo esc_url( $tracking_item['ast_tracking_link'] ); ?>" target="_blank"><?php esc_html_e( 'Track', 'ast-pro' ); ?></a>
 						</td>
 					</tr>
 					<?php

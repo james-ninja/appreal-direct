@@ -175,7 +175,7 @@ function ad_add_register_form_field()
 		</select>
 	</p>
 	<p class="form-row col-md-6">
-		<a href="https://sbx.certexpress.com/?c=78516d436b3277686641764377344759535a504f:2b36f3b5815e50558214c58bb76130cf" type="button" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clicking this link will take you to a third party site where you will upload your tax certificate to Apparel Direct Distributor. Please return to this application when you are done."><span>Submit Tax Certificate</span> *</a>
+		<a href="https://ttrecms.com/portal/apparel-direct-distributors" type="button" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Clicking this link will take you to a third party site where you will upload your tax certificate to Apparel Direct Distributor. Please return to this application when you are done."><span>Submit Tax Certificate</span> *</a>
 	</p>
 	<?php
 
@@ -256,7 +256,7 @@ function ad_add_register_form_field()
 	
 	foreach ($select_interested_categories as $in_cat) {
 	?>
-		<option value="<?php echo $in_cat->term_id; ?>" <?php if ($product_cat_selected && in_array($in_cat->term_id, explode(",", $product_cat_selected))) echo 'selected="selected" '; ?>><?php echo $in_cat->name; ?></option>
+		<option value="<?php echo $in_cat->term_id; ?>" <?php if ($product_cat_selected && in_array($in_cat->term_id, $product_cat_selected)) echo 'selected="selected" '; ?>><?php echo $in_cat->name; ?></option>
 	<?php } ?>
 	</select>
 <?php

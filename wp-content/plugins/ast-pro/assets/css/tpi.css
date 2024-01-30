@@ -22,6 +22,7 @@ table.widefat.ast-product-table{
 	border: 0;
 	margin-bottom: 0;
 	margin-top: 0;
+	table-layout: fixed;
 }
 .add_tracking_number_form input[type=checkbox].enable_tracking_per_item{
 	margin: 0px 8px 0 0px;

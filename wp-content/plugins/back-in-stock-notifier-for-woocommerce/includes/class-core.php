@@ -245,7 +245,7 @@ if (!class_exists('CWG_Instock_Core')) {
 						foreach ($results as $each_item_key => $bundle_id) {
 							//bundle id is parent id upon send instock email check the bundle product is instock
 							$bundle = wc_get_product($bundle_id);
-							if ($bundle->is_in_stock()) { //if it is true it check stock for bundled items as well
+							if ($bundle && $bundle->is_in_stock()) { //if it is true it check stock for bundled items as well
 								//fetch subscribers only when the bundle product items back in stock
 								$main_obj = new CWG_Instock_API($bundle_id, 0);
 								$get_list_of_subscribers = $main_obj->get_list_of_subscribers();

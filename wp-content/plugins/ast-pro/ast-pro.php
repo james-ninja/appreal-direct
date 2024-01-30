@@ -1,16 +1,16 @@
 <?php
 /** 
  * Plugin Name: Advanced Shipment Tracking Pro
- * Plugin URI: https://www.zorem.com/shop/tracking-per-item-ast-add-on/ 
+ * Plugin URI: https://www.zorem.com/product/woocommerce-advanced-shipment-tracking/ 
  * Description: AST PRO fulfilment manager provides powerful features to easily add tracking info to WooCommerce orders, automate the fulfillment workflows and keep customers happy and informed.
- * Version: 1.6
+ * Version: 3.1
  * Author: zorem
  * Author URI: https://zorem.com 
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl-3.0
  * Text Domain: ast-pro 
  * Domain Path: /lang/
- * WC tested up to: 5.9.0
+ * WC tested up to: 7.8.0
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -38,7 +38,7 @@ class Ast_Pro {
 	 *
 	 * @var string
 	 */
-	public $version = '1.6';
+	public $version = '3.1';
 	
 	/**
 	 * Initialize the main plugin function
@@ -57,21 +57,39 @@ class Ast_Pro {
 							
 		if ( $this->is_wc_active() ) {
 			
-			$this->includes();
+			//license
+			require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-license-manager.php';				
+			$this->license = AST_Pro_License_Manager::get_instance();
 			
-			// Init REST API.
-			$this->init_rest_api();
+			//update-manager	
+			require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-update-manager.php';
+			new AST_Pro_Update_Manager(
+				$this->version,
+				'ast-pro/ast-pro.php',
+				$this->license->get_item_code()
+			);
+
+			$subscription_status = $this->license->check_subscription_status();
 			
-			//start adding hooks
-			$this->init();						
-			
-			$this->ast_tpi->init();
-			$this->ast_pro_admin->init();	
-			$this->ast_pro_csv_import->init();
-			
+			$this->includes_for_all();
+
+			if ( $subscription_status ) {
+				$this->includes();
+				
+				// Init REST API.
+				$this->init_rest_api();
+				
+				//start adding hooks
+				$this->init();						
+				
+				$this->ast_tpi->init();
+				$this->ast_pro_admin->init();	
+				$this->ast_pro_csv_import->init();								
+			}
+
 			//plugin admin_notice class init
 			$this->ast_pro_admin_notice->init();				
-			
+				
 			//plugin install class init
 			$this->ast_pro_install->init();
 		}				
@@ -216,16 +234,26 @@ class Ast_Pro {
 		$shipment_api_controller_v3->register_routes();				
 	}
 	
+	public function includes_for_all() {
+		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-admin.php';
+		$this->ast_pro_admin = AST_pro_admin::get_instance();
+
+		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-integration-options.php';
+		$this->ast_pro_integration = AST_Pro_Integration::get_instance();
+
+		require_once $this->get_plugin_path() . '/includes/class-ast-pro-install.php';
+		$this->ast_pro_install = AST_PRO_Install::get_instance();
+
+		require_once $this->get_plugin_path() . '/includes/class-ast-pro-admin-notice.php';
+		$this->ast_pro_admin_notice = AST_PRO_Admin_notice::get_instance();
+
+		require_once $this->get_plugin_path() . '/includes/class-ast-pro-tracker.php';
+		$this->ast_pro_tracker = AST_PRO_Tracker::get_instance();
+	}
 	/**
 	 * Include files
 	*/
 	public function includes() {
-		
-		require_once $this->get_plugin_path() . '/includes/class-ast-pro-install.php';
-		$this->ast_pro_install = AST_PRO_Install::get_instance();
-		
-		require_once $this->get_plugin_path() . '/includes/class-ast-pro-admin-notice.php';
-		$this->ast_pro_admin_notice = AST_PRO_Admin_notice::get_instance();
 		
 		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-fulfillment-dashboard.php';	
 		$this->ast_pro_fulfillment_dashboard = AST_PRO_Fulfillment_Dashboard::get_instance();
@@ -235,9 +263,6 @@ class Ast_Pro {
 		
 		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-settings.php';	
 		$this->ast_pro_settings = AST_PRO_Settings::get_instance();
-		
-		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-admin.php';
-		$this->ast_pro_admin = AST_pro_admin::get_instance();
 		
 		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-csv-import.php';
 		$this->ast_pro_csv_import = AST_Pro_Csv_Import::get_instance();
@@ -253,13 +278,9 @@ class Ast_Pro {
 		
 		//Logger
 		require_once $this->get_plugin_path() . '/includes/class-ast-pro-logger.php';
-		$this->logger = AST_Pro_Logger::get_instance();
-		
-		$enable_shipstation_default = ( is_plugin_active( 'woocommerce-shipstation-integration/woocommerce-shipstation.php' ) ) ? 1 : 0;
-		$enable_shipstation = get_option( 'enable_shipstation_integration', $enable_shipstation_default );
-		if ( $enable_shipstation ) {
-			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-shipstation.php';
-		}	
+		$this->logger = AST_Pro_Logger::get_instance();			
+
+		require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-integration-functions.php';
 
 		$enable_wc_shipping_default = ( is_plugin_active( 'woocommerce-services/woocommerce-services.php' ) ) ? 1 : 0;
 		$enable_wc_shipping = get_option( 'enable_wc_shipping_integration', $enable_wc_shipping_default );
@@ -270,6 +291,11 @@ class Ast_Pro {
 		$enable_ups_shipping = get_option( 'enable_ups_shipping_label_pluginhive', 0 );
 		if ( $enable_ups_shipping ) {
 			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-ups-shipping-label.php';
+		}
+
+		$enable_canada_post_shipping = get_option( 'enable_canada_post_shipping_label_pluginhive', 0 );
+		if ( $enable_ups_shipping ) {
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-canada-post-shipping-label.php';
 		}
 		
 		$enable_quickbooks_commerce = get_option( 'enable_quickbooks_commerce_integration', 0 );
@@ -328,39 +354,82 @@ class Ast_Pro {
 		if ( $enable_dianxiaomi_integration ) {			
 			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-dianxiaomi-integration.php';
 			$this->ast_pro_dianxiaomi = AST_Pro_Dianxiaomi::get_instance();							
-		}	
-		
-		$pdf_invoice_by_ewout_default = ( is_plugin_active( 'woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php' ) ) ? 1 : 0;
-		$enable_pdf_invoice_by_ewout = get_option( 'enable_pdf_invoice_integration_ewout', $pdf_invoice_by_ewout_default );
-		if ( $enable_pdf_invoice_by_ewout ) {
-			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-pdf-invoice-by-ewout.php';
-		}
-		
-		$pdf_invoice_by_bas_default = ( is_plugin_active( 'woocommerce-pdf-invoices/bootstrap.php' ) ) ? 1 : 0;
-		$enable_pdf_invoice_by_bas = get_option( 'enable_pdf_invoice_integration_bas', $pdf_invoice_by_bas_default );
-		if ( $enable_pdf_invoice_by_bas ) {
-			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-pdf-invoice-by-bas.php';
-		}			
+		}				
 
 		$ali2woo_default = ( is_plugin_active( 'ali2woo-lite/ali2woo-lite.php' ) ) ? 1 : 0;
 		$enable_ali2woo = get_option( 'enable_ali2woo_integration', $ali2woo_default );
 		if ( $enable_ali2woo ) {
 			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-ali2woo-integration.php';
-		}					
+		}
 		
-		//license
-		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-license-manager.php';				
-		$this->license = AST_Pro_License_Manager::get_instance();
+		$enable_pirateship_integration = get_option( 'enable_pirateship_integration', 0 );
+		if ( $enable_pirateship_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-pirateship-integration.php';
+		}
+
+		$enable_sendcloud_integration = get_option( 'enable_sendcloud_integration', 0 );
+		if ( $enable_sendcloud_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-sendcloud-integration.php';
+		}
+
+		$enable_shiptheory_integration = get_option( 'enable_shiptheory_integration', 0 );
+		if ( $enable_shiptheory_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-shiptheory-integration.php';
+		}
+
+		$enable_stamps_com_integration = get_option( 'enable_stamps_com_integration', 0 );
+		if ( $enable_stamps_com_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-stamps-com-integration.php';
+		}
+
+		$enable_shippo_integration = get_option( 'enable_shippo_integration', 0 );
+		if ( $enable_shippo_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-shippo-integration.php';
+		}
+
+		$enable_inventory_source_integration = get_option( 'enable_inventory_source_integration', 0 );
+		if ( $enable_inventory_source_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-inventory-source-integration.php';
+		}
+
+		$enable_dhl_for_woocommerce_integration = get_option( 'enable_dhl_for_woocommerce_integration', 0 );
+		if ( $enable_dhl_for_woocommerce_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-dhl-for-wc-integration.php';
+		}
+
+		$enable_gls_sell_send_italy_integration = get_option( 'enable_gls_sell_send_italy_integration', 0 );
+		if ( $enable_gls_sell_send_italy_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-gls-sell-send-italy-integration.php';
+		}
+
+		$enable_gls_deliveryfrom_integration = get_option( 'enable_gls_deliveryfrom_integration', 0 );
+		if ( $enable_gls_deliveryfrom_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-gls-deliveryfrom-integration.php';
+		}
+
+		$enable_printful_integration = get_option( 'enable_printful_integration', 0 );
+		if ( $enable_printful_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-printful-integration.php';
+		}
+
+		$enable_byrd_integration = get_option( 'enable_byrd_integration', 0 );
+		if ( $enable_byrd_integration ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-byrd-integration.php';
+		}
+
+		if ( is_plugin_active( 'automatewoo/automatewoo.php' ) ) {
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-automatewoo-integration.php';
+		}
+
+		if ( is_plugin_active( 'woocommerce-pdf-invoices-packing-slips/woocommerce-pdf-invoices-packingslips.php' ) ) {
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-pdf-invoice-by-ewout.php';
+		}
 		
-		//update-manager	
-		require_once plugin_dir_path( __FILE__ ) . '/includes/class-ast-pro-update-manager.php';
-		new AST_Pro_Update_Manager(
-			$this->version,
-			'ast-pro/ast-pro.php',
-			$this->license->get_item_code()
-		);
-		
-		require_once $this->get_plugin_path() . '/includes/ast-pro-email-manager.php';
+		if ( is_plugin_active( 'woocommerce-pdf-invoices/bootstrap.php' ) ) {
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-pdf-invoice-by-bas.php';
+		}	
+
+		require_once $this->get_plugin_path() . '/includes/ast-pro-email-manager.php';		
 		
 	}
 	
@@ -403,16 +472,20 @@ class Ast_Pro {
 
 		add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'ast_pro_plugin_action_links' ) );	
 
-		$preview = ( isset( $_REQUEST['wcast-tracking-preview'] ) && '1' === $_REQUEST['wcast-tracking-preview'] ) || ( isset( $_REQUEST['wcast-partial-shipped-email-customizer-preview'] ) && '1' === $_REQUEST['wcast-partial-shipped-email-customizer-preview'] ) || ( isset( $_REQUEST['wcast-shipped-email-customizer-preview'] ) && '1' === $_REQUEST['wcast-shipped-email-customizer-preview'] ) ? true : false ;
+		$preview = false;
+		if ( isset( $_REQUEST['action'] ) && ( 'woocommerce_customizer_email_preview' === $_REQUEST['action'] || 'ast_email_preview' === $_REQUEST['action'] ) ) {
+			$preview = true; 
+		} else if ( isset( $_REQUEST['wooflow-email-customizer-preview'] ) && 1 == $_REQUEST['wooflow-email-customizer-preview'] ) {
+			$preview = true; 
+		} 
 				
 		if ( !$preview ) {			
 			$tracking_info_settings = get_option('tracking_info_settings');			
-			if ( isset( $tracking_info_settings['display_tracking_info_at'] ) && 'after_order' == $tracking_info_settings['display_tracking_info_at'] ) {
-				add_action( 'woocommerce_email_order_meta', array( $this->ast_pro_actions, 'email_display' ), 10, 4 );
-			} else {
-				add_action( 'woocommerce_email_before_order_table', array( $this->ast_pro_actions, 'email_display' ), 10, 4 );
-			}	
-		}			
+			add_action( 'woocommerce_email_before_order_table', array( $this->ast_pro_actions, 'email_display' ), 10, 4 );
+		}	
+		
+		add_filter( 'yith_wcbm_add_badge_tags_in_wp_kses_allowed_html', '__return_true' );
+		add_filter( 'yith_wcbm_is_allowed_adding_badge_tags_in_wp_kses', '__return_true' );
 	}
 	
 	/*** Method load Language file ***/
@@ -423,26 +496,30 @@ class Ast_Pro {
 	/*
 	* include file on plugin load
 	*/
-	public function on_plugins_loaded() {				
+	public function on_plugins_loaded() {
 		
-		require_once $this->get_plugin_path() . '/includes/tracking-info.php';
+		require_once $this->get_plugin_path() . '/includes/customizer/ast-customizer.php';	
+		$this->customizer = Ast_Customizer::get_instance();
 		
-		require_once $this->get_plugin_path() . '/includes/customizer/class-ast-pro-customizer.php';
-		
-		require_once $this->get_plugin_path() . '/includes/customizer/class-ast-pro-completed-email-customizer.php';
-		
-		require_once $this->get_plugin_path() . '/includes/customizer/class-ast-pro-tracking-info-customizer.php';
-		
-		require_once $this->get_plugin_path() . '/includes/customizer/class-ast-pro-partial-shipped-email-customizer.php';						
-																			
-		require_once $this->get_plugin_path() . '/includes/customizer/class-ast-pro-shipped-email-customizer.php';
+		require_once $this->get_plugin_path() . '/includes/tracking-info.php';				
 		
 		$enable_leagace_add_tracking = get_option( 'wc_ast_enable_leagace_add_tracking', 0);
 		if ( !$enable_leagace_add_tracking ) {
 			$ast = AST_Pro_Actions::get_instance();	
 			remove_action( 'ast_add_tracking_btn', array( $ast, 'ast_add_tracking_btn' ) );
-			add_action( 'ast_add_tracking_btn', array( $this->ast_pro_admin, 'ast_add_tracking_btn' ) );
-		}		
+			add_action( 'ast_add_tracking_btn', array( $ast, 'ast_add_tracking_btn_popup' ) );
+		}
+		
+		$enable_shipstation_default = ( is_plugin_active( 'woocommerce-shipstation-integration/woocommerce-shipstation.php' ) || is_plugin_active( 'dokan-pro/dokan-pro.php' ) ) ? 1 : 0;
+		$enable_shipstation = get_option( 'enable_shipstation_integration', $enable_shipstation_default );
+		if ( $enable_shipstation ) {			
+			require_once plugin_dir_path( __FILE__ ) . '/includes/integration/class-ast-pro-shipstation.php';
+		}
+
+		//if ( function_exists( 'dokan' ) ) {
+		//	require_once $this->get_plugin_path() . '/includes/class-ast-pro-dokan-compatibility.php';	
+		//	$this->dokan = Ast_Dokan::get_instance();
+		//}
 	}	
 	
 	/*
@@ -452,7 +529,7 @@ class Ast_Pro {
 		
 		if ( is_admin() ) {			
 			
-			if ( version_compare( get_option( 'tracking_per_item_addon_db_version' ), '1.3.2', '<' ) ) {
+			/*if ( version_compare( get_option( 'tracking_per_item_addon_db_version' ), '1.3.2', '<' ) ) {
 				$license_key = get_option( 'ast_product_license_key', false );
 				$status = get_option( 'ast_product_license_status', false );
 				$instance_id = get_option( 'ast_per_product_instance_id', false );				
@@ -460,7 +537,7 @@ class Ast_Pro {
 				$this->license->set_license_status( $status );
 				$this->license->set_instance_id( $instance_id );
 				update_option( 'tracking_per_item_addon_db_version', '1.3.2' );	
-			}
+			}*/
 			
 			if ( isset( $_GET['page'] ) && 'woocommerce-advanced-shipment-tracking' == $_GET['page'] ) {
 				$this->license->check_license_valid();
@@ -765,9 +842,19 @@ class Ast_Pro {
 	* @return array         List of modified plugin action links.
 	*/
 	public function ast_pro_plugin_action_links ( $links ) {
-		return array_merge( array(
+		$links = array_merge( array(
+			'<a href="https://wordpress.org/support/plugin/woo-advanced-shipment-tracking/reviews/#new-post" target="blank">' . __( 'Review' ) . '</a>'
+		), $links );
+		$links = array_merge( array(
+			'<a href="https://www.zorem.com/my-account/contact-support/" target="blank">' . __( 'Support' ) . '</a>'
+		), $links );
+		$links = array_merge( array(
+			'<a href="https://docs.zorem.com/docs/ast-pro/advanced-shipment-tracking-pro/" target="blank">' . __( 'Docs' ) . '</a>'
+		), $links );
+		$links = array_merge( array(
 			'<a href="' . esc_url( admin_url( '/admin.php?page=woocommerce-advanced-shipment-tracking' ) ) . '">' . __( 'Settings' ) . '</a>'
 		), $links );		
+		return $links;		
 	}	
 }
 
@@ -795,3 +882,9 @@ function ast_pro() {
  * Backward compatibility.
 */
 ast_pro();
+
+add_action( 'before_woocommerce_init', function() {
+	if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );

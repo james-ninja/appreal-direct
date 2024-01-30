@@ -233,61 +233,6 @@ if (!class_exists('CWG_Instock_API')) {
 			}
 			return $sku;
 		}
-		//custom mt
-		public function get_product_style( $id) {
-			$product_style = '';
-			if (!get_post_meta($id, 'cwginstock_bypass_pid', true)) {
-				$pid = get_post_meta($id, 'cwginstock_pid', true);
-			} else {
-				$pid = get_post_meta($id, 'cwginstock_bypass_pid', true);
-			}
-
-			$product_id = wp_get_post_parent_id($pid);
-
-			if ($product_id) {
-				$product_style = get_post_meta($product_id, 'product_style', true);
-			}
-			return $product_style;
-		}
-
-		public function get_product_variation_size( $id) {
-			$variation_size = '';
-			if (!get_post_meta($id, 'cwginstock_bypass_pid', true)) {
-				$pid = get_post_meta($id, 'cwginstock_pid', true);
-			} else {
-				$pid = get_post_meta($id, 'cwginstock_bypass_pid', true);
-			}
-
-			$variation = new WC_Product_Variation($pid);
-
-			if($variation){
-				$variation_attributes = $variation->get_variation_attributes();
-
-				$variation_size = str_replace("-", " ", $variation_attributes['attribute_pa_size']);
-			}
-			
-			return strtoupper($variation_size);
-		}
-
-		public function get_product_variation_color( $id) {
-			$variation_color = '';
-			if (!get_post_meta($id, 'cwginstock_bypass_pid', true)) {
-				$pid = get_post_meta($id, 'cwginstock_pid', true);
-			} else {
-				$pid = get_post_meta($id, 'cwginstock_bypass_pid', true);
-			}
-
-			$variation = new WC_Product_Variation($pid);
-
-			if($variation){
-				$variation_attributes = $variation->get_variation_attributes();
-
-				$variation_color = str_replace("-", " ", $variation_attributes['attribute_pa_color']);
-			}
-			
-			return ucwords($variation_color);
-		}
-
 
 		public function get_product_image( $id, $size = 'woocommerce_thumbnail') {
 			$image = '';
@@ -301,34 +246,8 @@ if (!class_exists('CWG_Instock_API')) {
 			if ($product) {
 				$image = $product->get_image($size);
 			}
-			$product_id = wp_get_post_parent_id($pid);
-			$var_image_id = $product->get_image_id();
-
-			$var_image_url =  wp_get_attachment_url($var_image_id);
-
-			if (strpos($var_image_url, '_sw') == true) {
-				$var_image_url = str_replace("_sw", "-300x300", $var_image_url);
-			}
-
-			if (strpos($var_image_url, 'EBY_') == true) {
-				$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
-			}
-
-			if (@getimagesize($var_image_url)) {
-				$thumbnail = '<img width="64" src="' . $var_image_url . '">';
-			} else {
-				$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-				$thumbnail = '<img width="64" src="' . $image_array[0] . '">';
-			}
-
-			if ($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327) {
-				$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_id), 'shop_thumbnail');
-				$thumbnail = '<img width="64" src="' . $image_coming_soon[0] . '">';
-			}
-			$image = $thumbnail;
 			return $image;
 		}
-		//custom mt
 
 		public function get_subscriber_name( $subscriber_id) {
 			$subscriber_name = get_post_meta($subscriber_id, 'cwginstock_subscriber_name', true);

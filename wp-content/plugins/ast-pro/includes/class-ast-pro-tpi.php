@@ -53,7 +53,10 @@ class AST_Tpi {
 		//add_action( 'woocommerce_order_item_meta_end', array( $this, 'action_woocommerce_order_item_meta_end' ), 10, 3 );
 
 		add_action( 'ast_api_create_item_arg', array( $this, 'ast_api_create_item_arg_callback' ), 10, 2 );	
-		add_action( 'trackship_tracking_header_before', array( $this, 'trackship_tracking_header_before_callback' ), 10, 4 );		
+		add_filter( 'tracking_widget_tab_array', array( $this, 'tracking_widget_tab_array_callback' ), 10, 5 );
+		add_action( 'tracking_widget_tab_content', array( $this, 'tracking_widget_tab_content_callback' ), 10, 4 );		
+
+		add_filter( 'tracking_widget_product_array', array( $this, 'tracking_widget_product_array_callback' ), 10, 5 );
 	}
 
 	public function include_tpi_styles( $actions, $order ) {
@@ -74,9 +77,7 @@ class AST_Tpi {
 		$total_items = count($items);				
 		
 		$product_list = array();
-		$tracking_items = $ast->get_tracking_items( $order_id );		
-		
-		//echo '<pre>';print_r($tracking_items);echo '</pre>';
+		$tracking_items = $ast->get_tracking_items( $order_id );
 		
 		foreach ( $tracking_items as $tracking_item ) {			
 			if ( isset( $tracking_item[ 'products_list' ] ) ) {
@@ -109,9 +110,7 @@ class AST_Tpi {
 		<div class="<?php esc_html_e( $inline_class ); ?>">
 			<?php
 			$enable_tpi_by_default = get_option( 'enable_tpi_by_default', 0 );
-			$checked = ( 1 == $enable_tpi_by_default ) ? 'checked' : '' ;
-			$display_sku_for_tpi = get_option( 'display_sku_for_tpi', 0 );
-			$display_image_for_tpi = get_option( 'display_image_for_tpi', 0 );
+			$checked = ( 1 == $enable_tpi_by_default ) ? 'checked' : '' ;			
 			?>
 			<h2 class="product-table-header">
 				<input type="checkbox" name="enable_tracking_per_item" class="enable_tracking_per_item" value="1" <?php esc_html_e( $checked ); ?>><?php esc_html_e( 'Tracking Per Item', 'ast-pro'); ?>
@@ -123,14 +122,12 @@ class AST_Tpi {
 				global $wpdb;
 				$vendor_table = $wpdb->prefix . 'wcpv_commissions';
 				
-				$query = "SELECT order_item_id FROM {$vendor_table} WHERE order_id = " . $order_id . "";
-				$order_items = $wpdb->get_results( $query );
-				
+				$order_items = $wpdb->get_results( $wpdb->prepare( 'SELECT order_item_id FROM %1s WHERE order_id = %s', $vendor_table, $order_id ) );				
 				?>
 				<tbody>
 					<?php 
 					$n = 0;					
-					
+					$total_qty = 0;
 					foreach ( $order_items as $order_item ) {
 						$item_id = $order_item->order_item_id;
 						$item = new WC_Order_Item_Product($item_id);
@@ -153,7 +150,7 @@ class AST_Tpi {
 								}
 							}
 						}
-						//echo '<pre>';print_r($order_items);echo '</pre>';exit;
+
 						if ( array_key_exists( $item_id, $all_list ) ) {	
 							if ( isset( $all_list[ $item_id ] ) ) {									  
 								$qty = (int) $item->get_quantity() - (int) $all_list[ $item_id ];
@@ -172,21 +169,15 @@ class AST_Tpi {
 						}
 						$qty = ( $qty < 0 ) ? 0 : $qty ;
 						$disable_row = ( 0 == $qty ) ? 'disable_row' : '';
+						$total_qty = $qty + $total_qty;
 						?>
 						<tr class="ASTProduct_row <?php esc_html_e( $disable_row ); ?>">
-							<?php 
-							if ( 'inline' == $location ) {
-								if ( 1 == $display_image_for_tpi ) {
-									?>
+							<?php if ( 'inline' == $location ) { ?>
 								<td style="width: 50px;"><?php echo wp_kses_post( $image ); ?></td>
-							<?php } } ?>							
+							<?php } ?>							
 							<td>
-								<?php 
-									esc_html_e( $item->get_name() );
-								if ( 1 == $display_sku_for_tpi ) { 
-									?>
-									<br/><span class="ASTProduct_sku"><?php esc_html_e( 'SKU:', 'ast-pro' ); ?> <?php esc_html_e( $item_sku ); ?></span>
-								<?php } ?>
+								<?php esc_html_e( $item->get_name() ); ?>
+								<br/><span class="ASTProduct_sku"><?php esc_html_e( 'SKU:', 'ast-pro' ); ?> <?php esc_html_e( $item_sku ); ?></span>								
 								<input type="hidden" value="<?php esc_html_e( $item->get_name() ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][title]">
 								<input type="hidden" class="product_id" value="<?php esc_html_e( $product_id ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][product]">
 								<input type="hidden" class="item_id" value="<?php esc_html_e( $item_id ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][item_id]">
@@ -206,7 +197,8 @@ class AST_Tpi {
 							</td>
 						</tr>	
 					<?php $n++; } ?>						
-				</tbody>			
+				</tbody>	
+				<input type="hidden" class="total_qty" value="<?php esc_html_e( $total_qty ); ?>" name="total_qty">		
 			</table>			
 		</div>
 		<div class="qty_validation"><?php esc_html_e( 'Please choose at least one item quantity', 'ast-pro' ); ?></div>
@@ -227,19 +219,27 @@ class AST_Tpi {
 		</style>
 	<?php
 	}	
+	
 	/*
 	* functions for add products table in tracking form
 	*/
-	public function ast_tracking_form_products( $order_id, $location ) {		
+	public function ast_tracking_form_products( $order_id, $location ) {
+		
+		$order = wc_get_order( $order_id );
+
+		global $sitepress;		
+		if ( $sitepress ) {
+			$old_lan = $sitepress->get_current_language();
+			$new_lan = $order->get_meta( 'wpml_language', true );
+			$sitepress->switch_lang($new_lan);
+		}
 		
 		wp_enqueue_style( 'tpi_styles', ast_pro()->plugin_dir_url() . 'assets/css/tpi.css', array(), ast_pro()->version );
 		wp_enqueue_script( 'tpi_scripts', ast_pro()->plugin_dir_url() . 'assets/js/tpi.js' , array( 'jquery', 'wp-util' ), ast_pro()->version, true );
 		
 		$ast = AST_Pro_Actions::get_instance();
 		
-		$order = new WC_Order( $order_id );
 		$items = $order->get_items();
-		
 		$total_items = count($items);				
 		
 		$product_list = array();
@@ -278,24 +278,43 @@ class AST_Tpi {
 			<?php
 			$enable_tpi_by_default = get_option( 'enable_tpi_by_default', 0 );
 			$checked = ( 1 == $enable_tpi_by_default ) ? 'checked' : '' ;
-			$display_sku_for_tpi = get_option( 'display_sku_for_tpi', 0 );
-			$display_image_for_tpi = get_option( 'display_image_for_tpi', 0 );
+			$table_css = ( 1 != $enable_tpi_by_default ) ? 'display:none;' : '';
+			$header_css = '';
+
+			if ( function_exists( 'dokan_is_seller_dashboard' ) ) {
+				if ( dokan_is_seller_dashboard() ) {
+					$checked = 'checked';
+					$table_css = '';
+					$header_css = 'display:none;';
+				}
+			}
+
 			?>
-			<h2 class="product-table-header">
+			<h2 class="product-table-header" style="<?php esc_html_e( $header_css ); ?>">
 				<input type="checkbox" name="enable_tracking_per_item" class="enable_tracking_per_item" value="1" <?php esc_html_e( $checked ); ?>><?php esc_html_e( 'Tracking Per Item', 'ast-pro'); ?>
 			</h2>
 			
-			<table class="wp-list-table widefat fixed posts ast-product-table" style="<?php esc_html_e( ( 1 != $enable_tpi_by_default ) ? 'display:none;' : '' ); ?>">			
+			<table class="wp-list-table widefat posts ast-product-table" style="<?php esc_html_e( $table_css ); ?>">			
 				<?php $items = $order->get_items(); ?>
 				<tbody>
 					<?php 
 					$n = 0;
 					$total_product = count( $items );
-					
-					foreach ( $items as $item_id => $item ) {												
+					$total_qty = 0;
+					foreach ( $items as $item_id => $item ) {	
+						
+						$item_qty_refunded = $order->get_qty_refunded_for_item( $item_id );
+						//$item_total_refunded = $order->get_total_refunded_for_item( $item_id );
+
 						$product = $item->get_product();
 						$checked = 0;
 						$qty = $item->get_quantity();
+						
+						$qty = $qty + $item_qty_refunded;
+
+						if ( 0 == $qty ) {
+							continue;
+						}
 						
 						$variation_id = $item->get_variation_id();
 						$product_id = $item->get_product_id();					
@@ -306,7 +325,7 @@ class AST_Tpi {
 											
 						if ( array_key_exists( $product_id, $all_list ) ) {	
 							if ( isset( $all_list[ $product_id ] ) ) {									  
-								$qty = (int) $item->get_quantity() - (int) $all_list[ $product_id ];
+								$qty = (int) $qty - (int) $all_list[ $product_id ];
 								if ( $all_list[ $product_id ] == $item->get_quantity() ) {
 									$checked = 1;										
 								}
@@ -315,7 +334,7 @@ class AST_Tpi {
 						
 						if ( array_key_exists( $item_id, $all_list ) ) {	
 							if ( isset( $all_list[ $item_id ] ) ) {									  
-								$qty = (int) $item->get_quantity() - (int) $all_list[ $item_id ];
+								$qty = (int) $qty - (int) $all_list[ $item_id ];
 								if ( $all_list[ $item_id ] == $item->get_quantity() ) {
 									$checked = 1;										
 								}
@@ -324,31 +343,25 @@ class AST_Tpi {
 						
 						$item_sku = '';
 						$image = '';
-						if ( $item->get_product_id() ) {
-							$product = wc_get_product( $item->get_product_id() );
+						if ( $product_id ) {
+							$product = wc_get_product( $product_id );
 							$item_sku = ( $product ) ? $product->get_sku() : '';
 							$image = ( $product ) ? $product->get_image( array( 50, 50 )  ) : '';	
 						}
 						$qty = ( $qty < 0 ) ? 0 : $qty ;
 						$disable_row = ( 0 == $qty ) ? 'disable_row' : '';
+						$total_qty = $qty + $total_qty;
 						?>
 						<tr class="ASTProduct_row <?php esc_html_e( $disable_row ); ?>">
-							<?php 
-							if ( 'inline' == $location ) {
-								if ( 1 == $display_image_for_tpi ) {
-									?>
+							<?php if ( 'inline' == $location ) { ?>
 								<td style="width: 15px;"><?php echo wp_kses_post( $image ); ?></td>
-							<?php } } ?>							
+							<?php } ?>							
 							<td>
-								<?php 
-									esc_html_e( $item->get_name() );
-								if ( 1 == $display_sku_for_tpi ) { 
-									?>
-									<br/><span class="ASTProduct_sku"><?php esc_html_e( 'SKU:', 'ast-pro' ); ?> <?php esc_html_e( $item_sku ); ?></span>
-								<?php } ?>
+								<?php esc_html_e( $item->get_name() ); ?>
+								<br/><span class="ASTProduct_sku"><?php esc_html_e( 'SKU:', 'ast-pro' ); ?> <?php esc_html_e( $item_sku ); ?></span>								
 								<input type="hidden" value="<?php esc_html_e( $item->get_name() ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][title]">
 								<input type="hidden" class="product_id" value="<?php esc_html_e( $product_id ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][product]">
-								<input type="hidden" class="item_id" value="<?php esc_html_e( $item_id ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][item_id]">
+								<input type="hidden" class="item_id" value="<?php esc_html_e( $item_id ); ?>" name="ASTProduct[<?php esc_html_e( $n ); ?>][item_id]">								
 							</td>
 							<td style="">
 								<div class="value-button" id="decrease" value="Decrease Value">-</div>
@@ -358,7 +371,7 @@ class AST_Tpi {
 									<span>
 									<?php 
 									esc_html_e( ' out of ', 'ast-pro'); 
-									esc_html_e( $item->get_quantity() ); 
+									esc_html_e( $item->get_quantity() + $item_qty_refunded ); 
 									?>
 									</span>
 								<?php } ?>		
@@ -366,7 +379,8 @@ class AST_Tpi {
 						</tr>	
 					<?php $n++; } ?>						
 				</tbody>			
-			</table>			
+			</table>	
+			<input type="hidden" class="total_qty" value="<?php esc_html_e( $total_qty ); ?>" name="total_qty">		
 		</div>
 		<div class="qty_validation"><?php esc_html_e( 'Please choose at least one item quantity', 'ast-pro' ); ?></div>
 		<style>
@@ -385,15 +399,15 @@ class AST_Tpi {
 		<?php } ?>
 		</style>
 	<?php	
+		if ( $sitepress ) {
+			$sitepress->switch_lang($old_lan);
+		}
 	}
 
 	/**
 	 * Function for return tracking per item args when save tracking information from single order page
 	 */
 	public function tracking_info_args_callback( $args, $postdata, $order_id ) {
-		
-		//echo '<pre>';print_r($postdata);echo '</pre>';exit;		
-		
 		$enable_tracking_per_item = isset( $postdata[ 'enable_tracking_per_item' ] ) ? wc_clean( $postdata[ 'enable_tracking_per_item' ] ) : '' ;
 		
 		if ( 1 == $enable_tracking_per_item ) {
@@ -451,20 +465,21 @@ class AST_Tpi {
 		$show = false;
 		$items = $order->get_items();		
 		
-		foreach ( $items as $item ) {	
+		foreach ( $items as $item_id => $item ) {	
 			
 			$product_id = $item->get_variation_id() ? $item->get_variation_id() : $item->get_product_id();			
 			
 			$products[] = (object) array (
 				'product' => $product_id,
+				'item_id' => $item_id,	
 				'qty' => $item->get_quantity(),
 			);					
-		}		
-		
+		}				
+
 		foreach ( $tracking_items as $t_item ) {			
 			if ( isset( $t_item[ 'products_list' ] ) && !empty( $t_item[ 'products_list' ] ) ) {
-				$product_list[ $t_item[ 'tracking_id' ] ] = $t_item[ 'products_list' ];
-				
+				$product_list[ $t_item[ 'tracking_id' ] ] = $t_item[ 'products_list' ];								
+
 				$array_check = ( $product_list[ $t_item[ 'tracking_id' ] ] == $products );
 				
 				if ( empty( $t_item[ 'products_list' ] ) || 1 == $array_check ) {
@@ -592,7 +607,6 @@ class AST_Tpi {
 							</div>
 							<?php
 						} elseif ( !isset( $products->item_id ) && $products->product == $product_id ) {
-							echo 'product_id';	
 							?>
 							<div class="wc-order-item-sku">
 								<strong><?php esc_html_e( 'Shipped with:', 'ast-pro' ); ?></strong>
@@ -763,9 +777,9 @@ class AST_Tpi {
 			$checked = 0;
 			$qty = $item->get_quantity();
 			
-			if ( 1 == $items_count && 1 == $qty ) {
-				return $args;
-			}	
+			/*if ( 1 == $items_count && 1 == $qty ) {
+				//return $args;
+			}*/	
 			
 			$variation_id = $item->get_variation_id();
 			$product_id = $item->get_product_id();					
@@ -826,14 +840,123 @@ class AST_Tpi {
 		return $all_list;
 	}	
 	
+	public function tracking_widget_product_array_callback ( $products, $order_id, $tracker, $tracking_provider, $tracking_number ) {
+		
+		$ast = AST_Pro_Actions::get_instance();	
+		$tracking_items = $ast->get_tracking_items( $order_id ); 
+		$order = wc_get_order( $order_id );		
+		$items = $order->get_items();
+		$items_count = count($items);
+
+		foreach ( $items as $item ) {																
+			
+			$qty = $item->get_quantity();
+			
+			if ( 1 == $items_count && 1 == $qty ) {
+				return $products;
+			}
+		}	
+		
+		$show = $this->check_if_tpi_order( $tracking_items, $order );
+		
+		if ( !$show ) {
+			return $products;
+		}
+		
+		foreach ( $tracking_items as $tracking_item ) {
+			if ( $tracking_item['tracking_number'] == $tracking_number ) {
+				
+				if ( !isset( $tracking_item['products_list'] ) ) {
+					return $products;
+				}
+				
+				if ( empty( $tracking_item['products_list'] ) ) {
+					return $products; 
+				}
+			}
+		}
+		$tpi_products = array();
+			
+		foreach ( $tracking_items as $tracking_item ) {
+			if ( $tracking_item[ 'tracking_number' ] == $tracking_number ) {
+				if ( isset( $tracking_item[ 'products_list' ] ) ) {
+					foreach ( (array) $tracking_item[ 'products_list' ] as $product_list ) {						
+						if ( $product_list->product ) {							
+							$product = wc_get_product( $product_list->product );							
+							if ( $product ) {
+								$tpi_products[$product_list->product] = array(
+									'product_id' => $product_list->product,
+									'product_name' => $product->get_name(),
+									'product_qty' => $product_list->qty,									
+								);
+							}			
+						}
+					}
+				}
+			}
+		}
+				
+		return $tpi_products;	
+	}
+
+	public function tracking_widget_tab_array_callback( $tab_array, $order_id, $tracker, $tracking_provider, $tracking_number ) {
+		
+		$ast = AST_Pro_Actions::get_instance();	
+		$tracking_items = $ast->get_tracking_items( $order_id ); 
+		$order = wc_get_order( $order_id );		
+		$items = $order->get_items();
+		$items_count = count($items);
+
+		foreach ( $items as $item ) {																
+			
+			$qty = $item->get_quantity();
+			
+			if ( 1 == $items_count && 1 == $qty ) {
+				return $tab_array;
+			}
+		}	
+		
+		$show = $this->check_if_tpi_order( $tracking_items, $order );
+		
+		if ( !$show ) {
+			return $tab_array;
+		}
+		
+		foreach ( $tracking_items as $tracking_item ) {
+			if ( $tracking_item['tracking_number'] == $tracking_number ) {
+				
+				if ( !isset( $tracking_item['products_list'] ) ) {
+					return $tab_array;
+				}
+				
+				if ( empty( $tracking_item['products_list'] ) ) {
+					return $tab_array; 
+				}
+			}
+		}
+		
+		$tab_array['product_details'] = array( 'label'	=> __( 'Products', 'trackship-for-woocommerce' ) );
+		return $tab_array;
+	}
 	/*
 	* Display TPI Product details in TrackShip Tracking Page
 	*/
-	public function trackship_tracking_header_before_callback( $order_id, $tracker, $tracking_provider, $tracking_number ) {
+	public function tracking_widget_tab_content_callback( $order_id, $tracker, $tracking_provider, $tracking_number ) {
 		
 		$ast = AST_Pro_Actions::get_instance();				
 		$tracking_items = $ast->get_tracking_items( $order_id ); 
-		$order = wc_get_order( $order_id );
+		$order = wc_get_order( $order_id );		
+		$items = $order->get_items();
+		$items_count = count($items);
+
+		foreach ( $items as $item ) {																
+			
+			$qty = $item->get_quantity();
+			
+			if ( 1 == $items_count && 1 == $qty ) {
+				return;
+			}
+		}	
 		
 		$show = $this->check_if_tpi_order( $tracking_items, $order );
 		
@@ -854,33 +977,50 @@ class AST_Tpi {
 			}
 		}	
 		?>
-		<h4 class="h4-heading tpi_products_heading"><?php esc_html_e( 'Products', 'woocommerce' ); ?></h4>			
-		<ul class="tpi_product_tracking_ul">
-			<?php
-			foreach ( $tracking_items as $tracking_item ) {
-				if ( $tracking_item[ 'tracking_number' ] == $tracking_number ) {
-					if ( isset( $tracking_item[ 'products_list' ] ) ) {
-						foreach ( (array) $tracking_item[ 'products_list' ] as $products ) {
-							if ( $products->product ) {
-								$product = wc_get_product( $products->product );
-								if ( $product ) {
-									$product_name = $product->get_name();
-									echo '<li><a target="_blank" href=' . esc_url( get_permalink( $products->product ) ) . '>' . esc_html( $product_name ) . '</a> x ' . esc_html( $products->qty ) . '</li>';
+		<div class="product_details" style="display:none;">
+			<ul class="tpi_product_tracking_ul">
+				<?php
+				foreach ( $tracking_items as $tracking_item ) {
+					if ( $tracking_item[ 'tracking_number' ] == $tracking_number ) {
+						if ( isset( $tracking_item[ 'products_list' ] ) ) {
+							foreach ( (array) $tracking_item[ 'products_list' ] as $products ) {
+								if ( $products->product ) {
+									$product = wc_get_product( $products->product );
+									if ( $product ) {
+										$image_size = array( 50, 50 );
+										$image = $product->get_image( $image_size );
+										$product_name = $product->get_name();
+										echo '<li>' . wp_kses_post( $image ) . '<span><a target="_blank" href=' . esc_url( get_permalink( $products->product ) ) . '>' . esc_html( $product_name ) . '</a> x ' . esc_html( $products->qty ) . '</span></li>';
+									}
 								}
 							}
 						}
 					}
 				}
-			}
-			?>
-		</ul>
+				?>
+			</ul>
+		</div>
 		<style>
 		ul.tpi_product_tracking_ul {
 			list-style: none;
 		}
 		ul.tpi_product_tracking_ul li{
 			font-size: 14px;
+			margin: 0 0 5px;
+			border-bottom: 1px solid #ccc;
+			padding: 0 0 5px;
+		}
+		ul.tpi_product_tracking_ul li:last-child{
+			border-bottom: 0;
 			margin: 0;
+			padding: 0;
+		}
+		ul.tpi_product_tracking_ul li img{
+			vertical-align: middle;
+		}
+		ul.tpi_product_tracking_ul li span{
+			margin: 0px 0px 0 10px;
+			vertical-align: middle;
 		}
 		.tpi_products_heading{
 			margin-top: -10px;

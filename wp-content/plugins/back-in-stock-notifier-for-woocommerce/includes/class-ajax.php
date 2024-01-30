@@ -76,7 +76,7 @@ if (!class_exists('CWG_Instock_Ajax')) {
 				$success_msg = __('You have successfully subscribed, we will inform you when this product back in stock', 'back-in-stock-notifier-for-woocommerce');
 				$success = isset($get_option['success_subscription']) && $get_option['success_subscription'] ? $get_option['success_subscription'] : $success_msg;
 				$success_message = "<div class='cwginstocksuccess' style='color:green;'>$success</div>";
-				$success_message = apply_filters('cwginstock_success_subscription_html', $success_message, $success);
+				$success_message = apply_filters('cwginstock_success_subscription_html', $success_message, $success, $post_data);
 				$array_success = array('msg' => $success_message);
 				if (!$rest_api) {
 					wp_send_json($array_success, 200);
@@ -119,7 +119,9 @@ if (!class_exists('CWG_Instock_Ajax')) {
 				$get_option = get_option('cwginstocksettings');
 				$already_sub_msg = __('Seems like you have already subscribed to this product', 'back-in-stock-notifier-for-woocommerce');
 				$error = isset($get_option['already_subscribed']) && $get_option['already_subscribed'] ? $get_option['already_subscribed'] : $already_sub_msg;
+				$raw_error = $error;
 				$error = "<div class='cwginstockerror' style='color:red;'>$error</div>";
+				$error = apply_filters('cwginstock_error_subscription_html', $error, $raw_error, $post_data);
 				$error_msg = array('msg' => $error);
 
 				if (!$rest_api) {

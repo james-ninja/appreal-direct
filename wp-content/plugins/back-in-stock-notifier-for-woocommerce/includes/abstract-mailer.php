@@ -44,18 +44,13 @@ abstract class CWG_Instock_Mailer {
 		$only_product_name = $obj->display_only_product_name($this->subscriber_id);
 		$product_link = $obj->display_product_link($this->subscriber_id);
 		$only_product_sku = $obj->get_product_sku($this->subscriber_id);
-		//custom mt
-		$product_style = $obj->get_product_style($this->subscriber_id);
-		$variation_size = $obj->get_product_variation_size($this->subscriber_id);
-		$variation_color = $obj->get_product_variation_color($this->subscriber_id);
-		//custom mt
 		$product_image = $obj->get_product_image($this->subscriber_id);
 		$subscriber_name = $obj->get_subscriber_name($this->subscriber_id);
 		$subscriber_phone = $obj->get_subscriber_phone($this->subscriber_id);
 		$cart_url = $obj->get_cart_link($this->subscriber_id); //esc_url_raw(add_query_arg('add-to-cart', $pid, get_permalink(wc_get_page_id('cart'))));
 		$blogname = get_bloginfo('name');
-		$find_array = array('{product_name}','{product_style}', '{variation_size}','{variation_color}','{product_id}', '{product_link}', '{shopname}', '{email_id}', '{subscriber_email}', '{cart_link}', '{only_product_name}', '{only_product_sku}', '{product_image}', '{subscriber_name}', '{subscriber_phone}');
-		$replace_array = array(strip_tags($product_name), $product_style, $variation_size, $variation_color, $pid, $product_link, $blogname, $this->email, $this->email, $cart_url, $only_product_name, $only_product_sku, $product_image, $subscriber_name, $subscriber_phone);
+		$find_array = array('{product_name}', '{product_id}', '{product_link}', '{shopname}', '{email_id}', '{subscriber_email}', '{cart_link}', '{only_product_name}', '{only_product_sku}', '{product_image}', '{subscriber_name}', '{subscriber_phone}');
+		$replace_array = array(strip_tags($product_name), $pid, $product_link, $blogname, $this->email, $this->email, $cart_url, $only_product_name, $only_product_sku, $product_image, $subscriber_name, $subscriber_phone);
 		$formatted_content = str_replace($find_array, $replace_array, $content);
 		return apply_filters('cwginstock_replace_shortcode', $formatted_content, $this->subscriber_id);
 	}

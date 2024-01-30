@@ -32,7 +32,7 @@
 						</a>
 					</li>            
 					<li class="woocommerce-list__item has-action">
-						<a href="https://www.zorem.com/docs/ast-pro/" class="woocommerce-list__item-inner" target="_blank">
+						<a href="https://docs.zorem.com/docs/ast-pro/advanced-shipment-tracking-pro/" class="woocommerce-list__item-inner" target="_blank">
 							<div class="woocommerce-list__item-before">
 								<img src="<?php echo esc_url( ast_pro()->plugin_dir_url() ); ?>assets/images/documentation-icon-20.svg">
 							</div>

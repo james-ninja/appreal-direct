@@ -106,9 +106,7 @@ if (!class_exists('CWG_Instock_Google_Recaptcha')) {
 		public function recaptcha_site_key() {
 			$options = get_option('cwginstocksettings');
 			?>
-
 			<input type='text' class="cwg_instock_recaptcha_v2" style='width: 400px;' name='cwginstocksettings[recaptcha_site_key]' value='<?php echo wp_kses_post(isset($options['recaptcha_site_key']) ? $options['recaptcha_site_key'] : ''); ?>'/>
-
 			<?php
 		}
 
@@ -189,9 +187,9 @@ if (!class_exists('CWG_Instock_Google_Recaptcha')) {
 				?>
 				<div class="cwginstock_google_credit">
 					<small>
-						This site is protected by reCAPTCHA and the Google
-						<a href="https://policies.google.com/privacy">Privacy Policy</a> and
-						<a href="https://policies.google.com/terms">Terms of Service</a> apply.
+						<?php esc_html_e('This site is protected by reCAPTCHA and the Google', 'back-in-stock-notifier-for-woocommerce'); ?>
+						<a href="https://policies.google.com/privacy"><?php esc_html_e('Privacy Policy', 'back-in-stock-notifier-for-woocommerce'); ?></a> and
+						<a href="https://policies.google.com/terms"><?php esc_html_e('Terms of Service', 'back-in-stock-notifier-for-woocommerce'); ?></a> apply.
 					</small>
 				</div>
 				<?php

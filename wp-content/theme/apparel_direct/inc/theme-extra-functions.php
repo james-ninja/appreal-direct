@@ -100,7 +100,7 @@ function share_list_get_pdf()
 
 	// send nocache headers.
 	nocache_headers();
-	//generate pdf;
+	// generate pdf.
 	$dompdf = new Dompdf\Dompdf();
 	$dompdf->loadHtml(get_savecartlater_content());
 	$dompdf->set_option('isRemoteEnabled', TRUE);
@@ -162,8 +162,13 @@ function get_save_cart_html()
 
 						foreach ($saved_value as $product_cart_key => $product_cart_value) {
 							$mwb_attribute = array();
+
+							$aws_var_image = get_post_meta($product_cart_value['variation_id'],'aws_url_field', true);
 							if (isset($product_cart_value['variation_id']) && 0 != $product_cart_value['variation_id']) {
 								$product = wc_get_product($product_cart_value['variation_id']);
+
+								
+
 								$image = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['variation_id']), 'single-post-thumbnail');
 								$mwb_attribute = $product_cart_value['product_attribute'];
 
@@ -194,11 +199,11 @@ function get_save_cart_html()
 										$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
 									}
 
-									if ($var_image_url) {
-										$thumbnail = '<img width="128" height="128" src="' . $var_image_url . '">';
+									if (file_is_valid_image($var_image_url)) {
+										$thumbnail = '<img width="128" height="128" src="' . $aws_var_image . '">';
 									} else {
 										$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['product_id']), 'shop_thumbnail');
-										$thumbnail = '<img width="128" height="128" src="' . $image_array[0] . '">';
+										$thumbnail = '<img width="128" height="128" src="' . $aws_var_image . '">';
 									}
 
 									if($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327){
@@ -336,7 +341,7 @@ function mwb_woo_save_my_cart_product_section_custom()
 							$mwb_attribute = array();
 
 							$aws_var_image = get_post_meta($product_cart_value['variation_id'],'aws_url_field', true);
-							
+
 							if (isset($product_cart_value['variation_id']) && 0 != $product_cart_value['variation_id']) {
 								$product = wc_get_product($product_cart_value['variation_id']);
 								$image = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['variation_id']), 'single-post-thumbnail');
@@ -363,30 +368,29 @@ function mwb_woo_save_my_cart_product_section_custom()
 								<td><a href="javascript:void(0)" class="mwb_woo_smc_remove_saved_item remove" data_move_prod_id="<?php echo esc_attr($product->get_id()); ?>" data-prod_qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>">x</a></td>
 								<?php */  ?>
 								<td><?php //echo wp_kses_post($product_parent->get_image('shop_thumbnail')); 
-								
-								if($aws_var_image){
+									if($aws_var_image){
 										$thumbnail = '<img width="128" height="128" src="' . $aws_var_image . '">';
-									}
-									else { 
-
-									$var_image_id = $product->get_image_id();
-									$var_image_url =  wp_get_attachment_url($var_image_id);
-
-									if (strpos($var_image_url, '_sw') == true) {
-										$var_image_url = str_replace("_sw", "-300x300", $var_image_url);
-									}
-
-									if (strpos($var_image_url, 'EBY_') == true) {
-										$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
-									}
-
-									if ($var_image_url) {
-										$thumbnail = '<img width="128" height="128" src="' . $var_image_url . '">';
 									} else {
-										$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['product_id']), 'shop_thumbnail');
-										$thumbnail = '<img width="128" height="128" src="' . $image_array[0] . '">';
+										$var_image_id = $product->get_image_id();
+										$var_image_url =  wp_get_attachment_url($var_image_id);
+
+										if (strpos($var_image_url, '_sw') == true) {
+											$var_image_url = str_replace("_sw", "-300x300", $var_image_url);
+										}
+
+										if (strpos($var_image_url, 'EBY_') == true) {
+											$var_image_url = str_replace("EBY_", "HBI_", $var_image_url);
+										}
+
+										if (file_is_valid_image($var_image_url)) {
+
+											$thumbnail = '<img width="128" height="128" src="' . $var_image_url . '">';
+										} else {
+											$image_array = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['product_id']), 'shop_thumbnail');
+											$thumbnail = '<img width="128" height="128" src="' . $image_array[0] . '">';
+										}
 									}
-									}
+									
 
 									if($var_image_id == 11668 || $var_image_id == 67550 || $var_image_id == 82327){
 										$image_coming_soon = wp_get_attachment_image_src(get_post_thumbnail_id($product_cart_value['product_id']), 'shop_thumbnail');
@@ -422,9 +426,7 @@ function mwb_woo_save_my_cart_product_section_custom()
 									if (is_array($product_data) && ('outofstock' != $product_data['stock_status'])) {
 									?>
 										<?php /*<input type="button" name="mwb_woo_smc_move_to_cart" class="mwb_woo_smc_move_to_cart_button button alt" id="mwb_woo_smc_move_to_cart_<?php echo esc_attr($product->get_id()); ?>" data_move_prod_id="<?php echo esc_attr($product->get_id()); ?>" value="<?php esc_attr_e('Move To Cart', 'save-cart-later'); ?>" data-prod_qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>">*/ ?>
-										
 										<button class="add-to-cart-button button alt" data-product-id="<?php echo esc_attr($product->get_id()); ?>" data-prod-qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>">Move To Cart</button>
-										
 										<?php
 										$fb_share_enable = get_option('mwb_save_my_cart_fb_share_button_enable', false);
 										if (isset($fb_share_enable) && 'yes' == $fb_share_enable) {
@@ -435,10 +437,9 @@ function mwb_woo_save_my_cart_product_section_custom()
 										}
 									} else {
 										?>
+										<button class="add-to-cart-button button alt" data-product-id="<?php echo esc_attr($product->get_id()); ?>" data-prod-qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>" disabled="disabled">Move To Cart</button>
+										
 										<?php /*<input type="button" name="mwb_woo_smc_move_to_cart" class="mwb_woo_smc_move_to_cart_button " id="mwb_woo_smc_move_to_cart_<?php echo esc_attr($product->get_id()); ?>" data_move_prod_id="<?php echo esc_attr($product->get_id()); ?>" value="<?php esc_attr_e('Out of stock', 'save-cart-later'); ?>" data-prod_qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>" disabled="disabled" style="color: red;">*/ ?>
-										
-										
-										<button class="add-to-cart-button button alt" data-product-id="<?php echo esc_attr($product->get_id()); ?>" data-prod-qty="<?php echo esc_attr($product_cart_value['product_qty']); ?>" disabled="disabled" style="color: red;">Move To Cart</button>
 									<?php
 									}
 									echo '</div>';
@@ -468,6 +469,7 @@ function mwb_woo_save_my_cart_product_section_custom()
 								<td data-title="Quantity"><label id="mwb_woo_smc_save_for_later_<?php echo esc_attr($product->get_id()); ?>" class="mwb_woo_smc_later_product_quntity"><?php echo esc_attr($product_cart_value['product_qty']); ?></label></td>
 								<td data-title="Price"><?php echo wp_kses(WC()->cart->get_product_price($product), $allowed_html); ?></td>
 								<td data-title="Total"><?php echo wp_kses(WC()->cart->get_product_subtotal($product, $product_cart_value['product_qty']), $allowed_html); ?></td>
+								
 								<?php /* ?>	
 								<td data-title="Action">
 									<?php
@@ -509,6 +511,9 @@ function mwb_woo_save_my_cart_product_section_custom()
 <?php
 	}
 }
+
+
+
 
 
 //Custom Move To Cart Function*/

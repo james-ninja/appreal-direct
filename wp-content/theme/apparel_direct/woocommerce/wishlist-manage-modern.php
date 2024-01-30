@@ -257,8 +257,8 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 						<?php
 						if ( $wishlist->has_items() ) :
 							$items = $wishlist->get_items( 1 );
-
 							foreach ( $items as $item ) {
+								//print_r($item);
 								$variation_id = $item['variation_id'];
 								$productid=$item['product_id'];
 								$variation_image = get_field('cdn_featured_image',$productid);

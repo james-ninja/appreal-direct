@@ -26,7 +26,7 @@ if (!class_exists('CWG_Instock_Settings')) {
 
 				<h1><?php esc_html_e('Back In Stock Notifier for WooCommerce Settings', 'cwginstocknotifier'); ?></h1>
 				<div class="notice cwg_marketing_notice">
-					<p>Browse our <a href="https://codewoogeek.online/product-category/back-in-stock-notifier/" target="_blank"><strong>Back In Stock Notifier Add-ons</strong></a> which cost you only <strong>$5.00(It help us to keep support this plugin) - Unlimited Site License and No Monthly Subscription</strong></p>
+					<p>Browse our <a href="https://codewoogeek.online/product-category/back-in-stock-notifier/" target="_blank"><strong>Back In Stock Notifier Add-ons</strong></a> which cost you only <strong>$10.00(It help us to keep support this plugin) - Unlimited Site License and No Monthly Subscription</strong></p>
 				</div>
 				<?php
 				settings_fields('cwginstocknotifier_settings');
@@ -51,9 +51,14 @@ if (!class_exists('CWG_Instock_Settings')) {
 
 			add_settings_section('cwginstock_section_visibility', __('Visibility Settings', 'back-in-stock-notifier-for-woocommerce'), array($this, 'visibility_section_heading'), 'cwginstocknotifier_settings');
 			add_settings_field('cwginstock_hide_name', __('Hide Name', 'back-in-stock-notifier-for-woocommerce'), array($this, 'hide_name_field'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+			//phone
 			add_settings_field('cwginstock_show_phone', __('Show Phone', 'back-in-stock-notifier-for-woocommerce'), array($this, 'show_phone_field'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
-
 			add_settings_field('cwginstock_show_phone_optional', __('Phone field optional', 'back-in-stock-notifier-for-woocommerce'), array($this, 'phone_field_optional'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+			add_settings_field('cwginstock_phone_default_country', __('Default Country for Phone Field', 'back-in-stock-notifier-for-woocommerce'), array($this, 'default_country'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+			add_settings_field('cwginstock_phone_country_placeholder', __('Default Country for Phone Field Placeholder', 'back-in-stock-notifier-for-woocommerce'), array($this, 'default_country_placeholder'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+			add_settings_field('cwginstock_phone_custom_placeholder', __('Custom Placeholder', 'back-in-stock-notifier-for-woocommerce'), array($this, 'custom_placeholder'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+			add_settings_field('cwginstock_remove_placeholder', __('Hide Country Placeholder', 'back-in-stock-notifier-for-woocommerce'), array($this, 'hide_placeholder'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
+
 			add_settings_field('cwginstock_visibility_guest', __('Hide Subscribe Form for Guests', 'back-in-stock-notifier-for-woocommerce'), array($this, 'hide_form_for_guest'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
 			// since version 1.7
 			add_settings_field('cwginstock_visibility_member', __('Hide Subscribe Form for Members', 'back-in-stock-notifier-for-woocommerce'), array($this, 'hide_form_for_member'), 'cwginstocknotifier_settings', 'cwginstock_section_visibility');
@@ -182,6 +187,51 @@ if (!class_exists('CWG_Instock_Settings')) {
 			?>
 			<input type='checkbox' class ='phone_field_optional' name='cwginstocksettings[phone_field_optional]' <?php isset($options['phone_field_optional']) ? checked($options['phone_field_optional'], 1) : ''; ?> value="1"/>
 			<p><i><?php esc_html_e('Enable this option to make phone field as optional', 'back-in-stock-notifier-for-woocommerce'); ?></i></p>
+			<?php
+		}
+
+		public function default_country() {
+			$options = get_option('cwginstocksettings');
+			?>
+			<select name='cwginstocksettings[default_country]'class='cwg_default_country'>
+				<option value=''>Select Default Country</option>
+				<?php
+				$countries_obj = new WC_Countries();
+				if ($countries_obj) {
+					$countries = $countries_obj->__get('countries');
+					foreach ($countries as $each_country => $country_name) {
+						?>
+						<option value='<?php esc_html_e($each_country); ?>' <?php echo isset($options['default_country']) && $each_country == $options['default_country'] ? 'selected=selected' : ''; ?>><?php esc_html_e($country_name, 'back-in-stock-notifier-for-woocommerce'); ?></option>
+						<?php
+					}
+				}
+				?>
+			</select>
+			<?php
+		}
+
+		public function default_country_placeholder() {
+			$options = get_option('cwginstocksettings');
+			?>
+			<select class="cwg_default_country_placeholder" name="cwginstocksettings[default_country_placeholder]" style='width: 200px;'>
+				<option value="default" <?php echo isset($options['default_country_placeholder']) && 'default' == $options['default_country_placeholder'] ? 'selected=selected' : ''; ?>><?php esc_html_e('Default/Automatic', 'back-in-stock-notifier-for-woocommerce'); ?></option>
+				<option value="custom" <?php echo isset($options['default_country_placeholder']) && 'custom' == $options['default_country_placeholder'] ? 'selected=selected' : ''; ?>><?php esc_html_e('Custom Placeholder', 'back-in-stock-notifier-for-woocommerce'); ?></option>
+			</select>
+			<?php
+		}
+
+		public function custom_placeholder() {
+			$options = get_option('cwginstocksettings');
+			?>
+			<input type='text' class="cwg_custom_placeholder" style='width: 400px;' name='cwginstocksettings[custom_placeholder]' value='<?php echo wp_kses_post(isset($options['custom_placeholder']) ? $options['custom_placeholder'] : ''); ?>'/>
+			<?php
+		}
+
+		public function hide_placeholder() {
+			$options = get_option('cwginstocksettings');
+			?>
+			<input type='checkbox' class ='hide_country_placeholder' name='cwginstocksettings[hide_country_placeholder]' <?php isset($options['hide_country_placeholder']) ? checked($options['hide_country_placeholder'], 1) : ''; ?> value="1"/>
+			<p><i><?php esc_html_e('Enable this option to hide the placeholder for the phone field in the front-end subscribe form', 'back-in-stock-notifier-for-woocommerce'); ?></i></p>
 			<?php
 		}
 
@@ -430,7 +480,7 @@ if (!class_exists('CWG_Instock_Settings')) {
 			$options = get_option('cwginstocksettings');
 			?>
 			<input type='checkbox' name='cwginstocksettings[enable_instock_mail_for_product_status]' <?php isset($options['enable_instock_mail_for_product_status']) ? checked($options['enable_instock_mail_for_product_status'], 1) : ''; ?> value="1"/>
-			<p><i><?php esc_html_e('By enble this option, instock email will be send to the published product. Status with private/draft product status will not be considered.', 'back-in-stock-notifier-for-woocommerce'); ?></i></p>
+			<p><i><?php esc_html_e('By enable this option, instock email will be send to the published product. Status with private/draft product status will not be considered.', 'back-in-stock-notifier-for-woocommerce'); ?></i></p>
 			<?php
 		}
 
@@ -467,7 +517,6 @@ if (!class_exists('CWG_Instock_Settings')) {
 			<select name="cwginstocksettings[bgp_engine]" style="width:400px;">
 				<option value="wcbgp" <?php echo isset($options['bgp_engine']) && 'wcbgp' == $options['bgp_engine'] ? 'selected=selected' : ''; ?>><?php esc_html_e('WooCommerce Background Process', 'back-in-stock-notifier-for-woocommerce'); ?></option>
 				<option value="wpbgp" <?php echo isset($options['bgp_engine']) && 'wpbgp' == $options['bgp_engine'] ? 'selected=selected' : ''; ?>><?php esc_html_e('Default Background Process', 'back-in-stock-notifier-for-woocommerce'); ?></option>
-
 			</select>
 			<?php
 		}
@@ -476,6 +525,7 @@ if (!class_exists('CWG_Instock_Settings')) {
 			$options = get_option('cwginstocksettings');
 			?>
 			<input type='text' style='width: 400px;' name='cwginstocksettings[success_subscription]' value="<?php echo wp_kses_post($this->api->sanitize_text_field($options['success_subscription'])); ?>"/>
+			<i><p>Supported Shortcodes {product_name}, {only_product_name}</p></i>
 			<?php
 		}
 
@@ -483,6 +533,7 @@ if (!class_exists('CWG_Instock_Settings')) {
 			$options = get_option('cwginstocksettings');
 			?>
 			<input type='text' style='width: 400px;' name='cwginstocksettings[already_subscribed]' value="<?php echo wp_kses_post($this->api->sanitize_text_field($options['already_subscribed'])); ?>"/>
+			<i><p>Supported Shortcodes {product_name}, {only_product_name}</p></i>
 			<?php
 		}
 

@@ -1,3 +1,4 @@
+
 if (jQuery('#product_brand_select').length > 0) {
     jQuery.fn.select2.amd.define('select2/selectAllAdapter', [
         'select2/utils',
@@ -204,11 +205,11 @@ jQuery(document).ready(function () {
             jQuery(".product_list_section").removeClass('show_lessmore');
             var txt = 'View More';
             if (jQuery(".product_list_section").hasClass("show_outofstock")) {
-                console.log('else checkbox checked show all');
+                /*console.log('else checkbox checked show all');*/
                 //jQuery('.color_box').find('.more_color_items.less_color_items').slideDown();
                 jQuery('.color_box').find('.more_color_items').slideUp();
             }else{
-                console.log('else checkbox not checked not show all');
+               /* console.log('else checkbox not checked not show all');*/
                 jQuery('.color_box').find('.more_color_items').not('.color_out_of_stock, .less_color_items ').slideUp();
                 //jQuery('.color_box').find('.more_color_items').not('.less_color_items ').slideUp();
                 //jQuery('.more_color_items.less_color_items').slideUp();
@@ -613,7 +614,7 @@ jQuery(document).ready(function () {
     function color_size_select() {
 
         jQuery(".single-product .color_box .action_color").click(function () {
-             //console.log('action2');
+             console.log('action2');
 
             //out of stock notify me
             jQuery('.wc-bulk-variations-table tbody tr').removeClass('outofstock_tr');
@@ -630,7 +631,7 @@ jQuery(document).ready(function () {
 
             //for image changes in gallery
             jQuery(".wpgs-nav .slick-list .slick-track .slick-slide").each(function() {
-                var image_src = jQuery(this).children('img').attr('src');
+                var image_src = jQuery(this).children('img').attr('src');  console.log('image_src = '+image_src);
                 var last = image_src.split('/').pop();
                 var lastIndex = last.lastIndexOf('-');
 
@@ -641,7 +642,8 @@ jQuery(document).ready(function () {
                 } else {
                     var final_image = last.slice(0, lastIndex);
                 }
-                
+                console.log('final_image = '+final_image);
+                console.log('galleryselectimg = '+galleryselectimg);
                 if(final_image == galleryselectimg) {
                     jQuery(this).children('img').trigger('click');
                 }
@@ -787,7 +789,9 @@ jQuery(document).ready(function () {
     setTimeout(function () {
         //jQuery("li [data-count='1']").trigger('click');
         if(jQuery('li.color_in_stock').length == 1){
-            jQuery("li [data-count='1']").trigger('click'); console.log('limit='+jQuery('li.color_in_stock').length);
+            jQuery("li [data-count='1']").trigger('click'); 
+
+            /*console.log('limit='+jQuery('li.color_in_stock').length);*/
         }else{
             jQuery("li.color_in_stock").eq(0).children('a').trigger('click');
         }
@@ -944,6 +948,9 @@ jQuery(document).ready(function () {
         jQuery('input:checkbox.rm_items_chk').not(this).prop('checked', this.checked);
     });
 });
+
+
+
 
 
 jQuery(document).ready(function ($) {

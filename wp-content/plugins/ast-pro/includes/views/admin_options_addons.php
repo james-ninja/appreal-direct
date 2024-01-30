@@ -1,24 +1,6 @@
 <section id="content6" class="tab_section">
-	<div class="tab_container_without_bg_1000">
-		<?php
-		$show_addons_tab = apply_filters( 'ast_show_addons_tab', false );
-		
-		if ( class_exists( 'ast_pro' ) ) {
-			$show_addons_tab = true;
-		} elseif ( class_exists( 'ast_compatibility_with_wc_shipstation' ) ) {
-			$show_addons_tab = true;
-		} elseif ( class_exists( 'ast_compatibility_with_wc_services' ) ) {
-			$show_addons_tab = true;
-		} elseif ( class_exists( 'ast_compatibility_with_readytoship' ) ) {
-			$show_addons_tab = true;
-		} elseif ( class_exists( 'paypal_tracking_add_on' ) ) {
-			$show_addons_tab = true;
-		}
-		$addons = isset( $_GET['addons'] ) ? sanitize_text_field($_GET['addons']) : 'addons'; 
-		?>
-		<h2 class="tab_page_heading clear_spacing"><?php esc_html_e( 'License', 'ast-pro' ); ?></h2>
-		<p><?php esc_html_e('Activate your license to receive automatic updates, you can get the license key in your ', 'ast-pro'); ?><a style="text-decoration: none;" href="https://www.zorem.com/my-account/subscriptions/" target="_blank">zorem account</a></p>
-		
+	<div class="tab_container_without_bg">
+		<h2 class="tab_page_heading"><?php esc_html_e( 'License', 'ast-pro' ); ?></h2>		
 		<?php do_action('ast_addon_license_form'); ?>
 	</div>
 	<div class="tab_container_without_bg">

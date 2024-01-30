@@ -58,29 +58,7 @@ class AST_Pro_Csv_Import {
 	*/
 	public function init() {
 		add_action( 'wp_ajax_wc_ast_upload_csv_form_update', array( $this, 'upload_tracking_csv_fun') );
-	}
-	
-	public function fulfillment_header( $heading, $parent_label, $parent_url ) {
-		include 'views/fulfillment_settings_header.php';
-	}
-	
-	/*
-	* callback for Shipment Tracking page
-	*/
-	public function csv_import_page_callback() {		  
-		wp_enqueue_script( 'shipment_tracking_table_rows' ); 
-		?>		
-		
-		<div class="zorem-layout">			
-			<?php $this->fulfillment_header( 'CSV Import', 'Fulfillment', admin_url() . 'admin.php?page=fulfillment-dashboard' ); ?>
-			<div class="woocommerce zorem_admin_layout">
-				<div class="ast_admin_content" >
-					<?php require_once( 'views/admin_options_bulk_upload.php' ); ?>
-				</div>				
-			</div>					
-		</div>		
-		<?php 
-	}
+	}	
 	
 	/*
 	* Ajax call for upload tracking details into order from bulk upload
@@ -98,6 +76,8 @@ class AST_Pro_Csv_Import {
 		update_option( 'date_format_for_csv_import', $date_format_for_csv_import );
 		$order_number = isset( $_POST['order_id'] ) ? wc_clean( $_POST['order_id'] ) : '';		
 		
+		$tpi = AST_Tpi::get_instance();
+
 		$wast = AST_Pro_Actions::get_instance();
 		$order_id = $wast->get_formated_order_id( $order_number );
 		
@@ -114,18 +94,19 @@ class AST_Pro_Csv_Import {
 
 		global $wpdb;					
 		
-		$sql = $wpdb->prepare( "SELECT COUNT(*) FROM {$this->table} WHERE api_provider_name = %s", $tracking_provider );
-		$shippment_provider = $wpdb->get_var( $sql );
+		$shippment_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %1s WHERE api_provider_name = %s', $this->table, $tracking_provider ) );
 		
 		if ( 0 == $shippment_provider ) {			
-			$sql = "SELECT COUNT(*) FROM {$this->table} WHERE JSON_CONTAINS(api_provider_name, '[" . '"' . $tracking_provider . '"' . "]')";
-			$shippment_provider = $wpdb->get_var( $sql );			
+			$shippment_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %1s WHERE JSON_CONTAINS(LOWER(api_provider_name), LOWER(%s))', $this->table, '["' . $tracking_provider . '"]' ) );
 		}	
 		
+		if ( 0 == $shippment_provider ) {			
+			$shippment_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %1s WHERE provider_name = %s', $this->table, $tracking_provider ) );
+		}
+		
 		if ( 0 == $shippment_provider ) {
-			$sql = $wpdb->prepare( "SELECT COUNT(*) FROM {$this->table} WHERE provider_name = %s", $tracking_provider );
-			$shippment_provider = $wpdb->get_var( $sql );
-		}	 		
+			$shippment_provider = $wpdb->get_var( $wpdb->prepare( 'SELECT COUNT(*) FROM %1s WHERE ts_slug = %s', $this->table, $tracking_provider ) );
+		}
 		
 		$order = wc_get_order($order_id);		
 		
@@ -141,6 +122,11 @@ class AST_Pro_Csv_Import {
 		
 		if ( empty( $tracking_number ) ) {
 			echo '<li class="tracking_number_error">Failed - Empty Tracking Number - Order ' . esc_html( $order_number ) . '</li>';
+			exit;
+		}
+
+		if ( preg_match( '/^[+-]?[0-9]+(\.[0-9]+)?E[+-][0-9]+$/', $tracking_number ) ) {
+			echo '<li class="tracking_number_error">Failed - Invalid Tracking Number - Order ' . esc_html( $order_number ) . '</li>';
 			exit;
 		}
 		
@@ -172,16 +158,19 @@ class AST_Pro_Csv_Import {
 						
 						$tracking_exist = false;
 						
-						if ( class_exists( 'ast_woo_advanced_shipment_tracking_by_products' ) ) {
+						$tpi_order = $tpi->check_if_tpi_order( $tracking_items, $order );
+						if ( $tpi_order ) {
 							$item_tracking_number = $item['tracking_number'];
 							$tracking_exist = in_array( $item_tracking_number, array_column( $trackings, 'tracking_number' ) );
 						}
 						
-						if ( false == $tracking_exist ) {
-							unset( $tracking_items[ $key ] );		
+						if ( false == $tracking_exist ) {	
+							do_action( 'delete_tracking_number_from_trackship', $tracking_items, $item['tracking_id'], $order_id );						
+							unset( $tracking_items[ $key ] );							
 						}
 					}
-					$wast->save_tracking_items( $order_id, $tracking_items );
+					
+					$wast->save_tracking_items( $order_id, $tracking_items );					
 				}
 			}
 		}
@@ -205,67 +194,71 @@ class AST_Pro_Csv_Import {
 					
 					$product_id = ast_get_product_id_by_sku( $sku );
 					
-					if ( $product_id ) {
-						
-						$product_data =  (object) array (							
-							'product' => $product_id,
-							'qty' => $qty,
-						);
-						
-						array_push( $products_list, $product_data );
-						
-						$product_data_array = array();
-						$product_data_array[ $product_id ] = $qty;												
-						
-						$autocomplete_order_tpi = get_option( 'autocomplete_order_tpi', 0 );
-						if ( 1 == $autocomplete_order_tpi ) {
-							$status_shipped = ast_pro()->ast_pro_admin->autocomplete_order_after_adding_all_products( $order_id, $status_shipped, $products_list );
-							$args['status_shipped'] = $status_shipped;
-						}						
-						
-						if ( count( $tracking_items ) > 0 ) {								
-							foreach ( $tracking_items as $key => $item ) {						
-								if ( $item['tracking_number'] == $tracking_number ) {
-									
-									if ( isset( $item['products_list'] ) && !empty( $item['products_list'] ) ) {
-										
-										$product_list_array = array();
-										foreach ( $item['products_list'] as $item_product_list ) {														
-											$product_list_array[ $item_product_list->product ] = $item_product_list->qty;
-										}																							
-										
-										$mearge_array = array();										
-										foreach ( array_keys( $product_data_array + $product_list_array ) as $product ) {										
-											$mearge_array[ $product ] = (int) ( isset( $product_data_array[ $product ] ) ? $product_data_array[ $product ] : 0 ) + (int) ( isset( $product_list_array[$product] ) ? $product_list_array[ $product ] : 0 );
-										}																								
-										
-										foreach ( $mearge_array as $productid => $product_qty ) {
-											$merge_product_data[] =  (object) array (							
-												'product' => $productid,
-												'qty' => $product_qty,
-											);
-										}
-											
-										if ( !empty( $merge_product_data ) ) {
-											$tracking_items[ $key ]['products_list'] = $merge_product_data;	
-											$wast->save_tracking_items( $order_id, $tracking_items );
-
-											$order = new WC_Order( $order_id );
-											
-											do_action( 'update_order_status_after_adding_tracking', $status_shipped, $order );
-		
-											echo '<li class="success">Success - added tracking info to Order ' . esc_html( $order_number ) . '</li>';
-											exit;
-										}		
-									}											
-								}	 
-							}																		
-						} 
-						
-						$product_args = array(
-							'products_list' => $products_list,				
-						);							
+					
+					if ( !$product_id ) {
+						echo '<li class="invalid_product_sku_error">Failed - Invalid product SKU - Order ' . esc_html( $order_number ) . '</li>';
+						exit;
 					}
+						
+					$product_data =  (object) array (							
+						'product' => $product_id,
+						'qty' => $qty,
+					);
+					
+					array_push( $products_list, $product_data );
+					
+					$product_data_array = array();
+					$product_data_array[ $product_id ] = $qty;												
+					
+					$autocomplete_order_tpi = get_option( 'autocomplete_order_tpi', 0 );
+					if ( 1 == $autocomplete_order_tpi ) {
+						$status_shipped = ast_pro()->ast_pro_admin->autocomplete_order_after_adding_all_products( $order_id, $status_shipped, $products_list );
+						$args['status_shipped'] = $status_shipped;
+					}						
+					
+					if ( count( $tracking_items ) > 0 ) {								
+						foreach ( $tracking_items as $key => $item ) {						
+							if ( $item['tracking_number'] == $tracking_number ) {
+								
+								if ( isset( $item['products_list'] ) && !empty( $item['products_list'] ) ) {
+									
+									$product_list_array = array();
+									foreach ( $item['products_list'] as $item_product_list ) {														
+										$product_list_array[ $item_product_list->product ] = $item_product_list->qty;
+									}																							
+									
+									$mearge_array = array();										
+									foreach ( array_keys( $product_data_array + $product_list_array ) as $product ) {										
+										$mearge_array[ $product ] = (int) ( isset( $product_data_array[ $product ] ) ? $product_data_array[ $product ] : 0 ) + (int) ( isset( $product_list_array[$product] ) ? $product_list_array[ $product ] : 0 );
+									}																								
+									
+									foreach ( $mearge_array as $productid => $product_qty ) {
+										$merge_product_data[] =  (object) array (							
+											'product' => $productid,
+											'qty' => $product_qty,
+										);
+									}
+										
+									if ( !empty( $merge_product_data ) ) {
+										$tracking_items[ $key ]['products_list'] = $merge_product_data;	
+										$wast->save_tracking_items( $order_id, $tracking_items );
+
+										$order = new WC_Order( $order_id );
+										
+										do_action( 'update_order_status_after_adding_tracking', $status_shipped, $order );
+		
+										echo '<li class="success">Success - added tracking info to Order ' . esc_html( $order_number ) . '</li>';
+										exit;
+									}		
+								}											
+							}	 
+						}																		
+					} 
+					
+					$product_args = array(
+						'products_list' => $products_list,				
+					);							
+					
 				}																																	
 				$args = array_merge( $args, $product_args );				
 			}																												

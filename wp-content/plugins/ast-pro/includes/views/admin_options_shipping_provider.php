@@ -3,9 +3,11 @@
  * Html code for shipping providers tab
  */
 
-$wc_ast_api_key = get_option( 'wc_ast_api_key' );
 $upload_dir   = wp_upload_dir();	
 $ast_directory = $upload_dir['baseurl'] . '/ast-shipping-providers/';
+$WC_Countries = new WC_Countries();
+$countries = $WC_Countries->get_countries();
+
 if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 	?>
 	<script>
@@ -13,11 +15,12 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 			jQuery('.sync_provider_popup').show();
 		});
 	</script>
-<?php 
-}
-?>
+<?php } ?>
 <section id="content1" class="tab_section">	
 	<div class="tab_container_without_bg">	
+		
+		<?php do_action( 'before_shipping_provider_list' ); ?>
+		
 		<div class="provider_top">																					
 			<div class="search_section">				
 				<span class="dashicons dashicons-search search-icon"></span>
@@ -25,19 +28,23 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 			</div>
 											
 			<div class="provider_settings">
-				<a href="javaScript:void(0);" class="add_custom_provider provider_settings_icon" id="add-custom"><span class="dashicons dashicons-plus-alt"></span></a>	
-				<a href="javaScript:void(0);" class="sync_providers provider_settings_icon"><span class="dashicons dashicons-update"></span></a>
-				<input class="ast-tgl ast-tgl-flat" id="reset_providers" name="reset_providers" type="checkbox" value="1"/>
-				<label class="ast-tgl-btn" for="reset_providers"></label>
+				<a href="javaScript:void(0);" class="provider_settings_icon" id="provider-settings"><span class="dashicons dashicons-ellipsis"></span></a>				
+				<!--a href="javaScript:void(0);" class="add_custom_provider provider_settings_icon" id="add-custom"><span class="dashicons dashicons-plus-alt"></span></a>	
+				<a href="javaScript:void(0);" class="sync_providers provider_settings_icon"><span class="dashicons dashicons-update"></span></a>								
+				<input type="checkbox" id="reset_providers" name="reset_providers" class="ast-toggle" value="1">
+				<label for="reset_providers"></label-->		
+				<ul class="provider-settings-ul">
+					<li><a href="javaScript:void(0);" class="add_custom_provider"><?php esc_html_e('Add Custom Provider', 'ast-pro'); ?></a></li>
+					<li><a href="javaScript:void(0);" class="sync_providers"><?php esc_html_e('Sync Providers', 'ast-pro'); ?></a></li>
+					<li><a href="javaScript:void(0);" class="reset_providers" data-reset="1"><?php esc_html_e('Enable All Providers', 'ast-pro'); ?></a></li>
+					<li><a href="javaScript:void(0);" class="reset_providers" data-reset="0"><?php esc_html_e('Disable All Providers', 'ast-pro'); ?></a></li>
+				</ul>			
 			</div>
+			
 		</div>		
 		
 		<div class="provider_list">	
-			<?php 
-			if ( $default_shippment_providers ) {
-				echo wp_kses_post( $this->get_provider_html( $default_shippment_providers, 'all' ) );
-			}
-			?>
+			<?php echo wp_kses_post( $this->get_provider_html( 1 ) ); ?>
 		</div>
 		
 		<input type="hidden" id="nonce_shipping_provider" value="<?php esc_html_e( wp_create_nonce( 'nonce_shipping_provider' ) ); ?>">
@@ -88,7 +95,7 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 							?>
 							<?php
 							/* translators: %s: replace with Shippinh provider page url */
-							echo sprintf(__('<a href="%s" target="blank">documentation</a>', 'ast-pro'), 'http://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/setting-shipping-providers/#adding-custom-shipping-provider'); 
+							echo sprintf(__('<a href="%s" target="blank">documentation</a>', 'ast-pro'), 'https://docs.zorem.com/docs/ast-pro/shipping-providers/create-custom-provider/#how-to-set-custom-tracking-link'); 
 							?>
 							</p>
 						</div>
@@ -119,7 +126,7 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 						<div class="form-field form-50 margin-0">
 							<label><?php esc_html_e( 'Custom display name', 'ast-pro' ); ?> <span class="woocommerce-help-tip tipTip" data-tip="<?php esc_html_e( "The custom display name will show in the tracking info section on the customer order emails, my-account, and TrackShip's tracking page and email notifications", 'ast-pro' ); ?>"></span> </label>
 							<input type="text" name="shipping_display_name" class="shipping_display_name" value="" placeholder="<?php esc_html_e( 'White Label Provider Name', 'ast-pro' ); ?>">
-						</div>
+						</div>						
 						<div class="form-field api_provider_name_container">
 							<label><?php esc_html_e( 'Custom API name', 'ast-pro' ); ?> <span class="woocommerce-help-tip tipTip" data-tip="<?php esc_html_e( 'Add API name aliases to map Shipping providers names with the provider names that are updated in the shipment tracking API by external shipping services', 'ast-pro' ); ?>"></span></label>
 							<div class="api_provider_div">									
@@ -144,8 +151,8 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 							<input type="button" class="button upload_image_button" value="<?php esc_html_e( 'Upload' , 'ast-pro' ); ?>" />
 						</div>
 						<div class="form-field">
-							<label><?php esc_html_e( 'Custom URL', 'ast-pro' ); ?></label>
-							<input type="text" name="tracking_url" class="tracking_url" placeholder="Tracking URL">
+							<label><?php esc_html_e( 'Tracking URL', 'ast-pro' ); ?></label>
+							<input type="text" name="tracking_url" class="tracking_url" placeholder="<?php esc_html_e( 'Tracking URL', 'ast-pro' ); ?>">
 						</div>
 						<div class="form-field custom_provider_instruction">
 							<p>
@@ -155,7 +162,7 @@ if ( isset( $_GET['open'] ) && 'synch_providers' == $_GET['open'] ) {
 							?>
 							<?php
 							/* translators: %s: replace with Shipping provider page link */		
-							echo sprintf(__('<a href="%s" target="blank">documentation</a>', 'ast-pro'), 'http://www.zorem.com/docs/woocommerce-advanced-shipment-tracking/setting-shipping-providers/#adding-custom-shipping-provider'); 
+							echo sprintf(__('<a href="%s" target="blank">documentation</a>', 'ast-pro'), 'https://docs.zorem.com/docs/ast-pro/shipping-providers/custom-tracking-page-url/'); 
 							?>
 							</p>
 						</div>

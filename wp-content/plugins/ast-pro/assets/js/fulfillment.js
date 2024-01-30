@@ -1,8 +1,9 @@
+
 jQuery(document).ready(function() {	
 	'use strict';
 	var url;
 	var $table = jQuery("#fullfilments_table").DataTable({		
-		dom: "it<'datatable_footer'pl>",
+		dom: "rti<'datatable_footer'pl>",
 		searching: false,
 		fixedHeader: true,
 		"processing": true,
@@ -15,8 +16,7 @@ jQuery(document).ready(function() {
 			'data': function ( d ) {
 				d.ajax_nonce = jQuery("#nonce_fullfillment_dashbaord").val();													
 				d.fullfillment_date = jQuery("#fullfillment_date").val();
-				d.unfulfilled_order_status = jQuery("#unfulfilled_order_status").val();
-				d.fulfillment_filter = jQuery("#fulfillment_filter").val();
+				d.unfulfilled_order_status = jQuery("#unfulfilled_order_status").val();				
 				d.fulfillment_search_input = jQuery("#fulfillment_search_input").val();
 				d.shipping_method_filter = jQuery("#shipping_method_filter").val();
 			},
@@ -25,15 +25,12 @@ jQuery(document).ready(function() {
 		"pageLength":25,
 		"drawCallback": function(settings) {
 			jQuery(window).resize();
-		},		
-		oLanguage: {
-			sProcessing: '<div id=loader><div class="fa-3x"><i class="fas fa-sync fa-spin"></i></div>'
 		},
 		
 		"columns":[
 			{
-				'width': 120,	
-				'orderable': false,		
+				'width': 130,	
+				'orderable': true,		
 				'data': 'order_date',	
 			},
 			{
@@ -44,6 +41,7 @@ jQuery(document).ready(function() {
 				},
 			},
 			{
+				'width': 150,
 				'orderable': false,
 				'data': 'order_status',
 			},
@@ -57,7 +55,7 @@ jQuery(document).ready(function() {
 				'data': 'ship_to',				
 			},
 			{
-				'width': 50,
+				//'width': 50,
 				'orderable': false,
 				'data': 'order_items',				
 			},
@@ -72,14 +70,10 @@ jQuery(document).ready(function() {
 			{
 				'orderable': false,	
 				'data' : 'actions_html',
-				'width': 100,
-				'className': 'text-right'
+				//'width': 100,
+				'className': 'column-wc_actions text-right'
 			},	
 		],
-	});	
-	
-	jQuery('#fulfillment_filter').change(function() {		
-		$table.ajax.reload();	
 	});	
 	
 	jQuery('#shipping_method_filter').change(function() {		
@@ -88,8 +82,12 @@ jQuery(document).ready(function() {
 	
 	jQuery('#fulfillment_search_submit').click(function() {		
 		$table.ajax.reload();	
-	});		
+	});	
 	
+	jQuery('#unfulfilled_orders,#recently_fulfilled').click(function() {	
+		$table.ajax.reload();	
+	});
+
 	jQuery(document).on("click", ".unfulfilled_order_status_filter", function(){
 		if ( jQuery(this).hasClass('active') ) {
 			jQuery('.unfulfilled_order_status_filter').removeClass('active');
@@ -103,6 +101,105 @@ jQuery(document).ready(function() {
 		$table.ajax.reload();	
 	});
 });
+
+	
+jQuery(document).ready(function() {	
+	'use strict';
+	var url;
+	var $table = jQuery("#fulfilled_order_table").DataTable({		
+		dom: "rti<'datatable_footer'pl>",
+		searching: false,
+		fixedHeader: true,
+		"processing": true,
+		"serverSide": true,	
+		"pagingType": "simple",	
+		'language': {
+            'loadingRecords': '&nbsp;',
+            'processing': '<div class="spinner"></div>'
+        },
+		//"order": [[ 5, "desc" ]],		
+		"ajax": {
+			'type': 'POST',
+			'url': ajaxurl+'?action=get_fulfilled_orders',
+			'data': function ( d ) {
+				d.ajax_nonce = jQuery("#nonce_fullfillment_dashbaord").val();				
+				d.fulfillment_search_input = jQuery("#fulfilled_search_input").val();
+				d.shipping_method_filter = jQuery("#fulfilled_shipping_method_filter").val();
+			},
+		},
+		"lengthMenu": [[25, 50, -1], [25, 50, "All"]],
+		"pageLength":25,
+		"drawCallback": function(settings) {
+			jQuery(window).resize();
+		},
+		
+		"columns":[
+			{
+				//'width': 130,	
+				'orderable': false,		
+				'data': 'order_date',	
+			},
+			{
+				'width': 50,
+				'orderable': false,				
+				"mRender":function(data,type,full) {
+					return '<a href="'+fulfillment_script.admin_url+'post.php?post='+full.order_id+'&action=edit">' + full.order_number + '</a>';
+				},
+			},
+			{
+				'width': 150,
+				'orderable': false,
+				'data': 'order_status',
+			},
+			{
+				'width': 30,	
+				'orderable': false,
+				'data': 'order_view',
+			},
+			{
+				'orderable': false,
+				'data': 'ship_to',				
+			},
+			{
+				//'width': 50,
+				'orderable': false,
+				'data': 'order_items',				
+			},
+			{
+				'orderable': false,	
+				'data' : 'shipping_method',	
+			},			
+			{
+				'orderable': false,
+				'data' : 'shipping_country',	
+			},	
+			{
+				'orderable': false,
+				'data' : 'shipment_tracking',	
+			},			
+			/*{
+				'orderable': false,	
+				'data' : 'actions_html',
+				//'width': 100,
+				'className': 'column-wc_actions text-right'
+			},*/	
+		],
+	});	
+	
+	jQuery('#fulfilled_shipping_method_filter').change(function() {		
+		$table.ajax.reload();	
+	});
+	
+	jQuery('#fulfilled_search_submit').click(function() {		
+		$table.ajax.reload();	
+	});	
+	
+	jQuery('#unfulfilled_orders,#recently_fulfilled').click(function() {	
+		$table.ajax.reload();	
+	});
+});
+
+
 
 jQuery(document).on("click", ".show_fulfilled_order_items", function(){
 	var order_id = jQuery(this).attr('href');

@@ -28,7 +28,7 @@ jQuery(document).on("click", ".tab_input", function(){
 	var tab = jQuery(this).data('tab');
 	var label = jQuery(this).data('label');
 	jQuery('.breadcums_page_heading').text(label);
-	var url = window.location.protocol + "//" + window.location.host + window.location.pathname+"?page=woocommerce-advanced-shipment-tracking&tab="+tab;
+	var url = window.location.protocol + "//" + window.location.host + window.location.pathname+"?page=" + ast_settings.page + "&tab="+tab;
 	window.history.pushState({path:url},'',url);	
 });
 

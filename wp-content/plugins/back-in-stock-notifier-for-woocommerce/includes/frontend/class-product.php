@@ -15,7 +15,7 @@ if (!class_exists('CWG_Instock_Notifier_Product')) {
 			add_action('woocommerce_woosb_add_to_cart', array($this, 'display_in_simple_product'), 31);
 			add_action('woocommerce_after_variations_form', array($this, 'display_in_no_variation_product'));
 			//add_action('woocommerce_grouped_add_to_cart', array($this, 'display_in_simple_product'), 32);
-			add_filter('woocommerce_available_variation', array($this, 'display_in_variation'), 10, 3);
+			add_filter('woocommerce_available_variation', array($this, 'display_in_variation'), 999, 3);
 			//some theme variation disabled by default if it is out of stock so for that workaround solution
 			add_filter('woocommerce_variation_is_active', array($this, 'enable_disabled_variation_dropdown'), 100, 2);
 			//hide out of stock products from catalog is checked bypass to display variation dropdown instead of hide
@@ -30,6 +30,10 @@ if (!class_exists('CWG_Instock_Notifier_Product')) {
 			//WPC Variation Radio Button Plugin Compatible for variation
 			add_filter('woovr_variation_availability', array($this, 'display_subscribe_form_in_wpcradiobutton'), 10, 2);
 			add_action('woocommerce_event_ticket_manager_add_to_cart', array($this, 'display_in_simple_product'), 31);
+			//template 
+			add_filter('cwginstock_locate_template', array($this, 'force_template_from_plugin'), 10, 5);
+			add_filter('cwginstock_success_subscription_html', array($this, 'replace_shortcode_for_message'), 10, 3);
+			add_filter('cwginstock_error_subscription_html', array($this, 'replace_shortcode_for_message'), 10, 3);
 		}
 
 		public function display_in_simple_product() {
@@ -321,6 +325,30 @@ if (!class_exists('CWG_Instock_Notifier_Product')) {
 			$display_filter = apply_filters('cwginstock_display_subscribe_form', true, $product, $variation);
 			$stock_html = $stock_html . $this->display_subscribe_box($product, $variation, $display_filter);
 			return $stock_html;
+		}
+
+		public function force_template_from_plugin( $template, $template_name, $template_path, $default_path, $args) {
+			$options = get_option('cwginstocksettings');
+			$force_load = isset($options['template_from_plugin']) && '1' == $options['template_from_plugin'] ? true : false;
+			if ($force_load) {
+				$template = $default_path . $template_name;
+			}
+			return $template;
+		}
+
+		public function replace_shortcode_for_message( $message_html, $message, $post_data) {
+			$id = $post_data && isset($post_data['product_id']) && isset($post_data['variation_id']) ? ( $post_data['variation_id'] > 0 ? $post_data['variation_id'] : $post_data['product_id'] ) : false;
+			if ($id) {
+				$obj = wc_get_product($id);
+				if ($obj) {
+					$product_name = $obj->get_formatted_name();
+					$only_product_name = $obj->get_name();
+					$find_shortcode = array('{product_name}', '{only_product_name}');
+					$replce_shortcode = array($product_name, $only_product_name);
+					$message_html = str_replace($find_shortcode, $replce_shortcode, $message_html);
+				}
+			}
+			return $message_html;
 		}
 
 	}

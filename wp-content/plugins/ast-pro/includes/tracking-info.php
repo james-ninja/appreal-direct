@@ -9,7 +9,7 @@
  * @param int         $date_shipped    		The timestamp of the shipped date.
  *                                     		This is optional, if not set it will
  *                                     		use current time.
- * @param int 		  $status_shipped		0=no,1=shipped,2=partial shipped(if partial shipped order status is enabled)
+ * @param int 		  $status_shipped		0=no,1=shipped,2=Partially Shipped(if Partially Shipped order status is enabled)
  */
 if ( !function_exists( 'ast_insert_tracking_number' ) ) { 
 	function ast_insert_tracking_number( $order_id, $tracking_number, $tracking_provider, $date_shipped = null, $status_shipped = 0, $sku = null, $qty = null ) {	
@@ -66,7 +66,7 @@ if ( !function_exists( 'ast_insert_tracking_number' ) ) {
  * @param int         $date_shipped    		The timestamp of the shipped date.
  *                                     		This is optional, if not set it will
  *                                     		use current time.
- * @param int 		  $status_shipped		0=no,1=shipped,2=partial shipped(if partial shipped order status is enabled)
+ * @param int 		  $status_shipped		0=no,1=shipped,2=Partially Shipped(if Partially Shipped order status is enabled)
  */
 if ( !function_exists( 'ast_add_tracking_number' ) ) { 
 	function ast_add_tracking_number( $order_id, $tracking_number, $tracking_provider, $date_shipped = null, $status_shipped = 0 ) {
@@ -111,5 +111,40 @@ if ( !function_exists( 'ast_get_product_id_by_sku' ) ) {
 		}	
 	
 		return null;	
+	}
+}
+
+if ( !is_plugin_active( 'woocommerce-shipment-tracking/woocommerce-shipment-tracking.php' ) ) {
+	if ( !function_exists( 'wc_st_add_tracking_number' ) ) {
+		function wc_st_add_tracking_number( $order_id, $tracking_number, $tracking_provider, $date_shipped = null, $custom_url = false ) {
+
+			$ast_admin = AST_pro_admin::get_instance();
+			$tracking_provider = $ast_admin->get_provider_slug_from_name( $tracking_provider );
+
+			$args = array(
+				'tracking_provider'     => $tracking_provider,		
+				'tracking_number'       => $tracking_number,
+				'date_shipped'          => $date_shipped,
+				'status_shipped'		=> 1,
+			);	
+
+			$ast = AST_Pro_Actions::get_instance();
+			$ast->add_tracking_item( $order_id, $args );	
+		}
+	}
+}
+
+if ( !function_exists( 'tracking_info_exist' ) ) {
+	function tracking_info_exist( $order_id, $tracking_number = null ) {
+		
+		$ast = AST_Pro_Actions::get_instance();
+		$tracking_items = $ast->get_tracking_items( $order_id, true );
+
+		$number_exist = array_search( $tracking_number, array_column( $tracking_items, 'tracking_number' ) );
+
+		if ( $number_exist || 0 === $number_exist ) {
+			return true;	
+		}	
+		return false;	
 	}
 }

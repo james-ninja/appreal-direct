@@ -56,15 +56,33 @@ if ( ! class_exists( 'WC_Email_Customer_Shipped_Order', false ) ) :
 				$order = wc_get_order( $order_id );
 			}
 
+			global $sitepress;
+			if ( $sitepress ) {
+				$old_lan = $sitepress->get_current_language();
+				$new_lan = $order->get_meta( 'wpml_language', true );
+				$sitepress->switch_lang($new_lan);
+			}						
+
 			if ( is_a( $order, 'WC_Order' ) ) {
 				$this->object                         = $order;
 				$this->recipient                      = $this->object->get_billing_email();
 				$this->placeholders['{order_date}']   = wc_format_datetime( $this->object->get_date_created() );
 				$this->placeholders['{order_number}'] = $this->object->get_order_number();
+
+				$user_id = $order->get_meta( '_customer_user', true );
+
+				$this->find['customer-first-name'] = '{customer_first_name}';
+				$this->find['customer-last-name'] = '{customer_last_name}';				
+				$this->replace['customer-first-name'] = get_user_meta( $user_id, 'shipping_first_name', true );
+				$this->replace['customer-last-name'] = get_user_meta( $user_id, 'shipping_last_name', true );
 			}
 
 			if ( $this->is_enabled() && $this->get_recipient() ) {
 				$this->send( $this->get_recipient(), $this->get_subject(), $this->get_content(), $this->get_headers(), $this->get_attachments() );
+			}
+			
+			if ( $sitepress ) {
+				$sitepress->switch_lang($old_lan);
 			}
 
 			$this->restore_locale();

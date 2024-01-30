@@ -22,10 +22,19 @@ if ( !function_exists( 'ast_pro_shippypro_func' ) ) {
 		$order = wc_get_order( $data['TransactionID'] );
 		// print_r($order);
 		if ( $order ) {
-			
-			if ( 'ORDER_SHIPPED' == $data['Event'] ) {			
-				ast_insert_tracking_number( $data['TransactionID'], $data['TrackingNumber'], $data['TrackingCarrier'], null, 1 );	  	
+			$status_shipped = get_option( 'autocomplete_shippypro', 1 );
+			if ( 'ORDER_SHIPPED' == $data['Event'] ) {
+				
+				$tracking_info_exist = tracking_info_exist( $data['TransactionID'], $data['TrackingNumber'] );
+				$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+				if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+					return;
+				}
+
+				ast_insert_tracking_number( $data['TransactionID'], $data['TrackingNumber'], $data['TrackingCarrier'], null, $status_shipped );	  	
 			}		
-		}		
+		}
+		echo json_encode('{}');		
 	}
 }

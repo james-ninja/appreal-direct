@@ -170,6 +170,25 @@ if (!class_exists('CWG_Instock_Status')) {
 
 				</tbody>
 			</table>
+			<hr>
+			<table class ="form-table">
+				<tbody>
+					<tr>
+						<th scope="row">Is Subscribe Form Template Override/loaded from Theme?</th>
+						<td>
+							<?php
+							$template_dir = 'back-in-stock-notifier-for-woocommerce';
+							$template_theme_file = get_stylesheet_directory() . '/' . $template_dir . '/default-form.php';
+							if (file_exists($template_theme_file)) {
+								echo "<p style='color:green;'>YES</p>";
+							} else {
+								echo "<p style='color:red;'>NO</p>";
+							}
+							?>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 			<?php
 		}

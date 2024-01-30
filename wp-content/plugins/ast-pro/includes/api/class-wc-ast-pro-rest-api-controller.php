@@ -62,7 +62,7 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 				'args'                => array_merge( $this->get_endpoint_args_for_item_schema( WP_REST_Server::CREATABLE ), array(
 					'tracking_number' => array(
 						'required' => true,
-					),
+					),					
 				) ),
 			),
 			'schema' => array( $this, 'get_public_item_schema' ),
@@ -155,18 +155,11 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 	 * @since 1.6.4
 	 */
 	public function is_valid_order_id( $order_id ) {
-		if ( version_compare( WC_VERSION, '3.0', '<' ) ) {
-			$order = get_post( $order_id );
-			if ( empty( $order->post_type ) || $this->post_type !== $order->post_type ) {
-				return false;
-			}
-		} else {
-			$order = wc_get_order( $order_id );
-			// in 3.0 the order factor will return false if the order class
-			// throws an exception or the class doesn't exist.
-			if ( false === $order ) {
-				return false;
-			}
+		$order = wc_get_order( $order_id );
+		// in 3.0 the order factor will return false if the order class
+		// throws an exception or the class doesn't exist.
+		if ( false === $order ) {
+			return false;
 		}
 		return true;
 	}		
@@ -222,25 +215,16 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 			return new WP_Error( 'woocommerce_rest_shop_order_shipment_tracking_exists', __( 'Cannot create existing order shipment tracking.', 'ast-pro' ), array( 'status' => 400 ) );
 		}
 
-		$order_id = (int) $request['order_id'];
-		
+		$order_id = (int) $request['order_id'];				
+
 		$ast = AST_Pro_Actions::get_instance();
 		$order_id = $ast->get_formated_order_id( $order_id );
 		
 		if ( ! $this->is_valid_order_id( $order_id ) ) {
 			return new WP_Error( 'woocommerce_rest_order_invalid_id', __( 'Invalid order ID.', 'ast-pro' ), array( 'status' => 404 ) );
 		}
-		
-		if ( preg_match( '/[^a-z0-9- \b]+/i', $request['tracking_number'] ) ) {
-			return new WP_Error( 'woocommerce_rest_order_invalid_id', __( 'Special character not allowd in tracking number', 'ast-pro' ), array( 'status' => 404 ) );			
-		}
 				
-		$ast_admin = AST_pro_admin::get_instance();		
-
-		$tracking_provider_name = ( isset( $request['custom_tracking_provider'] ) && !empty( $request['custom_tracking_provider'] ) ) ? $request['custom_tracking_provider'] : $request['tracking_provider'];	
-		
 		$replace_tracking = isset($request['replace_tracking']) ? $request['replace_tracking'] : 0;	
-		
 		if ( 1 == $replace_tracking ) {
 			$order = wc_get_order($order_id);
 			
@@ -256,6 +240,8 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 			}
 		}
 		
+		$tracking_provider_name = ( isset( $request['custom_tracking_provider'] ) && !empty( $request['custom_tracking_provider'] ) ) ? $request['custom_tracking_provider'] : $request['tracking_provider'];
+		$ast_admin = AST_pro_admin::get_instance();		
 		$tracking_provider = $ast_admin->get_provider_slug_from_name( $tracking_provider_name );
 		
 		$args = array(
@@ -265,14 +251,21 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 			'date_shipped'             => wc_clean( $request['date_shipped'] ),
 			'status_shipped'           => wc_clean( $request['status_shipped'] ),
 			'source'				   => 'REST_API',
-		);				
+		);								
 		
-		$args = apply_filters( 'ast_api_create_item_arg', $args, $request );		
+		$args = apply_filters( 'ast_api_create_item_arg', $args, $request );
 		
+		$tracking_info_exist = tracking_info_exist( $order_id, $request['tracking_number'] );
+		$restrict_adding_same_tracking = get_option( 'restrict_adding_same_tracking', 1 );
+
+		if ( $tracking_info_exist && $restrict_adding_same_tracking ) {
+			return new WP_Error( 'woocommerce_rest_tracking_number_exist', __( 'Tracking information already exist in order', 'ast-pro' ), array( 'status' => 404 ) );			
+		}
+
 		$tracking_item             = $ast->add_tracking_item( $order_id, $args );		
 		$tracking_item['order_id'] = $order_id;
 		$formatted                 = $ast->get_formatted_tracking_item( $order_id, $tracking_item );
-		$tracking_item             = array_merge( $tracking_item, $formatted );
+		$tracking_item             = array_merge( $tracking_item, $formatted );				
 
 		$request->set_param( 'context', 'edit' );
 
@@ -356,9 +349,12 @@ class WC_AST_PRO_REST_API_Controller extends WC_REST_Controller {
 	 * @return WP_REST_Response $response Response data
 	 */
 	public function prepare_item_for_response( $tracking_item, $request ) {
+		
 		$date_shipped = gmdate('Y-m-d');
+		
 		if ( isset( $tracking_item['date_shipped'] ) ) {
-			$date_shipped = gmdate( 'Y-m-d', $tracking_item['date_shipped'] );
+			$date_format = get_option( 'date_format', 'Y-m-d' );
+			$date_shipped = gmdate( $date_format, strtotime( $tracking_item['date_shipped'] ) );
 		}
 				
 		$data = array(
