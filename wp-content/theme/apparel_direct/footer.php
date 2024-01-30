@@ -150,11 +150,7 @@ html {
   console.log('CLIENT: service worker is not supported.');
 }</script>
 <?php wp_footer(); ?>
-<?php
-if (is_page(array(10, 9))) {
-?>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8_JBXi77JSS1V8nmo-48DIVRKIhMSziA&callback=initValuationMap&libraries=places" async defer></script>
-<?php } ?>
+
 <script src="//code.tidio.co/ffxpnegcaybmsbdqqqruwvpyjsuswihz.js"></script>
 </body>
 

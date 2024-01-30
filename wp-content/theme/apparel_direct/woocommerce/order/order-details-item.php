@@ -75,6 +75,7 @@ if (!apply_filters('woocommerce_order_item_visible', true, $item)) {
 			}
 
 			
+			} else {
 			echo $thumbnail;
 		} else {
 			if (wc_placeholder_img_src(array(100, 100))) {
